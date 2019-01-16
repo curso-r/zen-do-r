@@ -1,2 +1,2 @@
-# zen-do-r
-O Nobre Caminho Óctuplo que conduz à cessação do sofrimento (ao programar em R)
+# Zen Do R
+Um livro sobre como usar projetos no R para melhorar a sua programação.
