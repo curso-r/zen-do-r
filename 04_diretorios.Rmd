@@ -1,0 +1,3 @@
+# Rproj e diretórios
+
+> Esforço Correto: evite o surgimento de estados insalubres e crie estados saudáveis

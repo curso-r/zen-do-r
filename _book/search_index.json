@@ -1,4 +1,16 @@
 [
 ["index.html", "O Zen do R Bem-Vindo", " O Zen do R Caio Lente Bem-Vindo Este é O Zen do R, seja bem-vindo! O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R). O texto deste livro foi escrito por Caio Lente com o suporte, ajuda e revisão do time da Curso-R. Ele está disponível gratuitamente no Github sob a licença GNU GPLv3. Ele foi escrito em RMarkdown com o pacote bookdown. "],
-["introducao.html", "1 Introdução", " 1 Introdução "]
+["introducao.html", "1 Introdução 1.1 O que você vai aprender 1.2 Como esse livro é organizado 1.3 O que você não vai aprender 1.4 Pré-requisitos 1.5 Principais referências", " 1 Introdução 1.1 O que você vai aprender 1.2 Como esse livro é organizado 1.3 O que você não vai aprender 1.4 Pré-requisitos 1.5 Principais referências "],
+["sobre-ambiente.html", "2 Sobre", " 2 Sobre "],
+["rdata-e-historico.html", "3 .RData e histórico", " 3 .RData e histórico Consciência Correta: nunca esteja distraído, esteja consciente do que faz "],
+["rproj-e-diretorios.html", "4 Rproj e diretórios", " 4 Rproj e diretórios Esforço Correto: evite o surgimento de estados insalubres e crie estados saudáveis "],
+["sobre-versoes.html", "5 Sobre", " 5 Sobre "],
+["git-e-github.html", "6 Git e Github", " 6 Git e Github Compreensão Correta: nossas ações têm consequências, então limpe seu caminho da confusão, do equívoco e do pensamento iludido "],
+["packrat.html", "7 Packrat", " 7 Packrat Pensamento Correto: considere tudo e todos como impermanentes, uma fonte de sofrimento "],
+["sobre-dados.html", "8 Sobre", " 8 Sobre "],
+["data-e-data-raw.html", "9 Data e data-raw", " 9 Data e data-raw Ação Correta: abstenha-se de matar, de roubar e da promiscuidade "],
+["rdss-intermediarios.html", "10 RDSs intermediários", " 10 RDSs intermediários Fala Correta: nunca fale algo que não é benéfico e fale somente o que é verdadeiro e benéfico "],
+["sobre-arquivos.html", "11 Sobre", " 11 Sobre "],
+["reiniciar-a-sessao.html", "12 Reiniciar a sessão", " 12 Reiniciar a sessão Concentração Correta: procure um estado de consciência sem objeto ou sujeito "],
+["arquivos-minimalistas.html", "13 Arquivos minimalistas", " 13 Arquivos minimalistas Meio de Vida Correto: não aceite tudo e não possua mais do que é estritamente necessário "]
 ]
