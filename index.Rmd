@@ -10,7 +10,7 @@ site: bookdown::bookdown_site
 documentclass: book
 ---
 
-# Bem-Vindo {-}
+# Bem-vindo {-}
 
 Este é *O Zen do R*, seja bem-vindo! O objetivo deste livro é ensinar ao leitor
 algumas formas simples de melhorar a organização de seus projetos de análise de
