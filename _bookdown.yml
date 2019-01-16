@@ -1,2 +1,3 @@
 book_filename: "zen-do-r"
+output_dir: "docs"
 delete_merged_file: true

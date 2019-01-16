@@ -1,0 +1,20 @@
+# Introdução
+
+*O Zen do R* tem o objetivo de ser um livro sobre programação para
+não-programadores. Diferentemente dos manuais secos e técnicos com os quais
+geralmente nos deparamos na internet, o tom deste livro é leve e
+~pretende ser~ bem-humorado; assim, a sua motivação principal é atrair o
+máximo possível de pessoas para um mundo onde a programação é uma ferramenta e
+não um obstáculo no processo de análise de dados.
+
+
+
+## O que você vai aprender
+
+## Como esse livro é organizado
+
+## O que você não vai aprender
+
+## Pré-requisitos
+
+## Principais referências
