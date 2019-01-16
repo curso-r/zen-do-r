@@ -1,0 +1,4 @@
+[
+["index.html", "Zen do R Bem-Vindo", " Zen do R Caio Lente Bem-Vindo Este é o Zen do R, seja bem-vindo! O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R). O texto deste livro foi escrito por Caio Lente com o suporte, ajuda e revisão do time da Curso-R. Ele está disponível gratuitamente no Github sob a licença GNU GPLv3. Ele foi escrito em RMarkdown com o pacote bookdown. "],
+["introducao.html", "1 Introdução", " 1 Introdução "]
+]
