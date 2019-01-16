@@ -3,11 +3,12 @@ bookdown::gitbook:
     toc:
       collapse: section
       before: |
-        <li><strong><a href="./">Zen do R</a></strong></li>
+        <li><strong><a href="./">O Zen do R</a></strong></li>
     edit:
       link: https://github.com/curso-r/zen-do-r/edit/master/%s
       text: "Edit"
     sharing: no
+  css: zen-do-r.css
 
 bookdown::pdf_book:
 latex_engine: "xelatex"

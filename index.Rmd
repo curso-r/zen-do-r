@@ -1,6 +1,6 @@
 ---
 knit: "bookdown::render_book"
-title: "Zen do R"
+title: "O Zen do R"
 author: ["Caio Lente"]
 description: "O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R)."
 url: ""
@@ -12,7 +12,7 @@ documentclass: book
 
 # Bem-Vindo {-}
 
-Este é o *Zen do R*, seja bem-vindo! O objetivo deste livro é ensinar ao leitor
+Este é *O Zen do R*, seja bem-vindo! O objetivo deste livro é ensinar ao leitor
 algumas formas simples de melhorar a organização de seus projetos de análise de
 dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é
 comparado com uma das oito práticas do
