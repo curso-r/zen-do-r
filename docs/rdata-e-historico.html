@@ -50,41 +50,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="zen-do-r.css" type="text/css" />
@@ -153,44 +179,96 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="rdata-e-historico" class="section level1">
 <h1><span class="header-section-number">3</span> .RData e histórico</h1>
-<p>O primeiro passo para o workflow ideal de análise de dados já pode se provar bem complicado se você for o tipo de pessoa que não muda os ajustes padrões do RStudio. A primeira coisa que eu vou pedir que você faça é <strong>desativar a memória do R</strong>.</p>
-<p>Isso <del>parece ser</del> é bastante drástico. Caso você não saiba do que eu estou falando, faça o seguinte:</p>
+<p>O primeiro passo para o workflow ideal de análise de dados já pode se provar bem
+complicado se você for o tipo de pessoa que não muda os ajustes padrões do
+RStudio. A primeira coisa que eu vou pedir que você faça é
+<strong>desativar a memória do R</strong>.</p>
+<p>Isso <del>parece ser</del> é bastante drástico. Caso você não saiba do que eu estou
+falando, faça o seguinte:</p>
 <ol style="list-style-type: decimal">
 <li>Abra o RStudio e crie um novo arquivo;</li>
 <li>Gere algumas variáveis e salve o arquivo em qualquer lugar;</li>
 <li>Feche o RStudio e</li>
 <li>Abra ele de novo.</li>
 </ol>
-<p>Agora observe a aba Environment (Ambiente) do seu RStudio. As variáveis que você criou estão lá? Se sim, isso é a “memória” do seu R trabalhando a seu favor.</p>
+<p>Agora observe a aba Environment (Ambiente) do seu RStudio. As variáveis que você
+criou estão lá? Se sim, isso é a “memória” do seu R trabalhando a seu favor.</p>
 <p>No meu computador eu criei um arquivo chamado <code>teste.R</code> com o seguinte código:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="dv">1</span>
-m &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">as_tibble</span>(mtcars)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="dv">1</span>
+m &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">as_tibble</span>(mtcars)</code></pre>
 <p>Ao executá-lo, o meu ambiente ficou assim:</p>
-<p><img src="static/03_environment.png" width="521" style="display: block; margin: auto;" /></p>
-<p>A grande questão é que, mesmo depois de fechar e abrir o RStudio, o meu ambiente não mudou nada! Isso só é possível porque o R cria, por padrão, dois arquivos secretos no seu computador: o <code>.RData</code> e o <code>.Rhistory</code>. O objetivo deles é armazenar todos os objetos que foram criados na sua sessão e todos os comandos que você executou mesmo que o R não esteja rodando no seu computador; assim, quando você reinicializa o R, ele lê esses arquivos e reconstrói tanto o seu ambiente quanto o seu histórico de comandos.</p>
-<p>À primeira vista isso parece uma funcionalidade honestamente incrível. O fato de o R ter memória permite que você não se preocupe tanto com seus dados e possa dormir tranquilo sabendo que pode fechar o RStudio sem perder nada da sua sessão. É quase como se você pudesse parar uma análise no meio e retomá-la a qualquer momento.</p>
-<p>Mas a realidade é muito mais sombria do que parece… Ao permitir que o R lembre tudo por você, não há nenhum insentivo para que o seu código seja de fato reprodutível.</p>
+<p><img src="static/03_environment.png" style="display: block; margin: auto;" /></p>
+<p>A grande questão é que, mesmo depois de fechar e abrir o RStudio, o meu ambiente
+não mudou nada! Isso só é possível porque o R cria, por padrão, dois arquivos
+secretos no seu computador: o <code>.RData</code> e o <code>.Rhistory</code>. O objetivo deles é
+armazenar todos os objetos que foram criados na sua sessão e todos os comandos
+que você executou mesmo que o R não esteja rodando no seu computador; assim,
+quando você reinicializa o R, ele lê esses arquivos e reconstrói tanto o seu
+ambiente quanto o seu histórico de comandos.</p>
+<p>À primeira vista isso parece uma funcionalidade honestamente incrível. O fato
+de o R ter memória permite que você não se preocupe tanto com seus dados e
+possa dormir tranquilo sabendo que pode fechar o RStudio sem perder nada da
+sua sessão. É quase como se você pudesse parar uma análise no meio e retomá-la
+a qualquer momento.</p>
+<p>Mas a realidade é muito mais sombria do que parece… Ao permitir que o R
+lembre tudo por você, não há nenhum insentivo para que o seu código seja
+de fato reprodutível.</p>
 <div id="consciencia-correta" class="section level2">
 <h2><span class="header-section-number">3.1</span> Consciência correta</h2>
-<p>Um dois princípios do Nobre Caminho Óctuplo é denominado <strong>Consciência Correta</strong>. Algumas interpretações dele sugerem que esse princípio gira em torno da resistência aos desejos, à retenção dos ensinamentos budistas, mas aqui eu me refiro ao seguinte conceito:</p>
+<p>Um dois princípios do Nobre Caminho Óctuplo é denominado <strong>Consciência Correta</strong>.
+Algumas interpretações dele sugerem que esse princípio gira em torno da
+resistência aos desejos, à retenção dos ensinamentos budistas, mas aqui
+eu me refiro ao seguinte conceito:</p>
 <blockquote>
-<p>Consciência Correta: nunca esteja distraído, esteja consciente do que faz. A consciência permite que um não deseje ou se prenda a nenhum estado ou objeto transitório.</p>
+<p>Consciência Correta: nunca esteja distraído, esteja consciente do que faz.
+A consciência permite que um não deseje ou se prenda a nenhum estado ou
+objeto transitório.</p>
 </blockquote>
-<p>Assim, no Zen do R, sua tarefa será estar sempre consciente do que programa e nunca deixar esta tarefa na mão da sua ferramenta. Isso implica em abandonar o conforto do <code>.RData</code> e do <code>.Rhistory</code> para ser obrigado a sempre programar de forma reprodutível.</p>
+<p>Assim, no Zen do R, sua tarefa será estar sempre consciente do que programa
+e nunca deixar esta tarefa na mão da sua ferramenta. Isso implica em abandonar
+o conforto do <code>.RData</code> e do <code>.Rhistory</code> para ser obrigado a sempre programar
+de forma reprodutível.</p>
 </div>
 <div id="porque-desistir-desse-recurso" class="section level2">
 <h2><span class="header-section-number">3.2</span> Porque desistir desse recurso</h2>
-<p>Existem dois motivos principais para adotar essa atitude radical, ambos com consequências bastante observáveis no dia-a-dia.</p>
-<p>O primeiro e talvez mais importante diz respeito ao código. Note que, ao abrir o arquivo <code>teste.R</code> de novo, as duas linhas que usei para criar os objetos essencialmente perderam suas funções. Por já estarem prontamente disponíveis no ambiente, eu não tenho nenhuma necessidade real pelo código que os gera!</p>
-<p>Nessa hora, um programador incauto pode cometer o erro de alterar ou deletar essas linhas sem notar que o fez. Neste caso é fácil lembrar qual é o código correto, mas normalmente essa é uma tarefa consideravelmente mais difícil. Desta forma, não permitir que o R lembre dos seus objetos por você faz com que o código de geração tenha que ser executado toda vez que a sessão for aberta; a chance de um erro no código passar batido por muito nesse cenário é consideravelmente menor e, consequentemente, a sua chance se conseguir resolvê-lo sem maiores problemas é proporcionalmente maior.</p>
-<p>Já a segunda consequência de manter a memória do R funcionando é um pouco menos sutil: o que será que acontece quando você estiver trabalhando com objetos muito grandes? Geralmente queremos trabalhar com bases pesadas na memória o mínimo de tempo possível, então o ideal é tratá-la e já salvar o resultado deste processo em um arquivo intermediário para que ele possa ser carregado somente quando necessário.</p>
-<p>Com o <code>.RData</code> sendo salvo, no entando, toda vez que você abrir o seu R a base gigante será carregada imediatamente, mesmo que você não quisesse trabalhar com ela! A melhor forma de não ter que controlar quais objetos devem ou não ficar no ambiente ao fim de uma sessão é desabilitando essa funcionalidade como um todo.</p>
+<p>Existem dois motivos principais para adotar essa atitude radical, ambos com
+consequências bastante observáveis no dia-a-dia.</p>
+<p>O primeiro e talvez mais importante diz respeito ao código. Note que, ao abrir
+o arquivo <code>teste.R</code> de novo, as duas linhas que usei para criar os objetos
+essencialmente perderam suas funções. Por já estarem prontamente disponíveis
+no ambiente, eu não tenho nenhuma necessidade real pelo código que os gera!</p>
+<p>Nessa hora, um programador incauto pode cometer o erro de alterar ou deletar
+essas linhas sem notar que o fez. Neste caso é fácil lembrar qual é o
+código correto, mas normalmente essa é uma tarefa consideravelmente mais
+difícil. Desta forma, não permitir que o R lembre dos seus objetos por você
+faz com que o código de geração tenha que ser executado toda vez que a sessão
+for aberta; a chance de um erro no código passar batido por muito nesse cenário
+é consideravelmente menor e, consequentemente, a sua chance se conseguir
+resolvê-lo sem maiores problemas é proporcionalmente maior.</p>
+<p>Já a segunda consequência de manter a memória do R funcionando é um pouco
+menos sutil: o que será que acontece quando você estiver trabalhando com
+objetos muito grandes? Geralmente queremos trabalhar com bases pesadas
+na memória o mínimo de tempo possível, então o ideal é tratá-la e já salvar
+o resultado deste processo em um arquivo intermediário para que ele possa
+ser carregado somente quando necessário.</p>
+<p>Com o <code>.RData</code> sendo salvo, no entando, toda vez que você abrir o seu R a base
+gigante será carregada imediatamente, mesmo que você não quisesse trabalhar com
+ela! A melhor forma de não ter que controlar quais objetos devem ou não ficar
+no ambiente ao fim de uma sessão é desabilitando essa funcionalidade como um
+todo.</p>
 </div>
 <div id="como-desligar-a-memoria-do-r" class="section level2">
 <h2><span class="header-section-number">3.3</span> Como desligar a memória do R</h2>
-<p>O processo de desabilitar o <code>.RData</code> e o <code>.Rhistory</code> é bastante simples e afeta todos os projetos do seu computador, então você só precisará fazer isso uma vez. Basta selecionar <strong>Tools &gt; Global Options…</strong> na aba de ferramentas do RStudio e então ajustar três configurações. No final sua página das opções gerais deve ficar como na imagem abaixo:</p>
-<p><img src="static/03_configuracao.png" width="622" style="display: block; margin: auto;" /></p>
-<p>Feito isso, você provavelmente vai demorar um pouco para se acostumar com a ausência da memória. Esse desconforto temporário é esperado, mas resista ao impulso de habilitar os recursos novamente porque no longo prazo os benefícios serão enormes.</p>
+<p>O processo de desabilitar o <code>.RData</code> e o <code>.Rhistory</code> é bastante simples e afeta
+todos os projetos do seu computador, então você só precisará fazer isso uma vez.
+Basta selecionar <strong>Tools &gt; Global Options…</strong> na aba de ferramentas do RStudio
+e então ajustar três configurações. No final sua página das opções gerais deve
+ficar como na imagem abaixo:</p>
+<p><img src="static/03_configuracao.png" style="display: block; margin: auto;" /></p>
+<p>Feito isso, você provavelmente vai demorar um pouco para se acostumar com a
+ausência da memória. Esse desconforto temporário é esperado, mas resista ao
+impulso de habilitar os recursos novamente porque no longo prazo os benefícios
+serão enormes.</p>
 
 </div>
 </div>

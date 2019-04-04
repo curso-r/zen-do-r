@@ -1,0 +1,11 @@
+# Versões
+
+## Sobre versões
+
+## Git e Github
+
+> Compreensão Correta: nossas ações têm consequências, então limpe seu caminho da confusão, do equívoco e do pensamento iludido
+
+## Packrat
+
+> Pensamento Correto: considere tudo e todos como impermanentes, uma fonte de sofrimento

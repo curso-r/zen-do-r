@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="index.html">
-<link rel="next" href="sobre-ambiente.html">
+<link rel="next" href="ambiente.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,41 +50,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="zen-do-r.css" type="text/css" />
@@ -114,22 +140,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.4" data-path="introducao.html"><a href="introducao.html#pre-requisitos"><i class="fa fa-check"></i><b>1.4</b> Pré-requisitos</a></li>
 <li class="chapter" data-level="1.5" data-path="introducao.html"><a href="introducao.html#principais-referencias"><i class="fa fa-check"></i><b>1.5</b> Principais referências</a></li>
 </ul></li>
-<li class="part"><span><b>I Ambiente</b></span></li>
-<li class="chapter" data-level="2" data-path="sobre-ambiente.html"><a href="sobre-ambiente.html"><i class="fa fa-check"></i><b>2</b> Sobre</a></li>
-<li class="chapter" data-level="3" data-path="rdata-e-historico.html"><a href="rdata-e-historico.html"><i class="fa fa-check"></i><b>3</b> .RData e histórico</a></li>
-<li class="chapter" data-level="4" data-path="rproj-e-diretorios.html"><a href="rproj-e-diretorios.html"><i class="fa fa-check"></i><b>4</b> Rproj e diretórios</a></li>
-<li class="part"><span><b>II Versões</b></span></li>
-<li class="chapter" data-level="5" data-path="sobre-versoes.html"><a href="sobre-versoes.html"><i class="fa fa-check"></i><b>5</b> Sobre</a></li>
-<li class="chapter" data-level="6" data-path="git-e-github.html"><a href="git-e-github.html"><i class="fa fa-check"></i><b>6</b> Git e Github</a></li>
-<li class="chapter" data-level="7" data-path="packrat.html"><a href="packrat.html"><i class="fa fa-check"></i><b>7</b> Packrat</a></li>
-<li class="part"><span><b>III Dados</b></span></li>
-<li class="chapter" data-level="8" data-path="sobre-dados.html"><a href="sobre-dados.html"><i class="fa fa-check"></i><b>8</b> Sobre</a></li>
-<li class="chapter" data-level="9" data-path="data-e-data-raw.html"><a href="data-e-data-raw.html"><i class="fa fa-check"></i><b>9</b> Data e data-raw</a></li>
-<li class="chapter" data-level="10" data-path="rdss-intermediarios.html"><a href="rdss-intermediarios.html"><i class="fa fa-check"></i><b>10</b> RDSs intermediários</a></li>
-<li class="part"><span><b>IV Arquivos</b></span></li>
-<li class="chapter" data-level="11" data-path="sobre-arquivos.html"><a href="sobre-arquivos.html"><i class="fa fa-check"></i><b>11</b> Sobre</a></li>
-<li class="chapter" data-level="12" data-path="reiniciar-a-sessao.html"><a href="reiniciar-a-sessao.html"><i class="fa fa-check"></i><b>12</b> Reiniciar a sessão</a></li>
-<li class="chapter" data-level="13" data-path="arquivos-minimalistas.html"><a href="arquivos-minimalistas.html"><i class="fa fa-check"></i><b>13</b> Arquivos minimalistas</a></li>
+<li class="chapter" data-level="2" data-path="ambiente.html"><a href="ambiente.html"><i class="fa fa-check"></i><b>2</b> Ambiente</a><ul>
+<li class="chapter" data-level="2.1" data-path="ambiente.html"><a href="ambiente.html#sobre-o-ambiente"><i class="fa fa-check"></i><b>2.1</b> Sobre o ambiente</a></li>
+<li class="chapter" data-level="2.2" data-path="ambiente.html"><a href="ambiente.html#rdata-e-historico"><i class="fa fa-check"></i><b>2.2</b> .RData e histórico</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="ambiente.html"><a href="ambiente.html#consciencia-correta"><i class="fa fa-check"></i><b>2.2.1</b> Consciência correta</a></li>
+<li class="chapter" data-level="2.2.2" data-path="ambiente.html"><a href="ambiente.html#porque-desistir-desse-recurso"><i class="fa fa-check"></i><b>2.2.2</b> Porque desistir desse recurso</a></li>
+<li class="chapter" data-level="2.2.3" data-path="ambiente.html"><a href="ambiente.html#como-desligar-a-memoria-do-r"><i class="fa fa-check"></i><b>2.2.3</b> Como desligar a memória do R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="ambiente.html"><a href="ambiente.html#rproj-e-diretorios"><i class="fa fa-check"></i><b>2.3</b> Rproj e diretórios</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="versoes.html"><a href="versoes.html"><i class="fa fa-check"></i><b>3</b> Versões</a><ul>
+<li class="chapter" data-level="3.1" data-path="versoes.html"><a href="versoes.html#sobre-versoes"><i class="fa fa-check"></i><b>3.1</b> Sobre versões</a></li>
+<li class="chapter" data-level="3.2" data-path="versoes.html"><a href="versoes.html#git-e-github"><i class="fa fa-check"></i><b>3.2</b> Git e Github</a></li>
+<li class="chapter" data-level="3.3" data-path="versoes.html"><a href="versoes.html#packrat"><i class="fa fa-check"></i><b>3.3</b> Packrat</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="dados.html"><a href="dados.html"><i class="fa fa-check"></i><b>4</b> Dados</a><ul>
+<li class="chapter" data-level="4.1" data-path="dados.html"><a href="dados.html#sobre-dados"><i class="fa fa-check"></i><b>4.1</b> Sobre dados</a></li>
+<li class="chapter" data-level="4.2" data-path="dados.html"><a href="dados.html#data-e-data-raw"><i class="fa fa-check"></i><b>4.2</b> Data e data-raw</a></li>
+<li class="chapter" data-level="4.3" data-path="dados.html"><a href="dados.html#rdss-intermediarios"><i class="fa fa-check"></i><b>4.3</b> RDSs intermediários</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="arquivos.html"><a href="arquivos.html"><i class="fa fa-check"></i><b>5</b> Arquivos</a><ul>
+<li class="chapter" data-level="5.1" data-path="arquivos.html"><a href="arquivos.html#sobre-os-arquivos"><i class="fa fa-check"></i><b>5.1</b> Sobre os arquivos</a></li>
+<li class="chapter" data-level="5.2" data-path="arquivos.html"><a href="arquivos.html#reiniciar-a-sessao"><i class="fa fa-check"></i><b>5.2</b> Reiniciar a sessão</a></li>
+<li class="chapter" data-level="5.3" data-path="arquivos.html"><a href="arquivos.html#arquivos-minimalistas"><i class="fa fa-check"></i><b>5.3</b> Arquivos minimalistas</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -149,64 +183,138 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="introducao" class="section level1">
 <h1><span class="header-section-number">1</span> Introdução</h1>
-<p><em>O Zen do R</em> tem o objetivo de ser um livro sobre programação para não-programadores. Diferentemente dos manuais secos e técnicos com os quais geralmente nos deparamos na internet, o tom deste livro é leve e <del>pretende ser</del> bem-humorado; assim, a sua motivação principal é atrair o máximo possível de pessoas para um mundo onde a programação é uma ferramenta e não um obstáculo no processo de análise de dados. Aqui você vai ver com frequência o uso das primeira e segunda pessoas porque no fundo eu gostaria que o livro fosse como uma conversa.</p>
-<p>A escolha do R é parcialmente arbitrária. Nada impede de você usar Python para a análise de dados, mas ao longo de alguns anos de experiência os autores notaram que o fato de o R ter sido feito com análise de dados em mente acaba sendo uma vantagem muito difícil de ignorar. Fora isso, o <code>tidyverse</code>, as infinitas ferramentas do RStudio e o engajamento da comunidade fazem com que nós achemos o R a verdadeira linguagem do <em>data science</em>.</p>
-<p>Por isso, <em>O Zen do R</em> (caso não tenha ficado claro no título) vai abordar apenas fluxos de trabalho com a linguagem R de programação.</p>
+<p><em>O Zen do R</em> tem o objetivo de ser um livro sobre programação para
+não-programadores. Diferentemente dos manuais secos e técnicos com os quais
+geralmente nos deparamos na internet, o tom deste livro é leve e
+<del>pretende ser</del> bem-humorado; assim, a sua motivação principal é atrair o
+máximo possível de pessoas para um mundo onde a programação é uma ferramenta e
+não um obstáculo no processo de análise de dados. Aqui você vai ver com
+frequência o uso das primeira e segunda pessoas porque no fundo eu gostaria
+que o livro fosse como uma conversa.</p>
+<p>A escolha do R é parcialmente arbitrária. Nada impede de você usar Python para
+a análise de dados, mas ao longo de alguns anos de experiência os autores
+notaram que o fato de o R ter sido feito com análise de dados em mente acaba
+sendo uma vantagem muito difícil de ignorar. Fora isso, o <code>tidyverse</code>, as
+infinitas ferramentas do RStudio e o engajamento da comunidade fazem com que
+nós achemos o R a verdadeira linguagem do <em>data science</em>.</p>
+<p>Por isso, <em>O Zen do R</em> (caso não tenha ficado claro no título) vai abordar
+apenas fluxos de trabalho com a linguagem R de programação.</p>
 <div id="sobre-o-livro" class="section level2">
 <h2><span class="header-section-number">1.1</span> Sobre o livro</h2>
-<p>A grande piada do livro é que o caminho para o fluxo ideal de programação é análogo ao caminho descrito pelo Budismo para a libertação do espírito. Parece muito estranho que essas duas coisas tenham alguma relação, mas a vida é uma boa metáfora para muitos processos que encontramos no dia-a-dia!</p>
+<p>A grande piada do livro é que o caminho para o fluxo ideal de programação é
+análogo ao caminho descrito pelo Budismo para a libertação do espírito.
+Parece muito estranho que essas duas coisas tenham alguma relação, mas a vida
+é uma boa metáfora para muitos processos que encontramos no dia-a-dia!</p>
 <div id="budismo" class="section level3">
 <h3><span class="header-section-number">1.1.1</span> Budismo</h3>
-<p>Eu acho o Budismo um assunto no geral muito interessante e pelo qual tenho um grande respeito. Por isso não gostaria que qualquer praticante se sentisse ofendido pelas comparações que aqui serão feitas.</p>
-<p>Para ler o <em>O Zen do R</em> você obviamente não precisa saber nada sobre o Budismo, mas vale a pena ter um breve contexto do que é o Nobre Caminho Óctuplo e para quê ele serve:</p>
+<p>Eu acho o Budismo um assunto no geral muito interessante e pelo qual tenho um
+grande respeito. Por isso não gostaria que qualquer praticante se sentisse
+ofendido pelas comparações que aqui serão feitas.</p>
+<p>Para ler o <em>O Zen do R</em> você obviamente não precisa saber nada sobre o Budismo,
+mas vale a pena ter um breve contexto do que é o Nobre Caminho Óctuplo e para
+quê ele serve:</p>
 <blockquote>
-<p>O Nobre Caminho Óctuplo é um antigo resumo do caminho das práticas budistas que levam à libertação do samsara, o doloroso ciclo do renascimento. Ele consiste de oito práticas: compreensão correta, pensamento correto, fala correta, ação correta, meio de vida correto, esforço correto, consciência correta e concentração correta. — WIkipédia</p>
+<p>O Nobre Caminho Óctuplo é um antigo resumo do caminho das práticas budistas que
+levam à libertação do samsara, o doloroso ciclo do renascimento. Ele consiste de
+oito práticas: compreensão correta, pensamento correto, fala correta, ação correta,
+meio de vida correto, esforço correto, consciência correta e concentração correta.
+— WIkipédia</p>
 </blockquote>
-<p>Todas essas oito práticas são bastante abstratas e se aplicam em inúmeras situações, fazendo com que se encaixem muito bem ao tópico que estamos trabalhando. Dessa forma, em cada capítulo você aprenderá sobre uma boa prática em projetos de análise de dados e, para gravar melhor a informação, será apresentado também a um dos oito caminhos.</p>
-<p>A ideia é utilizar os nomes e definições grandiosas e espirituais do Nobre Caminho Óctuplo como uma ferramenta de fixação do aprendizado. Pense no que você aprender nesse livro como um conjunto de práticas que, quando cumpridas, são capazes de livrá-lo da dor da programação.</p>
+<p>Todas essas oito práticas são bastante abstratas e se aplicam em inúmeras
+situações, fazendo com que se encaixem muito bem ao tópico que estamos
+trabalhando. Dessa forma, em cada capítulo você aprenderá sobre uma boa prática
+em projetos de análise de dados e, para gravar melhor a informação, será
+apresentado também a um dos oito caminhos.</p>
+<p>A ideia é utilizar os nomes e definições grandiosas e espirituais do Nobre
+Caminho Óctuplo como uma ferramenta de fixação do aprendizado. Pense no que
+você aprender nesse livro como um conjunto de práticas que, quando cumpridas,
+são capazes de livrá-lo da dor da programação.</p>
 </div>
 <div id="voce-e-um-nao-programador" class="section level3">
 <h3><span class="header-section-number">1.1.2</span> Você é um não-programador?</h3>
-<p>O que eu quero dizer com o termo “não-programador” no começo desse capítulo é meramente “uma pessoa que não tem treinamento formal em programação”. Eu, por exemplo, fiz Ciência da Computação e portanto não posso escapar do fato de que sou um programador.</p>
-<p>Se você é treinado em Estatística, mas precisa usar o R para fazer suas análises, então você provavelmente vai tirar um bom proveito deste livro. Aqui você não vai aprender a programar, mas sim a como fazer com que o seu fluxo de programação não atrapalhe o seu fluxo de análise! O ideal é que a programação te ajude e por isso saber usar a ferramenta de forma correta é essencial.</p>
+<p>O que eu quero dizer com o termo “não-programador” no começo desse capítulo é
+meramente “uma pessoa que não tem treinamento formal em programação”. Eu, por
+exemplo, fiz Ciência da Computação e portanto não posso escapar do fato de
+que sou um programador.</p>
+<p>Se você é treinado em Estatística, mas precisa usar o R para fazer suas análises,
+então você provavelmente vai tirar um bom proveito deste livro. Aqui você não vai
+aprender a programar, mas sim a como fazer com que o seu fluxo de programação
+não atrapalhe o seu fluxo de análise! O ideal é que a programação te ajude e
+por isso saber usar a ferramenta de forma correta é essencial.</p>
 </div>
 </div>
 <div id="o-que-voce-vai-aprender" class="section level2">
 <h2><span class="header-section-number">1.2</span> O que você vai aprender</h2>
-<p>Essencialmente você vai aprender a usar dois pacotes e como trabalhar com quatro aspectos do processo de análise de dados: ambiente, versões, dados e arquivos. Não é necessário ler o livro em ordem porque cada uma dessas quatro sessões são completamente independentes!</p>
+<p>Essencialmente você vai aprender a usar dois pacotes e como trabalhar com quatro
+aspectos do processo de análise de dados: ambiente, versões, dados e arquivos.
+Não é necessário ler o livro em ordem porque cada uma dessas quatro sessões são
+completamente independentes!</p>
 <p>Os assuntos abordados são, em ordem:</p>
 <ul>
-<li>.RData e histórico: como fazer com que o RStudio não guarde nada que você fez para que você não fique mal acostumado (equivalente à Consciência Correta);</li>
-<li>Rproj e diretórios: como usar o conceito de “project” para organizar seu projeto e não se perder nos diretórios (equivalente ao Esforço Correto);</li>
-<li>Git e Github: como usar ferramentas de controle de versão para que você não corra o risco de perder seu progresso (equivalente à Compreensão Correta);</li>
-<li>Packrat: como usar o pacote <code>packrat</code> para manter suas dependências em ordem e atualizadas (equivalente ao Pensamento Correto);</li>
-<li>Data e data-raw: como organizar seus dados e scripts de tratamento em pastas com objetivos claros e distintos (equivalente à Ação Correta);</li>
-<li>RDSs intermediários: como quebrar o processo de tratamento em passos que podem ser salvos e reutilizados com custo mínimo (equivalente à Fala Correta);</li>
-<li>Reiniciar a sessão: como e porquê reiniciar sua sessão durante o processo de desenvolvimento (equivalente à Concentração Correta) e</li>
-<li>Arquivos minimalistas: como é o jeito ideal de dividir o seu código para que tudo seja rápido e fácil de encontrar (equivalente ao Meio de Vida Correto).</li>
+<li>.RData e histórico: como fazer com que o RStudio não guarde nada que você fez
+para que você não fique mal acostumado (equivalente à Consciência Correta);</li>
+<li>Rproj e diretórios: como usar o conceito de “project” para organizar seu
+projeto e não se perder nos diretórios (equivalente ao Esforço Correto);</li>
+<li>Git e Github: como usar ferramentas de controle de versão para que você
+não corra o risco de perder seu progresso (equivalente à Compreensão Correta);</li>
+<li>Packrat: como usar o pacote <code>packrat</code> para manter suas dependências em ordem
+e atualizadas (equivalente ao Pensamento Correto);</li>
+<li>Data e data-raw: como organizar seus dados e scripts de tratamento em pastas
+com objetivos claros e distintos (equivalente à Ação Correta);</li>
+<li>RDSs intermediários: como quebrar o processo de tratamento em passos que podem
+ser salvos e reutilizados com custo mínimo (equivalente à Fala Correta);</li>
+<li>Reiniciar a sessão: como e porquê reiniciar sua sessão durante o processo de
+desenvolvimento (equivalente à Concentração Correta) e</li>
+<li>Arquivos minimalistas: como é o jeito ideal de dividir o seu código para que
+tudo seja rápido e fácil de encontrar (equivalente ao Meio de Vida Correto).</li>
 </ul>
-<p>Sinta-se livre para pular todos os tópicos sobre os quais você sentir que já sabe o suficiente. Mas não se iluda! Nenhum dos caminhos é inútil ou pode ser simplesmente ignorado… Se você quiser alcançar a cessação do sofrimento, você precisa seguir o Nobre Caminho Óctuplo. Ao deixar um desses princípios para trás, você está pedindo para ter que resolver algum problema lá na frente.</p>
+<p>Sinta-se livre para pular todos os tópicos sobre os quais você sentir que já
+sabe o suficiente. Mas não se iluda! Nenhum dos caminhos é inútil ou pode ser
+simplesmente ignorado… Se você quiser alcançar a cessação do sofrimento, você
+precisa seguir o Nobre Caminho Óctuplo. Ao deixar um desses princípios para
+trás, você está pedindo para ter que resolver algum problema lá na frente.</p>
 </div>
 <div id="o-que-voce-nao-vai-aprender" class="section level2">
 <h2><span class="header-section-number">1.3</span> O que você não vai aprender</h2>
-<p>Primeiramente, você não vai aprender a programar R. Esse tópico é extremamente extenso e já existem livros o suficiente para te ajudar (vide <a href="https://r4ds.had.co.nz/">R for Data Science</a>), então não vou me preocupar com os detalhes do seu código ou com qual guia de estilo você segue.</p>
-<p>Se você gosta de fazer códigos longos e velozes usando o <code>base-r</code>, se você ama as pipelines do <code>tidyverse</code>, se você paraleliza todos os seus loops… Nada disso importa aqui; não sou sua mãe para dizer qual é o melhor jeito de programar (e também não tenho paciência para entrar em mais nenhum debate “base vs. tidyverse”). Aqui você vai conhecer somente as melhores ferramentas para <strong>organizar o seu fluxo de programação</strong>.</p>
-<p>Apesar de terem nomes parecidos, <em>O Zen do R</em> e <em>O Zen do Python</em> são diferentes justamente por causa disso. O livro do Python pretende te dar sugestões de como organizar e escrever o seu código, o que não farei aqui.</p>
+<p>Primeiramente, você não vai aprender a programar R. Esse tópico é extremamente
+extenso e já existem livros o suficiente para te ajudar (vide
+<a href="https://r4ds.had.co.nz/">R for Data Science</a>), então não vou me preocupar
+com os detalhes do seu código ou com qual guia de estilo você segue.</p>
+<p>Se você gosta de fazer códigos longos e velozes usando o <code>base-r</code>, se você
+ama as pipelines do <code>tidyverse</code>, se você paraleliza todos os seus loops…
+Nada disso importa aqui; não sou sua mãe para dizer qual é o melhor jeito
+de programar (e também não tenho paciência para entrar em mais nenhum debate
+“base vs. tidyverse”). Aqui você vai conhecer somente as melhores ferramentas
+para <strong>organizar o seu fluxo de programação</strong>.</p>
+<p>Apesar de terem nomes parecidos, <em>O Zen do R</em> e <em>O Zen do Python</em> são diferentes
+justamente por causa disso. O livro do Python pretende te dar sugestões de como
+organizar e escrever o seu código, o que não farei aqui.</p>
 </div>
 <div id="pre-requisitos" class="section level2">
 <h2><span class="header-section-number">1.4</span> Pré-requisitos</h2>
-<p>Como talvez já tenha ficado claro, um dos principais pré-requisitos deste livro é saber a programar pelo menos um pouco de R. Você não precisa ser um profissional, mas, para ter a necessidade de melhorar o seu fluxo de análise, você antes precisa estar fazendo alguma análise.</p>
-<p>Fora isso, o segundo principal pré-requisito é um ambiente de desenvolvimento. Grande parte das dicas do livro são baseadas em funcionalidades integradas ao RStudio, então se você quiser tirar o maior proveito possível dos ensinamentos talvez valha à pena <a href="https://www.rstudio.com/products/rstudio/download/">instalar a IDE</a>. Ainda no tocante ao R, você precisará ter instalado pelo menos os três pacotes a seguir:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Conteúdo principal do livro</span>
+<p>Como talvez já tenha ficado claro, um dos principais pré-requisitos deste livro
+é saber a programar pelo menos um pouco de R. Você não precisa ser um
+profissional, mas, para ter a necessidade de melhorar o seu fluxo de análise,
+você antes precisa estar fazendo alguma análise.</p>
+<p>Fora isso, o segundo principal pré-requisito é um ambiente de desenvolvimento.
+Grande parte das dicas do livro são baseadas em funcionalidades integradas ao
+RStudio, então se você quiser tirar o maior proveito possível dos ensinamentos
+talvez valha à pena
+<a href="https://www.rstudio.com/products/rstudio/download/">instalar a IDE</a>. Ainda
+no tocante ao R, você precisará ter instalado pelo menos os três pacotes a seguir:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Conteúdo principal do livro</span>
 <span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;usethis&quot;</span>, <span class="st">&quot;packrat&quot;</span>))
 
 <span class="co"># Se você quiser reproduzir os exemplos</span>
-<span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</code></pre></div>
-<p>Você também precisa de um computador funcionando com um sistema operacional razoavelmente moderno. E uma conexão à internet.</p>
+<span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</code></pre>
+<p>Você também precisa de um computador funcionando com um sistema operacional
+razoavelmente moderno. E uma conexão à internet.</p>
 </div>
 <div id="principais-referencias" class="section level2">
 <h2><span class="header-section-number">1.5</span> Principais referências</h2>
-<p><em>O Zen do R</em> se baseia em inúmeras referências que normalmente serão citadas juntamente com o próprio conteúdo. Mas algumas mais gerais acabariam sendo citadas o tempo todo e portanto acabarão ficando aqui:</p>
+<p><em>O Zen do R</em> se baseia em inúmeras referências que normalmente serão citadas
+juntamente com o próprio conteúdo. Mas algumas mais gerais acabariam sendo
+citadas o tempo todo e portanto acabarão ficando aqui:</p>
 <ul>
 <li><a href="https://r4ds.had.co.nz/">R for Data Science</a>;</li>
 <li><a href="https://bookdown.org/yihui/bookdown/">bookdown: Authoring Books and Technical Documents with R Markdown</a>;</li>
@@ -217,16 +325,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sobre-ambiente.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ambiente.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
