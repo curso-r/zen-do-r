@@ -157,8 +157,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="dados.html"><a href="dados.html"><i class="fa fa-check"></i><b>4</b> Dados</a><ul>
 <li class="chapter" data-level="4.1" data-path="dados.html"><a href="dados.html#sobre-dados"><i class="fa fa-check"></i><b>4.1</b> Sobre dados</a></li>
-<li class="chapter" data-level="4.2" data-path="dados.html"><a href="dados.html#data-e-data-raw"><i class="fa fa-check"></i><b>4.2</b> Data e data-raw</a></li>
-<li class="chapter" data-level="4.3" data-path="dados.html"><a href="dados.html#rdss-intermediarios"><i class="fa fa-check"></i><b>4.3</b> RDSs intermediários</a></li>
+<li class="chapter" data-level="4.2" data-path="dados.html"><a href="dados.html#funcoes-e-dependencias"><i class="fa fa-check"></i><b>4.2</b> Funções e dependências</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="dados.html"><a href="dados.html#section"><i class="fa fa-check"></i><b>4.2.1</b> ::</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="dados.html"><a href="dados.html#pacotes"><i class="fa fa-check"></i><b>4.3</b> Pacotes</a></li>
+<li class="chapter" data-level="4.4" data-path="dados.html"><a href="dados.html#data-e-data-raw"><i class="fa fa-check"></i><b>4.4</b> Data e data-raw</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="arquivos.html"><a href="arquivos.html"><i class="fa fa-check"></i><b>5</b> Arquivos</a><ul>
 <li class="chapter" data-level="5.1" data-path="arquivos.html"><a href="arquivos.html#sobre-os-arquivos"><i class="fa fa-check"></i><b>5.1</b> Sobre os arquivos</a></li>
@@ -186,20 +189,214 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">4</span> Dados</h1>
 <div id="sobre-dados" class="section level2">
 <h2><span class="header-section-number">4.1</span> Sobre dados</h2>
+<p>Lorem ipsum</p>
+</div>
+<div id="funcoes-e-dependencias" class="section level2">
+<h2><span class="header-section-number">4.2</span> Funções e dependências</h2>
+<p>Até este momento, foi abordada apenas uma forma de organizar os arquivos de uma
+análise: projetos. Entretanto existe ainda outra maneira, ainda mais
+interessante, de guardar análises. Se você programou em R, com certeza já se
+deparou com essa ferramenta, os bons e velhos pacotes ou bibliotecas. É
+surpreendentemente fácil criar um diretório que pode ser completamente acessado
+através da função <code>library()</code>.</p>
+<p>Quando uma tarefa de análise de dados aumenta em complexidade, o número de
+funções e arquivos necessários para manter tudo em ordem cresce
+exponencialmente. Um arquivo para ler os dados, outro para limpar os nomes das
+colunas, mais um para fazer joins… Cada um deles com incontáveis blocos de
+código que rapidamente se transformam em uma
+<a href="https://pt.wikipedia.org/wiki/C%C3%B3digo_espaguete">macarronada</a>.</p>
+<p>O primeiro passo para sair dessa situação é transformar tudo em funções. Essa
+tarefa está longe de simples, mas os benefícios são imensos; ao encontrar um
+erro no resultado, fica bem mais fácil depurar a função culpada do que uma
+coleção desordenada de código. Funções têm argumentos e saídas, enquanto código
+solto pode modificar globais e criar resultados tardios que são impossíveis de
+acompanhar sem conhecer profundamente a tarefa sendo realizada.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(tibble)
+
+<span class="co"># Limpar dados</span>
+mtcars_clean &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span><span class="dv">8</span>)
+
+<span class="co"># Selecionar carros com 4 cyl e tirar média de mpg e wt</span>
+mtcars_clean <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span><span class="dv">4</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(
+    <span class="dt">mpg =</span> <span class="kw">mean</span>(mpg),
+    <span class="dt">wt =</span> <span class="kw">mean</span>(wt)
+  )
+<span class="co">#&gt; # A tibble: 1 x 3</span>
+<span class="co">#&gt;     cyl   mpg    wt</span>
+<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1     4  26.7  2.29</span>
+
+<span class="co"># Selecionar carros com 6 cyl e tirar média de drat e disp</span>
+mtcars_clean <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span><span class="dv">6</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(
+    <span class="dt">drat =</span> <span class="kw">mean</span>(drat),
+    <span class="dt">disp =</span> <span class="kw">mean</span>(disp)
+  )
+<span class="co">#&gt; # A tibble: 1 x 3</span>
+<span class="co">#&gt;     cyl  drat  disp</span>
+<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1     6  3.59  183.</span></code></pre>
+<p>O código acima é somente um exemplo de análise. Como descrito pelos comentários,
+<code>mtcars</code> é limpa e depois são extraídas as médias de diferentes variáveis para
+duas seleções da tabela (número de cilindros igual a 4 e 6). Abaixo está
+descrita uma forma de transformar a maioria deste código em funções. É verdade
+que pela natureza simples do exemplo, fica difícil ver os benefícios do
+encapsulamento das tarefas de limpeza e resumo, mas perceba, por exemplo, que,
+se fosse necessário trocar <code>mean()</code> por <code>median()</code>, antes seria necessário
+alterar quatro linhas e agora apenas uma. Esse tipo de ganho a longo prazo pode
+salvar análises inteiras do caos.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(tibble)
+
+<span class="co"># Limpa tabela, filtrando cyl &lt; cyl_max</span>
+clean &lt;-<span class="st"> </span><span class="cf">function</span>(data, <span class="dt">cyl_max =</span> <span class="dv">8</span>) {
+  data <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span>cyl_max)
+}
+
+<span class="co"># Resume tabela onde cyl == cyl_max, tirando média das colunas em ...</span>
+summarise_cyl &lt;-<span class="st"> </span><span class="cf">function</span>(data, cyl_num, ...) {
+  data <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span>cyl_num) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise_at</span>(<span class="kw">vars</span>(...), mean)
+}
+
+<span class="co"># 4 cyl, média de mpg e wt</span>
+mtcars <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">4</span>, mpg, wt)
+<span class="co">#&gt; # A tibble: 1 x 3</span>
+<span class="co">#&gt;     cyl   mpg    wt</span>
+<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1     4  26.7  2.29</span>
+
+<span class="co"># 6 cyl, média de drat e disp</span>
+mtcars <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">6</span>, drat, disp)
+<span class="co">#&gt; # A tibble: 1 x 3</span>
+<span class="co">#&gt;     cyl  drat  disp</span>
+<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1     6  3.59  183.</span></code></pre>
+<p>Um código bem encapsulado reduz a necessidade de objetos intermediários (
+<code>base_tratada</code>, <code>base_filtrada</code>, etc.) pois para gerar um deles basta a
+aplicação de uma função. Além disso, programas com funções normalmente são muito
+mais enxutos e limpos do que <em>scripts</em> soltos, pois estes estimulam repetição de
+código. Às vezes é mais rápido copiar e colar um pedaço de código e adaptá-lo ao
+novo contexto do que criar uma função que generalize a operação desejada para as
+duas situações, mas os benefícios das funções são de longo prazo: ao encontrar
+um <em>bug</em>, haverá apenas um lugar para concertar; se surgir a necessidade de
+modificar uma propriedade, haverá apenas um lugar para editar; se aquele código
+se tornar obsoleto, haverá apenas um lugar para deletar.</p>
+<p>Pense na programação funcional<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> como ir à academia. No início o processo é
+difícil e exige uma quantidade considerável de esforço, mas depois de um tempo
+se torna um hábito e traz benefícios consideráveis para a saúde (neste caso, do
+código). As recomendações para quando criar uma nova função ou separar uma
+função em duas variam muito, mas normalmente é uma boa ideia não deixar uma
+única função ser encarregada de mais uma tarefa ou ficar longa/complexa demais.</p>
+<p>No mundo ideal, na pasta <code>R/</code> do seu projeto haverá uma coleção de arquivos,
+cada um com uma coleção de funções relacionadas e bem documentadas, e apenas
+alguns arquivos que utilizam essas funções para realizar a análise em si. Como
+dito anteriormente, isso fica muito mais fácil se você já tiver esse objetivo em
+mente desde o momento de criação do novo projeto.</p>
+<div id="section" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> ::</h3>
+<p>No exemplo da seção anterior, é possível notar as chamadas para as bibliotecas
+<code>dplyr</code> e <code>tibble</code>. Elas têm inúmeras funções úteis, mas aqui somente algumas
+poucas foram utilizadas. Além disso, se o código fosse muito maior, ficaria
+impossível saber de uma biblioteca ainda está sendo utilizada; se não fosse mais
+necessário utilizar <code>rownames_to_column()</code>, qual seria a melhor forma de saber
+que pode ser removida a chamada <code>library(tibble)</code>?</p>
+<p>A resposta para essa pergunta pode assustar: no código ideal, a função
+<code>library()</code> nunca seria chamada, todas as funções teriam seus pacotes de origem
+explicitamente referenciados pelo operador <code>::</code>.</p>
+<p>Esta subseção está separada porque ela de fato é um pouco radical demais. É
+excessivamente preciosista pedir para que qualquer análise em R seja feita sem
+a invocação de nenhuma biblioteca, apenas com chamadas do tipo
+<code>biblioteca::funcao()</code>. Muitas pessoas inclusive nem sabem que é possível
+invocar uma função diretamente através dessa sintaxe!</p>
+<p>Se algum leitor estiver tendendo a seguir o caminho do TOC da programação,
+existem dois grandes benefícios em chamar todas as funções diretamente:
+- O código, no total, executa um pouco mais rápido porque são carregadas menos
+funções no ambiente global (isso é especialmente importante em aplicações
+interativas feitas em Shiny).
+- As dependências do código estão sempre atualizadas porque elas estão
+diretamente atreladas às próprias funções sendo utilizadas.</p>
+<p>Existe um terceiro e importante benefício, mas este será abordado apenas no
+próximo capítulo. A título de curiosidade, o código anterior ficaria assim caso
+fosse escrito sem as chamadas para <code>library()</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Referência ao pipe</span>
+<span class="st">`</span><span class="dt">%&gt;%</span><span class="st">`</span> &lt;-<span class="st"> </span>magrittr<span class="op">::</span><span class="st">`</span><span class="dt">%&gt;%</span><span class="st">`</span>
+
+<span class="co"># Limpa tabela, filtrando cyl &lt; cyl_max</span>
+clean &lt;-<span class="st"> </span><span class="cf">function</span>(data, <span class="dt">cyl_max =</span> <span class="dv">8</span>) {
+  data <span class="op">%&gt;%</span>
+<span class="st">    </span>tibble<span class="op">::</span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span>cyl_max)
+}
+
+<span class="co"># Resume tabela onde cyl == cyl_max, tirando média das colunas em ...</span>
+summarise_cyl &lt;-<span class="st"> </span><span class="cf">function</span>(data, cyl_num, ...) {
+  data <span class="op">%&gt;%</span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span>cyl_num) <span class="op">%&gt;%</span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">summarise_at</span>(dplyr<span class="op">::</span><span class="kw">vars</span>(...), mean)
+}
+
+<span class="co"># 4 cyl, média de mpg e wt</span>
+mtcars <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">4</span>, mpg, wt)
+<span class="co">#&gt; # A tibble: 1 x 3</span>
+<span class="co">#&gt;     cyl   mpg    wt</span>
+<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1     4  26.7  2.29</span>
+
+<span class="co"># 6 cyl, média de drat e disp</span>
+mtcars <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">6</span>, drat, disp)
+<span class="co">#&gt; # A tibble: 1 x 3</span>
+<span class="co">#&gt;     cyl  drat  disp</span>
+<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1     6  3.59  183.</span></code></pre>
+<p>Se serve de consolo, o RStudio facilita muito esse tipo de programação por causa
+da sua capacidade de sugerir continuações para código interativamente. Para
+escrever <code>dplyr::</code>, por exemplo, basta digitar <code>d</code>, <code>p</code>, <code>l</code> e apertar <code>TAB</code> uma
+vez. Com os <code>::</code>, as sugestões passarão a ser somente de funções daquele pacote.</p>
+</div>
+</div>
+<div id="pacotes" class="section level2">
+<h2><span class="header-section-number">4.3</span> Pacotes</h2>
 </div>
 <div id="data-e-data-raw" class="section level2">
-<h2><span class="header-section-number">4.2</span> Data e data-raw</h2>
+<h2><span class="header-section-number">4.4</span> Data e data-raw</h2>
 <blockquote>
 <p>Ação Correta: abstenha-se de matar, de roubar e da promiscuidade</p>
 </blockquote>
-</div>
-<div id="rdss-intermediarios" class="section level2">
-<h2><span class="header-section-number">4.3</span> RDSs intermediários</h2>
-<blockquote>
-<p>Fala Correta: nunca fale algo que não é benéfico e fale somente o que é verdadeiro e benéfico</p>
-</blockquote>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Aqui o termo “programação funcional” é usado de forma figurativa. Na
+computação linguagens denominadas “funcionais” tem um <em>modus operandi</em> bastante
+específico não abordado neste capítulo.<a href="dados.html#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 

@@ -40,7 +40,7 @@ Nada mal para dois serviços gratuitos!
 
 No capítulo anterior, é apresentado o conceito de projeto. Agora o segundo passo
 é entender como esses projetos podem ser utilizados em conjunto com controle de
-versão para manter seu trabalho sempre sincronizado na núvem. Criar
+versão para manter seu trabalho sempre sincronizado na nuvem. Criar
 [uma conta](https://github.com/join) no GitHub e
 [instalar o programa](https://git-scm.com/downloads) `git` no seu computador são
 necessários para poder utilizar os recursos descritos a seguir. A partir daqui
@@ -140,8 +140,8 @@ usethis::use_github()
 
 Depois de ter executado estes dois novos comandos, será inicializada uma nova
 aba no RStudio denominada Git. Através dela é possível controlar todas as
-versões do código e eviálas ao GitHub para que sejam armazenadas com segurança
-na núvem.
+versões do código e enviá-las ao GitHub para que sejam armazenadas com segurança
+na nuvem.
 
 ```{r, echo=FALSE, fig.align='center', dpi=50}
 knitr::include_graphics("static/03_git.png")
