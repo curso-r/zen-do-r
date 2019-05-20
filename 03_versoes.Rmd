@@ -2,10 +2,163 @@
 
 ## Sobre versões
 
+Lorem ipsum
+
 ## Git e Github
 
-> Compreensão Correta: nossas ações têm consequências, então limpe seu caminho da confusão, do equívoco e do pensamento iludido
+Há poucas coisas mais frustrantes no mundo do que ter que refazer um trabalho.
+Perder progresso já feito por algum erro ou acidente transforma qualquer
+pacifista em um vulcão prestes a entrar em erupção. Quando se trata de
+programação, há várias formas de isso acontecer: um disco rígido que falha, o
+copo de café derramado no lugar errado, aquela alteração que não pode ser
+desfeita.
+
+Este problema está longe de ser novo. Em 2005, Linus Torvalds (o criador do
+Linux) se deparava com essas questões durante o seu desenvolvimento do kernel
+Linux. Muitas pessoas contribuindo para um mesmo código, fazendo alterações que
+deveriam ser revistas e possivelmente revertidas, não é uma tarefa facilmente
+solucionável com métodos convencionais de armazenamento de arquivos. Com isso
+em mente, Torvalds criou o sistema de controle de versão distribuído conhecido
+como Git.
+
+Em termos leigos, o Git permite gerenciar versões de arquivos texto (outros
+tipos também são suportados, mas o foco principal é em arquivos de código). Ele
+não passa de um programa para linha de comando que observa as mudanças nos
+arquivos de um diretório e vai guardando essas informações para que seja
+possível reverter qualquer alteração indesejada. O Git também pode se conectar
+a um serviço de hospedagem e armazenar todas as versões de um código fora
+do seu computador; o mais utilizado atualmente se chama GitHub.
+
+Na prática, a utilização do Git e do GitHub tem dois principais benefícios:
+- Nunca mais precisar controlar versões com `analise.R`, `analise_v2.R`,
+`analise_v3.R`, `analise_final.R`, `analise_final_final.R`,
+`analise_final_revisada.R`...
+- Nunca mais precisar se preocupar em perder seus projetos por causa de falhas
+no seu computador.
+
+Nada mal para dois serviços gratuitos!
+
+No capítulo anterior, é apresentado o conceito de projeto. Agora o segundo passo
+é entender como esses projetos podem ser utilizados em conjunto com controle de
+versão para manter seu trabalho sempre sincronizado na núvem. Criar
+[uma conta](https://github.com/join) no GitHub e
+[instalar o programa](https://git-scm.com/downloads) `git` no seu computador são
+necessários para poder utilizar os recursos descritos a seguir. A partir daqui
+assume-se que ambos os requisitos foram cumpridos.
+
+Para permitir que os comandos do R acessem a sua conta do GitHub, é essencial
+criar um *Personal Access Token* (PAT). Tendo logado no GitHub, clique na sua
+imagem no canto direito superior e siga para
+**Settings > Developer settings > Personal access tokens > Generate new token**.
+Nesta página basta descrever o seu uso para o token e selecionar o primeiro box
+de todos; por fim, gere e copie o seu token (uma sequência com uns 40 letras e
+números). Se você estiver sem nenhuma paciência, execute o comando abaixo:
+
+```r
+usethis::browse_github_token()
+#> ✔ Opening URL 'https://github.com/settings/tokens/new?scopes=repo,gist&description=R:GITHUB_PAT'
+#> ● Call `usethis::edit_r_environ()` to open '.Renviron'.
+#> ● Store your PAT with a line like:
+#>   GITHUB_PAT=xxxyyyzzz
+#> ● Make sure '.Renviron' ends with a newline!
+```
+
+```{r, echo=FALSE, fig.align='center', dpi=50}
+knitr::include_graphics("static/03_pat.png")
+```
+
+Independentemente de como um PAT foi gerado, o importante é seguir as instruções
+descritas no comando. Execute a função `usethis::edit_r_environ()` e crie uma
+nova linha na forma `GITHUB_PAT={SEU_TOKEN}`. Assim que isso estiver feito, você
+não precisará mais se preocupar com nenhum tipo de configuração.
+
+Agora, ao criar um novo projeto, é possível associar imediatamente a ele um
+repositório no GitHub. O comando para criar projetos não muda, mas torna-se
+possível usar dois outros comando para associar aquela pasta com o sistema de
+controle de versões.
+
+```r
+usethis::create_project("~/Documents/demo")
+#> ✔ Creating '~/Documents/demo/'
+#> ✔ Setting active project to '~/Documents/demo'
+#> ✔ Creating 'R/'
+#> ✔ Writing 'demo.Rproj'
+#> ✔ Adding '.Rproj.user' to '.gitignore'
+#> ✔ Opening '~/Documents/demo/' in new RStudio session
+#> ✔ Setting active project to ' demo' 
+
+# No console do novo projeto
+
+usethis::use_git()
+#> ✔ Setting active project to '~/Documents/demo'
+#> ✔ Initialising Git repo
+#> ✔ Adding '.Rhistory', '.RData' to '.gitignore'
+#> There are 2 uncommitted files:
+#> * '.gitignore'
+#> * 'demo.Rproj'
+#> Is it ok to commit them?
+#> 
+#> 1: Negative
+#> 2: Not now
+#> 3: I agree
+#> 
+#> Selection: 3
+#> ✔ Adding files
+#> ✔ Commit with message 'Initial commit'
+#> ● A restart of RStudio is required to activate the Git pane
+#> Restart now?
+#> 
+#> 1: Absolutely not
+#> 2: No way
+#> 3: Yes
+#> 
+#> Selection: 3
+
+usethis::use_github()
+#> ✔ Checking that current branch is 'master'
+#> Which git protocol to use? (enter 0 to exit) 
+#> 
+#> 1: ssh   <-- presumes that you have set up ssh keys
+#> 2: https <-- choose this if you don't have ssh keys (or don't know if you do)
+#> 
+#> Selection: 2
+#> ● Check title and description
+#>   Name:        demo
+#>   Description: 
+#> Are title and description ok?
+#> 
+#> 1: Nope
+#> 2: No way
+#> 3: Yup
+#> 
+#> Selection: 3
+#> ✔ Creating GitHub repository
+#> ✔ Setting remote 'origin' to 'https://github.com/curso-r/demo.git'
+#> ✔ Pushing 'master' branch to GitHub and setting remote tracking branch
+#> ✔ Opening URL 'https://github.com/curso-r/demo'
+```
+
+Depois de ter executado estes dois novos comandos, será inicializada uma nova
+aba no RStudio denominada Git. Através dela é possível controlar todas as
+versões do código e eviálas ao GitHub para que sejam armazenadas com segurança
+na núvem.
+
+```{r, echo=FALSE, fig.align='center', dpi=50}
+knitr::include_graphics("static/03_git.png")
+```
+
+Para testar se está tudo funcionando, crie um arquivo na pasta R e abra a aba
+Git. Clique na caixa em branco que lá se encontra, aperte o botão **Commit**
+(escreva uma mensagem que descreva aquilo que você fez) e então aperte o botão
+**Push**. Em poucos segundos o repositório deve ser atualizado na sua página
+correspondente no GitHub.
+
+Explicar todas as funcionalidades do Git e do GitHub estão além do escopo deste
+material. Os botões mais importantes dessa aba são as *checkboxes*, o **Commit**
+e o **Push**. Para saber mais sobre esse assunto, recomendo o livro
+*Happy Git with R* (especialmente
+[este capítulo](https://happygitwithr.com/existing-github-last.html)) que aborda
+em detalhes minuciosos todo o processo e uso e manutenção do Git com o RStudio.
 
 ## Packrat
 
-> Pensamento Correto: considere tudo e todos como impermanentes, uma fonte de sofrimento
