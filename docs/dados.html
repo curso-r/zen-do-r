@@ -161,7 +161,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2.1" data-path="dados.html"><a href="dados.html#section"><i class="fa fa-check"></i><b>4.2.1</b> ::</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="dados.html"><a href="dados.html#pacotes"><i class="fa fa-check"></i><b>4.3</b> Pacotes</a></li>
-<li class="chapter" data-level="4.4" data-path="dados.html"><a href="dados.html#data-e-data-raw"><i class="fa fa-check"></i><b>4.4</b> Data e data-raw</a></li>
+<li class="chapter" data-level="4.4" data-path="dados.html"><a href="dados.html#data-e-data-raw"><i class="fa fa-check"></i><b>4.4</b> Data e data-raw</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="dados.html"><a href="dados.html#documentacao"><i class="fa fa-check"></i><b>4.4.1</b> Documentação</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="arquivos.html"><a href="arquivos.html"><i class="fa fa-check"></i><b>5</b> Arquivos</a><ul>
 <li class="chapter" data-level="5.1" data-path="arquivos.html"><a href="arquivos.html#sobre-os-arquivos"><i class="fa fa-check"></i><b>5.1</b> Sobre os arquivos</a></li>
@@ -381,13 +383,126 @@ vez. Com os <code>::</code>, as sugestões passarão a ser somente de funções 
 </div>
 <div id="pacotes" class="section level2">
 <h2><span class="header-section-number">4.3</span> Pacotes</h2>
+<ul>
+<li>documentação</li>
+<li>testes</li>
+</ul>
 </div>
 <div id="data-e-data-raw" class="section level2">
 <h2><span class="header-section-number">4.4</span> Data e data-raw</h2>
-<blockquote>
-<p>Ação Correta: abstenha-se de matar, de roubar e da promiscuidade</p>
-</blockquote>
+<p>Na seção anterior, foi discutida a importância de empacotar uma análise. Seja
+para organizar dependências, reutilizar código, manter testes automatizados, ou
+qualquer outra razão, pacotes são a melhor forma de guardar e compartilhar
+código em R. Mas, apesar de toda a conversa sobre programação, pouco foi
+abordado sobre outro elemento essencial de uma análise de dados: dados.</p>
+<p>Felizmente, pacotes em R têm lugares específicos para guardar dados brutos e
+dados tratados. São as pastas <code>data</code> e <code>data-raw</code>, cada uma com as suas
+propriedades e possibilidades. Ambas podem ser criadas com facilidades por
+funções do pacote <code>usethis</code>, então elas se encaixam perfeitamente no fluxo de
+análise descrito até agora.</p>
+<p>Como indicado anteriormente, existem dois tipos de dados: brutos e tratados.
+Normalmente dados brutos estão em formatos comumente compartilhados em ambientes
+de trabalho: planilhas Excel, arquivos CSV, etc. Os pacotes <code>readxl</code> e <code>readr</code>
+permitem que esses formatos sejam importados para dentro do R, mas normalmente
+essas funções são mais lentas e menos padronizadas do que <code>readRDS()</code>, por
+exemplo, que lê arquivos no formato nativo do R.</p>
+<p>Além disso, raramente os dados recebidos durante uma análise estarão
+perfeitamente organizados e padronizados. É comum precisar de múltiplos fluxos
+de tratamento para poder transformar os dados brutos naquilo que de fato pode
+ser utilizado durante uma análise.</p>
+<p>O programador é encorajado a separar essas planilhas brutas daquelas resultates
+do processo de limpeza e tratamento. Junto com os dados crús, é importante
+também guardar os arquivos que fazem o processo de limpeza; caso haja uma
+mudança nas demandas ou nas bases, o analista precisa ser capaz de alterar os
+<em>scripts</em> de tratamento e gerar novas bases consolidadas.</p>
+<p>No exemplo abaixo, supõe-se um diretório com um pacote R e uma base bruta
+denominada <code>dados.xlsx</code>. Primeiramente deve-se executar a função
+<code>usethis::use_data_raw()</code> para criar a pasta <code>data-raw</code> e um arquivo de
+tratamento para a base em questão.</p>
+<pre class="sourceCode r"><code class="sourceCode r">usethis<span class="op">::</span><span class="kw">use_data_raw</span>(<span class="st">&quot;dados&quot;</span>)
+<span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span>
+<span class="co">#&gt; ✔ Creating &#39;data-raw/&#39;</span>
+<span class="co">#&gt; ✔ Adding &#39;^data-raw$&#39; to &#39;.Rbuildignore&#39;</span>
+<span class="co">#&gt; ✔ Writing &#39;data-raw/dados.R&#39;</span>
+<span class="co">#&gt; ● Modify &#39;data-raw/dados.R&#39;</span>
+<span class="co">#&gt; ● Finish the data preparation script in &#39;data-raw/dados.R&#39;</span>
+<span class="co">#&gt; ● Use `usethis::use_data()` to add prepared data to package</span></code></pre>
+<p>Como indicado pelos três últimos pontos da saída do comando, agora basta colocar
+o código de tratamento da base <code>dados</code> em <code>data-raw/dados.R</code> e por fim utilizar
+<code>usethis::use_data()</code> para adicionar os dados preparados ao pacote. Para
+prosseguir o exemplo, o arquivo <code>dados.xlsx</code> foi copiado para o diretório
+<code>data-raw</code> e o código abaixo foi inserido em <code>data-raw/dados.R</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(magrittr)
 
+<span class="co"># Limpar a base dados.xlsx</span>
+dados &lt;-<span class="st"> &quot;data-raw/dados.xlsx&quot;</span> <span class="op">%&gt;%</span>
+<span class="st">  </span>readxl<span class="op">::</span><span class="kw">read_xlsx</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cyl <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(
+    <span class="dt">brand =</span> stringr<span class="op">::</span><span class="kw">str_extract</span>(model, <span class="st">&quot;^[A-z]+&quot;</span>)
+  ) <span class="op">%&gt;%</span>
+<span class="st">  </span>dplyr<span class="op">::</span><span class="kw">group_by</span>(brand) <span class="op">%&gt;%</span>
+<span class="st">  </span>dplyr<span class="op">::</span><span class="kw">summarise</span>(
+    <span class="dt">mean_mpg =</span> <span class="kw">mean</span>(mpg),
+    <span class="dt">prop_6_cyl =</span> <span class="kw">sum</span>(cyl <span class="op">==</span><span class="st"> </span><span class="dv">6</span>)<span class="op">/</span>dplyr<span class="op">::</span><span class="kw">n</span>()
+  ) <span class="op">%&gt;%</span>
+<span class="st">  </span>dplyr<span class="op">::</span><span class="kw">arrange</span>(brand)
+
+<span class="co"># Salvar a base para uso no pacote</span>
+usethis<span class="op">::</span><span class="kw">use_data</span>(dados)
+<span class="co">#&gt; ✔ Creating &#39;data/&#39;</span>
+<span class="co">#&gt; ✔ Saving &#39;dados&#39; to &#39;data/dados.rda&#39;</span></code></pre>
+<p>Neste caso o arquivo Excel foi criado de dentro do prṕrio R com o comando
+<code>writexl::write_xlsx(tibble::rownames_to_column(mtcars, "model"), "data-raw/dados.xlsx")</code>,
+mas isso é só um exemplo ilustrativo. O importante é saber o que acontece quando
+a função <code>use_data()</code> é executada para um objeto do ambiente global, ou seja,
+as duas últimas linhas do bloco de código acima.</p>
+<p>Por trás das câmeras, <code>use_data()</code> está chamando a função <code>save()</code> do R para
+gerar um arquivo RDA a partir de um objeto do ambiente global. Arquivos RDA são
+extremamente estáveis, compactos e podem ser carregados rapidamente pelo R,
+tornando este formato o principal meio de guardar dados de um pacote. Se os
+dados do pacote forem guardados assim, eles ficarão disponíveis para serem
+chamados pelo usuário (você mesmo durante a análise)! Para entender como ficam
+os dados uma vez que eles são incluídos na pasta <code>data</code>, basta dar uma olhada
+no objeto <code>dplyr::starwars</code>; neste caso, a base tratada e exportada se chama
+<code>starwars</code>.</p>
+<p>Para carregar os dados na sua sessão e poder utilizá-los na análise, basta
+executar <code>pkgload::load_all()</code> ou pressionar a combinação <code>CTRL + SHIFT + L</code> no
+RStudio. Independentemente do número de tabelas que estiverem salvas na pasta
+<code>data</code>, todas serão carregadas instantaneamente.</p>
+<p>A título de curiosidade, existem algumas situações em que as bases brutas são
+grandes demais para serem sincronizadas com o GitHub. A plataforma tem um
+(razoável) limite de 1GB por repositório que pode ser insuficiente para
+armazenar dados brutos e tratados. Para náo sincronizar as bases brutas com o
+Git, basta adicioná-las ao arquivo <code>.gitignore</code> do pacote; no caso do exemplo
+acima, bastaria adicionar a esse arquivo uma linha com o texto
+<code>data-raw/dados.xlsx</code>.</p>
+<div id="documentacao" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Documentação</h3>
+<p>Além de funções, também é possível documentar bases de dados com o pacote
+<code>roxygen2</code>. Para isso, crie um arquivo <code>data.R</code> na pasta <code>R/</code> do pacote e crie
+um objeto entre aspas com o nome de cada base de dados exportada. Documentar
+dados é extremamente útil quando o pacote vai ser compartilhado com múltiplas
+pessoas da mesma organização, pois assim não é necessário compartilhar uma
+planilha Excel separada descrevendo cada uma das colunas da tabela.</p>
+<p>Uma boa documentação de bases de dados não precisa de muita coisa. Abaixo é
+exemplificado como seria documentada <code>dados</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Dados sobre 15 marcas de carros</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; A tabela, gerada a partir de `mtcars`, apresenta algumas poucas</span>
+<span class="co">#&#39; informações sobre carros com mais de 4 cilindros de 15 marcas</span>
+<span class="co">#&#39; americanas de carros.</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @format Uma tabela com 3 colunas e 15 linhas:</span>
+<span class="co">#&#39; \describe{</span>
+<span class="co">#&#39;   \item{brand}{Marca}</span>
+<span class="co">#&#39;   \item{mean_mpg}{Milhas por galão médias para aquela marca}</span>
+<span class="co">#&#39;   \item{prop_6_cyl}{Proporção dos carros que apresentam 6 cilindros}</span>
+<span class="co">#&#39; }</span>
+<span class="co">#&#39; @source Henderson and Velleman (1981)</span>
+<span class="st">&quot;dados&quot;</span></code></pre>
+
+</div>
 </div>
 </div>
 <div class="footnotes">
