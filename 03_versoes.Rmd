@@ -85,7 +85,7 @@ usethis::create_project("~/Documents/demo")
 #> ✔ Writing 'demo.Rproj'
 #> ✔ Adding '.Rproj.user' to '.gitignore'
 #> ✔ Opening '~/Documents/demo/' in new RStudio session
-#> ✔ Setting active project to ' demo' 
+#> ✔ Setting active project to 'demo' 
 
 # No console do novo projeto
 
@@ -147,7 +147,7 @@ na nuvem.
 knitr::include_graphics("static/03_git.png")
 ```
 
-Para testar se está tudo funcionando, crie um arquivo na pasta R e abra a aba
+Para testar se está tudo funcionando, crie um arquivo na pasta `R/` e abra a aba
 Git. Clique na caixa em branco que lá se encontra, aperte o botão **Commit**
 (escreva uma mensagem que descreva aquilo que você fez) e então aperte o botão
 **Push**. Em poucos segundos o repositório deve ser atualizado na sua página

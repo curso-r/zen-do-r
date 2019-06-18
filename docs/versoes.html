@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Versões | O Zen do R</title>
-  <meta name="description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R).">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R)." />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Versões | O Zen do R" />
   <meta property="og:type" content="book" />
@@ -22,13 +21,13 @@
   <meta name="twitter:description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R)." />
   
 
-<meta name="author" content="Caio Lente">
+<meta name="author" content="Caio Lente" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="ambiente.html">
@@ -157,13 +156,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="dados.html"><a href="dados.html"><i class="fa fa-check"></i><b>4</b> Dados</a><ul>
 <li class="chapter" data-level="4.1" data-path="dados.html"><a href="dados.html#sobre-dados"><i class="fa fa-check"></i><b>4.1</b> Sobre dados</a></li>
-<li class="chapter" data-level="4.2" data-path="dados.html"><a href="dados.html#data-e-data-raw"><i class="fa fa-check"></i><b>4.2</b> Data e data-raw</a></li>
-<li class="chapter" data-level="4.3" data-path="dados.html"><a href="dados.html#rdss-intermediarios"><i class="fa fa-check"></i><b>4.3</b> RDSs intermediários</a></li>
+<li class="chapter" data-level="4.2" data-path="dados.html"><a href="dados.html#funcoes-e-dependencias"><i class="fa fa-check"></i><b>4.2</b> Funções e dependências</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="dados.html"><a href="dados.html#section"><i class="fa fa-check"></i><b>4.2.1</b> ::</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="arquivos.html"><a href="arquivos.html"><i class="fa fa-check"></i><b>5</b> Arquivos</a><ul>
-<li class="chapter" data-level="5.1" data-path="arquivos.html"><a href="arquivos.html#sobre-os-arquivos"><i class="fa fa-check"></i><b>5.1</b> Sobre os arquivos</a></li>
-<li class="chapter" data-level="5.2" data-path="arquivos.html"><a href="arquivos.html#reiniciar-a-sessao"><i class="fa fa-check"></i><b>5.2</b> Reiniciar a sessão</a></li>
-<li class="chapter" data-level="5.3" data-path="arquivos.html"><a href="arquivos.html#arquivos-minimalistas"><i class="fa fa-check"></i><b>5.3</b> Arquivos minimalistas</a></li>
+<li class="chapter" data-level="4.3" data-path="dados.html"><a href="dados.html#pacotes"><i class="fa fa-check"></i><b>4.3</b> Pacotes</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="dados.html"><a href="dados.html#documentacao"><i class="fa fa-check"></i><b>4.3.1</b> Documentação</a></li>
+<li class="chapter" data-level="4.3.2" data-path="dados.html"><a href="dados.html#testes-automatizados"><i class="fa fa-check"></i><b>4.3.2</b> Testes automatizados</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="dados.html"><a href="dados.html#data-e-data-raw"><i class="fa fa-check"></i><b>4.4</b> Data e data-raw</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="dados.html"><a href="dados.html#documentacao-1"><i class="fa fa-check"></i><b>4.4.1</b> Documentação</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -219,7 +221,7 @@ no seu computador.</p>
 <p>Nada mal para dois serviços gratuitos!</p>
 <p>No capítulo anterior, é apresentado o conceito de projeto. Agora o segundo passo
 é entender como esses projetos podem ser utilizados em conjunto com controle de
-versão para manter seu trabalho sempre sincronizado na núvem. Criar
+versão para manter seu trabalho sempre sincronizado na nuvem. Criar
 <a href="https://github.com/join">uma conta</a> no GitHub e
 <a href="https://git-scm.com/downloads">instalar o programa</a> <code>git</code> no seu computador são
 necessários para poder utilizar os recursos descritos a seguir. A partir daqui
@@ -237,7 +239,7 @@ números). Se você estiver sem nenhuma paciência, execute o comando abaixo:</p
 <span class="co">#&gt; ● Store your PAT with a line like:</span>
 <span class="co">#&gt;   GITHUB_PAT=xxxyyyzzz</span>
 <span class="co">#&gt; ● Make sure &#39;.Renviron&#39; ends with a newline!</span></code></pre>
-<p><img src="static/03_pat.png" width="733" style="display: block; margin: auto;" /></p>
+<p><img src="static/03_pat.png" style="display: block; margin: auto;" /></p>
 <p>Independentemente de como um PAT foi gerado, o importante é seguir as instruções
 descritas no comando. Execute a função <code>usethis::edit_r_environ()</code> e crie uma
 nova linha na forma <code>GITHUB_PAT={SEU_TOKEN}</code>. Assim que isso estiver feito, você
@@ -253,7 +255,7 @@ controle de versões.</p>
 <span class="co">#&gt; ✔ Writing &#39;demo.Rproj&#39;</span>
 <span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span>
 <span class="co">#&gt; ✔ Opening &#39;~/Documents/demo/&#39; in new RStudio session</span>
-<span class="co">#&gt; ✔ Setting active project to &#39; demo&#39; </span>
+<span class="co">#&gt; ✔ Setting active project to &#39;demo&#39; </span>
 
 <span class="co"># No console do novo projeto</span>
 
@@ -306,10 +308,10 @@ usethis<span class="op">::</span><span class="kw">use_github</span>()
 <span class="co">#&gt; ✔ Opening URL &#39;https://github.com/curso-r/demo&#39;</span></code></pre>
 <p>Depois de ter executado estes dois novos comandos, será inicializada uma nova
 aba no RStudio denominada Git. Através dela é possível controlar todas as
-versões do código e eviálas ao GitHub para que sejam armazenadas com segurança
-na núvem.</p>
-<p><img src="static/03_git.png" width="617" style="display: block; margin: auto;" /></p>
-<p>Para testar se está tudo funcionando, crie um arquivo na pasta R e abra a aba
+versões do código e enviá-las ao GitHub para que sejam armazenadas com segurança
+na nuvem.</p>
+<p><img src="static/03_git.png" style="display: block; margin: auto;" /></p>
+<p>Para testar se está tudo funcionando, crie um arquivo na pasta <code>R/</code> e abra a aba
 Git. Clique na caixa em branco que lá se encontra, aperte o botão <strong>Commit</strong>
 (escreva uma mensagem que descreva aquilo que você fez) e então aperte o botão
 <strong>Push</strong>. Em poucos segundos o repositório deve ser atualizado na sua página

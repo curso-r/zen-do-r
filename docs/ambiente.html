@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Ambiente | O Zen do R</title>
-  <meta name="description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R).">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R)." />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Ambiente | O Zen do R" />
   <meta property="og:type" content="book" />
@@ -22,13 +21,13 @@
   <meta name="twitter:description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R)." />
   
 
-<meta name="author" content="Caio Lente">
+<meta name="author" content="Caio Lente" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="introducao.html">
@@ -157,13 +156,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="dados.html"><a href="dados.html"><i class="fa fa-check"></i><b>4</b> Dados</a><ul>
 <li class="chapter" data-level="4.1" data-path="dados.html"><a href="dados.html#sobre-dados"><i class="fa fa-check"></i><b>4.1</b> Sobre dados</a></li>
-<li class="chapter" data-level="4.2" data-path="dados.html"><a href="dados.html#data-e-data-raw"><i class="fa fa-check"></i><b>4.2</b> Data e data-raw</a></li>
-<li class="chapter" data-level="4.3" data-path="dados.html"><a href="dados.html#rdss-intermediarios"><i class="fa fa-check"></i><b>4.3</b> RDSs intermediários</a></li>
+<li class="chapter" data-level="4.2" data-path="dados.html"><a href="dados.html#funcoes-e-dependencias"><i class="fa fa-check"></i><b>4.2</b> Funções e dependências</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="dados.html"><a href="dados.html#section"><i class="fa fa-check"></i><b>4.2.1</b> ::</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="arquivos.html"><a href="arquivos.html"><i class="fa fa-check"></i><b>5</b> Arquivos</a><ul>
-<li class="chapter" data-level="5.1" data-path="arquivos.html"><a href="arquivos.html#sobre-os-arquivos"><i class="fa fa-check"></i><b>5.1</b> Sobre os arquivos</a></li>
-<li class="chapter" data-level="5.2" data-path="arquivos.html"><a href="arquivos.html#reiniciar-a-sessao"><i class="fa fa-check"></i><b>5.2</b> Reiniciar a sessão</a></li>
-<li class="chapter" data-level="5.3" data-path="arquivos.html"><a href="arquivos.html#arquivos-minimalistas"><i class="fa fa-check"></i><b>5.3</b> Arquivos minimalistas</a></li>
+<li class="chapter" data-level="4.3" data-path="dados.html"><a href="dados.html#pacotes"><i class="fa fa-check"></i><b>4.3</b> Pacotes</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="dados.html"><a href="dados.html#documentacao"><i class="fa fa-check"></i><b>4.3.1</b> Documentação</a></li>
+<li class="chapter" data-level="4.3.2" data-path="dados.html"><a href="dados.html#testes-automatizados"><i class="fa fa-check"></i><b>4.3.2</b> Testes automatizados</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="dados.html"><a href="dados.html#data-e-data-raw"><i class="fa fa-check"></i><b>4.4</b> Data e data-raw</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="dados.html"><a href="dados.html#documentacao-1"><i class="fa fa-check"></i><b>4.4.1</b> Documentação</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -248,7 +250,7 @@ todos os projetos do computador, então só é necessário passar por ele uma ve
 Basta selecionar <strong>Tools &gt; Global Options…</strong> na aba de ferramentas do RStudio
 e então ajustar três configurações. No final a página de opções gerais deve
 ficar similar à da imagem abaixo:</p>
-<p><img src="static/02_config.png" width="622" style="display: block; margin: auto;" /></p>
+<p><img src="static/02_config.png" style="display: block; margin: auto;" /></p>
 <p>Se acostumar com sessões efêmeras não é uma tarefa fácil e um desconforto
 inicial é esperado. Pode ser que o programador ache entediante executar o mesmo
 código toda vez que abrir seu RStudio, mas é importante ter em mente que esse
@@ -273,7 +275,7 @@ está, apenas que seja um lugar o qual você lembre sem dificuldades. Tendo
 criado um esse <em>workspace</em>, é importante registrá-lo como o seu ambiente de
 trabalho no RStudio: basta selecioná-lo em
 <strong>Tools &gt; Global Options… &gt; Browse</strong>.</p>
-<p><img src="static/02_wd.png" width="565" style="display: block; margin: auto;" /></p>
+<p><img src="static/02_wd.png" style="display: block; margin: auto;" /></p>
 <p>Desta forma, toda vez que você iniciar um novo projeto no R, ele por parão
 usará essa nova pasta como ambiente padrão! Se você já tiver alguns arquivos
 espalhados pelo seu computador, traga eles para o seu diretório de programas.</p>
@@ -321,7 +323,7 @@ essencialmente a raiz do seu projeto. Muitos programadores que aprenderam R há
 muito tempo conhecem uma função chamada <code>setwd()</code>; se você nunca ouviu falar
 disso, não se preocupe e continue assim, mas se você costuma usá-la, siga
 prestando atenção.</p>
-<p><img src="static/02_console.png" width="589" style="display: block; margin: auto;" /></p>
+<p><img src="static/02_console.png" style="display: block; margin: auto;" /></p>
 <p>O R dá a possibilidade de mudar, instantaneamente, o diretório de trabalho.
 Isso que dizer que os caminhos relativos para arquivos podem mudar em questão
 de linhas. O exemplo abaixo demonstra superficialmente como isso funciona:</p>
@@ -371,8 +373,9 @@ modificar nem uma linha do programa.</p>
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Não tenho nenhuma estatística confiável sobre esse número, mas sei que ele
-não é 100% porque conheço pelo menos uma pessoa que programa R no neovim.<a href="ambiente.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>Aqui o termo “programação funcional” é usado de forma figurativa. Na
+computação linguagens denominadas “funcionais” tem um <em>modus operandi</em> bastante
+específico não abordado neste capítulo.<a href="ambiente.html#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

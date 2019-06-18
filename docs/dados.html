@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Dados | O Zen do R</title>
-  <meta name="description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R).">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R)." />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Dados | O Zen do R" />
   <meta property="og:type" content="book" />
@@ -22,17 +21,17 @@
   <meta name="twitter:description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R)." />
   
 
-<meta name="author" content="Caio Lente">
+<meta name="author" content="Caio Lente" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="versoes.html">
-<link rel="next" href="arquivos.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -160,15 +159,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="dados.html"><a href="dados.html#funcoes-e-dependencias"><i class="fa fa-check"></i><b>4.2</b> Funções e dependências</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="dados.html"><a href="dados.html#section"><i class="fa fa-check"></i><b>4.2.1</b> ::</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="dados.html"><a href="dados.html#pacotes"><i class="fa fa-check"></i><b>4.3</b> Pacotes</a></li>
+<li class="chapter" data-level="4.3" data-path="dados.html"><a href="dados.html#pacotes"><i class="fa fa-check"></i><b>4.3</b> Pacotes</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="dados.html"><a href="dados.html#documentacao"><i class="fa fa-check"></i><b>4.3.1</b> Documentação</a></li>
+<li class="chapter" data-level="4.3.2" data-path="dados.html"><a href="dados.html#testes-automatizados"><i class="fa fa-check"></i><b>4.3.2</b> Testes automatizados</a></li>
+</ul></li>
 <li class="chapter" data-level="4.4" data-path="dados.html"><a href="dados.html#data-e-data-raw"><i class="fa fa-check"></i><b>4.4</b> Data e data-raw</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="dados.html"><a href="dados.html#documentacao"><i class="fa fa-check"></i><b>4.4.1</b> Documentação</a></li>
+<li class="chapter" data-level="4.4.1" data-path="dados.html"><a href="dados.html#documentacao-1"><i class="fa fa-check"></i><b>4.4.1</b> Documentação</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="arquivos.html"><a href="arquivos.html"><i class="fa fa-check"></i><b>5</b> Arquivos</a><ul>
-<li class="chapter" data-level="5.1" data-path="arquivos.html"><a href="arquivos.html#sobre-os-arquivos"><i class="fa fa-check"></i><b>5.1</b> Sobre os arquivos</a></li>
-<li class="chapter" data-level="5.2" data-path="arquivos.html"><a href="arquivos.html#reiniciar-a-sessao"><i class="fa fa-check"></i><b>5.2</b> Reiniciar a sessão</a></li>
-<li class="chapter" data-level="5.3" data-path="arquivos.html"><a href="arquivos.html#arquivos-minimalistas"><i class="fa fa-check"></i><b>5.3</b> Arquivos minimalistas</a></li>
 </ul></li>
 </ul>
 
@@ -302,7 +299,7 @@ duas situações, mas os benefícios das funções são de longo prazo: ao encon
 um <em>bug</em>, haverá apenas um lugar para concertar; se surgir a necessidade de
 modificar uma propriedade, haverá apenas um lugar para editar; se aquele código
 se tornar obsoleto, haverá apenas um lugar para deletar.</p>
-<p>Pense na programação funcional<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> como ir à academia. No início o processo é
+<p>Pense na programação funcional<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> como ir à academia. No início o processo é
 difícil e exige uma quantidade considerável de esforço, mas depois de um tempo
 se torna um hábito e traz benefícios consideráveis para a saúde (neste caso, do
 código). As recomendações para quando criar uma nova função ou separar uma
@@ -383,10 +380,209 @@ vez. Com os <code>::</code>, as sugestões passarão a ser somente de funções 
 </div>
 <div id="pacotes" class="section level2">
 <h2><span class="header-section-number">4.3</span> Pacotes</h2>
-<ul>
-<li>documentação</li>
-<li>testes</li>
-</ul>
+<p>Nas palavras do maior guru do R, Hadley Wickham, “pacotes são a unidade
+fundamental de código R reprodutível”. Toda vez que você utiliza a função
+<code>library()</code>, algum pacote está sendo carregado na sessão. Muitas vezes criar uma
+biblioteca de funções pode parecer uma tarefa árdua e confusa, restrita a
+grandes conhecedores da linguagem, mas essa impressão não poderia estar mais
+distante da realidade: pacotes para o R são bastante simples e intuitivos de
+fazer.</p>
+<p>No início deste livro foi abordado o conceito de projeto. Ele não passa de um
+arquivo <code>.Rproj</code> que indica para o RStudio que aquele diretório é um ambiente de
+trabalho estruturado. Nesse sentido, pacotes iguais a projetos porque eles
+também têm um <code>.Rproj</code>; pacotes na verdade <em>são</em> projetos.</p>
+<p>A diferença entre os dois é que pacotes podem ser documentados e instalados,
+permitindo toda uma gama de novas possibilidades para o programador.
+Muitas vezes uma análise de dados pode envolver dezenas de funções e diversas
+pessoas, fazendo com que o compartilhamento de código seja vital para que a
+análise não fuja do controle. Pacotes permitem gerenciar dependências, manter
+documentação, executar testes unitários e muito mais com o objetivo de deixar
+todos os analistas na mesma página.</p>
+<p>Sendo assim, recomenda-se criar um pacote para qualquer análise que envolva pelo
+menos meia dúzia de funções complexas e mais de uma pessoa; caso contrário, um
+projeto já é suficiente. Outra motivação para criar um pacote é compartilhar
+conjuntos úteis de funções com outras pessoas; isso acaba sendo menos comum para
+a maioria dos usuários, mas é importante ressaltar que o R não seria a linguagem
+popular que é hoje se não fossem pelas famosas bibliotecas <code>ggplot2</code> e <code>dplyr</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">usethis<span class="op">::</span><span class="kw">create_package</span>(<span class="st">&quot;~/Documents/demo&quot;</span>)
+<span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span>
+<span class="co">#&gt; ✔ Creating &#39;R/&#39;</span>
+<span class="co">#&gt; ✔ Writing &#39;DESCRIPTION&#39;</span>
+<span class="co">#&gt; Package: demo</span>
+<span class="co">#&gt; Title: What the Package Does (One Line, Title Case)</span>
+<span class="co">#&gt; Version: 0.0.0.9000</span>
+<span class="co">#&gt; Authors@R (parsed):</span>
+<span class="co">#&gt;     * First Last &lt;first.last@example.com&gt; [aut, cre] (&lt;https://orcid.org/YOUR-ORCID-ID&gt;)</span>
+<span class="co">#&gt; Description: What the package does (one paragraph).</span>
+<span class="co">#&gt; License: What license it uses</span>
+<span class="co">#&gt; Encoding: UTF-8</span>
+<span class="co">#&gt; LazyData: true</span>
+<span class="co">#&gt; ✔ Writing &#39;NAMESPACE&#39;</span>
+<span class="co">#&gt; ✔ Writing &#39;demo.Rproj&#39;</span>
+<span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span>
+<span class="co">#&gt; ✔ Adding &#39;^demo\\.Rproj$&#39;, &#39;^\\.Rproj\\.user$&#39; to &#39;.Rbuildignore&#39;</span>
+<span class="co">#&gt; ✔ Opening &#39;~/Documents/demo/&#39; in new RStudio session</span>
+<span class="co">#&gt; ✔ Setting active project to &#39;demo&#39;</span></code></pre>
+<p>A função executada acima é exatamente análoga à função de criação de projetos.
+A principal diferença é que ela cria um arquivo <code>DESCRIPTION</code> e assume que o
+nome do pacote é igual ao nome da pasta onde o mesmo está sendo criado (neste
+caso, “demo”). Alguns outros arquivos também são criados (como <code>.Rbuildignore</code> e
+<code>NAMESPACE</code>), mas eles não vêm ao caso. De resto, o pacote é idêntico a um
+projeto e pode ser sincronizado com o Git exatamente da mesma maneira.</p>
+<p>O primeiro passo para começar a usar um pacote é atribuir a ele uma licença
+(caso um dia você resolva compartilhá-lo com o mundo) e preencher a descrição.
+Abaixo encontra-se uma função simples que adiciona uma licença MIT ao pacote.</p>
+<pre class="sourceCode r"><code class="sourceCode r">usethis<span class="op">::</span><span class="kw">use_mit_license</span>(<span class="st">&quot;Seu Nome&quot;</span>)
+<span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span>
+<span class="co">#&gt; ✔ Setting License field in DESCRIPTION to &#39;MIT + file LICENSE&#39;</span>
+<span class="co">#&gt; ✔ Writing &#39;LICENSE.md&#39;</span>
+<span class="co">#&gt; ✔ Adding &#39;^LICENSE\\.md$&#39; to &#39;.Rbuildignore&#39;</span>
+<span class="co">#&gt; ✔ Writing &#39;LICENSE&#39;</span></code></pre>
+<p>O arquivo de descrição, no entando, é um pouco mais complexo porque ele tem
+alguns campos que precisam ser preenchidos manualmente. Quando o pacote for
+criado, eles já estarão populados com instruções para facilitar a vida do
+programador. Abaixo está um exemplo de como <code>DESCRIPTION</code> deve ficar depois de
+completo:</p>
+<pre><code>Package: demo
+Title: O Que o Pacote Faz (Uma Linha)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = &quot;Seu&quot;,
+           family = &quot;Nome&quot;,
+           role = c(&quot;aut&quot;, &quot;cre&quot;),
+           email = &quot;seunome@dominio.com&quot;)
+Description: O que o pacote faz (um paragrafo curto terminado em ponto final).
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true</code></pre>
+<p>A partir deste ponto, os metadados do pacote estão essencialmente prontos e não
+precisam mais ser modificados. Assim como em um projeto, o que resta é adicionar
+arquivos com funções à pasta <code>R/</code>.</p>
+<div id="documentacao" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Documentação</h3>
+<p>Para poder programar pacotes com mais facilidade, é necessário instalar o
+<code>devtools</code>. Assim como o <code>tidyverse</code>, este é um conjunto de pacotes (que inclui
+o <code>usethis</code> por sinal) que auxiliam no processo de criar e testar um pacote de
+R.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</code></pre>
+<p>A partir de agora você pode, por exemplo, criar documentações para as funções do
+seu pacote. Quando outras pessoas o instalarem, elas poderão consultar esses
+manuais da mesma forma que fazem com qualquer outra função: <code>?funcao()</code>.</p>
+<p>A documentação mais simples (e obrigatória) envolve dar um título para a função
+e descrever o que cada parâmetro significa. Para documentar uma função qualquer,
+basta adicionar comentários em cima dela com <code>#'</code> assim como no exemplo abaixo:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Função demonstrativa que soma e imprime</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @param x Um número ou vetor numérico</span>
+<span class="co">#&#39; @param y Um número ou vetor numérico</span>
+<span class="co">#&#39; @param ... Outros argumentos passados para [print()]</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @export</span>
+funcao_demo &lt;-<span class="st"> </span><span class="cf">function</span>(x, y, ...) {
+  z &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y
+  <span class="kw">print</span>(z, ...)
+  <span class="kw">return</span>(z)
+}</code></pre>
+<p>No RStudio esse tipo de documentação é tratado diferentemente de outros
+comentários, então certas palavras-chave ficam coloridas. <code>@param</code> por exemplo
+indica a documentação de um dos parâmetros e <code>@export</code> indica que aquela função
+será exportada pelo pacote, ou seja, ficará disponível ao usuário quando ele
+executar <code>library(demo)</code>.</p>
+<p>Para gerar a documentação do pacote, basta chamar uma outra função do
+<code>devtools</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">document</span>()
+<span class="co">#&gt; Updating demo documentation</span>
+<span class="co">#&gt; Updating roxygen version in ~/Documents/demo/DESCRIPTION</span>
+<span class="co">#&gt; Writing NAMESPACE</span>
+<span class="co">#&gt; Loading demo</span>
+<span class="co">#&gt; Writing NAMESPACE</span>
+<span class="co">#&gt; Writing funcao_demo.Rd</span>
+
+?<span class="kw">funcao_demo</span>()
+<span class="co">#&gt; Rendering development documentation for &#39;funcao_demo&#39;</span></code></pre>
+<p><img src="static/04_doc.png" style="display: block; margin: auto;" /></p>
+<p>Conforme o número de funções no pacote for crescendo, basta iterar nesse cíclo
+descrito até aqui. Além disso, é importante lembrar (como destacado na sessão
+anterior) que qualquer função utilizada de outro pacote deve ser invocada na
+forma <code>pacote::funcao()</code>; neste momento, o pacote em questão se tornará uma
+<em>dependência</em> do seu pacote e deve ser declarado como tal com
+<code>usethis::use_package("pacote")</code>.</p>
+<p>Para garantir que o R não encontrará nenhum problema no seu pacote, basta
+executar a função de verificação <code>devtools::check()</code>. Se nenhum defeito for
+encontrado, basta compartilhar o pacote com os seus colegas e instatá-lo com
+<code>devtools::install_local()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">check</span>()
+<span class="co">#&gt; Updating demo documentation</span>
+<span class="co">#&gt; Writing NAMESPACE</span>
+<span class="co">#&gt; Loading demo</span>
+<span class="co">#&gt; Writing NAMESPACE</span>
+<span class="co">#&gt; ── Building ───────────────────────────────────────────────────────── demo ──</span>
+<span class="co">#&gt; Setting env vars:</span>
+<span class="co">#&gt; ● CFLAGS    : -Wall -pedantic -fdiagnostics-color=always</span>
+<span class="co">#&gt; ● CXXFLAGS  : -Wall -pedantic -fdiagnostics-color=always</span>
+<span class="co">#&gt; ● CXX11FLAGS: -Wall -pedantic -fdiagnostics-color=always</span>
+<span class="co">#&gt; ─────────────────────────────────────────────────────────────────────────────</span>
+<span class="co">#&gt; ✔  checking for file ‘/home/clente/Documents/demo/DESCRIPTION’ ...</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [... omitido por brevidade ...]</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; ── R CMD check results ───────────────────────────────── demo 0.0.0.9000 ────</span>
+<span class="co">#&gt; Duration: 8.2s</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; 0 errors ✔ | 0 warnings ✔ | 0 notes ✔</span></code></pre>
+</div>
+<div id="testes-automatizados" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Testes automatizados</h3>
+<p>Antes de concluir a sessão sobre pacotes, se faz necessária uma breve menção aos
+testes automatizados. Eles são disponibilizados pelo pacote <code>testthat</code> e
+permitem que um programador verifique que seu código está atendendo às
+especificações. Testes unitários garantem que uma alteração pontual em algum
+ponto do código não vai alterar o comportamento de nenhuma outra parte, já que
+as outras funções ainda terão que passar nos seus próprios testes.</p>
+<p>Para criar um conjunto de testes é necessário primeiro criar o ambiente para tal
+dentro do pacote. Depois disso, basta criar conjuntos individuais de testes para
+cada função.</p>
+<pre class="sourceCode r"><code class="sourceCode r">usethis<span class="op">::</span><span class="kw">use_testthat</span>()
+<span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span>
+<span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span>
+<span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span>
+<span class="co">#&gt; ● Call `use_test()` to initialize a basic test file and open it for editing.</span>
+
+usethis<span class="op">::</span><span class="kw">use_test</span>(<span class="st">&quot;funcao_demo&quot;</span>)
+<span class="co">#&gt; ✔ Increasing &#39;testthat&#39; version to &#39;&gt;= 2.1.0&#39; in DESCRIPTION</span>
+<span class="co">#&gt; ✔ Writing &#39;tests/testthat/test-funcao_demo.R&#39;</span>
+<span class="co">#&gt; ● Modify &#39;tests/testthat/test-funcao_demo.R&#39;</span></code></pre>
+<p>Como é possível notar, o pacote <code>testthat</code> permite criar um arquivo de testes
+para <code>funcao_demo()</code> (neste caso <code>tests/testthat/test-funcao_demo.R</code>). Esse
+arquivo já vem com um teste padrão a título de demonstração, mas, depois de
+reescrito manualmente, um possível conjunto de testes para <code>funcao_demo()</code> seria
+o seguinte:</p>
+<pre><code>library(demo)
+
+test_that(&quot;funcao_demo funciona&quot;, {
+
+  expect_equal(funcao_demo(1, 2), 3)
+  expect_equal(funcao_demo(-1, -2), -3)
+  expect_equal(funcao_demo(1, -2), -1)
+
+  expect_output(funcao_demo(1, 2), &quot;3&quot;)
+
+})</code></pre>
+<p>E o resultado da execução dos testes é o seguinte:</p>
+<pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">test</span>()
+<span class="co">#&gt; Loading demo</span>
+<span class="co">#&gt; Testing demo</span>
+<span class="co">#&gt; ✔ |  OK F W S | Context</span>
+<span class="co">#&gt; ✔ |   4       | funcao_demo</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; ══ Results ═════════════════════════════════════════════════════════════════════</span>
+<span class="co">#&gt; OK:       4</span>
+<span class="co">#&gt; Failed:   0</span>
+<span class="co">#&gt; Warnings: 0</span>
+<span class="co">#&gt; Skipped:  0</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Keep up the good work.</span></code></pre>
+</div>
 </div>
 <div id="data-e-data-raw" class="section level2">
 <h2><span class="header-section-number">4.4</span> Data e data-raw</h2>
@@ -410,7 +606,7 @@ exemplo, que lê arquivos no formato nativo do R.</p>
 perfeitamente organizados e padronizados. É comum precisar de múltiplos fluxos
 de tratamento para poder transformar os dados brutos naquilo que de fato pode
 ser utilizado durante uma análise.</p>
-<p>O programador é encorajado a separar essas planilhas brutas daquelas resultates
+<p>O programador é encorajado a separar essas planilhas brutas daquelas resultantes
 do processo de limpeza e tratamento. Junto com os dados crús, é importante
 também guardar os arquivos que fazem o processo de limpeza; caso haja uma
 mudança nas demandas ou nas bases, o analista precisa ser capaz de alterar os
@@ -473,11 +669,11 @@ RStudio. Independentemente do número de tabelas que estiverem salvas na pasta
 <p>A título de curiosidade, existem algumas situações em que as bases brutas são
 grandes demais para serem sincronizadas com o GitHub. A plataforma tem um
 (razoável) limite de 1GB por repositório que pode ser insuficiente para
-armazenar dados brutos e tratados. Para náo sincronizar as bases brutas com o
+armazenar dados brutos e tratados. Para não sincronizar as bases brutas com o
 Git, basta adicioná-las ao arquivo <code>.gitignore</code> do pacote; no caso do exemplo
 acima, bastaria adicionar a esse arquivo uma linha com o texto
 <code>data-raw/dados.xlsx</code>.</p>
-<div id="documentacao" class="section level3">
+<div id="documentacao-1" class="section level3">
 <h3><span class="header-section-number">4.4.1</span> Documentação</h3>
 <p>Além de funções, também é possível documentar bases de dados com o pacote
 <code>roxygen2</code>. Para isso, crie um arquivo <code>data.R</code> na pasta <code>R/</code> do pacote e crie
@@ -505,12 +701,23 @@ exemplificado como seria documentada <code>dados</code>:</p>
 </div>
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>Aqui o termo “programação funcional” é usado de forma figurativa. Na
+<ol start="2">
+<li id="fn2"><p>Aqui o termo “programação funcional” é usado de forma figurativa. Na
 computação linguagens denominadas “funcionais” tem um <em>modus operandi</em> bastante
-específico não abordado neste capítulo.<a href="dados.html#fnref1" class="footnote-back">↩</a></p></li>
+específico não abordado neste capítulo.<a href="dados.html#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -518,8 +725,8 @@ específico não abordado neste capítulo.<a href="dados.html#fnref1" class="foo
           </div>
         </div>
       </div>
-<a href="versoes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="arquivos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="versoes.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
