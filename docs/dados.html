@@ -438,7 +438,7 @@ Abaixo encontra-se uma função simples que adiciona uma licença MIT ao pacote.
 <span class="co">#&gt; ✔ Writing &#39;LICENSE.md&#39;</span>
 <span class="co">#&gt; ✔ Adding &#39;^LICENSE\\.md$&#39; to &#39;.Rbuildignore&#39;</span>
 <span class="co">#&gt; ✔ Writing &#39;LICENSE&#39;</span></code></pre>
-<p>O arquivo de descrição, no entando, é um pouco mais complexo porque ele tem
+<p>O arquivo de descrição, no entanto, é um pouco mais complexo porque ele tem
 alguns campos que precisam ser preenchidos manualmente. Quando o pacote for
 criado, eles já estarão populados com instruções para facilitar a vida do
 programador. Abaixo está um exemplo de como <code>DESCRIPTION</code> deve ficar depois de
@@ -501,7 +501,7 @@ executar <code>library(demo)</code>.</p>
 ?<span class="kw">funcao_demo</span>()
 <span class="co">#&gt; Rendering development documentation for &#39;funcao_demo&#39;</span></code></pre>
 <p><img src="static/04_doc.png" style="display: block; margin: auto;" /></p>
-<p>Conforme o número de funções no pacote for crescendo, basta iterar nesse cíclo
+<p>Conforme o número de funções no pacote for crescendo, basta iterar nesse ciclo
 descrito até aqui. Além disso, é importante lembrar (como destacado na sessão
 anterior) que qualquer função utilizada de outro pacote deve ser invocada na
 forma <code>pacote::funcao()</code>; neste momento, o pacote em questão se tornará uma
@@ -509,7 +509,7 @@ forma <code>pacote::funcao()</code>; neste momento, o pacote em questão se torn
 <code>usethis::use_package("pacote")</code>.</p>
 <p>Para garantir que o R não encontrará nenhum problema no seu pacote, basta
 executar a função de verificação <code>devtools::check()</code>. Se nenhum defeito for
-encontrado, basta compartilhar o pacote com os seus colegas e instatá-lo com
+encontrado, basta compartilhar o pacote com os seus colegas e instalá-lo com
 <code>devtools::install_local()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">check</span>()
 <span class="co">#&gt; Updating demo documentation</span>

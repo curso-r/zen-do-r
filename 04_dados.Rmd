@@ -288,7 +288,7 @@ usethis::use_mit_license("Seu Nome")
 #> ✔ Writing 'LICENSE'
 ```
 
-O arquivo de descrição, no entando, é um pouco mais complexo porque ele tem
+O arquivo de descrição, no entanto, é um pouco mais complexo porque ele tem
 alguns campos que precisam ser preenchidos manualmente. Quando o pacote for
 criado, eles já estarão populados com instruções para facilitar a vida do
 programador. Abaixo está um exemplo de como `DESCRIPTION` deve ficar depois de
@@ -373,7 +373,7 @@ devtools::document()
 knitr::include_graphics("static/04_doc.png")
 ```
 
-Conforme o número de funções no pacote for crescendo, basta iterar nesse cíclo
+Conforme o número de funções no pacote for crescendo, basta iterar nesse ciclo
 descrito até aqui. Além disso, é importante lembrar (como destacado na sessão
 anterior) que qualquer função utilizada de outro pacote deve ser invocada na
 forma `pacote::funcao()`; neste momento, o pacote em questão se tornará uma
@@ -382,7 +382,7 @@ forma `pacote::funcao()`; neste momento, o pacote em questão se tornará uma
 
 Para garantir que o R não encontrará nenhum problema no seu pacote, basta
 executar a função de verificação `devtools::check()`. Se nenhum defeito for
-encontrado, basta compartilhar o pacote com os seus colegas e instatá-lo com
+encontrado, basta compartilhar o pacote com os seus colegas e instalá-lo com
 `devtools::install_local()`.
 
 ```r
