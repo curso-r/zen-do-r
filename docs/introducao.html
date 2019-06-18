@@ -5,23 +5,23 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 Introdução | O Zen do R</title>
-  <meta name="description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R)." />
+  <meta name="description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R." />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 Introdução | O Zen do R" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R)." />
+  <meta property="og:description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R." />
   <meta name="github-repo" content="curso-r/zen-do-r" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="1 Introdução | O Zen do R" />
-  <meta name="twitter:site" content="@ctlente" />
-  <meta name="twitter:description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R)." />
+  
+  <meta name="twitter:description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R." />
   
 
-<meta name="author" content="Caio Lente" />
+<meta name="author" content="C. Lente" />
 
 
 
@@ -131,13 +131,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a></li>
 <li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
 <li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="introducao.html"><a href="introducao.html#budismo"><i class="fa fa-check"></i><b>1.1.1</b> Budismo</a></li>
-<li class="chapter" data-level="1.1.2" data-path="introducao.html"><a href="introducao.html#voce-e-um-nao-programador"><i class="fa fa-check"></i><b>1.1.2</b> Você é um não-programador?</a></li>
+<li class="chapter" data-level="1.1.1" data-path="introducao.html"><a href="introducao.html#o-que-voce-vai-aprender"><i class="fa fa-check"></i><b>1.1.1</b> O que você vai aprender</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="introducao.html"><a href="introducao.html#o-que-voce-vai-aprender"><i class="fa fa-check"></i><b>1.2</b> O que você vai aprender</a></li>
-<li class="chapter" data-level="1.3" data-path="introducao.html"><a href="introducao.html#o-que-voce-nao-vai-aprender"><i class="fa fa-check"></i><b>1.3</b> O que você não vai aprender</a></li>
-<li class="chapter" data-level="1.4" data-path="introducao.html"><a href="introducao.html#pre-requisitos"><i class="fa fa-check"></i><b>1.4</b> Pré-requisitos</a></li>
-<li class="chapter" data-level="1.5" data-path="introducao.html"><a href="introducao.html#principais-referencias"><i class="fa fa-check"></i><b>1.5</b> Principais referências</a></li>
+<li class="chapter" data-level="1.2" data-path="introducao.html"><a href="introducao.html#o-que-voce-nao-vai-aprender"><i class="fa fa-check"></i><b>1.2</b> O que você não vai aprender</a></li>
+<li class="chapter" data-level="1.3" data-path="introducao.html"><a href="introducao.html#pre-requisitos"><i class="fa fa-check"></i><b>1.3</b> Pré-requisitos</a></li>
+<li class="chapter" data-level="1.4" data-path="introducao.html"><a href="introducao.html#principais-referencias"><i class="fa fa-check"></i><b>1.4</b> Principais referências</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ambiente.html"><a href="ambiente.html"><i class="fa fa-check"></i><b>2</b> Ambiente</a><ul>
 <li class="chapter" data-level="2.1" data-path="ambiente.html"><a href="ambiente.html#sobre-o-ambiente"><i class="fa fa-check"></i><b>2.1</b> Sobre o ambiente</a></li>
@@ -187,114 +185,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="introducao" class="section level1">
 <h1><span class="header-section-number">1</span> Introdução</h1>
 <p><em>O Zen do R</em> tem o objetivo de ser um livro sobre programação para
-não-programadores. Diferentemente dos manuais secos e técnicos com os quais
-geralmente nos deparamos na internet, o tom deste livro é leve e
-<del>pretende ser</del> bem-humorado; assim, a sua motivação principal é atrair o
-máximo possível de pessoas para um mundo onde a programação é uma ferramenta e
-não um obstáculo no processo de análise de dados. Aqui você vai ver com
-frequência o uso das primeira e segunda pessoas porque no fundo eu gostaria
-que o livro fosse como uma conversa.</p>
+não-programadores. Atualmente muitas pessoas de diferentes áreas do conhecimento
+acabam precisando usar a linguagem R por causa do seu grande potencial para
+programação estatística, mas ficam perdidas depois que aprendem o básico sobre a
+linguagem. Nesse sentido, este é um livro para “não-programadores” no que se
+refere a treinamento formal; isto não é uma introdução ao R, mas sim um guia
+sobre como usar o R de forma eficiente no dia-a-dia. <em>O Zen do R</em> também
+pretende destoar dos manuais mais secos e técnicos sobre programação, utilizando
+uma linguagem leve e acessível justamente porque parte-se do princípio de que
+ele será utilizado em conjunto com algum outro texto (seco e técnico) sobre como
+de fato programar em R.</p>
 <p>A escolha do R é parcialmente arbitrária. Nada impede de você usar Python para
 a análise de dados, mas ao longo de alguns anos de experiência os autores
 notaram que o fato de o R ter sido feito com análise de dados em mente acaba
 sendo uma vantagem muito difícil de ignorar. Fora isso, o <code>tidyverse</code>, as
 infinitas ferramentas do RStudio e o engajamento da comunidade fazem com que
 nós achemos o R a verdadeira linguagem do <em>data science</em>.</p>
-<p>Por isso, <em>O Zen do R</em> (caso não tenha ficado claro no título) vai abordar
-apenas fluxos de trabalho com a linguagem R de programação.</p>
+<p>Por isso, <em>O Zen do R</em> é um guia para acalmar os nervos daqueles que se
+aventuram pela primeira vez em um grande projeto em R.</p>
 <div id="sobre-o-livro" class="section level2">
 <h2><span class="header-section-number">1.1</span> Sobre o livro</h2>
-<p>A grande piada do livro é que o caminho para o fluxo ideal de programação é
+<p>A grande piada do título é que o caminho para o fluxo ideal de programação é
 análogo ao caminho descrito pelo Budismo para a libertação do espírito.
 Parece muito estranho que essas duas coisas tenham alguma relação, mas a vida
 é uma boa metáfora para muitos processos que encontramos no dia-a-dia!</p>
-<div id="budismo" class="section level3">
-<h3><span class="header-section-number">1.1.1</span> Budismo</h3>
-<p>Eu acho o Budismo um assunto no geral muito interessante e pelo qual tenho um
-grande respeito. Por isso não gostaria que qualquer praticante se sentisse
-ofendido pelas comparações que aqui serão feitas.</p>
-<p>Para ler o <em>O Zen do R</em> você obviamente não precisa saber nada sobre o Budismo,
-mas vale a pena ter um breve contexto do que é o Nobre Caminho Óctuplo e para
-quê ele serve:</p>
-<blockquote>
-<p>O Nobre Caminho Óctuplo é um antigo resumo do caminho das práticas budistas que
-levam à libertação do samsara, o doloroso ciclo do renascimento. Ele consiste de
-oito práticas: compreensão correta, pensamento correto, fala correta, ação correta,
-meio de vida correto, esforço correto, consciência correta e concentração correta.
-— WIkipédia</p>
-</blockquote>
-<p>Todas essas oito práticas são bastante abstratas e se aplicam em inúmeras
-situações, fazendo com que se encaixem muito bem ao tópico que estamos
-trabalhando. Dessa forma, em cada capítulo você aprenderá sobre uma boa prática
-em projetos de análise de dados e, para gravar melhor a informação, será
-apresentado também a um dos oito caminhos.</p>
-<p>A ideia é utilizar os nomes e definições grandiosas e espirituais do Nobre
-Caminho Óctuplo como uma ferramenta de fixação do aprendizado. Pense no que
-você aprender nesse livro como um conjunto de práticas que, quando cumpridas,
-são capazes de livrá-lo da dor da programação.</p>
-</div>
-<div id="voce-e-um-nao-programador" class="section level3">
-<h3><span class="header-section-number">1.1.2</span> Você é um não-programador?</h3>
-<p>O que eu quero dizer com o termo “não-programador” no começo desse capítulo é
-meramente “uma pessoa que não tem treinamento formal em programação”. Eu, por
-exemplo, fiz Ciência da Computação e portanto não posso escapar do fato de
-que sou um programador.</p>
-<p>Se você é treinado em Estatística, mas precisa usar o R para fazer suas análises,
-então você provavelmente vai tirar um bom proveito deste livro. Aqui você não vai
-aprender a programar, mas sim a como fazer com que o seu fluxo de programação
-não atrapalhe o seu fluxo de análise! O ideal é que a programação te ajude e
-por isso saber usar a ferramenta de forma correta é essencial.</p>
-</div>
-</div>
-<div id="o-que-voce-vai-aprender" class="section level2">
-<h2><span class="header-section-number">1.2</span> O que você vai aprender</h2>
+<div id="o-que-voce-vai-aprender" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> O que você vai aprender</h3>
 <p>Essencialmente você vai aprender a usar dois pacotes e como trabalhar com quatro
 aspectos do processo de análise de dados: ambiente, versões, dados e arquivos.
 Não é necessário ler o livro em ordem porque cada uma dessas quatro sessões são
-completamente independentes!</p>
+completamente independentes.</p>
 <p>Os assuntos abordados são, em ordem:</p>
 <ul>
-<li>.RData e histórico: como fazer com que o RStudio não guarde nada que você fez
-para que você não fique mal acostumado (equivalente à Consciência Correta);</li>
-<li>Rproj e diretórios: como usar o conceito de “project” para organizar seu
-projeto e não se perder nos diretórios (equivalente ao Esforço Correto);</li>
+<li>.RData e .Rhistory: como fazer com que o RStudio não guarde nada que você fez
+para que você não fique mal acostumado;</li>
+<li>Rproj e diretórios: como usar o conceito de “projeto” para organizar seu
+trabalho e não se perder nos diretórios;</li>
 <li>Git e Github: como usar ferramentas de controle de versão para que você
-não corra o risco de perder seu progresso (equivalente à Compreensão Correta);</li>
+não corra o risco de perder seu progresso;</li>
 <li>Packrat: como usar o pacote <code>packrat</code> para manter suas dependências em ordem
-e atualizadas (equivalente ao Pensamento Correto);</li>
+e atualizadas;</li>
+<li>Funções e dependências: como organizar arquivos, funções e dependências para
+maximizar a reprodutibilidade do código;</li>
+<li>Pacotes: como e porquê transformar um projeto em um pacote, como documentá-lo
+e como criar testes unitários;</li>
 <li>Data e data-raw: como organizar seus dados e scripts de tratamento em pastas
-com objetivos claros e distintos (equivalente à Ação Correta);</li>
-<li>RDSs intermediários: como quebrar o processo de tratamento em passos que podem
-ser salvos e reutilizados com custo mínimo (equivalente à Fala Correta);</li>
-<li>Reiniciar a sessão: como e porquê reiniciar sua sessão durante o processo de
-desenvolvimento (equivalente à Concentração Correta) e</li>
-<li>Arquivos minimalistas: como é o jeito ideal de dividir o seu código para que
-tudo seja rápido e fácil de encontrar (equivalente ao Meio de Vida Correto).</li>
+com objetivos claros e distintos.</li>
 </ul>
 <p>Sinta-se livre para pular todos os tópicos sobre os quais você sentir que já
-sabe o suficiente. Mas não se iluda! Nenhum dos caminhos é inútil ou pode ser
-simplesmente ignorado… Se você quiser alcançar a cessação do sofrimento, você
-precisa seguir o Nobre Caminho Óctuplo. Ao deixar um desses princípios para
-trás, você está pedindo para ter que resolver algum problema lá na frente.</p>
+sabe o suficiente. Mas não se iluda, porque nenhum dos tópicos é inútil ou pode
+ser simplesmente ignorado; quanto maior for um projeto (seja uma tese de
+mestrado ou uma análise de dados médicos), mais necessários serão os tópicos
+mais avançados.</p>
+</div>
 </div>
 <div id="o-que-voce-nao-vai-aprender" class="section level2">
-<h2><span class="header-section-number">1.3</span> O que você não vai aprender</h2>
-<p>Primeiramente, você não vai aprender a programar R. Esse tópico é extremamente
-extenso e já existem livros o suficiente para te ajudar (vide
+<h2><span class="header-section-number">1.2</span> O que você não vai aprender</h2>
+<p>Primeiramente, você não vai aprender a programar R. Esse assunto é extremamente
+extenso e já existem livros o suficiente para ajudar com isso (vide
 <a href="https://r4ds.had.co.nz/">R for Data Science</a>), então não vou me preocupar
-com os detalhes do seu código ou com qual guia de estilo você segue.</p>
+com os detalhes do código ou com qual guia de estilo seguir.</p>
 <p>Se você gosta de fazer códigos longos e velozes usando o <code>base-r</code>, se você
 ama as pipelines do <code>tidyverse</code>, se você paraleliza todos os seus loops…
-Nada disso importa aqui; não sou sua mãe para dizer qual é o melhor jeito
-de programar (e também não tenho paciência para entrar em mais nenhum debate
-“base vs. tidyverse”). Aqui você vai conhecer somente as melhores ferramentas
-para <strong>organizar o seu fluxo de programação</strong>.</p>
+Nada disso importa aqui; não vou dizer qual é o melhor jeito de programar<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.
+Aqui você vai conhecer somente as melhores ferramentas para <strong>organizar o seu
+fluxo de programação</strong>.</p>
 <p>Apesar de terem nomes parecidos, <em>O Zen do R</em> e <em>O Zen do Python</em> são diferentes
-justamente por causa disso. O livro do Python pretende te dar sugestões de como
-organizar e escrever o seu código, o que não farei aqui.</p>
+justamente por causa disso. O livro do Python pretende dar sugestões de como
+organizar e escrever o seu código, o que não será feito aqui.</p>
 </div>
 <div id="pre-requisitos" class="section level2">
-<h2><span class="header-section-number">1.4</span> Pré-requisitos</h2>
+<h2><span class="header-section-number">1.3</span> Pré-requisitos</h2>
 <p>Como talvez já tenha ficado claro, um dos principais pré-requisitos deste livro
 é saber a programar pelo menos um pouco de R. Você não precisa ser um
 profissional, mas, para ter a necessidade de melhorar o seu fluxo de análise,
@@ -304,17 +265,18 @@ Grande parte das dicas do livro são baseadas em funcionalidades integradas ao
 RStudio, então se você quiser tirar o maior proveito possível dos ensinamentos
 talvez valha à pena
 <a href="https://www.rstudio.com/products/rstudio/download/">instalar a IDE</a>. Ainda
-no tocante ao R, você precisará ter instalado pelo menos os três pacotes a seguir:</p>
+no tocante ao R, você precisará ter instalado pelo menos os três pacotes a
+seguir:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Conteúdo principal do livro</span>
 <span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;usethis&quot;</span>, <span class="st">&quot;packrat&quot;</span>))
 
 <span class="co"># Se você quiser reproduzir os exemplos</span>
-<span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</code></pre>
+<span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</code></pre>
 <p>Você também precisa de um computador funcionando com um sistema operacional
 razoavelmente moderno. E uma conexão à internet.</p>
 </div>
 <div id="principais-referencias" class="section level2">
-<h2><span class="header-section-number">1.5</span> Principais referências</h2>
+<h2><span class="header-section-number">1.4</span> Principais referências</h2>
 <p><em>O Zen do R</em> se baseia em inúmeras referências que normalmente serão citadas
 juntamente com o próprio conteúdo. Mas algumas mais gerais acabariam sendo
 citadas o tempo todo e portanto acabarão ficando aqui:</p>
@@ -327,6 +289,14 @@ citadas o tempo todo e portanto acabarão ficando aqui:</p>
 </ul>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Aqui o termo “programação funcional” é usado de forma figurativa. Na
+computação linguagens denominadas “funcionais” tem um <em>modus operandi</em> bastante
+específico não abordado neste capítulo.<a href="introducao.html#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 

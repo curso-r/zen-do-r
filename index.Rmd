@@ -1,11 +1,10 @@
 ---
 knit: "bookdown::render_book"
 title: "O Zen do R"
-author: ["Caio Lente"]
-description: "O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é comparado com uma das oito práticas do Nobre Caminho Óctuplo do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção de livrar o leitor do sofrimento (ao programar em R)."
+author: ["C. Lente"]
+description: "O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R."
 url: ""
 github-repo: curso-r/zen-do-r
-twitter-handle: ctlente
 site: bookdown::bookdown_site
 documentclass: book
 ---
@@ -14,13 +13,9 @@ documentclass: book
 
 Este é *O Zen do R*, seja bem-vindo! O objetivo deste livro é ensinar ao leitor
 algumas formas simples de melhorar a organização de seus projetos de análise de
-dados em R. Para auxiliar na fixação desses princípios, cada um dos capítulos é
-comparado com uma das oito práticas do
-[Nobre Caminho Óctuplo](https://pt.wikipedia.org/wiki/Nobre_Caminho_%C3%93ctuplo)
-do Budismo; assim como a Roda do Dharma, os caminhos deste livro têm a intenção
-de livrar o leitor do sofrimento (ao programar em R).
+dados em R.
 
-O texto deste livro foi escrito por [Caio Lente](https://ctlente.com/) com o
+O texto deste livro foi escrito por [clente](https://github.com/clente) com o
 suporte, ajuda e revisão do time da [Curso-R](https://www.curso-r.com/). Ele
 está disponível gratuitamente no [Github](https://github.com/curso-r/zen-do-r)
 sob a licença [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
