@@ -8,12 +8,14 @@ Um livro de programação em R para não-programadores.
 - [x] Rproj e diretórios
 - [ ] Sobre versões
 - [x] Git e Github
-- [ ] Versões e releases
 - [ ] Packrat
 - [ ] Sobre dados
 - [x] Funções e dependências
 - [x] Pacotes
 - [x] Data e data-raw
+- [ ] Sobre metadados
+- [ ] Versões e releases
+- [ ] Submissão ao CRAN
 - [ ] Sobre paralelismo
 - [ ] Multithread e multicore
 - [ ] Distribuição
