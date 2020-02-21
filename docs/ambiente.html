@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Ambiente | O Zen do R</title>
   <meta name="description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R." />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Ambiente | O Zen do R" />
   <meta property="og:type" content="book" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introducao.html">
-<link rel="next" href="versoes.html">
+<link rel="prev" href="introdução.html"/>
+<link rel="next" href="versões.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -39,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -49,26 +52,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -77,9 +80,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,41 +132,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a></li>
-<li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
-<li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="introducao.html"><a href="introducao.html#o-que-voce-vai-aprender"><i class="fa fa-check"></i><b>1.1.1</b> O que você vai aprender</a></li>
+<li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introdução.html"><a href="introdução.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introdução.html"><a href="introdução.html#o-que-você-vai-aprender"><i class="fa fa-check"></i><b>1.1.1</b> O que você vai aprender</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="introducao.html"><a href="introducao.html#o-que-voce-nao-vai-aprender"><i class="fa fa-check"></i><b>1.2</b> O que você não vai aprender</a></li>
-<li class="chapter" data-level="1.3" data-path="introducao.html"><a href="introducao.html#pre-requisitos"><i class="fa fa-check"></i><b>1.3</b> Pré-requisitos</a></li>
-<li class="chapter" data-level="1.4" data-path="introducao.html"><a href="introducao.html#principais-referencias"><i class="fa fa-check"></i><b>1.4</b> Principais referências</a></li>
+<li class="chapter" data-level="1.2" data-path="introdução.html"><a href="introdução.html#o-que-você-não-vai-aprender"><i class="fa fa-check"></i><b>1.2</b> O que você não vai aprender</a></li>
+<li class="chapter" data-level="1.3" data-path="introdução.html"><a href="introdução.html#pré-requisitos"><i class="fa fa-check"></i><b>1.3</b> Pré-requisitos</a></li>
+<li class="chapter" data-level="1.4" data-path="introdução.html"><a href="introdução.html#principais-referências"><i class="fa fa-check"></i><b>1.4</b> Principais referências</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="ambiente.html"><a href="ambiente.html"><i class="fa fa-check"></i><b>2</b> Ambiente</a><ul>
+<li class="chapter" data-level="2" data-path="ambiente.html"><a href="ambiente.html"><i class="fa fa-check"></i><b>2</b> Ambiente</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="ambiente.html"><a href="ambiente.html#sobre-o-ambiente"><i class="fa fa-check"></i><b>2.1</b> Sobre o ambiente</a></li>
-<li class="chapter" data-level="2.2" data-path="ambiente.html"><a href="ambiente.html#rdata-e-.rhistory"><i class="fa fa-check"></i><b>2.2</b> .RData e .Rhistory</a><ul>
+<li class="chapter" data-level="2.2" data-path="ambiente.html"><a href="ambiente.html#rdata-e-.rhistory"><i class="fa fa-check"></i><b>2.2</b> .RData e .Rhistory</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="ambiente.html"><a href="ambiente.html#porque-desistir-desse-recurso"><i class="fa fa-check"></i><b>2.2.1</b> Porque desistir desse recurso</a></li>
 <li class="chapter" data-level="2.2.2" data-path="ambiente.html"><a href="ambiente.html#como-desativar-essa-funcionalidade"><i class="fa fa-check"></i><b>2.2.2</b> Como desativar essa funcionalidade</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ambiente.html"><a href="ambiente.html#rproj-e-diretorios"><i class="fa fa-check"></i><b>2.3</b> Rproj e diretórios</a><ul>
-<li class="chapter" data-level="2.3.1" data-path="ambiente.html"><a href="ambiente.html#diretorio-de-trabalho"><i class="fa fa-check"></i><b>2.3.1</b> Diretório de trabalho</a></li>
+<li class="chapter" data-level="2.3" data-path="ambiente.html"><a href="ambiente.html#rproj-e-diretórios"><i class="fa fa-check"></i><b>2.3</b> Rproj e diretórios</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="ambiente.html"><a href="ambiente.html#diretório-de-trabalho"><i class="fa fa-check"></i><b>2.3.1</b> Diretório de trabalho</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="versoes.html"><a href="versoes.html"><i class="fa fa-check"></i><b>3</b> Versões</a><ul>
-<li class="chapter" data-level="3.1" data-path="versoes.html"><a href="versoes.html#sobre-versoes"><i class="fa fa-check"></i><b>3.1</b> Sobre versões</a></li>
-<li class="chapter" data-level="3.2" data-path="versoes.html"><a href="versoes.html#git-e-github"><i class="fa fa-check"></i><b>3.2</b> Git e Github</a></li>
-<li class="chapter" data-level="3.3" data-path="versoes.html"><a href="versoes.html#packrat"><i class="fa fa-check"></i><b>3.3</b> Packrat</a></li>
+<li class="chapter" data-level="3" data-path="versões.html"><a href="versões.html"><i class="fa fa-check"></i><b>3</b> Versões</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="versões.html"><a href="versões.html#sobre-versões"><i class="fa fa-check"></i><b>3.1</b> Sobre versões</a></li>
+<li class="chapter" data-level="3.2" data-path="versões.html"><a href="versões.html#git-e-github"><i class="fa fa-check"></i><b>3.2</b> Git e Github</a></li>
+<li class="chapter" data-level="3.3" data-path="versões.html"><a href="versões.html#packrat"><i class="fa fa-check"></i><b>3.3</b> Packrat</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="dados.html"><a href="dados.html"><i class="fa fa-check"></i><b>4</b> Dados</a><ul>
+<li class="chapter" data-level="4" data-path="dados.html"><a href="dados.html"><i class="fa fa-check"></i><b>4</b> Dados</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="dados.html"><a href="dados.html#sobre-dados"><i class="fa fa-check"></i><b>4.1</b> Sobre dados</a></li>
-<li class="chapter" data-level="4.2" data-path="dados.html"><a href="dados.html#funcoes-e-dependencias"><i class="fa fa-check"></i><b>4.2</b> Funções e dependências</a><ul>
+<li class="chapter" data-level="4.2" data-path="dados.html"><a href="dados.html#funções-e-dependências"><i class="fa fa-check"></i><b>4.2</b> Funções e dependências</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="dados.html"><a href="dados.html#section"><i class="fa fa-check"></i><b>4.2.1</b> ::</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="dados.html"><a href="dados.html#pacotes"><i class="fa fa-check"></i><b>4.3</b> Pacotes</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="dados.html"><a href="dados.html#documentacao"><i class="fa fa-check"></i><b>4.3.1</b> Documentação</a></li>
+<li class="chapter" data-level="4.3" data-path="dados.html"><a href="dados.html#pacotes"><i class="fa fa-check"></i><b>4.3</b> Pacotes</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="dados.html"><a href="dados.html#documentação"><i class="fa fa-check"></i><b>4.3.1</b> Documentação</a></li>
 <li class="chapter" data-level="4.3.2" data-path="dados.html"><a href="dados.html#testes-automatizados"><i class="fa fa-check"></i><b>4.3.2</b> Testes automatizados</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="dados.html"><a href="dados.html#data-e-data-raw"><i class="fa fa-check"></i><b>4.4</b> Data e data-raw</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="dados.html"><a href="dados.html#documentacao-1"><i class="fa fa-check"></i><b>4.4.1</b> Documentação</a></li>
+<li class="chapter" data-level="4.4" data-path="dados.html"><a href="dados.html#data-e-data-raw"><i class="fa fa-check"></i><b>4.4</b> Data e data-raw</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="dados.html"><a href="dados.html#documentação-1"><i class="fa fa-check"></i><b>4.4.1</b> Documentação</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="metadados.html"><a href="metadados.html"><i class="fa fa-check"></i><b>5</b> Metadados</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="metadados.html"><a href="metadados.html#sobre-metadados"><i class="fa fa-check"></i><b>5.1</b> Sobre metadados</a></li>
+<li class="chapter" data-level="5.2" data-path="metadados.html"><a href="metadados.html#versões-e-releases"><i class="fa fa-check"></i><b>5.2</b> Versões e releases</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="metadados.html"><a href="metadados.html#versionamento-semântico"><i class="fa fa-check"></i><b>5.2.1</b> Versionamento semântico</a></li>
+<li class="chapter" data-level="5.2.2" data-path="metadados.html"><a href="metadados.html#releases"><i class="fa fa-check"></i><b>5.2.2</b> Releases</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="metadados.html"><a href="metadados.html#submissão-ao-cran"><i class="fa fa-check"></i><b>5.3</b> Submissão ao CRAN</a></li>
 </ul></li>
 </ul>
 
@@ -193,7 +216,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>O fluxo ideal de análise de dados começa na escolha da ferramenta. Por ser uma
 linguagem especializada em estatística, o R é a primeira escolha de muitos
 usuários. Normalmente optar por programar em R também implica na escolha de uma
-IDE (<em>Integrated Development Environment</em>) que, em 90%<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> dos casos, será o
+IDE (<em>Integrated Development Environment</em>) que, em 90%<a href="metadados.html#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> dos casos, será o
 RStudio.</p>
 <p>O R, em combinação com o RStudio, possui um conjunto de funcionalidades cuja
 intenção é ajudar no processo de desenvolvimento. Entretanto, isso acaba
@@ -248,7 +271,7 @@ todos os projetos do computador, então só é necessário passar por ele uma ve
 Basta selecionar <strong>Tools &gt; Global Options…</strong> na aba de ferramentas do RStudio
 e então ajustar três configurações. No final a página de opções gerais deve
 ficar similar à da imagem abaixo:</p>
-<p><img src="static/02_config.png" style="display: block; margin: auto;" /></p>
+<p><img src="static/02_config.png" width="622" style="display: block; margin: auto;" /></p>
 <p>Se acostumar com sessões efêmeras não é uma tarefa fácil e um desconforto
 inicial é esperado. Pode ser que o programador ache entediante executar o mesmo
 código toda vez que abrir seu RStudio, mas é importante ter em mente que esse
@@ -256,7 +279,7 @@ programa só está lá e pode ser executado inúmeras vezes porque o R não esta
 mais fazendo o trabalho do analista.</p>
 </div>
 </div>
-<div id="rproj-e-diretorios" class="section level2">
+<div id="rproj-e-diretórios" class="section level2">
 <h2><span class="header-section-number">2.3</span> Rproj e diretórios</h2>
 <p>Um programador iniciante corre o risco de não gerenciar seus projetos. Muitas
 vezes seus arquivos de código ficarão espalhados pelos infinitos diretórios de
@@ -273,7 +296,7 @@ está, apenas que seja um lugar o qual você lembre sem dificuldades. Tendo
 criado um esse <em>workspace</em>, é importante registrá-lo como o seu ambiente de
 trabalho no RStudio: basta selecioná-lo em
 <strong>Tools &gt; Global Options… &gt; Browse</strong>.</p>
-<p><img src="static/02_wd.png" style="display: block; margin: auto;" /></p>
+<p><img src="static/02_wd.png" width="565" style="display: block; margin: auto;" /></p>
 <p>Desta forma, toda vez que você iniciar um novo projeto no R, ele por parão
 usará essa nova pasta como ambiente padrão! Se você já tiver alguns arquivos
 espalhados pelo seu computador, traga eles para o seu diretório de programas.</p>
@@ -291,14 +314,14 @@ assunto. Mas esta não deve ser uma pasta comum, ela deve ser um projeto.</p>
 <p>O código listado abaixo demonstra como criar um projeto no RStudio. Basta
 apenas um comando e ele já fará tudo que for necessário para preparar o seu
 ambiente de desenvolvimento.</p>
-<pre class="sourceCode r"><code class="sourceCode r">usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&quot;~/Documents/Dev/R/Proj/&quot;</span>)
-<span class="co">#&gt; ✔ Creating &#39;~/Documents/Dev/R/Proj/&#39;</span>
-<span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/Dev/R/Proj&#39;</span>
-<span class="co">#&gt; ✔ Creating &#39;R/&#39;</span>
-<span class="co">#&gt; ✔ Writing &#39;Proj.Rproj&#39;</span>
-<span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span>
-<span class="co">#&gt; ✔ Opening &#39;~/Documents/Dev/R/Proj/&#39; in new RStudio session</span>
-<span class="co">#&gt; ✔ Setting active project to &#39;Proj&#39;</span></code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="ambiente.html#cb2-1"></a>usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&quot;~/Documents/Dev/R/Proj/&quot;</span>)</span>
+<span id="cb2-2"><a href="ambiente.html#cb2-2"></a><span class="co">#&gt; ✔ Creating &#39;~/Documents/Dev/R/Proj/&#39;</span></span>
+<span id="cb2-3"><a href="ambiente.html#cb2-3"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/Dev/R/Proj&#39;</span></span>
+<span id="cb2-4"><a href="ambiente.html#cb2-4"></a><span class="co">#&gt; ✔ Creating &#39;R/&#39;</span></span>
+<span id="cb2-5"><a href="ambiente.html#cb2-5"></a><span class="co">#&gt; ✔ Writing &#39;Proj.Rproj&#39;</span></span>
+<span id="cb2-6"><a href="ambiente.html#cb2-6"></a><span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span></span>
+<span id="cb2-7"><a href="ambiente.html#cb2-7"></a><span class="co">#&gt; ✔ Opening &#39;~/Documents/Dev/R/Proj/&#39; in new RStudio session</span></span>
+<span id="cb2-8"><a href="ambiente.html#cb2-8"></a><span class="co">#&gt; ✔ Setting active project to &#39;Proj&#39;</span></span></code></pre></div>
 <p>Cada linha da saída do comando representa algo que ele fez para preparar o
 projeto. A mais importante é a quarta linha, que cria o arquivo <code>Proj.Rproj</code>;
 ele indica para o RStudio que aquele diretório será a raiz de um projeto e que,
@@ -312,7 +335,7 @@ no seu diretório de trabalho, crie um projeto novo para cada grupo de programas
 que vocẽ tiver detectado. Talvez um para exercícios de R, um para cada cliente,
 um para uma nova ideia, etc. Cada um deles deve ter um nome descritivo e
 conter, em sua pasta R, todos os arquivos necessários para aquela análise.</p>
-<div id="diretorio-de-trabalho" class="section level3">
+<div id="diretório-de-trabalho" class="section level3">
 <h3><span class="header-section-number">2.3.1</span> Diretório de trabalho</h3>
 <p>Mas a funcionalidade mais importante dentre todas as já citadas é o conceito do
 <em>working directory</em> ou diretório de trabalho. No canto esquerdo superior do
@@ -321,19 +344,19 @@ essencialmente a raiz do seu projeto. Muitos programadores que aprenderam R há
 muito tempo conhecem uma função chamada <code>setwd()</code>; se você nunca ouviu falar
 disso, não se preocupe e continue assim, mas se você costuma usá-la, siga
 prestando atenção.</p>
-<p><img src="static/02_console.png" style="display: block; margin: auto;" /></p>
+<p><img src="static/02_console.png" width="589" style="display: block; margin: auto;" /></p>
 <p>O R dá a possibilidade de mudar, instantaneamente, o diretório de trabalho.
 Isso que dizer que os caminhos relativos para arquivos podem mudar em questão
 de linhas. O exemplo abaixo demonstra superficialmente como isso funciona:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Abrindo dois arquivos em diretórios diferentes</span>
-
-<span class="kw">setwd</span>(<span class="st">&quot;~/Downloads&quot;</span>)
-a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)
-
-<span class="kw">setwd</span>(<span class="st">&quot;~/Documents/Dev/R/Proj&quot;</span>)
-b &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;b.csv&quot;</span>)
-
-<span class="kw">write.csv</span>(a, <span class="st">&quot;c.csv&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="ambiente.html#cb3-1"></a><span class="co"># Abrindo dois arquivos em diretórios diferentes</span></span>
+<span id="cb3-2"><a href="ambiente.html#cb3-2"></a></span>
+<span id="cb3-3"><a href="ambiente.html#cb3-3"></a><span class="kw">setwd</span>(<span class="st">&quot;~/Downloads&quot;</span>)</span>
+<span id="cb3-4"><a href="ambiente.html#cb3-4"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span>
+<span id="cb3-5"><a href="ambiente.html#cb3-5"></a></span>
+<span id="cb3-6"><a href="ambiente.html#cb3-6"></a><span class="kw">setwd</span>(<span class="st">&quot;~/Documents/Dev/R/Proj&quot;</span>)</span>
+<span id="cb3-7"><a href="ambiente.html#cb3-7"></a>b &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;b.csv&quot;</span>)</span>
+<span id="cb3-8"><a href="ambiente.html#cb3-8"></a></span>
+<span id="cb3-9"><a href="ambiente.html#cb3-9"></a><span class="kw">write.csv</span>(a, <span class="st">&quot;c.csv&quot;</span>)</span></code></pre></div>
 <p>Isso não parece tão problemático à primeira vista, mas usar <code>setwd()</code> cria um
 vício difícil de abandonar. Essa função estimula que os seus projetos continuem
 desorganizados com arquivos espalhados pelo computador, mas também confunde o
@@ -345,12 +368,12 @@ responder caso você não esteja atento ao código todo.</p>
 trabalho seja sempre a pasta do projeto. Neste caso é como se, ao abrir o
 RStudio, ele executasse o comando <code>setwd("~/Documents/Dev/R/Proj")</code>
 automaticamente. Mas como ler então o arquivo <code>a.csv</code>?</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Duas formas de ler a.csv</span>
-
-a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>)
-
-<span class="kw">file.copy</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>, <span class="st">&quot;a.csv&quot;</span>)
-a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="ambiente.html#cb4-1"></a><span class="co"># Duas formas de ler a.csv</span></span>
+<span id="cb4-2"><a href="ambiente.html#cb4-2"></a></span>
+<span id="cb4-3"><a href="ambiente.html#cb4-3"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>)</span>
+<span id="cb4-4"><a href="ambiente.html#cb4-4"></a></span>
+<span id="cb4-5"><a href="ambiente.html#cb4-5"></a><span class="kw">file.copy</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>, <span class="st">&quot;a.csv&quot;</span>)</span>
+<span id="cb4-6"><a href="ambiente.html#cb4-6"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span></code></pre></div>
 <p>A primeira forma deixa explícito que aquele arquivo não faz parte do projeto e
 que portanto deve ser tratado como temporário. A segunda forma, mais indicada,
 é trazer o arquivo para dentro do projeto! Se ele é importante, é essencial que
@@ -368,30 +391,24 @@ modificar nem uma linha do programa.</p>
 </div>
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="2">
-<li id="fn2"><p>Aqui o termo “programação funcional” é usado de forma figurativa. Na
-computação linguagens denominadas “funcionais” tem um <em>modus operandi</em> bastante
-específico não abordado neste capítulo.<a href="ambiente.html#fnref2" class="footnote-back">↩</a></p></li>
-</ol>
-</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introducao.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="versoes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introdução.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="versões.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -406,6 +423,10 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Versões | O Zen do R</title>
+  <meta name="description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R." />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Versões | O Zen do R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R." />
+  <meta name="github-repo" content="curso-r/zen-do-r" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Versões | O Zen do R" />
+  
+  <meta name="twitter:description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R." />
+  
+
+<meta name="author" content="C. Lente" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ambiente.html"/>
+<link rel="next" href="dados.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="zen-do-r.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong><a href="./">O Zen do R</a></strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a></li>
+<li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introdução.html"><a href="introdução.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introdução.html"><a href="introdução.html#o-que-você-vai-aprender"><i class="fa fa-check"></i><b>1.1.1</b> O que você vai aprender</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introdução.html"><a href="introdução.html#o-que-você-não-vai-aprender"><i class="fa fa-check"></i><b>1.2</b> O que você não vai aprender</a></li>
+<li class="chapter" data-level="1.3" data-path="introdução.html"><a href="introdução.html#pré-requisitos"><i class="fa fa-check"></i><b>1.3</b> Pré-requisitos</a></li>
+<li class="chapter" data-level="1.4" data-path="introdução.html"><a href="introdução.html#principais-referências"><i class="fa fa-check"></i><b>1.4</b> Principais referências</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ambiente.html"><a href="ambiente.html"><i class="fa fa-check"></i><b>2</b> Ambiente</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ambiente.html"><a href="ambiente.html#sobre-o-ambiente"><i class="fa fa-check"></i><b>2.1</b> Sobre o ambiente</a></li>
+<li class="chapter" data-level="2.2" data-path="ambiente.html"><a href="ambiente.html#rdata-e-.rhistory"><i class="fa fa-check"></i><b>2.2</b> .RData e .Rhistory</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="ambiente.html"><a href="ambiente.html#porque-desistir-desse-recurso"><i class="fa fa-check"></i><b>2.2.1</b> Porque desistir desse recurso</a></li>
+<li class="chapter" data-level="2.2.2" data-path="ambiente.html"><a href="ambiente.html#como-desativar-essa-funcionalidade"><i class="fa fa-check"></i><b>2.2.2</b> Como desativar essa funcionalidade</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="ambiente.html"><a href="ambiente.html#rproj-e-diretórios"><i class="fa fa-check"></i><b>2.3</b> Rproj e diretórios</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="ambiente.html"><a href="ambiente.html#diretório-de-trabalho"><i class="fa fa-check"></i><b>2.3.1</b> Diretório de trabalho</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="versões.html"><a href="versões.html"><i class="fa fa-check"></i><b>3</b> Versões</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="versões.html"><a href="versões.html#sobre-versões"><i class="fa fa-check"></i><b>3.1</b> Sobre versões</a></li>
+<li class="chapter" data-level="3.2" data-path="versões.html"><a href="versões.html#git-e-github"><i class="fa fa-check"></i><b>3.2</b> Git e Github</a></li>
+<li class="chapter" data-level="3.3" data-path="versões.html"><a href="versões.html#packrat"><i class="fa fa-check"></i><b>3.3</b> Packrat</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="dados.html"><a href="dados.html"><i class="fa fa-check"></i><b>4</b> Dados</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="dados.html"><a href="dados.html#sobre-dados"><i class="fa fa-check"></i><b>4.1</b> Sobre dados</a></li>
+<li class="chapter" data-level="4.2" data-path="dados.html"><a href="dados.html#funções-e-dependências"><i class="fa fa-check"></i><b>4.2</b> Funções e dependências</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="dados.html"><a href="dados.html#section"><i class="fa fa-check"></i><b>4.2.1</b> ::</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="dados.html"><a href="dados.html#pacotes"><i class="fa fa-check"></i><b>4.3</b> Pacotes</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="dados.html"><a href="dados.html#documentação"><i class="fa fa-check"></i><b>4.3.1</b> Documentação</a></li>
+<li class="chapter" data-level="4.3.2" data-path="dados.html"><a href="dados.html#testes-automatizados"><i class="fa fa-check"></i><b>4.3.2</b> Testes automatizados</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="dados.html"><a href="dados.html#data-e-data-raw"><i class="fa fa-check"></i><b>4.4</b> Data e data-raw</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="dados.html"><a href="dados.html#documentação-1"><i class="fa fa-check"></i><b>4.4.1</b> Documentação</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="metadados.html"><a href="metadados.html"><i class="fa fa-check"></i><b>5</b> Metadados</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="metadados.html"><a href="metadados.html#sobre-metadados"><i class="fa fa-check"></i><b>5.1</b> Sobre metadados</a></li>
+<li class="chapter" data-level="5.2" data-path="metadados.html"><a href="metadados.html#versões-e-releases"><i class="fa fa-check"></i><b>5.2</b> Versões e releases</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="metadados.html"><a href="metadados.html#versionamento-semântico"><i class="fa fa-check"></i><b>5.2.1</b> Versionamento semântico</a></li>
+<li class="chapter" data-level="5.2.2" data-path="metadados.html"><a href="metadados.html#releases"><i class="fa fa-check"></i><b>5.2.2</b> Releases</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="metadados.html"><a href="metadados.html#submissão-ao-cran"><i class="fa fa-check"></i><b>5.3</b> Submissão ao CRAN</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">O Zen do R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="versões" class="section level1">
+<h1><span class="header-section-number">3</span> Versões</h1>
+<div id="sobre-versões" class="section level2">
+<h2><span class="header-section-number">3.1</span> Sobre versões</h2>
+<p>Lorem ipsum</p>
+</div>
+<div id="git-e-github" class="section level2">
+<h2><span class="header-section-number">3.2</span> Git e Github</h2>
+<p>Há poucas coisas mais frustrantes no mundo do que ter que refazer um trabalho.
+Perder progresso já feito por algum erro ou acidente transforma qualquer
+pacifista em um vulcão prestes a entrar em erupção. Quando se trata de
+programação, há várias formas de isso acontecer: um disco rígido que falha, o
+copo de café derramado no lugar errado, aquela alteração que não pode ser
+desfeita.</p>
+<p>Este problema está longe de ser novo. Em 2005, Linus Torvalds (o criador do
+Linux) se deparava com essas questões durante o seu desenvolvimento do kernel
+Linux. Muitas pessoas contribuindo para um mesmo código, fazendo alterações que
+deveriam ser revistas e possivelmente revertidas, não é uma tarefa facilmente
+solucionável com métodos convencionais de armazenamento de arquivos. Com isso
+em mente, Torvalds criou o sistema de controle de versão distribuído conhecido
+como Git.</p>
+<p>Em termos leigos, o Git permite gerenciar versões de arquivos texto (outros
+tipos também são suportados, mas o foco principal é em arquivos de código). Ele
+não passa de um programa para linha de comando que observa as mudanças nos
+arquivos de um diretório e vai guardando essas informações para que seja
+possível reverter qualquer alteração indesejada. O Git também pode se conectar
+a um serviço de hospedagem e armazenar todas as versões de um código fora
+do seu computador; o mais utilizado atualmente se chama GitHub.</p>
+<p>Na prática, a utilização do Git e do GitHub tem dois principais benefícios:
+- Nunca mais precisar controlar versões com <code>analise.R</code>, <code>analise_v2.R</code>,
+<code>analise_v3.R</code>, <code>analise_final.R</code>, <code>analise_final_final.R</code>,
+<code>analise_final_revisada.R</code>…
+- Nunca mais precisar se preocupar em perder seus projetos por causa de falhas
+no seu computador.</p>
+<p>Nada mal para dois serviços gratuitos!</p>
+<p>No capítulo anterior, é apresentado o conceito de projeto. Agora o segundo passo
+é entender como esses projetos podem ser utilizados em conjunto com controle de
+versão para manter seu trabalho sempre sincronizado na nuvem. Criar
+<a href="https://github.com/join">uma conta</a> no GitHub e
+<a href="https://git-scm.com/downloads">instalar o programa</a> <code>git</code> no seu computador são
+necessários para poder utilizar os recursos descritos a seguir. A partir daqui
+assume-se que ambos os requisitos foram cumpridos.</p>
+<p>Para permitir que os comandos do R acessem a sua conta do GitHub, é essencial
+criar um <em>Personal Access Token</em> (PAT). Tendo logado no GitHub, clique na sua
+imagem no canto direito superior e siga para
+<strong>Settings &gt; Developer settings &gt; Personal access tokens &gt; Generate new token</strong>.
+Nesta página basta descrever o seu uso para o token e selecionar o primeiro box
+de todos; por fim, gere e copie o seu token (uma sequência com uns 40 letras e
+números). Se você estiver sem nenhuma paciência, execute o comando abaixo:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="versões.html#cb5-1"></a>usethis<span class="op">::</span><span class="kw">browse_github_token</span>()</span>
+<span id="cb5-2"><a href="versões.html#cb5-2"></a><span class="co">#&gt; ✔ Opening URL &#39;https://github.com/settings/tokens/new?scopes=repo,gist&amp;description=R:GITHUB_PAT&#39;</span></span>
+<span id="cb5-3"><a href="versões.html#cb5-3"></a><span class="co">#&gt; ● Call `usethis::edit_r_environ()` to open &#39;.Renviron&#39;.</span></span>
+<span id="cb5-4"><a href="versões.html#cb5-4"></a><span class="co">#&gt; ● Store your PAT with a line like:</span></span>
+<span id="cb5-5"><a href="versões.html#cb5-5"></a><span class="co">#&gt;   GITHUB_PAT=xxxyyyzzz</span></span>
+<span id="cb5-6"><a href="versões.html#cb5-6"></a><span class="co">#&gt; ● Make sure &#39;.Renviron&#39; ends with a newline!</span></span></code></pre></div>
+<p><img src="static/03_pat.png" width="733" style="display: block; margin: auto;" /></p>
+<p>Independentemente de como um PAT foi gerado, o importante é seguir as instruções
+descritas no comando. Execute a função <code>usethis::edit_r_environ()</code> e crie uma
+nova linha na forma <code>GITHUB_PAT={SEU_TOKEN}</code>. Assim que isso estiver feito, você
+não precisará mais se preocupar com nenhum tipo de configuração.</p>
+<p>Agora, ao criar um novo projeto, é possível associar imediatamente a ele um
+repositório no GitHub. O comando para criar projetos não muda, mas torna-se
+possível usar dois outros comando para associar aquela pasta com o sistema de
+controle de versões.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="versões.html#cb6-1"></a>usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&quot;~/Documents/demo&quot;</span>)</span>
+<span id="cb6-2"><a href="versões.html#cb6-2"></a><span class="co">#&gt; ✔ Creating &#39;~/Documents/demo/&#39;</span></span>
+<span id="cb6-3"><a href="versões.html#cb6-3"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span></span>
+<span id="cb6-4"><a href="versões.html#cb6-4"></a><span class="co">#&gt; ✔ Creating &#39;R/&#39;</span></span>
+<span id="cb6-5"><a href="versões.html#cb6-5"></a><span class="co">#&gt; ✔ Writing &#39;demo.Rproj&#39;</span></span>
+<span id="cb6-6"><a href="versões.html#cb6-6"></a><span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span></span>
+<span id="cb6-7"><a href="versões.html#cb6-7"></a><span class="co">#&gt; ✔ Opening &#39;~/Documents/demo/&#39; in new RStudio session</span></span>
+<span id="cb6-8"><a href="versões.html#cb6-8"></a><span class="co">#&gt; ✔ Setting active project to &#39;demo&#39; </span></span>
+<span id="cb6-9"><a href="versões.html#cb6-9"></a></span>
+<span id="cb6-10"><a href="versões.html#cb6-10"></a><span class="co"># No console do novo projeto</span></span>
+<span id="cb6-11"><a href="versões.html#cb6-11"></a></span>
+<span id="cb6-12"><a href="versões.html#cb6-12"></a>usethis<span class="op">::</span><span class="kw">use_git</span>()</span>
+<span id="cb6-13"><a href="versões.html#cb6-13"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span></span>
+<span id="cb6-14"><a href="versões.html#cb6-14"></a><span class="co">#&gt; ✔ Initialising Git repo</span></span>
+<span id="cb6-15"><a href="versões.html#cb6-15"></a><span class="co">#&gt; ✔ Adding &#39;.Rhistory&#39;, &#39;.RData&#39; to &#39;.gitignore&#39;</span></span>
+<span id="cb6-16"><a href="versões.html#cb6-16"></a><span class="co">#&gt; There are 2 uncommitted files:</span></span>
+<span id="cb6-17"><a href="versões.html#cb6-17"></a><span class="co">#&gt; * &#39;.gitignore&#39;</span></span>
+<span id="cb6-18"><a href="versões.html#cb6-18"></a><span class="co">#&gt; * &#39;demo.Rproj&#39;</span></span>
+<span id="cb6-19"><a href="versões.html#cb6-19"></a><span class="co">#&gt; Is it ok to commit them?</span></span>
+<span id="cb6-20"><a href="versões.html#cb6-20"></a><span class="co">#&gt; </span></span>
+<span id="cb6-21"><a href="versões.html#cb6-21"></a><span class="co">#&gt; 1: Negative</span></span>
+<span id="cb6-22"><a href="versões.html#cb6-22"></a><span class="co">#&gt; 2: Not now</span></span>
+<span id="cb6-23"><a href="versões.html#cb6-23"></a><span class="co">#&gt; 3: I agree</span></span>
+<span id="cb6-24"><a href="versões.html#cb6-24"></a><span class="co">#&gt; </span></span>
+<span id="cb6-25"><a href="versões.html#cb6-25"></a><span class="co">#&gt; Selection: 3</span></span>
+<span id="cb6-26"><a href="versões.html#cb6-26"></a><span class="co">#&gt; ✔ Adding files</span></span>
+<span id="cb6-27"><a href="versões.html#cb6-27"></a><span class="co">#&gt; ✔ Commit with message &#39;Initial commit&#39;</span></span>
+<span id="cb6-28"><a href="versões.html#cb6-28"></a><span class="co">#&gt; ● A restart of RStudio is required to activate the Git pane</span></span>
+<span id="cb6-29"><a href="versões.html#cb6-29"></a><span class="co">#&gt; Restart now?</span></span>
+<span id="cb6-30"><a href="versões.html#cb6-30"></a><span class="co">#&gt; </span></span>
+<span id="cb6-31"><a href="versões.html#cb6-31"></a><span class="co">#&gt; 1: Absolutely not</span></span>
+<span id="cb6-32"><a href="versões.html#cb6-32"></a><span class="co">#&gt; 2: No way</span></span>
+<span id="cb6-33"><a href="versões.html#cb6-33"></a><span class="co">#&gt; 3: Yes</span></span>
+<span id="cb6-34"><a href="versões.html#cb6-34"></a><span class="co">#&gt; </span></span>
+<span id="cb6-35"><a href="versões.html#cb6-35"></a><span class="co">#&gt; Selection: 3</span></span>
+<span id="cb6-36"><a href="versões.html#cb6-36"></a></span>
+<span id="cb6-37"><a href="versões.html#cb6-37"></a>usethis<span class="op">::</span><span class="kw">use_github</span>()</span>
+<span id="cb6-38"><a href="versões.html#cb6-38"></a><span class="co">#&gt; ✔ Checking that current branch is &#39;master&#39;</span></span>
+<span id="cb6-39"><a href="versões.html#cb6-39"></a><span class="co">#&gt; Which git protocol to use? (enter 0 to exit) </span></span>
+<span id="cb6-40"><a href="versões.html#cb6-40"></a><span class="co">#&gt; </span></span>
+<span id="cb6-41"><a href="versões.html#cb6-41"></a><span class="co">#&gt; 1: ssh   &lt;-- presumes that you have set up ssh keys</span></span>
+<span id="cb6-42"><a href="versões.html#cb6-42"></a><span class="co">#&gt; 2: https &lt;-- choose this if you don&#39;t have ssh keys (or don&#39;t know if you do)</span></span>
+<span id="cb6-43"><a href="versões.html#cb6-43"></a><span class="co">#&gt; </span></span>
+<span id="cb6-44"><a href="versões.html#cb6-44"></a><span class="co">#&gt; Selection: 2</span></span>
+<span id="cb6-45"><a href="versões.html#cb6-45"></a><span class="co">#&gt; ● Check title and description</span></span>
+<span id="cb6-46"><a href="versões.html#cb6-46"></a><span class="co">#&gt;   Name:        demo</span></span>
+<span id="cb6-47"><a href="versões.html#cb6-47"></a><span class="co">#&gt;   Description: </span></span>
+<span id="cb6-48"><a href="versões.html#cb6-48"></a><span class="co">#&gt; Are title and description ok?</span></span>
+<span id="cb6-49"><a href="versões.html#cb6-49"></a><span class="co">#&gt; </span></span>
+<span id="cb6-50"><a href="versões.html#cb6-50"></a><span class="co">#&gt; 1: Nope</span></span>
+<span id="cb6-51"><a href="versões.html#cb6-51"></a><span class="co">#&gt; 2: No way</span></span>
+<span id="cb6-52"><a href="versões.html#cb6-52"></a><span class="co">#&gt; 3: Yup</span></span>
+<span id="cb6-53"><a href="versões.html#cb6-53"></a><span class="co">#&gt; </span></span>
+<span id="cb6-54"><a href="versões.html#cb6-54"></a><span class="co">#&gt; Selection: 3</span></span>
+<span id="cb6-55"><a href="versões.html#cb6-55"></a><span class="co">#&gt; ✔ Creating GitHub repository</span></span>
+<span id="cb6-56"><a href="versões.html#cb6-56"></a><span class="co">#&gt; ✔ Setting remote &#39;origin&#39; to &#39;https://github.com/curso-r/demo.git&#39;</span></span>
+<span id="cb6-57"><a href="versões.html#cb6-57"></a><span class="co">#&gt; ✔ Pushing &#39;master&#39; branch to GitHub and setting remote tracking branch</span></span>
+<span id="cb6-58"><a href="versões.html#cb6-58"></a><span class="co">#&gt; ✔ Opening URL &#39;https://github.com/curso-r/demo&#39;</span></span></code></pre></div>
+<p>Depois de ter executado estes dois novos comandos, será inicializada uma nova
+aba no RStudio denominada Git. Através dela é possível controlar todas as
+versões do código e enviá-las ao GitHub para que sejam armazenadas com segurança
+na nuvem.</p>
+<p><img src="static/03_git.png" width="617" style="display: block; margin: auto;" /></p>
+<p>Para testar se está tudo funcionando, crie um arquivo na pasta <code>R/</code> e abra a aba
+Git. Clique na caixa em branco que lá se encontra, aperte o botão <strong>Commit</strong>
+(escreva uma mensagem que descreva aquilo que você fez) e então aperte o botão
+<strong>Push</strong>. Em poucos segundos o repositório deve ser atualizado na sua página
+correspondente no GitHub.</p>
+<p>Explicar todas as funcionalidades do Git e do GitHub estão além do escopo deste
+material. Os botões mais importantes dessa aba são as <em>checkboxes</em>, o <strong>Commit</strong>
+e o <strong>Push</strong>. Para saber mais sobre esse assunto, recomendo o livro
+<em>Happy Git with R</em> (especialmente
+<a href="https://happygitwithr.com/existing-github-last.html">este capítulo</a>) que aborda
+em detalhes minuciosos todo o processo e uso e manutenção do Git com o RStudio.</p>
+</div>
+<div id="packrat" class="section level2">
+<h2><span class="header-section-number">3.3</span> Packrat</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ambiente.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="dados.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/curso-r/zen-do-r/edit/master/03_versoes.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

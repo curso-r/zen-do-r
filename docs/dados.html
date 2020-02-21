@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Dados | O Zen do R</title>
   <meta name="description" content="O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R." />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Dados | O Zen do R" />
   <meta property="og:type" content="book" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="versoes.html">
-
+<link rel="prev" href="versões.html"/>
+<link rel="next" href="metadados.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -39,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -49,26 +52,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -77,9 +80,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,41 +132,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a></li>
-<li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
-<li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="introducao.html"><a href="introducao.html#o-que-voce-vai-aprender"><i class="fa fa-check"></i><b>1.1.1</b> O que você vai aprender</a></li>
+<li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introdução.html"><a href="introdução.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introdução.html"><a href="introdução.html#o-que-você-vai-aprender"><i class="fa fa-check"></i><b>1.1.1</b> O que você vai aprender</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="introducao.html"><a href="introducao.html#o-que-voce-nao-vai-aprender"><i class="fa fa-check"></i><b>1.2</b> O que você não vai aprender</a></li>
-<li class="chapter" data-level="1.3" data-path="introducao.html"><a href="introducao.html#pre-requisitos"><i class="fa fa-check"></i><b>1.3</b> Pré-requisitos</a></li>
-<li class="chapter" data-level="1.4" data-path="introducao.html"><a href="introducao.html#principais-referencias"><i class="fa fa-check"></i><b>1.4</b> Principais referências</a></li>
+<li class="chapter" data-level="1.2" data-path="introdução.html"><a href="introdução.html#o-que-você-não-vai-aprender"><i class="fa fa-check"></i><b>1.2</b> O que você não vai aprender</a></li>
+<li class="chapter" data-level="1.3" data-path="introdução.html"><a href="introdução.html#pré-requisitos"><i class="fa fa-check"></i><b>1.3</b> Pré-requisitos</a></li>
+<li class="chapter" data-level="1.4" data-path="introdução.html"><a href="introdução.html#principais-referências"><i class="fa fa-check"></i><b>1.4</b> Principais referências</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="ambiente.html"><a href="ambiente.html"><i class="fa fa-check"></i><b>2</b> Ambiente</a><ul>
+<li class="chapter" data-level="2" data-path="ambiente.html"><a href="ambiente.html"><i class="fa fa-check"></i><b>2</b> Ambiente</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="ambiente.html"><a href="ambiente.html#sobre-o-ambiente"><i class="fa fa-check"></i><b>2.1</b> Sobre o ambiente</a></li>
-<li class="chapter" data-level="2.2" data-path="ambiente.html"><a href="ambiente.html#rdata-e-.rhistory"><i class="fa fa-check"></i><b>2.2</b> .RData e .Rhistory</a><ul>
+<li class="chapter" data-level="2.2" data-path="ambiente.html"><a href="ambiente.html#rdata-e-.rhistory"><i class="fa fa-check"></i><b>2.2</b> .RData e .Rhistory</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="ambiente.html"><a href="ambiente.html#porque-desistir-desse-recurso"><i class="fa fa-check"></i><b>2.2.1</b> Porque desistir desse recurso</a></li>
 <li class="chapter" data-level="2.2.2" data-path="ambiente.html"><a href="ambiente.html#como-desativar-essa-funcionalidade"><i class="fa fa-check"></i><b>2.2.2</b> Como desativar essa funcionalidade</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ambiente.html"><a href="ambiente.html#rproj-e-diretorios"><i class="fa fa-check"></i><b>2.3</b> Rproj e diretórios</a><ul>
-<li class="chapter" data-level="2.3.1" data-path="ambiente.html"><a href="ambiente.html#diretorio-de-trabalho"><i class="fa fa-check"></i><b>2.3.1</b> Diretório de trabalho</a></li>
+<li class="chapter" data-level="2.3" data-path="ambiente.html"><a href="ambiente.html#rproj-e-diretórios"><i class="fa fa-check"></i><b>2.3</b> Rproj e diretórios</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="ambiente.html"><a href="ambiente.html#diretório-de-trabalho"><i class="fa fa-check"></i><b>2.3.1</b> Diretório de trabalho</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="versoes.html"><a href="versoes.html"><i class="fa fa-check"></i><b>3</b> Versões</a><ul>
-<li class="chapter" data-level="3.1" data-path="versoes.html"><a href="versoes.html#sobre-versoes"><i class="fa fa-check"></i><b>3.1</b> Sobre versões</a></li>
-<li class="chapter" data-level="3.2" data-path="versoes.html"><a href="versoes.html#git-e-github"><i class="fa fa-check"></i><b>3.2</b> Git e Github</a></li>
-<li class="chapter" data-level="3.3" data-path="versoes.html"><a href="versoes.html#packrat"><i class="fa fa-check"></i><b>3.3</b> Packrat</a></li>
+<li class="chapter" data-level="3" data-path="versões.html"><a href="versões.html"><i class="fa fa-check"></i><b>3</b> Versões</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="versões.html"><a href="versões.html#sobre-versões"><i class="fa fa-check"></i><b>3.1</b> Sobre versões</a></li>
+<li class="chapter" data-level="3.2" data-path="versões.html"><a href="versões.html#git-e-github"><i class="fa fa-check"></i><b>3.2</b> Git e Github</a></li>
+<li class="chapter" data-level="3.3" data-path="versões.html"><a href="versões.html#packrat"><i class="fa fa-check"></i><b>3.3</b> Packrat</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="dados.html"><a href="dados.html"><i class="fa fa-check"></i><b>4</b> Dados</a><ul>
+<li class="chapter" data-level="4" data-path="dados.html"><a href="dados.html"><i class="fa fa-check"></i><b>4</b> Dados</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="dados.html"><a href="dados.html#sobre-dados"><i class="fa fa-check"></i><b>4.1</b> Sobre dados</a></li>
-<li class="chapter" data-level="4.2" data-path="dados.html"><a href="dados.html#funcoes-e-dependencias"><i class="fa fa-check"></i><b>4.2</b> Funções e dependências</a><ul>
+<li class="chapter" data-level="4.2" data-path="dados.html"><a href="dados.html#funções-e-dependências"><i class="fa fa-check"></i><b>4.2</b> Funções e dependências</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="dados.html"><a href="dados.html#section"><i class="fa fa-check"></i><b>4.2.1</b> ::</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="dados.html"><a href="dados.html#pacotes"><i class="fa fa-check"></i><b>4.3</b> Pacotes</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="dados.html"><a href="dados.html#documentacao"><i class="fa fa-check"></i><b>4.3.1</b> Documentação</a></li>
+<li class="chapter" data-level="4.3" data-path="dados.html"><a href="dados.html#pacotes"><i class="fa fa-check"></i><b>4.3</b> Pacotes</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="dados.html"><a href="dados.html#documentação"><i class="fa fa-check"></i><b>4.3.1</b> Documentação</a></li>
 <li class="chapter" data-level="4.3.2" data-path="dados.html"><a href="dados.html#testes-automatizados"><i class="fa fa-check"></i><b>4.3.2</b> Testes automatizados</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="dados.html"><a href="dados.html#data-e-data-raw"><i class="fa fa-check"></i><b>4.4</b> Data e data-raw</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="dados.html"><a href="dados.html#documentacao-1"><i class="fa fa-check"></i><b>4.4.1</b> Documentação</a></li>
+<li class="chapter" data-level="4.4" data-path="dados.html"><a href="dados.html#data-e-data-raw"><i class="fa fa-check"></i><b>4.4</b> Data e data-raw</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="dados.html"><a href="dados.html#documentação-1"><i class="fa fa-check"></i><b>4.4.1</b> Documentação</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="metadados.html"><a href="metadados.html"><i class="fa fa-check"></i><b>5</b> Metadados</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="metadados.html"><a href="metadados.html#sobre-metadados"><i class="fa fa-check"></i><b>5.1</b> Sobre metadados</a></li>
+<li class="chapter" data-level="5.2" data-path="metadados.html"><a href="metadados.html#versões-e-releases"><i class="fa fa-check"></i><b>5.2</b> Versões e releases</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="metadados.html"><a href="metadados.html#versionamento-semântico"><i class="fa fa-check"></i><b>5.2.1</b> Versionamento semântico</a></li>
+<li class="chapter" data-level="5.2.2" data-path="metadados.html"><a href="metadados.html#releases"><i class="fa fa-check"></i><b>5.2.2</b> Releases</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="metadados.html"><a href="metadados.html#submissão-ao-cran"><i class="fa fa-check"></i><b>5.3</b> Submissão ao CRAN</a></li>
 </ul></li>
 </ul>
 
@@ -188,7 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.1</span> Sobre dados</h2>
 <p>Lorem ipsum</p>
 </div>
-<div id="funcoes-e-dependencias" class="section level2">
+<div id="funções-e-dependências" class="section level2">
 <h2><span class="header-section-number">4.2</span> Funções e dependências</h2>
 <p>Até este momento, foi abordada apenas uma forma de organizar os arquivos de uma
 análise: projetos. Entretanto existe ainda outra maneira, ainda mais
@@ -208,40 +231,40 @@ erro no resultado, fica bem mais fácil depurar a função culpada do que uma
 coleção desordenada de código. Funções têm argumentos e saídas, enquanto código
 solto pode modificar globais e criar resultados tardios que são impossíveis de
 acompanhar sem conhecer profundamente a tarefa sendo realizada.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
-<span class="kw">library</span>(tibble)
-
-<span class="co"># Limpar dados</span>
-mtcars_clean &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span><span class="dv">8</span>)
-
-<span class="co"># Selecionar carros com 4 cyl e tirar média de mpg e wt</span>
-mtcars_clean <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span><span class="dv">4</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">summarise</span>(
-    <span class="dt">mpg =</span> <span class="kw">mean</span>(mpg),
-    <span class="dt">wt =</span> <span class="kw">mean</span>(wt)
-  )
-<span class="co">#&gt; # A tibble: 1 x 3</span>
-<span class="co">#&gt;     cyl   mpg    wt</span>
-<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1     4  26.7  2.29</span>
-
-<span class="co"># Selecionar carros com 6 cyl e tirar média de drat e disp</span>
-mtcars_clean <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span><span class="dv">6</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">summarise</span>(
-    <span class="dt">drat =</span> <span class="kw">mean</span>(drat),
-    <span class="dt">disp =</span> <span class="kw">mean</span>(disp)
-  )
-<span class="co">#&gt; # A tibble: 1 x 3</span>
-<span class="co">#&gt;     cyl  drat  disp</span>
-<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1     6  3.59  183.</span></code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="dados.html#cb7-1"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb7-2"><a href="dados.html#cb7-2"></a><span class="kw">library</span>(tibble)</span>
+<span id="cb7-3"><a href="dados.html#cb7-3"></a></span>
+<span id="cb7-4"><a href="dados.html#cb7-4"></a><span class="co"># Limpar dados</span></span>
+<span id="cb7-5"><a href="dados.html#cb7-5"></a>mtcars_clean &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span></span>
+<span id="cb7-6"><a href="dados.html#cb7-6"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb7-7"><a href="dados.html#cb7-7"></a><span class="st">  </span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span></span>
+<span id="cb7-8"><a href="dados.html#cb7-8"></a><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span><span class="dv">8</span>)</span>
+<span id="cb7-9"><a href="dados.html#cb7-9"></a></span>
+<span id="cb7-10"><a href="dados.html#cb7-10"></a><span class="co"># Selecionar carros com 4 cyl e tirar média de mpg e wt</span></span>
+<span id="cb7-11"><a href="dados.html#cb7-11"></a>mtcars_clean <span class="op">%&gt;%</span></span>
+<span id="cb7-12"><a href="dados.html#cb7-12"></a><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span><span class="dv">4</span>) <span class="op">%&gt;%</span></span>
+<span id="cb7-13"><a href="dados.html#cb7-13"></a><span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></span>
+<span id="cb7-14"><a href="dados.html#cb7-14"></a><span class="st">  </span><span class="kw">summarise</span>(</span>
+<span id="cb7-15"><a href="dados.html#cb7-15"></a>    <span class="dt">mpg =</span> <span class="kw">mean</span>(mpg),</span>
+<span id="cb7-16"><a href="dados.html#cb7-16"></a>    <span class="dt">wt =</span> <span class="kw">mean</span>(wt)</span>
+<span id="cb7-17"><a href="dados.html#cb7-17"></a>  )</span>
+<span id="cb7-18"><a href="dados.html#cb7-18"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
+<span id="cb7-19"><a href="dados.html#cb7-19"></a><span class="co">#&gt;     cyl   mpg    wt</span></span>
+<span id="cb7-20"><a href="dados.html#cb7-20"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb7-21"><a href="dados.html#cb7-21"></a><span class="co">#&gt; 1     4  26.7  2.29</span></span>
+<span id="cb7-22"><a href="dados.html#cb7-22"></a></span>
+<span id="cb7-23"><a href="dados.html#cb7-23"></a><span class="co"># Selecionar carros com 6 cyl e tirar média de drat e disp</span></span>
+<span id="cb7-24"><a href="dados.html#cb7-24"></a>mtcars_clean <span class="op">%&gt;%</span></span>
+<span id="cb7-25"><a href="dados.html#cb7-25"></a><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span><span class="dv">6</span>) <span class="op">%&gt;%</span></span>
+<span id="cb7-26"><a href="dados.html#cb7-26"></a><span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></span>
+<span id="cb7-27"><a href="dados.html#cb7-27"></a><span class="st">  </span><span class="kw">summarise</span>(</span>
+<span id="cb7-28"><a href="dados.html#cb7-28"></a>    <span class="dt">drat =</span> <span class="kw">mean</span>(drat),</span>
+<span id="cb7-29"><a href="dados.html#cb7-29"></a>    <span class="dt">disp =</span> <span class="kw">mean</span>(disp)</span>
+<span id="cb7-30"><a href="dados.html#cb7-30"></a>  )</span>
+<span id="cb7-31"><a href="dados.html#cb7-31"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
+<span id="cb7-32"><a href="dados.html#cb7-32"></a><span class="co">#&gt;     cyl  drat  disp</span></span>
+<span id="cb7-33"><a href="dados.html#cb7-33"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb7-34"><a href="dados.html#cb7-34"></a><span class="co">#&gt; 1     6  3.59  183.</span></span></code></pre></div>
 <p>O código acima é somente um exemplo de análise. Como descrito pelos comentários,
 <code>mtcars</code> é limpa e depois são extraídas as médias de diferentes variáveis para
 duas seleções da tabela (número de cilindros igual a 4 e 6). Abaixo está
@@ -251,42 +274,42 @@ encapsulamento das tarefas de limpeza e resumo, mas perceba, por exemplo, que,
 se fosse necessário trocar <code>mean()</code> por <code>median()</code>, antes seria necessário
 alterar quatro linhas e agora apenas uma. Esse tipo de ganho a longo prazo pode
 salvar análises inteiras do caos.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
-<span class="kw">library</span>(tibble)
-
-<span class="co"># Limpa tabela, filtrando cyl &lt; cyl_max</span>
-clean &lt;-<span class="st"> </span><span class="cf">function</span>(data, <span class="dt">cyl_max =</span> <span class="dv">8</span>) {
-  data <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span>cyl_max)
-}
-
-<span class="co"># Resume tabela onde cyl == cyl_max, tirando média das colunas em ...</span>
-summarise_cyl &lt;-<span class="st"> </span><span class="cf">function</span>(data, cyl_num, ...) {
-  data <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span>cyl_num) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">summarise_at</span>(<span class="kw">vars</span>(...), mean)
-}
-
-<span class="co"># 4 cyl, média de mpg e wt</span>
-mtcars <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">4</span>, mpg, wt)
-<span class="co">#&gt; # A tibble: 1 x 3</span>
-<span class="co">#&gt;     cyl   mpg    wt</span>
-<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1     4  26.7  2.29</span>
-
-<span class="co"># 6 cyl, média de drat e disp</span>
-mtcars <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">6</span>, drat, disp)
-<span class="co">#&gt; # A tibble: 1 x 3</span>
-<span class="co">#&gt;     cyl  drat  disp</span>
-<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1     6  3.59  183.</span></code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="dados.html#cb8-1"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb8-2"><a href="dados.html#cb8-2"></a><span class="kw">library</span>(tibble)</span>
+<span id="cb8-3"><a href="dados.html#cb8-3"></a></span>
+<span id="cb8-4"><a href="dados.html#cb8-4"></a><span class="co"># Limpa tabela, filtrando cyl &lt; cyl_max</span></span>
+<span id="cb8-5"><a href="dados.html#cb8-5"></a>clean &lt;-<span class="st"> </span><span class="cf">function</span>(data, <span class="dt">cyl_max =</span> <span class="dv">8</span>) {</span>
+<span id="cb8-6"><a href="dados.html#cb8-6"></a>  data <span class="op">%&gt;%</span></span>
+<span id="cb8-7"><a href="dados.html#cb8-7"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb8-8"><a href="dados.html#cb8-8"></a><span class="st">  </span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span></span>
+<span id="cb8-9"><a href="dados.html#cb8-9"></a><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span>cyl_max)</span>
+<span id="cb8-10"><a href="dados.html#cb8-10"></a>}</span>
+<span id="cb8-11"><a href="dados.html#cb8-11"></a></span>
+<span id="cb8-12"><a href="dados.html#cb8-12"></a><span class="co"># Resume tabela onde cyl == cyl_max, tirando média das colunas em ...</span></span>
+<span id="cb8-13"><a href="dados.html#cb8-13"></a>summarise_cyl &lt;-<span class="st"> </span><span class="cf">function</span>(data, cyl_num, ...) {</span>
+<span id="cb8-14"><a href="dados.html#cb8-14"></a>  data <span class="op">%&gt;%</span></span>
+<span id="cb8-15"><a href="dados.html#cb8-15"></a><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span>cyl_num) <span class="op">%&gt;%</span></span>
+<span id="cb8-16"><a href="dados.html#cb8-16"></a><span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></span>
+<span id="cb8-17"><a href="dados.html#cb8-17"></a><span class="st">  </span><span class="kw">summarise_at</span>(<span class="kw">vars</span>(...), mean)</span>
+<span id="cb8-18"><a href="dados.html#cb8-18"></a>}</span>
+<span id="cb8-19"><a href="dados.html#cb8-19"></a></span>
+<span id="cb8-20"><a href="dados.html#cb8-20"></a><span class="co"># 4 cyl, média de mpg e wt</span></span>
+<span id="cb8-21"><a href="dados.html#cb8-21"></a>mtcars <span class="op">%&gt;%</span></span>
+<span id="cb8-22"><a href="dados.html#cb8-22"></a><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></span>
+<span id="cb8-23"><a href="dados.html#cb8-23"></a><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">4</span>, mpg, wt)</span>
+<span id="cb8-24"><a href="dados.html#cb8-24"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
+<span id="cb8-25"><a href="dados.html#cb8-25"></a><span class="co">#&gt;     cyl   mpg    wt</span></span>
+<span id="cb8-26"><a href="dados.html#cb8-26"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb8-27"><a href="dados.html#cb8-27"></a><span class="co">#&gt; 1     4  26.7  2.29</span></span>
+<span id="cb8-28"><a href="dados.html#cb8-28"></a></span>
+<span id="cb8-29"><a href="dados.html#cb8-29"></a><span class="co"># 6 cyl, média de drat e disp</span></span>
+<span id="cb8-30"><a href="dados.html#cb8-30"></a>mtcars <span class="op">%&gt;%</span></span>
+<span id="cb8-31"><a href="dados.html#cb8-31"></a><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></span>
+<span id="cb8-32"><a href="dados.html#cb8-32"></a><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">6</span>, drat, disp)</span>
+<span id="cb8-33"><a href="dados.html#cb8-33"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
+<span id="cb8-34"><a href="dados.html#cb8-34"></a><span class="co">#&gt;     cyl  drat  disp</span></span>
+<span id="cb8-35"><a href="dados.html#cb8-35"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb8-36"><a href="dados.html#cb8-36"></a><span class="co">#&gt; 1     6  3.59  183.</span></span></code></pre></div>
 <p>Um código bem encapsulado reduz a necessidade de objetos intermediários (
 <code>base_tratada</code>, <code>base_filtrada</code>, etc.) pois para gerar um deles basta a
 aplicação de uma função. Além disso, programas com funções normalmente são muito
@@ -297,7 +320,7 @@ duas situações, mas os benefícios das funções são de longo prazo: ao encon
 um <em>bug</em>, haverá apenas um lugar para concertar; se surgir a necessidade de
 modificar uma propriedade, haverá apenas um lugar para editar; se aquele código
 se tornar obsoleto, haverá apenas um lugar para deletar.</p>
-<p>Pense na programação funcional<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> como ir à academia. No início o processo é
+<p>Pense na programação funcional<a href="metadados.html#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> como ir à academia. No início o processo é
 difícil e exige uma quantidade considerável de esforço, mas depois de um tempo
 se torna um hábito e traz benefícios consideráveis para a saúde (neste caso, do
 código). As recomendações para quando criar uma nova função ou separar uma
@@ -334,42 +357,42 @@ diretamente atreladas às próprias funções sendo utilizadas.</p>
 <p>Existe um terceiro e importante benefício, mas este será abordado apenas no
 próximo capítulo. A título de curiosidade, o código anterior ficaria assim caso
 fosse escrito sem as chamadas para <code>library()</code>:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Referência ao pipe</span>
-<span class="st">`</span><span class="dt">%&gt;%</span><span class="st">`</span> &lt;-<span class="st"> </span>magrittr<span class="op">::</span><span class="st">`</span><span class="dt">%&gt;%</span><span class="st">`</span>
-
-<span class="co"># Limpa tabela, filtrando cyl &lt; cyl_max</span>
-clean &lt;-<span class="st"> </span><span class="cf">function</span>(data, <span class="dt">cyl_max =</span> <span class="dv">8</span>) {
-  data <span class="op">%&gt;%</span>
-<span class="st">    </span>tibble<span class="op">::</span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span>
-<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span>
-<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span>cyl_max)
-}
-
-<span class="co"># Resume tabela onde cyl == cyl_max, tirando média das colunas em ...</span>
-summarise_cyl &lt;-<span class="st"> </span><span class="cf">function</span>(data, cyl_num, ...) {
-  data <span class="op">%&gt;%</span>
-<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span>cyl_num) <span class="op">%&gt;%</span>
-<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span>
-<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">summarise_at</span>(dplyr<span class="op">::</span><span class="kw">vars</span>(...), mean)
-}
-
-<span class="co"># 4 cyl, média de mpg e wt</span>
-mtcars <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">4</span>, mpg, wt)
-<span class="co">#&gt; # A tibble: 1 x 3</span>
-<span class="co">#&gt;     cyl   mpg    wt</span>
-<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1     4  26.7  2.29</span>
-
-<span class="co"># 6 cyl, média de drat e disp</span>
-mtcars <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">6</span>, drat, disp)
-<span class="co">#&gt; # A tibble: 1 x 3</span>
-<span class="co">#&gt;     cyl  drat  disp</span>
-<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1     6  3.59  183.</span></code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="dados.html#cb9-1"></a><span class="co"># Referência ao pipe</span></span>
+<span id="cb9-2"><a href="dados.html#cb9-2"></a><span class="st">`</span><span class="dt">%&gt;%</span><span class="st">`</span> &lt;-<span class="st"> </span>magrittr<span class="op">::</span><span class="st">`</span><span class="dt">%&gt;%</span><span class="st">`</span></span>
+<span id="cb9-3"><a href="dados.html#cb9-3"></a></span>
+<span id="cb9-4"><a href="dados.html#cb9-4"></a><span class="co"># Limpa tabela, filtrando cyl &lt; cyl_max</span></span>
+<span id="cb9-5"><a href="dados.html#cb9-5"></a>clean &lt;-<span class="st"> </span><span class="cf">function</span>(data, <span class="dt">cyl_max =</span> <span class="dv">8</span>) {</span>
+<span id="cb9-6"><a href="dados.html#cb9-6"></a>  data <span class="op">%&gt;%</span></span>
+<span id="cb9-7"><a href="dados.html#cb9-7"></a><span class="st">    </span>tibble<span class="op">::</span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb9-8"><a href="dados.html#cb9-8"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span></span>
+<span id="cb9-9"><a href="dados.html#cb9-9"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span>cyl_max)</span>
+<span id="cb9-10"><a href="dados.html#cb9-10"></a>}</span>
+<span id="cb9-11"><a href="dados.html#cb9-11"></a></span>
+<span id="cb9-12"><a href="dados.html#cb9-12"></a><span class="co"># Resume tabela onde cyl == cyl_max, tirando média das colunas em ...</span></span>
+<span id="cb9-13"><a href="dados.html#cb9-13"></a>summarise_cyl &lt;-<span class="st"> </span><span class="cf">function</span>(data, cyl_num, ...) {</span>
+<span id="cb9-14"><a href="dados.html#cb9-14"></a>  data <span class="op">%&gt;%</span></span>
+<span id="cb9-15"><a href="dados.html#cb9-15"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span>cyl_num) <span class="op">%&gt;%</span></span>
+<span id="cb9-16"><a href="dados.html#cb9-16"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></span>
+<span id="cb9-17"><a href="dados.html#cb9-17"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">summarise_at</span>(dplyr<span class="op">::</span><span class="kw">vars</span>(...), mean)</span>
+<span id="cb9-18"><a href="dados.html#cb9-18"></a>}</span>
+<span id="cb9-19"><a href="dados.html#cb9-19"></a></span>
+<span id="cb9-20"><a href="dados.html#cb9-20"></a><span class="co"># 4 cyl, média de mpg e wt</span></span>
+<span id="cb9-21"><a href="dados.html#cb9-21"></a>mtcars <span class="op">%&gt;%</span></span>
+<span id="cb9-22"><a href="dados.html#cb9-22"></a><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></span>
+<span id="cb9-23"><a href="dados.html#cb9-23"></a><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">4</span>, mpg, wt)</span>
+<span id="cb9-24"><a href="dados.html#cb9-24"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
+<span id="cb9-25"><a href="dados.html#cb9-25"></a><span class="co">#&gt;     cyl   mpg    wt</span></span>
+<span id="cb9-26"><a href="dados.html#cb9-26"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb9-27"><a href="dados.html#cb9-27"></a><span class="co">#&gt; 1     4  26.7  2.29</span></span>
+<span id="cb9-28"><a href="dados.html#cb9-28"></a></span>
+<span id="cb9-29"><a href="dados.html#cb9-29"></a><span class="co"># 6 cyl, média de drat e disp</span></span>
+<span id="cb9-30"><a href="dados.html#cb9-30"></a>mtcars <span class="op">%&gt;%</span></span>
+<span id="cb9-31"><a href="dados.html#cb9-31"></a><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></span>
+<span id="cb9-32"><a href="dados.html#cb9-32"></a><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">6</span>, drat, disp)</span>
+<span id="cb9-33"><a href="dados.html#cb9-33"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
+<span id="cb9-34"><a href="dados.html#cb9-34"></a><span class="co">#&gt;     cyl  drat  disp</span></span>
+<span id="cb9-35"><a href="dados.html#cb9-35"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb9-36"><a href="dados.html#cb9-36"></a><span class="co">#&gt; 1     6  3.59  183.</span></span></code></pre></div>
 <p>Se serve de consolo, o RStudio facilita muito esse tipo de programação por causa
 da sua capacidade de sugerir continuações para código interativamente. Para
 escrever <code>dplyr::</code>, por exemplo, basta digitar <code>d</code>, <code>p</code>, <code>l</code> e apertar <code>TAB</code> uma
@@ -402,25 +425,25 @@ projeto já é suficiente. Outra motivação para criar um pacote é compartilha
 conjuntos úteis de funções com outras pessoas; isso acaba sendo menos comum para
 a maioria dos usuários, mas é importante ressaltar que o R não seria a linguagem
 popular que é hoje se não fossem pelas famosas bibliotecas <code>ggplot2</code> e <code>dplyr</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">usethis<span class="op">::</span><span class="kw">create_package</span>(<span class="st">&quot;~/Documents/demo&quot;</span>)
-<span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span>
-<span class="co">#&gt; ✔ Creating &#39;R/&#39;</span>
-<span class="co">#&gt; ✔ Writing &#39;DESCRIPTION&#39;</span>
-<span class="co">#&gt; Package: demo</span>
-<span class="co">#&gt; Title: What the Package Does (One Line, Title Case)</span>
-<span class="co">#&gt; Version: 0.0.0.9000</span>
-<span class="co">#&gt; Authors@R (parsed):</span>
-<span class="co">#&gt;     * First Last &lt;first.last@example.com&gt; [aut, cre] (&lt;https://orcid.org/YOUR-ORCID-ID&gt;)</span>
-<span class="co">#&gt; Description: What the package does (one paragraph).</span>
-<span class="co">#&gt; License: What license it uses</span>
-<span class="co">#&gt; Encoding: UTF-8</span>
-<span class="co">#&gt; LazyData: true</span>
-<span class="co">#&gt; ✔ Writing &#39;NAMESPACE&#39;</span>
-<span class="co">#&gt; ✔ Writing &#39;demo.Rproj&#39;</span>
-<span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span>
-<span class="co">#&gt; ✔ Adding &#39;^demo\\.Rproj$&#39;, &#39;^\\.Rproj\\.user$&#39; to &#39;.Rbuildignore&#39;</span>
-<span class="co">#&gt; ✔ Opening &#39;~/Documents/demo/&#39; in new RStudio session</span>
-<span class="co">#&gt; ✔ Setting active project to &#39;demo&#39;</span></code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="dados.html#cb10-1"></a>usethis<span class="op">::</span><span class="kw">create_package</span>(<span class="st">&quot;~/Documents/demo&quot;</span>)</span>
+<span id="cb10-2"><a href="dados.html#cb10-2"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span></span>
+<span id="cb10-3"><a href="dados.html#cb10-3"></a><span class="co">#&gt; ✔ Creating &#39;R/&#39;</span></span>
+<span id="cb10-4"><a href="dados.html#cb10-4"></a><span class="co">#&gt; ✔ Writing &#39;DESCRIPTION&#39;</span></span>
+<span id="cb10-5"><a href="dados.html#cb10-5"></a><span class="co">#&gt; Package: demo</span></span>
+<span id="cb10-6"><a href="dados.html#cb10-6"></a><span class="co">#&gt; Title: What the Package Does (One Line, Title Case)</span></span>
+<span id="cb10-7"><a href="dados.html#cb10-7"></a><span class="co">#&gt; Version: 0.0.0.9000</span></span>
+<span id="cb10-8"><a href="dados.html#cb10-8"></a><span class="co">#&gt; Authors@R (parsed):</span></span>
+<span id="cb10-9"><a href="dados.html#cb10-9"></a><span class="co">#&gt;     * First Last &lt;first.last@example.com&gt; [aut, cre] (&lt;https://orcid.org/YOUR-ORCID-ID&gt;)</span></span>
+<span id="cb10-10"><a href="dados.html#cb10-10"></a><span class="co">#&gt; Description: What the package does (one paragraph).</span></span>
+<span id="cb10-11"><a href="dados.html#cb10-11"></a><span class="co">#&gt; License: What license it uses</span></span>
+<span id="cb10-12"><a href="dados.html#cb10-12"></a><span class="co">#&gt; Encoding: UTF-8</span></span>
+<span id="cb10-13"><a href="dados.html#cb10-13"></a><span class="co">#&gt; LazyData: true</span></span>
+<span id="cb10-14"><a href="dados.html#cb10-14"></a><span class="co">#&gt; ✔ Writing &#39;NAMESPACE&#39;</span></span>
+<span id="cb10-15"><a href="dados.html#cb10-15"></a><span class="co">#&gt; ✔ Writing &#39;demo.Rproj&#39;</span></span>
+<span id="cb10-16"><a href="dados.html#cb10-16"></a><span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span></span>
+<span id="cb10-17"><a href="dados.html#cb10-17"></a><span class="co">#&gt; ✔ Adding &#39;^demo\\.Rproj$&#39;, &#39;^\\.Rproj\\.user$&#39; to &#39;.Rbuildignore&#39;</span></span>
+<span id="cb10-18"><a href="dados.html#cb10-18"></a><span class="co">#&gt; ✔ Opening &#39;~/Documents/demo/&#39; in new RStudio session</span></span>
+<span id="cb10-19"><a href="dados.html#cb10-19"></a><span class="co">#&gt; ✔ Setting active project to &#39;demo&#39;</span></span></code></pre></div>
 <p>A função executada acima é exatamente análoga à função de criação de projetos.
 A principal diferença é que ela cria um arquivo <code>DESCRIPTION</code> e assume que o
 nome do pacote é igual ao nome da pasta onde o mesmo está sendo criado (neste
@@ -430,12 +453,12 @@ projeto e pode ser sincronizado com o Git exatamente da mesma maneira.</p>
 <p>O primeiro passo para começar a usar um pacote é atribuir a ele uma licença
 (caso um dia você resolva compartilhá-lo com o mundo) e preencher a descrição.
 Abaixo encontra-se uma função simples que adiciona uma licença MIT ao pacote.</p>
-<pre class="sourceCode r"><code class="sourceCode r">usethis<span class="op">::</span><span class="kw">use_mit_license</span>(<span class="st">&quot;Seu Nome&quot;</span>)
-<span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span>
-<span class="co">#&gt; ✔ Setting License field in DESCRIPTION to &#39;MIT + file LICENSE&#39;</span>
-<span class="co">#&gt; ✔ Writing &#39;LICENSE.md&#39;</span>
-<span class="co">#&gt; ✔ Adding &#39;^LICENSE\\.md$&#39; to &#39;.Rbuildignore&#39;</span>
-<span class="co">#&gt; ✔ Writing &#39;LICENSE&#39;</span></code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="dados.html#cb11-1"></a>usethis<span class="op">::</span><span class="kw">use_mit_license</span>(<span class="st">&quot;Seu Nome&quot;</span>)</span>
+<span id="cb11-2"><a href="dados.html#cb11-2"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span></span>
+<span id="cb11-3"><a href="dados.html#cb11-3"></a><span class="co">#&gt; ✔ Setting License field in DESCRIPTION to &#39;MIT + file LICENSE&#39;</span></span>
+<span id="cb11-4"><a href="dados.html#cb11-4"></a><span class="co">#&gt; ✔ Writing &#39;LICENSE.md&#39;</span></span>
+<span id="cb11-5"><a href="dados.html#cb11-5"></a><span class="co">#&gt; ✔ Adding &#39;^LICENSE\\.md$&#39; to &#39;.Rbuildignore&#39;</span></span>
+<span id="cb11-6"><a href="dados.html#cb11-6"></a><span class="co">#&gt; ✔ Writing &#39;LICENSE&#39;</span></span></code></pre></div>
 <p>O arquivo de descrição, no entanto, é um pouco mais complexo porque ele tem
 alguns campos que precisam ser preenchidos manualmente. Quando o pacote for
 criado, eles já estarão populados com instruções para facilitar a vida do
@@ -456,31 +479,31 @@ LazyData: true</code></pre>
 <p>A partir deste ponto, os metadados do pacote estão essencialmente prontos e não
 precisam mais ser modificados. Assim como em um projeto, o que resta é adicionar
 arquivos com funções à pasta <code>R/</code>.</p>
-<div id="documentacao" class="section level3">
+<div id="documentação" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Documentação</h3>
 <p>Para poder programar pacotes com mais facilidade, é necessário instalar o
 <code>devtools</code>. Assim como o <code>tidyverse</code>, este é um conjunto de pacotes (que inclui
 o <code>usethis</code> por sinal) que auxiliam no processo de criar e testar um pacote de
 R.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="dados.html#cb13-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span></code></pre></div>
 <p>A partir de agora você pode, por exemplo, criar documentações para as funções do
 seu pacote. Quando outras pessoas o instalarem, elas poderão consultar esses
 manuais da mesma forma que fazem com qualquer outra função: <code>?funcao()</code>.</p>
 <p>A documentação mais simples (e obrigatória) envolve dar um título para a função
 e descrever o que cada parâmetro significa. Para documentar uma função qualquer,
 basta adicionar comentários em cima dela com <code>#'</code> assim como no exemplo abaixo:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Função demonstrativa que soma e imprime</span>
-<span class="co">#&#39;</span>
-<span class="co">#&#39; @param x Um número ou vetor numérico</span>
-<span class="co">#&#39; @param y Um número ou vetor numérico</span>
-<span class="co">#&#39; @param ... Outros argumentos passados para [print()]</span>
-<span class="co">#&#39;</span>
-<span class="co">#&#39; @export</span>
-funcao_demo &lt;-<span class="st"> </span><span class="cf">function</span>(x, y, ...) {
-  z &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y
-  <span class="kw">print</span>(z, ...)
-  <span class="kw">return</span>(z)
-}</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="dados.html#cb14-1"></a><span class="co">#&#39; Função demonstrativa que soma e imprime</span></span>
+<span id="cb14-2"><a href="dados.html#cb14-2"></a><span class="co">#&#39;</span></span>
+<span id="cb14-3"><a href="dados.html#cb14-3"></a><span class="co">#&#39; @param x Um número ou vetor numérico</span></span>
+<span id="cb14-4"><a href="dados.html#cb14-4"></a><span class="co">#&#39; @param y Um número ou vetor numérico</span></span>
+<span id="cb14-5"><a href="dados.html#cb14-5"></a><span class="co">#&#39; @param ... Outros argumentos passados para [print()]</span></span>
+<span id="cb14-6"><a href="dados.html#cb14-6"></a><span class="co">#&#39;</span></span>
+<span id="cb14-7"><a href="dados.html#cb14-7"></a><span class="co">#&#39; @export</span></span>
+<span id="cb14-8"><a href="dados.html#cb14-8"></a>funcao_demo &lt;-<span class="st"> </span><span class="cf">function</span>(x, y, ...) {</span>
+<span id="cb14-9"><a href="dados.html#cb14-9"></a>  z &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y</span>
+<span id="cb14-10"><a href="dados.html#cb14-10"></a>  <span class="kw">print</span>(z, ...)</span>
+<span id="cb14-11"><a href="dados.html#cb14-11"></a>  <span class="kw">return</span>(z)</span>
+<span id="cb14-12"><a href="dados.html#cb14-12"></a>}</span></code></pre></div>
 <p>No RStudio esse tipo de documentação é tratado diferentemente de outros
 comentários, então certas palavras-chave ficam coloridas. <code>@param</code> por exemplo
 indica a documentação de um dos parâmetros e <code>@export</code> indica que aquela função
@@ -488,17 +511,17 @@ será exportada pelo pacote, ou seja, ficará disponível ao usuário quando ele
 executar <code>library(demo)</code>.</p>
 <p>Para gerar a documentação do pacote, basta chamar uma outra função do
 <code>devtools</code>:</p>
-<pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">document</span>()
-<span class="co">#&gt; Updating demo documentation</span>
-<span class="co">#&gt; Updating roxygen version in ~/Documents/demo/DESCRIPTION</span>
-<span class="co">#&gt; Writing NAMESPACE</span>
-<span class="co">#&gt; Loading demo</span>
-<span class="co">#&gt; Writing NAMESPACE</span>
-<span class="co">#&gt; Writing funcao_demo.Rd</span>
-
-?<span class="kw">funcao_demo</span>()
-<span class="co">#&gt; Rendering development documentation for &#39;funcao_demo&#39;</span></code></pre>
-<p><img src="static/04_doc.png" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="dados.html#cb15-1"></a>devtools<span class="op">::</span><span class="kw">document</span>()</span>
+<span id="cb15-2"><a href="dados.html#cb15-2"></a><span class="co">#&gt; Updating demo documentation</span></span>
+<span id="cb15-3"><a href="dados.html#cb15-3"></a><span class="co">#&gt; Updating roxygen version in ~/Documents/demo/DESCRIPTION</span></span>
+<span id="cb15-4"><a href="dados.html#cb15-4"></a><span class="co">#&gt; Writing NAMESPACE</span></span>
+<span id="cb15-5"><a href="dados.html#cb15-5"></a><span class="co">#&gt; Loading demo</span></span>
+<span id="cb15-6"><a href="dados.html#cb15-6"></a><span class="co">#&gt; Writing NAMESPACE</span></span>
+<span id="cb15-7"><a href="dados.html#cb15-7"></a><span class="co">#&gt; Writing funcao_demo.Rd</span></span>
+<span id="cb15-8"><a href="dados.html#cb15-8"></a></span>
+<span id="cb15-9"><a href="dados.html#cb15-9"></a>?<span class="kw">funcao_demo</span>()</span>
+<span id="cb15-10"><a href="dados.html#cb15-10"></a><span class="co">#&gt; Rendering development documentation for &#39;funcao_demo&#39;</span></span></code></pre></div>
+<p><img src="static/04_doc.png" width="723" style="display: block; margin: auto;" /></p>
 <p>Conforme o número de funções no pacote for crescendo, basta iterar nesse ciclo
 descrito até aqui. Além disso, é importante lembrar (como destacado na sessão
 anterior) que qualquer função utilizada de outro pacote deve ser invocada na
@@ -509,25 +532,25 @@ forma <code>pacote::funcao()</code>; neste momento, o pacote em questão se torn
 executar a função de verificação <code>devtools::check()</code>. Se nenhum defeito for
 encontrado, basta compartilhar o pacote com os seus colegas e instalá-lo com
 <code>devtools::install_local()</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">check</span>()
-<span class="co">#&gt; Updating demo documentation</span>
-<span class="co">#&gt; Writing NAMESPACE</span>
-<span class="co">#&gt; Loading demo</span>
-<span class="co">#&gt; Writing NAMESPACE</span>
-<span class="co">#&gt; ── Building ───────────────────────────────────────────────────────── demo ──</span>
-<span class="co">#&gt; Setting env vars:</span>
-<span class="co">#&gt; ● CFLAGS    : -Wall -pedantic -fdiagnostics-color=always</span>
-<span class="co">#&gt; ● CXXFLAGS  : -Wall -pedantic -fdiagnostics-color=always</span>
-<span class="co">#&gt; ● CXX11FLAGS: -Wall -pedantic -fdiagnostics-color=always</span>
-<span class="co">#&gt; ─────────────────────────────────────────────────────────────────────────────</span>
-<span class="co">#&gt; ✔  checking for file ‘/home/clente/Documents/demo/DESCRIPTION’ ...</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [... omitido por brevidade ...]</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; ── R CMD check results ───────────────────────────────── demo 0.0.0.9000 ────</span>
-<span class="co">#&gt; Duration: 8.2s</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; 0 errors ✔ | 0 warnings ✔ | 0 notes ✔</span></code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="dados.html#cb16-1"></a>devtools<span class="op">::</span><span class="kw">check</span>()</span>
+<span id="cb16-2"><a href="dados.html#cb16-2"></a><span class="co">#&gt; Updating demo documentation</span></span>
+<span id="cb16-3"><a href="dados.html#cb16-3"></a><span class="co">#&gt; Writing NAMESPACE</span></span>
+<span id="cb16-4"><a href="dados.html#cb16-4"></a><span class="co">#&gt; Loading demo</span></span>
+<span id="cb16-5"><a href="dados.html#cb16-5"></a><span class="co">#&gt; Writing NAMESPACE</span></span>
+<span id="cb16-6"><a href="dados.html#cb16-6"></a><span class="co">#&gt; ── Building ───────────────────────────────────────────────────────── demo ──</span></span>
+<span id="cb16-7"><a href="dados.html#cb16-7"></a><span class="co">#&gt; Setting env vars:</span></span>
+<span id="cb16-8"><a href="dados.html#cb16-8"></a><span class="co">#&gt; ● CFLAGS    : -Wall -pedantic -fdiagnostics-color=always</span></span>
+<span id="cb16-9"><a href="dados.html#cb16-9"></a><span class="co">#&gt; ● CXXFLAGS  : -Wall -pedantic -fdiagnostics-color=always</span></span>
+<span id="cb16-10"><a href="dados.html#cb16-10"></a><span class="co">#&gt; ● CXX11FLAGS: -Wall -pedantic -fdiagnostics-color=always</span></span>
+<span id="cb16-11"><a href="dados.html#cb16-11"></a><span class="co">#&gt; ─────────────────────────────────────────────────────────────────────────────</span></span>
+<span id="cb16-12"><a href="dados.html#cb16-12"></a><span class="co">#&gt; ✔  checking for file ‘/home/clente/Documents/demo/DESCRIPTION’ ...</span></span>
+<span id="cb16-13"><a href="dados.html#cb16-13"></a><span class="co">#&gt; </span></span>
+<span id="cb16-14"><a href="dados.html#cb16-14"></a><span class="co">#&gt; [... omitido por brevidade ...]</span></span>
+<span id="cb16-15"><a href="dados.html#cb16-15"></a><span class="co">#&gt; </span></span>
+<span id="cb16-16"><a href="dados.html#cb16-16"></a><span class="co">#&gt; ── R CMD check results ───────────────────────────────── demo 0.0.0.9000 ────</span></span>
+<span id="cb16-17"><a href="dados.html#cb16-17"></a><span class="co">#&gt; Duration: 8.2s</span></span>
+<span id="cb16-18"><a href="dados.html#cb16-18"></a><span class="co">#&gt; </span></span>
+<span id="cb16-19"><a href="dados.html#cb16-19"></a><span class="co">#&gt; 0 errors ✔ | 0 warnings ✔ | 0 notes ✔</span></span></code></pre></div>
 </div>
 <div id="testes-automatizados" class="section level3">
 <h3><span class="header-section-number">4.3.2</span> Testes automatizados</h3>
@@ -540,16 +563,16 @@ as outras funções ainda terão que passar nos seus próprios testes.</p>
 <p>Para criar um conjunto de testes é necessário primeiro criar o ambiente para tal
 dentro do pacote. Depois disso, basta criar conjuntos individuais de testes para
 cada função.</p>
-<pre class="sourceCode r"><code class="sourceCode r">usethis<span class="op">::</span><span class="kw">use_testthat</span>()
-<span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span>
-<span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span>
-<span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span>
-<span class="co">#&gt; ● Call `use_test()` to initialize a basic test file and open it for editing.</span>
-
-usethis<span class="op">::</span><span class="kw">use_test</span>(<span class="st">&quot;funcao_demo&quot;</span>)
-<span class="co">#&gt; ✔ Increasing &#39;testthat&#39; version to &#39;&gt;= 2.1.0&#39; in DESCRIPTION</span>
-<span class="co">#&gt; ✔ Writing &#39;tests/testthat/test-funcao_demo.R&#39;</span>
-<span class="co">#&gt; ● Modify &#39;tests/testthat/test-funcao_demo.R&#39;</span></code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="dados.html#cb17-1"></a>usethis<span class="op">::</span><span class="kw">use_testthat</span>()</span>
+<span id="cb17-2"><a href="dados.html#cb17-2"></a><span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span></span>
+<span id="cb17-3"><a href="dados.html#cb17-3"></a><span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span></span>
+<span id="cb17-4"><a href="dados.html#cb17-4"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span></span>
+<span id="cb17-5"><a href="dados.html#cb17-5"></a><span class="co">#&gt; ● Call `use_test()` to initialize a basic test file and open it for editing.</span></span>
+<span id="cb17-6"><a href="dados.html#cb17-6"></a></span>
+<span id="cb17-7"><a href="dados.html#cb17-7"></a>usethis<span class="op">::</span><span class="kw">use_test</span>(<span class="st">&quot;funcao_demo&quot;</span>)</span>
+<span id="cb17-8"><a href="dados.html#cb17-8"></a><span class="co">#&gt; ✔ Increasing &#39;testthat&#39; version to &#39;&gt;= 2.1.0&#39; in DESCRIPTION</span></span>
+<span id="cb17-9"><a href="dados.html#cb17-9"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat/test-funcao_demo.R&#39;</span></span>
+<span id="cb17-10"><a href="dados.html#cb17-10"></a><span class="co">#&gt; ● Modify &#39;tests/testthat/test-funcao_demo.R&#39;</span></span></code></pre></div>
 <p>Como é possível notar, o pacote <code>testthat</code> permite criar um arquivo de testes
 para <code>funcao_demo()</code> (neste caso <code>tests/testthat/test-funcao_demo.R</code>). Esse
 arquivo já vem com um teste padrão a título de demonstração, mas, depois de
@@ -567,19 +590,19 @@ test_that(&quot;funcao_demo funciona&quot;, {
 
 })</code></pre>
 <p>E o resultado da execução dos testes é o seguinte:</p>
-<pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">test</span>()
-<span class="co">#&gt; Loading demo</span>
-<span class="co">#&gt; Testing demo</span>
-<span class="co">#&gt; ✔ |  OK F W S | Context</span>
-<span class="co">#&gt; ✔ |   4       | funcao_demo</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; ══ Results ═════════════════════════════════════════════════════════════════════</span>
-<span class="co">#&gt; OK:       4</span>
-<span class="co">#&gt; Failed:   0</span>
-<span class="co">#&gt; Warnings: 0</span>
-<span class="co">#&gt; Skipped:  0</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Keep up the good work.</span></code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="dados.html#cb19-1"></a>devtools<span class="op">::</span><span class="kw">test</span>()</span>
+<span id="cb19-2"><a href="dados.html#cb19-2"></a><span class="co">#&gt; Loading demo</span></span>
+<span id="cb19-3"><a href="dados.html#cb19-3"></a><span class="co">#&gt; Testing demo</span></span>
+<span id="cb19-4"><a href="dados.html#cb19-4"></a><span class="co">#&gt; ✔ |  OK F W S | Context</span></span>
+<span id="cb19-5"><a href="dados.html#cb19-5"></a><span class="co">#&gt; ✔ |   4       | funcao_demo</span></span>
+<span id="cb19-6"><a href="dados.html#cb19-6"></a><span class="co">#&gt; </span></span>
+<span id="cb19-7"><a href="dados.html#cb19-7"></a><span class="co">#&gt; ══ Results ═════════════════════════════════════════════════════════════════════</span></span>
+<span id="cb19-8"><a href="dados.html#cb19-8"></a><span class="co">#&gt; OK:       4</span></span>
+<span id="cb19-9"><a href="dados.html#cb19-9"></a><span class="co">#&gt; Failed:   0</span></span>
+<span id="cb19-10"><a href="dados.html#cb19-10"></a><span class="co">#&gt; Warnings: 0</span></span>
+<span id="cb19-11"><a href="dados.html#cb19-11"></a><span class="co">#&gt; Skipped:  0</span></span>
+<span id="cb19-12"><a href="dados.html#cb19-12"></a><span class="co">#&gt; </span></span>
+<span id="cb19-13"><a href="dados.html#cb19-13"></a><span class="co">#&gt; Keep up the good work.</span></span></code></pre></div>
 </div>
 </div>
 <div id="data-e-data-raw" class="section level2">
@@ -613,39 +636,39 @@ mudança nas demandas ou nas bases, o analista precisa ser capaz de alterar os
 denominada <code>dados.xlsx</code>. Primeiramente deve-se executar a função
 <code>usethis::use_data_raw()</code> para criar a pasta <code>data-raw</code> e um arquivo de
 tratamento para a base em questão.</p>
-<pre class="sourceCode r"><code class="sourceCode r">usethis<span class="op">::</span><span class="kw">use_data_raw</span>(<span class="st">&quot;dados&quot;</span>)
-<span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span>
-<span class="co">#&gt; ✔ Creating &#39;data-raw/&#39;</span>
-<span class="co">#&gt; ✔ Adding &#39;^data-raw$&#39; to &#39;.Rbuildignore&#39;</span>
-<span class="co">#&gt; ✔ Writing &#39;data-raw/dados.R&#39;</span>
-<span class="co">#&gt; ● Modify &#39;data-raw/dados.R&#39;</span>
-<span class="co">#&gt; ● Finish the data preparation script in &#39;data-raw/dados.R&#39;</span>
-<span class="co">#&gt; ● Use `usethis::use_data()` to add prepared data to package</span></code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="dados.html#cb20-1"></a>usethis<span class="op">::</span><span class="kw">use_data_raw</span>(<span class="st">&quot;dados&quot;</span>)</span>
+<span id="cb20-2"><a href="dados.html#cb20-2"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span></span>
+<span id="cb20-3"><a href="dados.html#cb20-3"></a><span class="co">#&gt; ✔ Creating &#39;data-raw/&#39;</span></span>
+<span id="cb20-4"><a href="dados.html#cb20-4"></a><span class="co">#&gt; ✔ Adding &#39;^data-raw$&#39; to &#39;.Rbuildignore&#39;</span></span>
+<span id="cb20-5"><a href="dados.html#cb20-5"></a><span class="co">#&gt; ✔ Writing &#39;data-raw/dados.R&#39;</span></span>
+<span id="cb20-6"><a href="dados.html#cb20-6"></a><span class="co">#&gt; ● Modify &#39;data-raw/dados.R&#39;</span></span>
+<span id="cb20-7"><a href="dados.html#cb20-7"></a><span class="co">#&gt; ● Finish the data preparation script in &#39;data-raw/dados.R&#39;</span></span>
+<span id="cb20-8"><a href="dados.html#cb20-8"></a><span class="co">#&gt; ● Use `usethis::use_data()` to add prepared data to package</span></span></code></pre></div>
 <p>Como indicado pelos três últimos pontos da saída do comando, agora basta colocar
 o código de tratamento da base <code>dados</code> em <code>data-raw/dados.R</code> e por fim utilizar
 <code>usethis::use_data()</code> para adicionar os dados preparados ao pacote. Para
 prosseguir o exemplo, o arquivo <code>dados.xlsx</code> foi copiado para o diretório
 <code>data-raw</code> e o código abaixo foi inserido em <code>data-raw/dados.R</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(magrittr)
-
-<span class="co"># Limpar a base dados.xlsx</span>
-dados &lt;-<span class="st"> &quot;data-raw/dados.xlsx&quot;</span> <span class="op">%&gt;%</span>
-<span class="st">  </span>readxl<span class="op">::</span><span class="kw">read_xlsx</span>() <span class="op">%&gt;%</span>
-<span class="st">  </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cyl <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(
-    <span class="dt">brand =</span> stringr<span class="op">::</span><span class="kw">str_extract</span>(model, <span class="st">&quot;^[A-z]+&quot;</span>)
-  ) <span class="op">%&gt;%</span>
-<span class="st">  </span>dplyr<span class="op">::</span><span class="kw">group_by</span>(brand) <span class="op">%&gt;%</span>
-<span class="st">  </span>dplyr<span class="op">::</span><span class="kw">summarise</span>(
-    <span class="dt">mean_mpg =</span> <span class="kw">mean</span>(mpg),
-    <span class="dt">prop_6_cyl =</span> <span class="kw">sum</span>(cyl <span class="op">==</span><span class="st"> </span><span class="dv">6</span>)<span class="op">/</span>dplyr<span class="op">::</span><span class="kw">n</span>()
-  ) <span class="op">%&gt;%</span>
-<span class="st">  </span>dplyr<span class="op">::</span><span class="kw">arrange</span>(brand)
-
-<span class="co"># Salvar a base para uso no pacote</span>
-usethis<span class="op">::</span><span class="kw">use_data</span>(dados)
-<span class="co">#&gt; ✔ Creating &#39;data/&#39;</span>
-<span class="co">#&gt; ✔ Saving &#39;dados&#39; to &#39;data/dados.rda&#39;</span></code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="dados.html#cb21-1"></a><span class="kw">library</span>(magrittr)</span>
+<span id="cb21-2"><a href="dados.html#cb21-2"></a></span>
+<span id="cb21-3"><a href="dados.html#cb21-3"></a><span class="co"># Limpar a base dados.xlsx</span></span>
+<span id="cb21-4"><a href="dados.html#cb21-4"></a>dados &lt;-<span class="st"> &quot;data-raw/dados.xlsx&quot;</span> <span class="op">%&gt;%</span></span>
+<span id="cb21-5"><a href="dados.html#cb21-5"></a><span class="st">  </span>readxl<span class="op">::</span><span class="kw">read_xlsx</span>() <span class="op">%&gt;%</span></span>
+<span id="cb21-6"><a href="dados.html#cb21-6"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cyl <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>) <span class="op">%&gt;%</span></span>
+<span id="cb21-7"><a href="dados.html#cb21-7"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(</span>
+<span id="cb21-8"><a href="dados.html#cb21-8"></a>    <span class="dt">brand =</span> stringr<span class="op">::</span><span class="kw">str_extract</span>(model, <span class="st">&quot;^[A-z]+&quot;</span>)</span>
+<span id="cb21-9"><a href="dados.html#cb21-9"></a>  ) <span class="op">%&gt;%</span></span>
+<span id="cb21-10"><a href="dados.html#cb21-10"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">group_by</span>(brand) <span class="op">%&gt;%</span></span>
+<span id="cb21-11"><a href="dados.html#cb21-11"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">summarise</span>(</span>
+<span id="cb21-12"><a href="dados.html#cb21-12"></a>    <span class="dt">mean_mpg =</span> <span class="kw">mean</span>(mpg),</span>
+<span id="cb21-13"><a href="dados.html#cb21-13"></a>    <span class="dt">prop_6_cyl =</span> <span class="kw">sum</span>(cyl <span class="op">==</span><span class="st"> </span><span class="dv">6</span>)<span class="op">/</span>dplyr<span class="op">::</span><span class="kw">n</span>()</span>
+<span id="cb21-14"><a href="dados.html#cb21-14"></a>  ) <span class="op">%&gt;%</span></span>
+<span id="cb21-15"><a href="dados.html#cb21-15"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">arrange</span>(brand)</span>
+<span id="cb21-16"><a href="dados.html#cb21-16"></a></span>
+<span id="cb21-17"><a href="dados.html#cb21-17"></a><span class="co"># Salvar a base para uso no pacote</span></span>
+<span id="cb21-18"><a href="dados.html#cb21-18"></a>usethis<span class="op">::</span><span class="kw">use_data</span>(dados)</span>
+<span id="cb21-19"><a href="dados.html#cb21-19"></a><span class="co">#&gt; ✔ Creating &#39;data/&#39;</span></span>
+<span id="cb21-20"><a href="dados.html#cb21-20"></a><span class="co">#&gt; ✔ Saving &#39;dados&#39; to &#39;data/dados.rda&#39;</span></span></code></pre></div>
 <p>Neste caso o arquivo Excel foi criado de dentro do prṕrio R com o comando
 <code>writexl::write_xlsx(tibble::rownames_to_column(mtcars, "model"), "data-raw/dados.xlsx")</code>,
 mas isso é só um exemplo ilustrativo. O importante é saber o que acontece quando
@@ -671,7 +694,7 @@ armazenar dados brutos e tratados. Para não sincronizar as bases brutas com o
 Git, basta adicioná-las ao arquivo <code>.gitignore</code> do pacote; no caso do exemplo
 acima, bastaria adicionar a esse arquivo uma linha com o texto
 <code>data-raw/dados.xlsx</code>.</p>
-<div id="documentacao-1" class="section level3">
+<div id="documentação-1" class="section level3">
 <h3><span class="header-section-number">4.4.1</span> Documentação</h3>
 <p>Além de funções, também é possível documentar bases de dados com o pacote
 <code>roxygen2</code>. Para isso, crie um arquivo <code>data.R</code> na pasta <code>R/</code> do pacote e crie
@@ -681,62 +704,42 @@ pessoas da mesma organização, pois assim não é necessário compartilhar uma
 planilha Excel separada descrevendo cada uma das colunas da tabela.</p>
 <p>Uma boa documentação de bases de dados não precisa de muita coisa. Abaixo é
 exemplificado como seria documentada <code>dados</code>:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Dados sobre 15 marcas de carros</span>
-<span class="co">#&#39;</span>
-<span class="co">#&#39; A tabela, gerada a partir de `mtcars`, apresenta algumas poucas</span>
-<span class="co">#&#39; informações sobre carros com mais de 4 cilindros de 15 marcas</span>
-<span class="co">#&#39; americanas de carros.</span>
-<span class="co">#&#39;</span>
-<span class="co">#&#39; @format Uma tabela com 3 colunas e 15 linhas:</span>
-<span class="co">#&#39; \describe{</span>
-<span class="co">#&#39;   \item{brand}{Marca}</span>
-<span class="co">#&#39;   \item{mean_mpg}{Milhas por galão médias para aquela marca}</span>
-<span class="co">#&#39;   \item{prop_6_cyl}{Proporção dos carros que apresentam 6 cilindros}</span>
-<span class="co">#&#39; }</span>
-<span class="co">#&#39; @source Henderson and Velleman (1981)</span>
-<span class="st">&quot;dados&quot;</span></code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="dados.html#cb22-1"></a><span class="co">#&#39; Dados sobre 15 marcas de carros</span></span>
+<span id="cb22-2"><a href="dados.html#cb22-2"></a><span class="co">#&#39;</span></span>
+<span id="cb22-3"><a href="dados.html#cb22-3"></a><span class="co">#&#39; A tabela, gerada a partir de `mtcars`, apresenta algumas poucas</span></span>
+<span id="cb22-4"><a href="dados.html#cb22-4"></a><span class="co">#&#39; informações sobre carros com mais de 4 cilindros de 15 marcas</span></span>
+<span id="cb22-5"><a href="dados.html#cb22-5"></a><span class="co">#&#39; americanas de carros.</span></span>
+<span id="cb22-6"><a href="dados.html#cb22-6"></a><span class="co">#&#39;</span></span>
+<span id="cb22-7"><a href="dados.html#cb22-7"></a><span class="co">#&#39; @format Uma tabela com 3 colunas e 15 linhas:</span></span>
+<span id="cb22-8"><a href="dados.html#cb22-8"></a><span class="co">#&#39; \describe{</span></span>
+<span id="cb22-9"><a href="dados.html#cb22-9"></a><span class="co">#&#39;   \item{brand}{Marca}</span></span>
+<span id="cb22-10"><a href="dados.html#cb22-10"></a><span class="co">#&#39;   \item{mean_mpg}{Milhas por galão médias para aquela marca}</span></span>
+<span id="cb22-11"><a href="dados.html#cb22-11"></a><span class="co">#&#39;   \item{prop_6_cyl}{Proporção dos carros que apresentam 6 cilindros}</span></span>
+<span id="cb22-12"><a href="dados.html#cb22-12"></a><span class="co">#&#39; }</span></span>
+<span id="cb22-13"><a href="dados.html#cb22-13"></a><span class="co">#&#39; @source Henderson and Velleman (1981)</span></span>
+<span id="cb22-14"><a href="dados.html#cb22-14"></a><span class="st">&quot;dados&quot;</span></span></code></pre></div>
 
 </div>
 </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="footnotes">
-<hr />
-<ol start="3">
-<li id="fn3"><p>Aqui o termo “programação funcional” é usado de forma figurativa. Na
-computação linguagens denominadas “funcionais” tem um <em>modus operandi</em> bastante
-específico não abordado neste capítulo.<a href="dados.html#fnref3" class="footnote-back">↩</a></p></li>
-</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="versoes.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="versões.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="metadados.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -751,6 +754,10 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

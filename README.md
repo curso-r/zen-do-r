@@ -14,7 +14,7 @@ Um livro de programação em R para não-programadores.
 - [x] Pacotes
 - [x] Data e data-raw
 - [ ] Sobre metadados
-- [ ] Versões e releases
+- [X] Versões e releases
 - [ ] Submissão ao CRAN
 - [ ] Sobre paralelismo
 - [ ] Multithread e multicore
