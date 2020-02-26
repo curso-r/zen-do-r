@@ -151,7 +151,7 @@ devtools::document()
 #> Rendering development documentation for 'funcao_demo'
 ```
 
-```{r, echo=FALSE, fig.align='center', dpi=50}
+```{r}
 knitr::include_graphics("static/pacotes/doc.png")
 ```
 

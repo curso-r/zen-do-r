@@ -1,6 +1,7 @@
 book_filename: "zen-do-r"
 output_dir: "docs"
 delete_merged_file: true
+before_chapter_script: "_common.R"
 
 rmd_files: [
   "index.Rmd",

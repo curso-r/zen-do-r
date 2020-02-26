@@ -161,7 +161,7 @@ fundo isso não passa de um versionamento semântico integrado ao site.
 
 Como exemplo, podemos ver a aba "Releases" do pacote `decryptr`:
 
-```{r, echo=FALSE, fig.align='center', dpi=50}
+```{r}
 knitr::include_graphics("static/versoes-releases/ver.png")
 ```
 
@@ -178,7 +178,7 @@ versão do seu pacote que deve ser baixada pelos usuários. Depois basta ir para
 a aba das releases e clicar em **Draft a new release**. Preencha os campos
 correspondentes e publique a versão.
 
-```{r, echo=FALSE, fig.align='center', dpi=50}
+```{r}
 knitr::include_graphics("static/versoes-releases/tag.png")
 ```
 

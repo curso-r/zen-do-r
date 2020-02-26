@@ -204,7 +204,7 @@ está, apenas que seja um lugar o qual você lembre sem dificuldades. Tendo
 criado um esse <em>workspace</em>, é importante registrá-lo como o seu ambiente de
 trabalho no RStudio: basta selecioná-lo em
 <strong>Tools &gt; Global Options… &gt; Browse</strong>.</p>
-<p><img src="static/rproj-dir/wd.png" width="565" style="display: block; margin: auto;" /></p>
+<p><img src="static/rproj-dir/wd.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Desta forma, toda vez que você iniciar um novo projeto no R, ele por parão
 usará essa nova pasta como ambiente padrão! Se você já tiver alguns arquivos
 espalhados pelo seu computador, traga eles para o seu diretório de programas.</p>
@@ -222,14 +222,14 @@ assunto. Mas esta não deve ser uma pasta comum, ela deve ser um projeto.</p>
 <p>O código listado abaixo demonstra como criar um projeto no RStudio. Basta
 apenas um comando e ele já fará tudo que for necessário para preparar o seu
 ambiente de desenvolvimento.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="rproj-dir.html#cb2-1"></a>usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&quot;~/Documents/Dev/R/Proj/&quot;</span>)</span>
-<span id="cb2-2"><a href="rproj-dir.html#cb2-2"></a><span class="co">#&gt; ✔ Creating &#39;~/Documents/Dev/R/Proj/&#39;</span></span>
-<span id="cb2-3"><a href="rproj-dir.html#cb2-3"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/Dev/R/Proj&#39;</span></span>
-<span id="cb2-4"><a href="rproj-dir.html#cb2-4"></a><span class="co">#&gt; ✔ Creating &#39;R/&#39;</span></span>
-<span id="cb2-5"><a href="rproj-dir.html#cb2-5"></a><span class="co">#&gt; ✔ Writing &#39;Proj.Rproj&#39;</span></span>
-<span id="cb2-6"><a href="rproj-dir.html#cb2-6"></a><span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span></span>
-<span id="cb2-7"><a href="rproj-dir.html#cb2-7"></a><span class="co">#&gt; ✔ Opening &#39;~/Documents/Dev/R/Proj/&#39; in new RStudio session</span></span>
-<span id="cb2-8"><a href="rproj-dir.html#cb2-8"></a><span class="co">#&gt; ✔ Setting active project to &#39;Proj&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="rproj-dir.html#cb1-1"></a>usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&quot;~/Documents/Dev/R/Proj/&quot;</span>)</span>
+<span id="cb1-2"><a href="rproj-dir.html#cb1-2"></a><span class="co">#&gt; ✔ Creating &#39;~/Documents/Dev/R/Proj/&#39;</span></span>
+<span id="cb1-3"><a href="rproj-dir.html#cb1-3"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/Dev/R/Proj&#39;</span></span>
+<span id="cb1-4"><a href="rproj-dir.html#cb1-4"></a><span class="co">#&gt; ✔ Creating &#39;R/&#39;</span></span>
+<span id="cb1-5"><a href="rproj-dir.html#cb1-5"></a><span class="co">#&gt; ✔ Writing &#39;Proj.Rproj&#39;</span></span>
+<span id="cb1-6"><a href="rproj-dir.html#cb1-6"></a><span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span></span>
+<span id="cb1-7"><a href="rproj-dir.html#cb1-7"></a><span class="co">#&gt; ✔ Opening &#39;~/Documents/Dev/R/Proj/&#39; in new RStudio session</span></span>
+<span id="cb1-8"><a href="rproj-dir.html#cb1-8"></a><span class="co">#&gt; ✔ Setting active project to &#39;Proj&#39;</span></span></code></pre></div>
 <p>Cada linha da saída do comando representa algo que ele fez para preparar o
 projeto. A mais importante é a quarta linha, que cria o arquivo <code>Proj.Rproj</code>;
 ele indica para o RStudio que aquele diretório será a raiz de um projeto e que,
@@ -252,19 +252,19 @@ essencialmente a raiz do seu projeto. Muitos programadores que aprenderam R há
 muito tempo conhecem uma função chamada <code>setwd()</code>; se você nunca ouviu falar
 disso, não se preocupe e continue assim, mas se você costuma usá-la, siga
 prestando atenção.</p>
-<p><img src="static/rproj-dir/console.png" width="589" style="display: block; margin: auto;" /></p>
+<p><img src="static/rproj-dir/console.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>O R dá a possibilidade de mudar, instantaneamente, o diretório de trabalho.
 Isso que dizer que os caminhos relativos para arquivos podem mudar em questão
 de linhas. O exemplo abaixo demonstra superficialmente como isso funciona:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="rproj-dir.html#cb3-1"></a><span class="co"># Abrindo dois arquivos em diretórios diferentes</span></span>
-<span id="cb3-2"><a href="rproj-dir.html#cb3-2"></a></span>
-<span id="cb3-3"><a href="rproj-dir.html#cb3-3"></a><span class="kw">setwd</span>(<span class="st">&quot;~/Downloads&quot;</span>)</span>
-<span id="cb3-4"><a href="rproj-dir.html#cb3-4"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span>
-<span id="cb3-5"><a href="rproj-dir.html#cb3-5"></a></span>
-<span id="cb3-6"><a href="rproj-dir.html#cb3-6"></a><span class="kw">setwd</span>(<span class="st">&quot;~/Documents/Dev/R/Proj&quot;</span>)</span>
-<span id="cb3-7"><a href="rproj-dir.html#cb3-7"></a>b &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;b.csv&quot;</span>)</span>
-<span id="cb3-8"><a href="rproj-dir.html#cb3-8"></a></span>
-<span id="cb3-9"><a href="rproj-dir.html#cb3-9"></a><span class="kw">write.csv</span>(a, <span class="st">&quot;c.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="rproj-dir.html#cb2-1"></a><span class="co"># Abrindo dois arquivos em diretórios diferentes</span></span>
+<span id="cb2-2"><a href="rproj-dir.html#cb2-2"></a></span>
+<span id="cb2-3"><a href="rproj-dir.html#cb2-3"></a><span class="kw">setwd</span>(<span class="st">&quot;~/Downloads&quot;</span>)</span>
+<span id="cb2-4"><a href="rproj-dir.html#cb2-4"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span>
+<span id="cb2-5"><a href="rproj-dir.html#cb2-5"></a></span>
+<span id="cb2-6"><a href="rproj-dir.html#cb2-6"></a><span class="kw">setwd</span>(<span class="st">&quot;~/Documents/Dev/R/Proj&quot;</span>)</span>
+<span id="cb2-7"><a href="rproj-dir.html#cb2-7"></a>b &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;b.csv&quot;</span>)</span>
+<span id="cb2-8"><a href="rproj-dir.html#cb2-8"></a></span>
+<span id="cb2-9"><a href="rproj-dir.html#cb2-9"></a><span class="kw">write.csv</span>(a, <span class="st">&quot;c.csv&quot;</span>)</span></code></pre></div>
 <p>Isso não parece tão problemático à primeira vista, mas usar <code>setwd()</code> cria um
 vício difícil de abandonar. Essa função estimula que os seus projetos continuem
 desorganizados com arquivos espalhados pelo computador, mas também confunde o
@@ -276,12 +276,12 @@ responder caso você não esteja atento ao código todo.</p>
 trabalho seja sempre a pasta do projeto. Neste caso é como se, ao abrir o
 RStudio, ele executasse o comando <code>setwd("~/Documents/Dev/R/Proj")</code>
 automaticamente. Mas como ler então o arquivo <code>a.csv</code>?</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="rproj-dir.html#cb4-1"></a><span class="co"># Duas formas de ler a.csv</span></span>
-<span id="cb4-2"><a href="rproj-dir.html#cb4-2"></a></span>
-<span id="cb4-3"><a href="rproj-dir.html#cb4-3"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>)</span>
-<span id="cb4-4"><a href="rproj-dir.html#cb4-4"></a></span>
-<span id="cb4-5"><a href="rproj-dir.html#cb4-5"></a><span class="kw">file.copy</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>, <span class="st">&quot;a.csv&quot;</span>)</span>
-<span id="cb4-6"><a href="rproj-dir.html#cb4-6"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="rproj-dir.html#cb3-1"></a><span class="co"># Duas formas de ler a.csv</span></span>
+<span id="cb3-2"><a href="rproj-dir.html#cb3-2"></a></span>
+<span id="cb3-3"><a href="rproj-dir.html#cb3-3"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>)</span>
+<span id="cb3-4"><a href="rproj-dir.html#cb3-4"></a></span>
+<span id="cb3-5"><a href="rproj-dir.html#cb3-5"></a><span class="kw">file.copy</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>, <span class="st">&quot;a.csv&quot;</span>)</span>
+<span id="cb3-6"><a href="rproj-dir.html#cb3-6"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span></code></pre></div>
 <p>A primeira forma deixa explícito que aquele arquivo não faz parte do projeto e
 que portanto deve ser tratado como temporário. A segunda forma, mais indicada,
 é trazer o arquivo para dentro do projeto! Se ele é importante, é essencial que

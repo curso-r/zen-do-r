@@ -70,7 +70,7 @@ Basta selecionar **Tools > Global Options...** na aba de ferramentas do RStudio
 e então ajustar três configurações. No final a página de opções gerais deve
 ficar similar à da imagem abaixo:
 
-```{r, echo=FALSE, fig.align='center', dpi=50}
+```{r}
 knitr::include_graphics("static/rdata-rhistory/config.png")
 ```
 

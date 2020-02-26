@@ -18,7 +18,7 @@ criado um esse *workspace*, é importante registrá-lo como o seu ambiente de
 trabalho no RStudio: basta selecioná-lo em
 **Tools > Global Options... > Browse**.
 
-```{r, echo=FALSE, fig.align='center', dpi=50}
+```{r}
 knitr::include_graphics("static/rproj-dir/wd.png")
 ```
 
@@ -79,7 +79,7 @@ muito tempo conhecem uma função chamada `setwd()`; se você nunca ouviu falar
 disso, não se preocupe e continue assim, mas se você costuma usá-la, siga
 prestando atenção.
 
-```{r, echo=FALSE, fig.align='center', dpi=50}
+```{r}
 knitr::include_graphics("static/rproj-dir/console.png")
 ```
 

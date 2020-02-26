@@ -289,8 +289,8 @@ LazyData: true</code></pre>
 <p>Note como o campo <em>Version</em> já está populado com a primeira versão possível para
 um pacote: 0.0.0.9000. Depois de alguns commits, se acharmos que o código está
 preparado para a primeira minor, utilizamos:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="versoes-releases.html#cb2-1"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;minor&quot;</span>)</span>
-<span id="cb2-2"><a href="versoes-releases.html#cb2-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="versoes-releases.html#cb23-1"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;minor&quot;</span>)</span>
+<span id="cb23-2"><a href="versoes-releases.html#cb23-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0&#39;</span></span></code></pre></div>
 <p>A segunda linha já deixa claro que agora o arquivo <code>DESCRIPTION</code> contém uma
 linha <code>Version: 0.1.0</code> (note como a versão de desenvolvimento é removida
 automaticamente). <strong>Mas atenção</strong>, antes de fazer qualquer outra alteração no
@@ -300,19 +300,19 @@ ela. Atualmente o <code>usethis</code> faz isso automaticamente.</p>
 para o estado de desenvolvimento. Ou seja, deve existir um único commit no qual
 o pacote é considerado estável para cada sequência de commits de
 desenvolvimento.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="versoes-releases.html#cb3-1"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
-<span id="cb3-2"><a href="versoes-releases.html#cb3-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0.9000&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="versoes-releases.html#cb24-1"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
+<span id="cb24-2"><a href="versoes-releases.html#cb24-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0.9000&#39;</span></span></code></pre></div>
 <p>Depois que o pacote voltar para desenvolvimento, a programação pode continuar
 desempedida. Por completude, <code>usethis::use_version()</code> pode ser utilizada para
 qualquer versão cheia:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="versoes-releases.html#cb4-1"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;patch&quot;</span>)</span>
-<span id="cb4-2"><a href="versoes-releases.html#cb4-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1&#39;</span></span>
-<span id="cb4-3"><a href="versoes-releases.html#cb4-3"></a></span>
-<span id="cb4-4"><a href="versoes-releases.html#cb4-4"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
-<span id="cb4-5"><a href="versoes-releases.html#cb4-5"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1.9000&#39;</span></span>
-<span id="cb4-6"><a href="versoes-releases.html#cb4-6"></a></span>
-<span id="cb4-7"><a href="versoes-releases.html#cb4-7"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;major&quot;</span>)</span>
-<span id="cb4-8"><a href="versoes-releases.html#cb4-8"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;1.0.0&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="versoes-releases.html#cb25-1"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;patch&quot;</span>)</span>
+<span id="cb25-2"><a href="versoes-releases.html#cb25-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1&#39;</span></span>
+<span id="cb25-3"><a href="versoes-releases.html#cb25-3"></a></span>
+<span id="cb25-4"><a href="versoes-releases.html#cb25-4"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
+<span id="cb25-5"><a href="versoes-releases.html#cb25-5"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1.9000&#39;</span></span>
+<span id="cb25-6"><a href="versoes-releases.html#cb25-6"></a></span>
+<span id="cb25-7"><a href="versoes-releases.html#cb25-7"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;major&quot;</span>)</span>
+<span id="cb25-8"><a href="versoes-releases.html#cb25-8"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;1.0.0&#39;</span></span></code></pre></div>
 </div>
 <div id="releases" class="section level2">
 <h2><span class="header-section-number">8.2</span> Releases</h2>
@@ -320,7 +320,7 @@ qualquer versão cheia:</p>
 marcar commits específicos como estáveis e atribuir um rótulo aos mesmos. No
 fundo isso não passa de um versionamento semântico integrado ao site.</p>
 <p>Como exemplo, podemos ver a aba “Releases” do pacote <code>decryptr</code>:</p>
-<p><img src="static/versoes-releases/ver.png" width="982" style="display: block; margin: auto;" /></p>
+<p><img src="static/versoes-releases/ver.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>É bom fazer esse tipo de versionamento externo porque os usuários passam a ter
 um lugar de fácil acesso com o código-fonte de absolutamente todas as versões do
 seu pacote. Além disso, a função <code>devtools::install_github()</code> é capaz de
@@ -332,7 +332,7 @@ versão atual (depois de <code>usethis::use_version()</code> e antes de
 versão do seu pacote que deve ser baixada pelos usuários. Depois basta ir para
 a aba das releases e clicar em <strong>Draft a new release</strong>. Preencha os campos
 correspondentes e publique a versão.</p>
-<p><img src="static/versoes-releases/tag.png" width="728" style="display: block; margin: auto;" /></p>
+<p><img src="static/versoes-releases/tag.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Uma forma eficiente de manter todas as alterações realizadas no pacote de forma
 organizada é com um arquivo <code>NEWS</code>. Ele pode ser criado com
 <code>usethis::use_news_md()</code> e criar um novo título para cada versão. Observe como
@@ -340,6 +340,18 @@ organizada é com um arquivo <code>NEWS</code>. Ele pode ser criado com
 utilizado no <code>ggplot2</code>.</p>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>E também não tenho paciência para entrar em mais nenhum debate “base vs.
+tidyverse”<a href="introducao.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Não tenho nenhuma estatística confiável sobre esse número, mas sei que ele
+não é 100% porque conheço pelo menos uma pessoa que programa R no neovim.<a href="rdata-rhistory.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Aqui o termo “programação funcional” é usado de forma figurativa. Na
+computação linguagens denominadas “funcionais” tem um <em>modus operandi</em> bastante
+específico não abordado neste capítulo.<a href="funcoes-deps.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

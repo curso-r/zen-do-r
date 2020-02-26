@@ -57,7 +57,7 @@ usethis::browse_github_token()
 #> ● Make sure '.Renviron' ends with a newline!
 ```
 
-```{r, echo=FALSE, fig.align='center', dpi=50}
+```{r}
 knitr::include_graphics("static/git-github/pat.png")
 ```
 
@@ -137,7 +137,7 @@ aba no RStudio denominada Git. Através dela é possível controlar todas as
 versões do código e enviá-las ao GitHub para que sejam armazenadas com segurança
 na nuvem.
 
-```{r, echo=FALSE, fig.align='center', dpi=50}
+```{r}
 knitr::include_graphics("static/git-github/git.png")
 ```
 
