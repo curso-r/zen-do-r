@@ -1,0 +1,134 @@
+# Data e data-raw {#data-data-raw}
+
+Na seção anterior, foi discutida a importância de empacotar uma análise. Seja
+para organizar dependências, reutilizar código, manter testes automatizados, ou
+qualquer outra razão, pacotes são a melhor forma de guardar e compartilhar
+código em R. Mas, apesar de toda a conversa sobre programação, pouco foi
+abordado sobre outro elemento essencial de uma análise de dados: dados.
+
+Felizmente, pacotes em R têm lugares específicos para guardar dados brutos e
+dados tratados. São as pastas `data` e `data-raw`, cada uma com as suas
+propriedades e possibilidades. Ambas podem ser criadas com facilidades por
+funções do pacote `usethis`, então elas se encaixam perfeitamente no fluxo de
+análise descrito até agora.
+
+Como indicado anteriormente, existem dois tipos de dados: brutos e tratados.
+Normalmente dados brutos estão em formatos comumente compartilhados em ambientes
+de trabalho: planilhas Excel, arquivos CSV, etc. Os pacotes `readxl` e `readr`
+permitem que esses formatos sejam importados para dentro do R, mas normalmente
+essas funções são mais lentas e menos padronizadas do que `readRDS()`, por
+exemplo, que lê arquivos no formato nativo do R.
+
+Além disso, raramente os dados recebidos durante uma análise estarão
+perfeitamente organizados e padronizados. É comum precisar de múltiplos fluxos
+de tratamento para poder transformar os dados brutos naquilo que de fato pode
+ser utilizado durante uma análise.
+
+O programador é encorajado a separar essas planilhas brutas daquelas resultantes
+do processo de limpeza e tratamento. Junto com os dados crús, é importante
+também guardar os arquivos que fazem o processo de limpeza; caso haja uma
+mudança nas demandas ou nas bases, o analista precisa ser capaz de alterar os
+*scripts* de tratamento e gerar novas bases consolidadas.
+
+No exemplo abaixo, supõe-se um diretório com um pacote R e uma base bruta
+denominada `dados.xlsx`. Primeiramente deve-se executar a função
+`usethis::use_data_raw()` para criar a pasta `data-raw` e um arquivo de
+tratamento para a base em questão.
+
+```r
+usethis::use_data_raw("dados")
+#> ✔ Setting active project to '~/Documents/demo'
+#> ✔ Creating 'data-raw/'
+#> ✔ Adding '^data-raw$' to '.Rbuildignore'
+#> ✔ Writing 'data-raw/dados.R'
+#> ● Modify 'data-raw/dados.R'
+#> ● Finish the data preparation script in 'data-raw/dados.R'
+#> ● Use `usethis::use_data()` to add prepared data to package
+```
+
+Como indicado pelos três últimos pontos da saída do comando, agora basta colocar
+o código de tratamento da base `dados` em `data-raw/dados.R` e por fim utilizar
+`usethis::use_data()` para adicionar os dados preparados ao pacote. Para
+prosseguir o exemplo, o arquivo `dados.xlsx` foi copiado para o diretório
+`data-raw` e o código abaixo foi inserido em `data-raw/dados.R`.
+
+```r
+library(magrittr)
+
+# Limpar a base dados.xlsx
+dados <- "data-raw/dados.xlsx" %>%
+  readxl::read_xlsx() %>%
+  dplyr::filter(cyl > 4) %>%
+  dplyr::mutate(
+    brand = stringr::str_extract(model, "^[A-z]+")
+  ) %>%
+  dplyr::group_by(brand) %>%
+  dplyr::summarise(
+    mean_mpg = mean(mpg),
+    prop_6_cyl = sum(cyl == 6)/dplyr::n()
+  ) %>%
+  dplyr::arrange(brand)
+
+# Salvar a base para uso no pacote
+usethis::use_data(dados)
+#> ✔ Creating 'data/'
+#> ✔ Saving 'dados' to 'data/dados.rda'
+```
+
+Neste caso o arquivo Excel foi criado de dentro do prṕrio R com o comando
+`writexl::write_xlsx(tibble::rownames_to_column(mtcars, "model"), "data-raw/dados.xlsx")`,
+mas isso é só um exemplo ilustrativo. O importante é saber o que acontece quando
+a função `use_data()` é executada para um objeto do ambiente global, ou seja,
+as duas últimas linhas do bloco de código acima.
+
+Por trás das câmeras, `use_data()` está chamando a função `save()` do R para
+gerar um arquivo RDA a partir de um objeto do ambiente global. Arquivos RDA são
+extremamente estáveis, compactos e podem ser carregados rapidamente pelo R,
+tornando este formato o principal meio de guardar dados de um pacote. Se os
+dados do pacote forem guardados assim, eles ficarão disponíveis para serem
+chamados pelo usuário (você mesmo durante a análise)! Para entender como ficam
+os dados uma vez que eles são incluídos na pasta `data`, basta dar uma olhada
+no objeto `dplyr::starwars`; neste caso, a base tratada e exportada se chama
+`starwars`.
+
+Para carregar os dados na sua sessão e poder utilizá-los na análise, basta
+executar `pkgload::load_all()` ou pressionar a combinação `CTRL + SHIFT + L` no
+RStudio. Independentemente do número de tabelas que estiverem salvas na pasta
+`data`, todas serão carregadas instantaneamente.
+
+A título de curiosidade, existem algumas situações em que as bases brutas são
+grandes demais para serem sincronizadas com o GitHub. A plataforma tem um
+(razoável) limite de 1GB por repositório que pode ser insuficiente para
+armazenar dados brutos e tratados. Para não sincronizar as bases brutas com o
+Git, basta adicioná-las ao arquivo `.gitignore` do pacote; no caso do exemplo
+acima, bastaria adicionar a esse arquivo uma linha com o texto
+`data-raw/dados.xlsx`.
+
+## Documentação
+
+Além de funções, também é possível documentar bases de dados com o pacote
+`roxygen2`. Para isso, crie um arquivo `data.R` na pasta `R/` do pacote e crie
+um objeto entre aspas com o nome de cada base de dados exportada. Documentar
+dados é extremamente útil quando o pacote vai ser compartilhado com múltiplas
+pessoas da mesma organização, pois assim não é necessário compartilhar uma
+planilha Excel separada descrevendo cada uma das colunas da tabela.
+
+Uma boa documentação de bases de dados não precisa de muita coisa. Abaixo é
+exemplificado como seria documentada `dados`:
+
+```r
+#' Dados sobre 15 marcas de carros
+#'
+#' A tabela, gerada a partir de `mtcars`, apresenta algumas poucas
+#' informações sobre carros com mais de 4 cilindros de 15 marcas
+#' americanas de carros.
+#'
+#' @format Uma tabela com 3 colunas e 15 linhas:
+#' \describe{
+#'   \item{brand}{Marca}
+#'   \item{mean_mpg}{Milhas por galão médias para aquela marca}
+#'   \item{prop_6_cyl}{Proporção dos carros que apresentam 6 cilindros}
+#' }
+#' @source Henderson and Velleman (1981)
+"dados"
+```

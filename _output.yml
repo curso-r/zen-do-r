@@ -11,4 +11,4 @@ bookdown::gitbook:
   css: zen-do-r.css
 
 bookdown::pdf_book:
-latex_engine: "xelatex"
+  latex_engine: "xelatex"

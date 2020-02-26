@@ -1,10 +1,4 @@
-# Metadados
-
-## Sobre metadados
-
-Lorem ipsum
-
-## Versões e releases
+# Versões e releases {#versoes-releases}
 
 A maior parte dos softwares que utilizamos no dia-a-dia possuem versões, até
 mesmo aqueles que não costumamos associar com esse tipo de prática. Sistemas
@@ -41,7 +35,7 @@ entender para as versões de um projeto. Trazendo isso para termos concretos, o
 pacote `dplyr` está na versão 0.8.4, o `ggplot2` está na 3.2.1 e o `shiny`
 está na 1.4.0.
 
-### Versionamento semântico
+## Versionamento semântico
 
 Em teoria, existe um [padrão ouro](https://semver.org/) para a nomenclatura de
 versões de um software. Alguns dos seus preceitos, como o uso de 3 números
@@ -159,7 +153,7 @@ usethis::use_version("major")
 #> ✔ Setting Version field in DESCRIPTION to '1.0.0'
 ```
 
-### Releases
+## Releases
 
 Uma parte interessante do processo de versionamento é que o GitHub permite
 marcar commits específicos como estáveis e atribuir um rótulo aos mesmos. No
@@ -168,7 +162,7 @@ fundo isso não passa de um versionamento semântico integrado ao site.
 Como exemplo, podemos ver a aba "Releases" do pacote `decryptr`:
 
 ```{r, echo=FALSE, fig.align='center', dpi=50}
-knitr::include_graphics("static/05_ver.png")
+knitr::include_graphics("static/versoes-releases/ver.png")
 ```
 
 É bom fazer esse tipo de versionamento externo porque os usuários passam a ter
@@ -185,7 +179,7 @@ a aba das releases e clicar em **Draft a new release**. Preencha os campos
 correspondentes e publique a versão.
 
 ```{r, echo=FALSE, fig.align='center', dpi=50}
-knitr::include_graphics("static/05_tag.png")
+knitr::include_graphics("static/versoes-releases/tag.png")
 ```
 
 Uma forma eficiente de manter todas as alterações realizadas no pacote de forma
@@ -193,6 +187,3 @@ organizada é com um arquivo `NEWS`. Ele pode ser criado com
 `usethis::use_news_md()` e criar um novo título para cada versão. Observe como
 [esse arquivo](https://github.com/tidyverse/ggplot2/blob/master/NEWS.md) é
 utilizado no `ggplot2`.
-
-
-## Submissão ao CRAN

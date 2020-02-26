@@ -1,10 +1,4 @@
-# Versões
-
-## Sobre versões
-
-Lorem ipsum
-
-## Git e Github
+# Git e GitHub {#git-github}
 
 Há poucas coisas mais frustrantes no mundo do que ter que refazer um trabalho.
 Perder progresso já feito por algum erro ou acidente transforma qualquer
@@ -64,7 +58,7 @@ usethis::browse_github_token()
 ```
 
 ```{r, echo=FALSE, fig.align='center', dpi=50}
-knitr::include_graphics("static/03_pat.png")
+knitr::include_graphics("static/git-github/pat.png")
 ```
 
 Independentemente de como um PAT foi gerado, o importante é seguir as instruções
@@ -144,7 +138,7 @@ versões do código e enviá-las ao GitHub para que sejam armazenadas com segura
 na nuvem.
 
 ```{r, echo=FALSE, fig.align='center', dpi=50}
-knitr::include_graphics("static/03_git.png")
+knitr::include_graphics("static/git-github/git.png")
 ```
 
 Para testar se está tudo funcionando, crie um arquivo na pasta `R/` e abra a aba
@@ -159,6 +153,3 @@ e o **Push**. Para saber mais sobre esse assunto, recomendo o livro
 *Happy Git with R* (especialmente
 [este capítulo](https://happygitwithr.com/existing-github-last.html)) que aborda
 em detalhes minuciosos todo o processo e uso e manutenção do Git com o RStudio.
-
-## Packrat
-

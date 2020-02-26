@@ -1,92 +1,4 @@
-# Ambiente
-
-## Sobre o ambiente
-
-Lorem ipsum
-
-## .RData e .Rhistory
-
-O fluxo ideal de análise de dados começa na escolha da ferramenta. Por ser uma
-linguagem especializada em estatística, o R é a primeira escolha de muitos
-usuários. Normalmente optar por programar em R também implica na escolha de uma
-IDE (*Integrated Development Environment*) que, em 90%[^1] dos casos, será o
-RStudio.
-
-[^1]: Não tenho nenhuma estatística confiável sobre esse número, mas sei que ele
-não é 100% porque conheço pelo menos uma pessoa que programa R no neovim.
-
-O R, em combinação com o RStudio, possui um conjunto de funcionalidades cuja
-intenção é ajudar no processo de desenvolvimento. Entretanto, isso acaba
-deixando os programadores de R mal acostumados.
-
-Como uma pai coruja, o RStudio faz questão de lembrar tudo o que você fez
-anteriormente. Em sua configuração padrão, a IDE manterá na "memória" todos os
-últimos comandos executados, todos os dados utilizados e todos os objetos
-criados. Ao fechar e abrir o RStudio, essas informações serão recarregadas
-na memória como se o usuário nunca tivesse saído do programa.
-
-Esse recurso é tornado possível pela criação de dois arquivos ocultos: `.RData`
-e `.Rhistory`. O primeiro abriga absolutamente todos os objetos criados por uma
-sessão R, enquanto o segundo contém uma lista com os últimos comandos
-executados. Ao reabrir o RStudio, o conteúdo armazenados nestes arquivos será
-carregado no ambiente de trabalho atual como se nada tivesse acontecido.
-
-### Porque desistir desse recurso
-
-Apesar de ser uma ótima conveniência, assim como o pai coruja, esse tipo de
-funcionalidade pode deixar o programador mal acostumado. Se todos os resultados
-parciais de uma análise estiverem disponíveis a qualquer momento, diminui o
-incentivo para a escrita de *código reprodutível* e, se todo o histórico de
-comandos for acessível, acaba a necessidade de experimentos controlados.
-
-Um usuário que dependa ativamente do `.RData` para recuperar seus dados estará
-aos poucos contando cada vez mais com a sorte. Caso ele acidentalmente
-sobrescreva o objeto relevante e o código para recriá-lo já tenha sido apagado,
-não haverá nenhuma forma confiável de recuperar esses dados. Idealmente, todo
-o código necessário para uma análise de dados deve estar salvo em um arquivo
-`.R` perfeitamente reprodutível; assim, caso o programador cometa um engado,
-é possível executar aquele arquivo do início e obter novamente os objetos que
-estavam sendo utilizados.
-
-Arquivos reprodutíveis também tem uma outra vantagem: facilidade de
-compartilhamento. A menos que o programador pretenda sentar com seu colega para
-explicar como utilizar os objetos do `.RData` e do `.Rhistory`, não pode-se
-esperar que outra pessoa seja capaz de reproduzir uma análise a partir de
-arquivos incompletos. Deste modo, abandonar essa funcionalidade permite utilizar
-ferramentas de compartilhamento e controle de versão da maneira como elas foram
-idealizadas.
-
-Por fim, é importante notar uma desvantagem sutil mas muito relevante do uso
-do `.RData`. O R trata todos os objetos guardados na memória igualmente, sem
-levar em conta sua utilidade ou tamanho. Isso significa que ele também irá
-armazenar nos arquivos ocultos todas as bases de dados da sessão (não
-importando quão grande sejam). Isso faz com que o `.RData` normalmente seja um
-arquivo de múltiplos gigabytes.
-
-Ao reabrir o RStudio, todos esses dados serão recarregados e
-provavelmente farão com que o programador espere vários minutos até que ele
-possa voltar ao seu trabalho. Com o `.RData` é impossível ter controle sobre
-quais dados devem ser utilizados em cada sessão de programação.
-
-### Como desativar essa funcionalidade
-
-O processo de desabilitar o `.RData` e o `.Rhistory` é bastante simples e afeta
-todos os projetos do computador, então só é necessário passar por ele uma vez.
-Basta selecionar **Tools > Global Options...** na aba de ferramentas do RStudio
-e então ajustar três configurações. No final a página de opções gerais deve
-ficar similar à da imagem abaixo:
-
-```{r, echo=FALSE, fig.align='center', dpi=50}
-knitr::include_graphics("static/02_config.png")
-```
-
-Se acostumar com sessões efêmeras não é uma tarefa fácil e um desconforto
-inicial é esperado. Pode ser que o programador ache entediante executar o mesmo
-código toda vez que abrir seu RStudio, mas é importante ter em mente que esse
-programa só está lá e pode ser executado inúmeras vezes porque o R não estará
-mais fazendo o trabalho do analista.
-
-## Rproj e diretórios
+# Rproj e diretórios {#rproj-dir}
 
 Um programador iniciante corre o risco de não gerenciar seus projetos. Muitas
 vezes seus arquivos de código ficarão espalhados pelos infinitos diretórios de
@@ -107,7 +19,7 @@ trabalho no RStudio: basta selecioná-lo em
 **Tools > Global Options... > Browse**.
 
 ```{r, echo=FALSE, fig.align='center', dpi=50}
-knitr::include_graphics("static/02_wd.png")
+knitr::include_graphics("static/rproj-dir/wd.png")
 ```
 
 Desta forma, toda vez que você iniciar um novo projeto no R, ele por parão
@@ -157,7 +69,7 @@ que vocẽ tiver detectado. Talvez um para exercícios de R, um para cada client
 um para uma nova ideia, etc. Cada um deles deve ter um nome descritivo e
 conter, em sua pasta R, todos os arquivos necessários para aquela análise.
 
-### Diretório de trabalho
+## Diretório de trabalho
 
 Mas a funcionalidade mais importante dentre todas as já citadas é o conceito do
 *working directory* ou diretório de trabalho. No canto esquerdo superior do
@@ -168,7 +80,7 @@ disso, não se preocupe e continue assim, mas se você costuma usá-la, siga
 prestando atenção.
 
 ```{r, echo=FALSE, fig.align='center', dpi=50}
-knitr::include_graphics("static/02_console.png")
+knitr::include_graphics("static/rproj-dir/console.png")
 ```
 
 O R dá a possibilidade de mudar, instantaneamente, o diretório de trabalho.

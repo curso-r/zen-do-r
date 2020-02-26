@@ -1,0 +1,254 @@
+# Pacotes {#pacotes}
+
+Nas palavras do maior guru do R, Hadley Wickham, "pacotes são a unidade
+fundamental de código R reprodutível". Toda vez que você utiliza a função
+`library()`, algum pacote está sendo carregado na sessão. Muitas vezes criar uma
+biblioteca de funções pode parecer uma tarefa árdua e confusa, restrita a
+grandes conhecedores da linguagem, mas essa impressão não poderia estar mais
+distante da realidade: pacotes para o R são bastante simples e intuitivos de
+fazer.
+
+No início deste livro foi abordado o conceito de projeto. Ele não passa de um
+arquivo `.Rproj` que indica para o RStudio que aquele diretório é um ambiente de
+trabalho estruturado. Nesse sentido, pacotes iguais a projetos porque eles
+também têm um `.Rproj`; pacotes na verdade *são* projetos.
+
+A diferença entre os dois é que pacotes podem ser documentados e instalados,
+permitindo toda uma gama de novas possibilidades para o programador.
+Muitas vezes uma análise de dados pode envolver dezenas de funções e diversas
+pessoas, fazendo com que o compartilhamento de código seja vital para que a
+análise não fuja do controle. Pacotes permitem gerenciar dependências, manter
+documentação, executar testes unitários e muito mais com o objetivo de deixar
+todos os analistas na mesma página.
+
+Sendo assim, recomenda-se criar um pacote para qualquer análise que envolva pelo
+menos meia dúzia de funções complexas e mais de uma pessoa; caso contrário, um
+projeto já é suficiente. Outra motivação para criar um pacote é compartilhar
+conjuntos úteis de funções com outras pessoas; isso acaba sendo menos comum para
+a maioria dos usuários, mas é importante ressaltar que o R não seria a linguagem
+popular que é hoje se não fossem pelas famosas bibliotecas `ggplot2` e `dplyr`.
+
+```r
+usethis::create_package("~/Documents/demo")
+#> ✔ Setting active project to '~/Documents/demo'
+#> ✔ Creating 'R/'
+#> ✔ Writing 'DESCRIPTION'
+#> Package: demo
+#> Title: What the Package Does (One Line, Title Case)
+#> Version: 0.0.0.9000
+#> Authors@R (parsed):
+#>     * First Last <first.last@example.com> [aut, cre] (<https://orcid.org/YOUR-ORCID-ID>)
+#> Description: What the package does (one paragraph).
+#> License: What license it uses
+#> Encoding: UTF-8
+#> LazyData: true
+#> ✔ Writing 'NAMESPACE'
+#> ✔ Writing 'demo.Rproj'
+#> ✔ Adding '.Rproj.user' to '.gitignore'
+#> ✔ Adding '^demo\\.Rproj$', '^\\.Rproj\\.user$' to '.Rbuildignore'
+#> ✔ Opening '~/Documents/demo/' in new RStudio session
+#> ✔ Setting active project to 'demo'
+```
+
+A função executada acima é exatamente análoga à função de criação de projetos.
+A principal diferença é que ela cria um arquivo `DESCRIPTION` e assume que o
+nome do pacote é igual ao nome da pasta onde o mesmo está sendo criado (neste
+caso, "demo"). Alguns outros arquivos também são criados (como `.Rbuildignore` e
+`NAMESPACE`), mas eles não vêm ao caso. De resto, o pacote é idêntico a um
+projeto e pode ser sincronizado com o Git exatamente da mesma maneira.
+
+O primeiro passo para começar a usar um pacote é atribuir a ele uma licença
+(caso um dia você resolva compartilhá-lo com o mundo) e preencher a descrição.
+Abaixo encontra-se uma função simples que adiciona uma licença MIT ao pacote.
+
+```r
+usethis::use_mit_license("Seu Nome")
+#> ✔ Setting active project to '~/Documents/demo'
+#> ✔ Setting License field in DESCRIPTION to 'MIT + file LICENSE'
+#> ✔ Writing 'LICENSE.md'
+#> ✔ Adding '^LICENSE\\.md$' to '.Rbuildignore'
+#> ✔ Writing 'LICENSE'
+```
+
+O arquivo de descrição, no entanto, é um pouco mais complexo porque ele tem
+alguns campos que precisam ser preenchidos manualmente. Quando o pacote for
+criado, eles já estarão populados com instruções para facilitar a vida do
+programador. Abaixo está um exemplo de como `DESCRIPTION` deve ficar depois de
+completo:
+
+```
+Package: demo
+Title: O Que o Pacote Faz (Uma Linha)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Seu",
+           family = "Nome",
+           role = c("aut", "cre"),
+           email = "seunome@dominio.com")
+Description: O que o pacote faz (um paragrafo curto terminado em ponto final).
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+```
+
+A partir deste ponto, os metadados do pacote estão essencialmente prontos e não
+precisam mais ser modificados. Assim como em um projeto, o que resta é adicionar
+arquivos com funções à pasta `R/`.
+
+## Documentação
+
+Para poder programar pacotes com mais facilidade, é necessário instalar o
+`devtools`. Assim como o `tidyverse`, este é um conjunto de pacotes (que inclui
+o `usethis` por sinal) que auxiliam no processo de criar e testar um pacote de
+R.
+
+```r
+install.packages("devtools")
+```
+
+A partir de agora você pode, por exemplo, criar documentações para as funções do
+seu pacote. Quando outras pessoas o instalarem, elas poderão consultar esses
+manuais da mesma forma que fazem com qualquer outra função: `?funcao()`.
+
+A documentação mais simples (e obrigatória) envolve dar um título para a função
+e descrever o que cada parâmetro significa. Para documentar uma função qualquer,
+basta adicionar comentários em cima dela com `#'` assim como no exemplo abaixo:
+
+```r
+#' Função demonstrativa que soma e imprime
+#'
+#' @param x Um número ou vetor numérico
+#' @param y Um número ou vetor numérico
+#' @param ... Outros argumentos passados para [print()]
+#'
+#' @export
+funcao_demo <- function(x, y, ...) {
+  z <- x + y
+  print(z, ...)
+  return(z)
+}
+```
+
+No RStudio esse tipo de documentação é tratado diferentemente de outros
+comentários, então certas palavras-chave ficam coloridas. `@param` por exemplo
+indica a documentação de um dos parâmetros e `@export` indica que aquela função
+será exportada pelo pacote, ou seja, ficará disponível ao usuário quando ele
+executar `library(demo)`.
+
+Para gerar a documentação do pacote, basta chamar uma outra função do
+`devtools`:
+
+```r
+devtools::document()
+#> Updating demo documentation
+#> Updating roxygen version in ~/Documents/demo/DESCRIPTION
+#> Writing NAMESPACE
+#> Loading demo
+#> Writing NAMESPACE
+#> Writing funcao_demo.Rd
+
+?funcao_demo()
+#> Rendering development documentation for 'funcao_demo'
+```
+
+```{r, echo=FALSE, fig.align='center', dpi=50}
+knitr::include_graphics("static/pacotes/doc.png")
+```
+
+Conforme o número de funções no pacote for crescendo, basta iterar nesse ciclo
+descrito até aqui. Além disso, é importante lembrar (como destacado na sessão
+anterior) que qualquer função utilizada de outro pacote deve ser invocada na
+forma `pacote::funcao()`; neste momento, o pacote em questão se tornará uma
+*dependência* do seu pacote e deve ser declarado como tal com
+`usethis::use_package("pacote")`.
+
+Para garantir que o R não encontrará nenhum problema no seu pacote, basta
+executar a função de verificação `devtools::check()`. Se nenhum defeito for
+encontrado, basta compartilhar o pacote com os seus colegas e instalá-lo com
+`devtools::install_local()`.
+
+```r
+devtools::check()
+#> Updating demo documentation
+#> Writing NAMESPACE
+#> Loading demo
+#> Writing NAMESPACE
+#> ── Building ───────────────────────────────────────────────────────── demo ──
+#> Setting env vars:
+#> ● CFLAGS    : -Wall -pedantic -fdiagnostics-color=always
+#> ● CXXFLAGS  : -Wall -pedantic -fdiagnostics-color=always
+#> ● CXX11FLAGS: -Wall -pedantic -fdiagnostics-color=always
+#> ─────────────────────────────────────────────────────────────────────────────
+#> ✔  checking for file ‘/home/clente/Documents/demo/DESCRIPTION’ ...
+#> 
+#> [... omitido por brevidade ...]
+#> 
+#> ── R CMD check results ───────────────────────────────── demo 0.0.0.9000 ────
+#> Duration: 8.2s
+#> 
+#> 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
+```
+
+## Testes automatizados
+
+Antes de concluir a sessão sobre pacotes, se faz necessária uma breve menção aos
+testes automatizados. Eles são disponibilizados pelo pacote `testthat` e
+permitem que um programador verifique que seu código está atendendo às
+especificações. Testes unitários garantem que uma alteração pontual em algum
+ponto do código não vai alterar o comportamento de nenhuma outra parte, já que
+as outras funções ainda terão que passar nos seus próprios testes.
+
+Para criar um conjunto de testes é necessário primeiro criar o ambiente para tal
+dentro do pacote. Depois disso, basta criar conjuntos individuais de testes para
+cada função.
+
+```r
+usethis::use_testthat()
+#> ✔ Adding 'testthat' to Suggests field in DESCRIPTION
+#> ✔ Creating 'tests/testthat/'
+#> ✔ Writing 'tests/testthat.R'
+#> ● Call `use_test()` to initialize a basic test file and open it for editing.
+
+usethis::use_test("funcao_demo")
+#> ✔ Increasing 'testthat' version to '>= 2.1.0' in DESCRIPTION
+#> ✔ Writing 'tests/testthat/test-funcao_demo.R'
+#> ● Modify 'tests/testthat/test-funcao_demo.R'
+```
+
+Como é possível notar, o pacote `testthat` permite criar um arquivo de testes
+para `funcao_demo()` (neste caso `tests/testthat/test-funcao_demo.R`). Esse
+arquivo já vem com um teste padrão a título de demonstração, mas, depois de
+reescrito manualmente, um possível conjunto de testes para `funcao_demo()` seria
+o seguinte:
+
+```
+library(demo)
+
+test_that("funcao_demo funciona", {
+
+  expect_equal(funcao_demo(1, 2), 3)
+  expect_equal(funcao_demo(-1, -2), -3)
+  expect_equal(funcao_demo(1, -2), -1)
+
+  expect_output(funcao_demo(1, 2), "3")
+
+})
+```
+
+E o resultado da execução dos testes é o seguinte:
+
+```r
+devtools::test()
+#> Loading demo
+#> Testing demo
+#> ✔ |  OK F W S | Context
+#> ✔ |   4       | funcao_demo
+#> 
+#> ══ Results ═════════════════════════════════════════════════════════════════════
+#> OK:       4
+#> Failed:   0
+#> Warnings: 0
+#> Skipped:  0
+#> 
+#> Keep up the good work.
+```

@@ -1,3 +1,15 @@
 book_filename: "zen-do-r"
 output_dir: "docs"
 delete_merged_file: true
+
+rmd_files: [
+  "index.Rmd",
+  "introducao.Rmd",
+  "rdata-rhistory.Rmd",
+  "rproj-dir.Rmd",
+  "git-github.Rmd",
+  "funcoes-deps.Rmd",
+  "pacotes.Rmd",
+  "data-data-raw.Rmd",
+  "versoes-releases.Rmd"
+]

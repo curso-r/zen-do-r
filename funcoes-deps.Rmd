@@ -1,0 +1,211 @@
+# Funções e dependências {#funcoes-deps}
+
+Até este momento, foi abordada apenas uma forma de organizar os arquivos de uma
+análise: projetos. Entretanto existe ainda outra maneira, ainda mais
+interessante, de guardar análises. Se você programou em R, com certeza já se
+deparou com essa ferramenta, os bons e velhos pacotes ou bibliotecas. É
+surpreendentemente fácil criar um diretório que pode ser completamente acessado
+através da função `library()`.
+
+Quando uma tarefa de análise de dados aumenta em complexidade, o número de
+funções e arquivos necessários para manter tudo em ordem cresce
+exponencialmente. Um arquivo para ler os dados, outro para limpar os nomes das
+colunas, mais um para fazer joins... Cada um deles com incontáveis blocos de
+código que rapidamente se transformam em uma
+[macarronada](https://pt.wikipedia.org/wiki/C%C3%B3digo_espaguete).
+
+O primeiro passo para sair dessa situação é transformar tudo em funções. Essa
+tarefa está longe de simples, mas os benefícios são imensos; ao encontrar um
+erro no resultado, fica bem mais fácil depurar a função culpada do que uma
+coleção desordenada de código. Funções têm argumentos e saídas, enquanto código
+solto pode modificar globais e criar resultados tardios que são impossíveis de
+acompanhar sem conhecer profundamente a tarefa sendo realizada.
+
+```r
+library(dplyr)
+library(tibble)
+
+# Limpar dados
+mtcars_clean <- mtcars %>%
+  rownames_to_column(var = "model") %>%
+  as_tibble() %>%
+  filter(cyl < 8)
+
+# Selecionar carros com 4 cyl e tirar média de mpg e wt
+mtcars_clean %>%
+  filter(cyl == 4) %>%
+  group_by(cyl) %>%
+  summarise(
+    mpg = mean(mpg),
+    wt = mean(wt)
+  )
+#> # A tibble: 1 x 3
+#>     cyl   mpg    wt
+#>   <dbl> <dbl> <dbl>
+#> 1     4  26.7  2.29
+
+# Selecionar carros com 6 cyl e tirar média de drat e disp
+mtcars_clean %>%
+  filter(cyl == 6) %>%
+  group_by(cyl) %>%
+  summarise(
+    drat = mean(drat),
+    disp = mean(disp)
+  )
+#> # A tibble: 1 x 3
+#>     cyl  drat  disp
+#>   <dbl> <dbl> <dbl>
+#> 1     6  3.59  183.
+```
+
+O código acima é somente um exemplo de análise. Como descrito pelos comentários,
+`mtcars` é limpa e depois são extraídas as médias de diferentes variáveis para
+duas seleções da tabela (número de cilindros igual a 4 e 6). Abaixo está
+descrita uma forma de transformar a maioria deste código em funções. É verdade
+que pela natureza simples do exemplo, fica difícil ver os benefícios do
+encapsulamento das tarefas de limpeza e resumo, mas perceba, por exemplo, que,
+se fosse necessário trocar `mean()` por `median()`, antes seria necessário
+alterar quatro linhas e agora apenas uma. Esse tipo de ganho a longo prazo pode
+salvar análises inteiras do caos.
+
+```r
+library(dplyr)
+library(tibble)
+
+# Limpa tabela, filtrando cyl < cyl_max
+clean <- function(data, cyl_max = 8) {
+  data %>%
+  rownames_to_column(var = "model") %>%
+  as_tibble() %>%
+  filter(cyl < cyl_max)
+}
+
+# Resume tabela onde cyl == cyl_max, tirando média das colunas em ...
+summarise_cyl <- function(data, cyl_num, ...) {
+  data %>%
+  filter(cyl == cyl_num) %>%
+  group_by(cyl) %>%
+  summarise_at(vars(...), mean)
+}
+
+# 4 cyl, média de mpg e wt
+mtcars %>%
+  clean(cyl_max = 8) %>%
+  summarise_cyl(cyl_num = 4, mpg, wt)
+#> # A tibble: 1 x 3
+#>     cyl   mpg    wt
+#>   <dbl> <dbl> <dbl>
+#> 1     4  26.7  2.29
+
+# 6 cyl, média de drat e disp
+mtcars %>%
+  clean(cyl_max = 8) %>%
+  summarise_cyl(cyl_num = 6, drat, disp)
+#> # A tibble: 1 x 3
+#>     cyl  drat  disp
+#>   <dbl> <dbl> <dbl>
+#> 1     6  3.59  183.
+```
+
+Um código bem encapsulado reduz a necessidade de objetos intermediários (
+`base_tratada`, `base_filtrada`, etc.) pois para gerar um deles basta a
+aplicação de uma função. Além disso, programas com funções normalmente são muito
+mais enxutos e limpos do que *scripts* soltos, pois estes estimulam repetição de
+código. Às vezes é mais rápido copiar e colar um pedaço de código e adaptá-lo ao
+novo contexto do que criar uma função que generalize a operação desejada para as
+duas situações, mas os benefícios das funções são de longo prazo: ao encontrar
+um *bug*, haverá apenas um lugar para concertar; se surgir a necessidade de
+modificar uma propriedade, haverá apenas um lugar para editar; se aquele código
+se tornar obsoleto, haverá apenas um lugar para deletar.
+
+Pense na programação funcional[^3] como ir à academia. No início o processo é
+difícil e exige uma quantidade considerável de esforço, mas depois de um tempo
+se torna um hábito e traz benefícios consideráveis para a saúde (neste caso, do
+código). As recomendações para quando criar uma nova função ou separar uma
+função em duas variam muito, mas normalmente é uma boa ideia não deixar uma
+única função ser encarregada de mais uma tarefa ou ficar longa/complexa demais.
+
+[^3]: Aqui o termo "programação funcional" é usado de forma figurativa. Na
+computação linguagens denominadas "funcionais" tem um *modus operandi* bastante
+específico não abordado neste capítulo.
+
+No mundo ideal, na pasta `R/` do seu projeto haverá uma coleção de arquivos,
+cada um com uma coleção de funções relacionadas e bem documentadas, e apenas
+alguns arquivos que utilizam essas funções para realizar a análise em si. Como
+dito anteriormente, isso fica muito mais fácil se você já tiver esse objetivo em
+mente desde o momento de criação do novo projeto.
+
+## Quatro-pontos
+
+No exemplo da seção anterior, é possível notar as chamadas para as bibliotecas
+`dplyr` e `tibble`. Elas têm inúmeras funções úteis, mas aqui somente algumas
+poucas foram utilizadas. Além disso, se o código fosse muito maior, ficaria
+impossível saber de uma biblioteca ainda está sendo utilizada; se não fosse mais
+necessário utilizar `rownames_to_column()`, qual seria a melhor forma de saber
+que pode ser removida a chamada `library(tibble)`?
+
+A resposta para essa pergunta pode assustar: no código ideal, a função
+`library()` nunca seria chamada, todas as funções teriam seus pacotes de origem
+explicitamente referenciados pelo operador `::`.
+
+Esta subseção está separada porque ela de fato é um pouco radical demais. É
+excessivamente preciosista pedir para que qualquer análise em R seja feita sem
+a invocação de nenhuma biblioteca, apenas com chamadas do tipo
+`biblioteca::funcao()`. Muitas pessoas inclusive nem sabem que é possível
+invocar uma função diretamente através dessa sintaxe!
+
+Se algum leitor estiver tendendo a seguir o caminho do TOC da programação,
+existem dois grandes benefícios em chamar todas as funções diretamente:
+- O código, no total, executa um pouco mais rápido porque são carregadas menos
+funções no ambiente global (isso é especialmente importante em aplicações
+interativas feitas em Shiny).
+- As dependências do código estão sempre atualizadas porque elas estão
+diretamente atreladas às próprias funções sendo utilizadas.
+
+Existe um terceiro e importante benefício, mas este será abordado apenas no
+próximo capítulo. A título de curiosidade, o código anterior ficaria assim caso
+fosse escrito sem as chamadas para `library()`:
+
+```r
+# Referência ao pipe
+`%>%` <- magrittr::`%>%`
+
+# Limpa tabela, filtrando cyl < cyl_max
+clean <- function(data, cyl_max = 8) {
+  data %>%
+    tibble::rownames_to_column(var = "model") %>%
+    dplyr::as_tibble() %>%
+    dplyr::filter(cyl < cyl_max)
+}
+
+# Resume tabela onde cyl == cyl_max, tirando média das colunas em ...
+summarise_cyl <- function(data, cyl_num, ...) {
+  data %>%
+    dplyr::filter(cyl == cyl_num) %>%
+    dplyr::group_by(cyl) %>%
+    dplyr::summarise_at(dplyr::vars(...), mean)
+}
+
+# 4 cyl, média de mpg e wt
+mtcars %>%
+  clean(cyl_max = 8) %>%
+  summarise_cyl(cyl_num = 4, mpg, wt)
+#> # A tibble: 1 x 3
+#>     cyl   mpg    wt
+#>   <dbl> <dbl> <dbl>
+#> 1     4  26.7  2.29
+
+# 6 cyl, média de drat e disp
+mtcars %>%
+  clean(cyl_max = 8) %>%
+  summarise_cyl(cyl_num = 6, drat, disp)
+#> # A tibble: 1 x 3
+#>     cyl  drat  disp
+#>   <dbl> <dbl> <dbl>
+#> 1     6  3.59  183.
+```
+
+Se serve de consolo, o RStudio facilita muito esse tipo de programação por causa
+da sua capacidade de sugerir continuações para código interativamente. Para
+escrever `dplyr::`, por exemplo, basta digitar `d`, `p`, `l` e apertar `TAB` uma
+vez. Com os `::`, as sugestões passarão a ser somente de funções daquele pacote.

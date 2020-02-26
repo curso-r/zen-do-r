@@ -1,4 +1,4 @@
-# Introdução
+# Introdução {#introducao}
 
 *O Zen do R* tem o objetivo de ser um livro sobre programação para
 não-programadores. Atualmente muitas pessoas de diferentes áreas do conhecimento
@@ -59,7 +59,7 @@ ser simplesmente ignorado; quanto maior for um projeto (seja uma tese de
 mestrado ou uma análise de dados médicos), mais necessários serão os tópicos
 mais avançados.
 
-## O que você não vai aprender
+### O que você não vai aprender
 
 Primeiramente, você não vai aprender a programar R. Esse assunto é extremamente
 extenso e já existem livros o suficiente para ajudar com isso (vide

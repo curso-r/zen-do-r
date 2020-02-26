@@ -2,7 +2,7 @@
 knit: "bookdown::render_book"
 title: "O Zen do R"
 author: ["C. Lente"]
-description: "O objetivo deste livro é ensinar ao leitor algumas formas simples de melhorar a organização de seus projetos de análise de dados em R."
+description: "Um livro de programação para não-programadores"
 url: ""
 github-repo: curso-r/zen-do-r
 site: bookdown::bookdown_site
