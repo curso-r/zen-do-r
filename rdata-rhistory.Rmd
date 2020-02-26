@@ -25,7 +25,7 @@ sessão R, enquanto o segundo contém uma lista com os últimos comandos
 executados. Ao reabrir o RStudio, o conteúdo armazenados nestes arquivos será
 carregado no ambiente de trabalho atual como se nada tivesse acontecido.
 
-## Porque desistir desse recurso
+## Porque desistir
 
 Apesar de ser uma ótima conveniência, assim como o pai coruja, esse tipo de
 funcionalidade pode deixar o programador mal acostumado. Se todos os resultados
@@ -62,7 +62,7 @@ provavelmente farão com que o programador espere vários minutos até que ele
 possa voltar ao seu trabalho. Com o `.RData` é impossível ter controle sobre
 quais dados devem ser utilizados em cada sessão de programação.
 
-## Como desativar essa funcionalidade
+## Como desativar
 
 O processo de desabilitar o `.RData` e o `.Rhistory` é bastante simples e afeta
 todos os projetos do computador, então só é necessário passar por ele uma vez.
