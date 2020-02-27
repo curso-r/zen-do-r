@@ -160,7 +160,7 @@ descrito até aqui. Além disso, é importante lembrar (como destacado na sessã
 anterior) que qualquer função utilizada de outro pacote deve ser invocada na
 forma `pacote::funcao()`; neste momento, o pacote em questão se tornará uma
 *dependência* do seu pacote e deve ser declarado como tal com
-`usethis::use_package("pacote")`.
+`usethis::use_package("pacote")` (mais sobre isso a seguir).
 
 Para garantir que o R não encontrará nenhum problema no seu pacote, basta
 executar a função de verificação `devtools::check()`. Se nenhum defeito for
@@ -188,6 +188,42 @@ devtools::check()
 #> 
 #> 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 ```
+
+## Imports
+
+Como dito anteriormente, um passo importante na criação de um pacote é a
+declaração de suas dependências. Se você tiver seguido com cuidado a sugestão de
+já começar a escrever o pacote declarando todas as importações explicitamente
+(ou seja, com `pacote::funcao()`), isso não será um problema, pois o
+`devtools::check()` já será capaz de apontar extamanete quais dependências ainda
+precisam ser registradas.
+
+Suponha que um pacote tem exatamente duas dependências: o `dplyr` e o `kuber`
+(um pacote desenvolvido pela Curso-R e disponível somente via GitHub). Para
+passar no `check()` basta executar os dois comandos abaixo:
+
+```r
+usethis::use_package("dplyr")
+usethis::use_dev_package("kuber")
+```
+
+O `dplyr`, por estar disponível no CRAN, não é um pacote considerado em fase de
+desenvolvimento, então basta usar `usethis::use_package()`. Já o `kuber` só está
+disponível no GitHub e instalável via `remotes::install_github("curso-r/kuber")`,
+então precisamos neste caso utilizar `usethis::use_dev_package()`. Os comandos
+acima criam uma nova seção no arquivo `DESCRIPTION`:
+
+```
+Imports: 
+    dplyr,
+    kuber (>= 0.3.1.9000)
+Remotes:  
+    curso-r/kuber
+```
+
+Note que o `kuber` já é importado com um link remoto para o seu repositório no
+GitHub e um marcador da versão atualmente instalada na sua máquina. Para saber
+mais sobre versões, consulte o capítulo **Funções e dependências**.
 
 ## Testes automatizados
 

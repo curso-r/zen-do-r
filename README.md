@@ -11,9 +11,9 @@ Um livro de programação em R para não-programadores.
 - [x] Funções e dependências
 - [x] Pacotes
 - [x] Data e data-raw
+- [ ] Testes automatizados
 - [X] Versões e releases
+- [ ] CI/CD
 - [ ] Submissão ao CRAN
 - [ ] Multithread e multicore
 - [ ] Distribuição
-- [ ] Testes automatizados
-- [ ] CI/CD

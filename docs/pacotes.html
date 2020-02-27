@@ -159,7 +159,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="pacotes.html"><a href="pacotes.html"><i class="fa fa-check"></i><b>6</b> Pacotes</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>6.1</b> Documentação</a></li>
-<li class="chapter" data-level="6.2" data-path="pacotes.html"><a href="pacotes.html#testes-automatizados"><i class="fa fa-check"></i><b>6.2</b> Testes automatizados</a></li>
+<li class="chapter" data-level="6.2" data-path="pacotes.html"><a href="pacotes.html#imports"><i class="fa fa-check"></i><b>6.2</b> Imports</a></li>
+<li class="chapter" data-level="6.3" data-path="pacotes.html"><a href="pacotes.html#testes-automatizados"><i class="fa fa-check"></i><b>6.3</b> Testes automatizados</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a>
 <ul>
@@ -315,7 +316,7 @@ descrito até aqui. Além disso, é importante lembrar (como destacado na sessã
 anterior) que qualquer função utilizada de outro pacote deve ser invocada na
 forma <code>pacote::funcao()</code>; neste momento, o pacote em questão se tornará uma
 <em>dependência</em> do seu pacote e deve ser declarado como tal com
-<code>usethis::use_package("pacote")</code>.</p>
+<code>usethis::use_package("pacote")</code> (mais sobre isso a seguir).</p>
 <p>Para garantir que o R não encontrará nenhum problema no seu pacote, basta
 executar a função de verificação <code>devtools::check()</code>. Se nenhum defeito for
 encontrado, basta compartilhar o pacote com os seus colegas e instalá-lo com
@@ -340,8 +341,35 @@ encontrado, basta compartilhar o pacote com os seus colegas e instalá-lo com
 <span id="cb15-18"><a href="pacotes.html#cb15-18"></a><span class="co">#&gt; </span></span>
 <span id="cb15-19"><a href="pacotes.html#cb15-19"></a><span class="co">#&gt; 0 errors ✔ | 0 warnings ✔ | 0 notes ✔</span></span></code></pre></div>
 </div>
+<div id="imports" class="section level2">
+<h2><span class="header-section-number">6.2</span> Imports</h2>
+<p>Como dito anteriormente, um passo importante na criação de um pacote é a
+declaração de suas dependências. Se você tiver seguido com cuidado a sugestão de
+já começar a escrever o pacote declarando todas as importações explicitamente
+(ou seja, com <code>pacote::funcao()</code>), isso não será um problema, pois o
+<code>devtools::check()</code> já será capaz de apontar extamanete quais dependências ainda
+precisam ser registradas.</p>
+<p>Suponha que um pacote tem exatamente duas dependências: o <code>dplyr</code> e o <code>kuber</code>
+(um pacote desenvolvido pela Curso-R e disponível somente via GitHub). Para
+passar no <code>check()</code> basta executar os dois comandos abaixo:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="pacotes.html#cb16-1"></a>usethis<span class="op">::</span><span class="kw">use_package</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb16-2"><a href="pacotes.html#cb16-2"></a>usethis<span class="op">::</span><span class="kw">use_dev_package</span>(<span class="st">&quot;kuber&quot;</span>)</span></code></pre></div>
+<p>O <code>dplyr</code>, por estar disponível no CRAN, não é um pacote considerado em fase de
+desenvolvimento, então basta usar <code>usethis::use_package()</code>. Já o <code>kuber</code> só está
+disponível no GitHub e instalável via <code>remotes::install_github("curso-r/kuber")</code>,
+então precisamos neste caso utilizar <code>usethis::use_dev_package()</code>. Os comandos
+acima criam uma nova seção no arquivo <code>DESCRIPTION</code>:</p>
+<pre><code>Imports: 
+    dplyr,
+    kuber (&gt;= 0.3.1.9000)
+Remotes:  
+    curso-r/kuber</code></pre>
+<p>Note que o <code>kuber</code> já é importado com um link remoto para o seu repositório no
+GitHub e um marcador da versão atualmente instalada na sua máquina. Para saber
+mais sobre versões, consulte o capítulo <strong>Funções e dependências</strong>.</p>
+</div>
 <div id="testes-automatizados" class="section level2">
-<h2><span class="header-section-number">6.2</span> Testes automatizados</h2>
+<h2><span class="header-section-number">6.3</span> Testes automatizados</h2>
 <p>Antes de concluir a sessão sobre pacotes, se faz necessária uma breve menção aos
 testes automatizados. Eles são disponibilizados pelo pacote <code>testthat</code> e
 permitem que um programador verifique que seu código está atendendo às
@@ -351,16 +379,16 @@ as outras funções ainda terão que passar nos seus próprios testes.</p>
 <p>Para criar um conjunto de testes é necessário primeiro criar o ambiente para tal
 dentro do pacote. Depois disso, basta criar conjuntos individuais de testes para
 cada função.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="pacotes.html#cb16-1"></a>usethis<span class="op">::</span><span class="kw">use_testthat</span>()</span>
-<span id="cb16-2"><a href="pacotes.html#cb16-2"></a><span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span></span>
-<span id="cb16-3"><a href="pacotes.html#cb16-3"></a><span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span></span>
-<span id="cb16-4"><a href="pacotes.html#cb16-4"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span></span>
-<span id="cb16-5"><a href="pacotes.html#cb16-5"></a><span class="co">#&gt; ● Call `use_test()` to initialize a basic test file and open it for editing.</span></span>
-<span id="cb16-6"><a href="pacotes.html#cb16-6"></a></span>
-<span id="cb16-7"><a href="pacotes.html#cb16-7"></a>usethis<span class="op">::</span><span class="kw">use_test</span>(<span class="st">&quot;funcao_demo&quot;</span>)</span>
-<span id="cb16-8"><a href="pacotes.html#cb16-8"></a><span class="co">#&gt; ✔ Increasing &#39;testthat&#39; version to &#39;&gt;= 2.1.0&#39; in DESCRIPTION</span></span>
-<span id="cb16-9"><a href="pacotes.html#cb16-9"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat/test-funcao_demo.R&#39;</span></span>
-<span id="cb16-10"><a href="pacotes.html#cb16-10"></a><span class="co">#&gt; ● Modify &#39;tests/testthat/test-funcao_demo.R&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="pacotes.html#cb18-1"></a>usethis<span class="op">::</span><span class="kw">use_testthat</span>()</span>
+<span id="cb18-2"><a href="pacotes.html#cb18-2"></a><span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span></span>
+<span id="cb18-3"><a href="pacotes.html#cb18-3"></a><span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span></span>
+<span id="cb18-4"><a href="pacotes.html#cb18-4"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span></span>
+<span id="cb18-5"><a href="pacotes.html#cb18-5"></a><span class="co">#&gt; ● Call `use_test()` to initialize a basic test file and open it for editing.</span></span>
+<span id="cb18-6"><a href="pacotes.html#cb18-6"></a></span>
+<span id="cb18-7"><a href="pacotes.html#cb18-7"></a>usethis<span class="op">::</span><span class="kw">use_test</span>(<span class="st">&quot;funcao_demo&quot;</span>)</span>
+<span id="cb18-8"><a href="pacotes.html#cb18-8"></a><span class="co">#&gt; ✔ Increasing &#39;testthat&#39; version to &#39;&gt;= 2.1.0&#39; in DESCRIPTION</span></span>
+<span id="cb18-9"><a href="pacotes.html#cb18-9"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat/test-funcao_demo.R&#39;</span></span>
+<span id="cb18-10"><a href="pacotes.html#cb18-10"></a><span class="co">#&gt; ● Modify &#39;tests/testthat/test-funcao_demo.R&#39;</span></span></code></pre></div>
 <p>Como é possível notar, o pacote <code>testthat</code> permite criar um arquivo de testes
 para <code>funcao_demo()</code> (neste caso <code>tests/testthat/test-funcao_demo.R</code>). Esse
 arquivo já vem com um teste padrão a título de demonstração, mas, depois de
@@ -378,19 +406,19 @@ test_that(&quot;funcao_demo funciona&quot;, {
 
 })</code></pre>
 <p>E o resultado da execução dos testes é o seguinte:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="pacotes.html#cb18-1"></a>devtools<span class="op">::</span><span class="kw">test</span>()</span>
-<span id="cb18-2"><a href="pacotes.html#cb18-2"></a><span class="co">#&gt; Loading demo</span></span>
-<span id="cb18-3"><a href="pacotes.html#cb18-3"></a><span class="co">#&gt; Testing demo</span></span>
-<span id="cb18-4"><a href="pacotes.html#cb18-4"></a><span class="co">#&gt; ✔ |  OK F W S | Context</span></span>
-<span id="cb18-5"><a href="pacotes.html#cb18-5"></a><span class="co">#&gt; ✔ |   4       | funcao_demo</span></span>
-<span id="cb18-6"><a href="pacotes.html#cb18-6"></a><span class="co">#&gt; </span></span>
-<span id="cb18-7"><a href="pacotes.html#cb18-7"></a><span class="co">#&gt; ══ Results ═════════════════════════════════════════════════════════════════════</span></span>
-<span id="cb18-8"><a href="pacotes.html#cb18-8"></a><span class="co">#&gt; OK:       4</span></span>
-<span id="cb18-9"><a href="pacotes.html#cb18-9"></a><span class="co">#&gt; Failed:   0</span></span>
-<span id="cb18-10"><a href="pacotes.html#cb18-10"></a><span class="co">#&gt; Warnings: 0</span></span>
-<span id="cb18-11"><a href="pacotes.html#cb18-11"></a><span class="co">#&gt; Skipped:  0</span></span>
-<span id="cb18-12"><a href="pacotes.html#cb18-12"></a><span class="co">#&gt; </span></span>
-<span id="cb18-13"><a href="pacotes.html#cb18-13"></a><span class="co">#&gt; Keep up the good work.</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="pacotes.html#cb20-1"></a>devtools<span class="op">::</span><span class="kw">test</span>()</span>
+<span id="cb20-2"><a href="pacotes.html#cb20-2"></a><span class="co">#&gt; Loading demo</span></span>
+<span id="cb20-3"><a href="pacotes.html#cb20-3"></a><span class="co">#&gt; Testing demo</span></span>
+<span id="cb20-4"><a href="pacotes.html#cb20-4"></a><span class="co">#&gt; ✔ |  OK F W S | Context</span></span>
+<span id="cb20-5"><a href="pacotes.html#cb20-5"></a><span class="co">#&gt; ✔ |   4       | funcao_demo</span></span>
+<span id="cb20-6"><a href="pacotes.html#cb20-6"></a><span class="co">#&gt; </span></span>
+<span id="cb20-7"><a href="pacotes.html#cb20-7"></a><span class="co">#&gt; ══ Results ═════════════════════════════════════════════════════════════════════</span></span>
+<span id="cb20-8"><a href="pacotes.html#cb20-8"></a><span class="co">#&gt; OK:       4</span></span>
+<span id="cb20-9"><a href="pacotes.html#cb20-9"></a><span class="co">#&gt; Failed:   0</span></span>
+<span id="cb20-10"><a href="pacotes.html#cb20-10"></a><span class="co">#&gt; Warnings: 0</span></span>
+<span id="cb20-11"><a href="pacotes.html#cb20-11"></a><span class="co">#&gt; Skipped:  0</span></span>
+<span id="cb20-12"><a href="pacotes.html#cb20-12"></a><span class="co">#&gt; </span></span>
+<span id="cb20-13"><a href="pacotes.html#cb20-13"></a><span class="co">#&gt; Keep up the good work.</span></span></code></pre></div>
 
 </div>
 </div>

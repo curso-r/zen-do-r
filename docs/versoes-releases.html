@@ -159,7 +159,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="pacotes.html"><a href="pacotes.html"><i class="fa fa-check"></i><b>6</b> Pacotes</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>6.1</b> Documentação</a></li>
-<li class="chapter" data-level="6.2" data-path="pacotes.html"><a href="pacotes.html#testes-automatizados"><i class="fa fa-check"></i><b>6.2</b> Testes automatizados</a></li>
+<li class="chapter" data-level="6.2" data-path="pacotes.html"><a href="pacotes.html#imports"><i class="fa fa-check"></i><b>6.2</b> Imports</a></li>
+<li class="chapter" data-level="6.3" data-path="pacotes.html"><a href="pacotes.html#testes-automatizados"><i class="fa fa-check"></i><b>6.3</b> Testes automatizados</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a>
 <ul>
@@ -289,8 +290,8 @@ LazyData: true</code></pre>
 <p>Note como o campo <em>Version</em> já está populado com a primeira versão possível para
 um pacote: 0.0.0.9000. Depois de alguns commits, se acharmos que o código está
 preparado para a primeira minor, utilizamos:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="versoes-releases.html#cb23-1"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;minor&quot;</span>)</span>
-<span id="cb23-2"><a href="versoes-releases.html#cb23-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="versoes-releases.html#cb25-1"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;minor&quot;</span>)</span>
+<span id="cb25-2"><a href="versoes-releases.html#cb25-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0&#39;</span></span></code></pre></div>
 <p>A segunda linha já deixa claro que agora o arquivo <code>DESCRIPTION</code> contém uma
 linha <code>Version: 0.1.0</code> (note como a versão de desenvolvimento é removida
 automaticamente). <strong>Mas atenção</strong>, antes de fazer qualquer outra alteração no
@@ -300,19 +301,19 @@ ela. Atualmente o <code>usethis</code> faz isso automaticamente.</p>
 para o estado de desenvolvimento. Ou seja, deve existir um único commit no qual
 o pacote é considerado estável para cada sequência de commits de
 desenvolvimento.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="versoes-releases.html#cb24-1"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
-<span id="cb24-2"><a href="versoes-releases.html#cb24-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0.9000&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="versoes-releases.html#cb26-1"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
+<span id="cb26-2"><a href="versoes-releases.html#cb26-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0.9000&#39;</span></span></code></pre></div>
 <p>Depois que o pacote voltar para desenvolvimento, a programação pode continuar
 desempedida. Por completude, <code>usethis::use_version()</code> pode ser utilizada para
 qualquer versão cheia:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="versoes-releases.html#cb25-1"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;patch&quot;</span>)</span>
-<span id="cb25-2"><a href="versoes-releases.html#cb25-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1&#39;</span></span>
-<span id="cb25-3"><a href="versoes-releases.html#cb25-3"></a></span>
-<span id="cb25-4"><a href="versoes-releases.html#cb25-4"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
-<span id="cb25-5"><a href="versoes-releases.html#cb25-5"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1.9000&#39;</span></span>
-<span id="cb25-6"><a href="versoes-releases.html#cb25-6"></a></span>
-<span id="cb25-7"><a href="versoes-releases.html#cb25-7"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;major&quot;</span>)</span>
-<span id="cb25-8"><a href="versoes-releases.html#cb25-8"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;1.0.0&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="versoes-releases.html#cb27-1"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;patch&quot;</span>)</span>
+<span id="cb27-2"><a href="versoes-releases.html#cb27-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1&#39;</span></span>
+<span id="cb27-3"><a href="versoes-releases.html#cb27-3"></a></span>
+<span id="cb27-4"><a href="versoes-releases.html#cb27-4"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
+<span id="cb27-5"><a href="versoes-releases.html#cb27-5"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1.9000&#39;</span></span>
+<span id="cb27-6"><a href="versoes-releases.html#cb27-6"></a></span>
+<span id="cb27-7"><a href="versoes-releases.html#cb27-7"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;major&quot;</span>)</span>
+<span id="cb27-8"><a href="versoes-releases.html#cb27-8"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;1.0.0&#39;</span></span></code></pre></div>
 </div>
 <div id="releases" class="section level2">
 <h2><span class="header-section-number">8.2</span> Releases</h2>
