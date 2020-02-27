@@ -1,0 +1,72 @@
+# Testes automatizados {#testes}
+
+Um recurso extremamente importante, mas comumente ignorado no mundo do R, para a
+garantia da longevidade de um pacote são os testes unitários automatizados. Como
+essa técnica deve ser limitada somente a pacotes complexos e utilizados por mais
+de uma pessoa, esta seção não passa de uma breve exploração do tópico.
+
+Um teste unitário não passa de uma verificação de corretude referente a uma
+pequena unidade do código-fonte de um software. Testes unitários garantem que
+uma alteração pontual em algum lugar do código não vai alterar o comportamento
+de nenhuma outra parte, já que as outras funções ainda terão que passar nos seus
+próprios testes. Além disso, antes de fazer uma alteração em código já existente,
+é comum pensar antes em quais devem ser os novos resultados para os testes
+daquela função (prática conhecida como Desenvolvimento Orientado a Testes).
+
+Para criar um conjunto de testes é necessário primeiro criar o ambiente para tal
+dentro do pacote através do pacote `testthat`. Depois disso, basta criar
+conjuntos individuais de testes para cada função.
+
+```r
+usethis::use_testthat()
+#> ✔ Adding 'testthat' to Suggests field in DESCRIPTION
+#> ✔ Creating 'tests/testthat/'
+#> ✔ Writing 'tests/testthat.R'
+#> ● Call `use_test()` to initialize a basic test file and open it for editing.
+
+usethis::use_test("funcao_demo")
+#> ✔ Increasing 'testthat' version to '>= 2.1.0' in DESCRIPTION
+#> ✔ Writing 'tests/testthat/test-funcao_demo.R'
+#> ● Modify 'tests/testthat/test-funcao_demo.R'
+```
+
+Como é possível notar, o pacote `testthat` permite criar um arquivo de testes
+para `funcao_demo()` (neste caso `tests/testthat/test-funcao_demo.R`). Esse
+arquivo já vem com um teste padrão a título de demonstração, mas, depois de
+reescrito manualmente, um possível conjunto de testes para `funcao_demo()` seria
+o seguinte:
+
+```
+library(demo)
+
+test_that("funcao_demo funciona", {
+
+  expect_equal(funcao_demo(1, 2), 3)
+  expect_equal(funcao_demo(-1, -2), -3)
+  expect_equal(funcao_demo(1, -2), -1)
+
+  expect_output(funcao_demo(1, 2), "3")
+
+})
+```
+
+E o resultado da execução dos testes é o seguinte:
+
+```r
+devtools::test()
+#> Loading demo
+#> Testing demo
+#> ✔ |  OK F W S | Context
+#> ✔ |   4       | funcao_demo
+#> 
+#> ══ Results ═════════════════════════════════════════════════════════════════════
+#> OK:       4
+#> Failed:   0
+#> Warnings: 0
+#> Skipped:  0
+#> 
+#> Keep up the good work.
+```
+
+Para saber mais sobre como desenvolver testes eficazes, consulte a própria
+[documentação](https://testthat.r-lib.org/) do `testthat`.

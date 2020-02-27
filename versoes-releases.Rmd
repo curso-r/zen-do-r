@@ -8,7 +8,7 @@ esse tipo de informação no fundo da página de configurações.
 
 Pacotes do R também possuem versões. Ao executar o comando `update.packages()`
 (inclusive faça isso agora caso você nunca o tenha feito), o R é forçado a
-procurar por vesões mais recentes dos pacotes instalados na sua máquina. É
+procurar por versões mais recentes dos pacotes instalados na sua máquina. É
 importante deixar claro que "versão" não é nada mais que o identificador de uma
 atualização do software; se eu mudar uma linha do código do meu pacote e
 atualizar esse fonte no GitHub, pode-se dizer que criei uma nova versão do meu
@@ -55,7 +55,7 @@ utilizando a versão sem o patch deve continuar funcionando. Quando alguma nova
 funcionalidade é introduzida ao programa, mas ele continua sendo
 retrocompatível (ou seja, compatível com as suas versões anteriores), deve ser
 incrementada a versão minor. Por fim, se for introduzida alguma mudança que
-quebra a retrocompatibilidade, deve ser increvementada a versão major. É
+quebra a retrocompatibilidade, deve ser incrementada a versão major. É
 importante dizer também que, depois de lançada, uma versão **nunca** deverá ser
 alterada, pois isso confundirá os usuários da mesma.
 
@@ -139,7 +139,7 @@ usethis::use_dev_version()
 ```
 
 Depois que o pacote voltar para desenvolvimento, a programação pode continuar
-desempedida. Por completude, `usethis::use_version()` pode ser utilizada para
+desimpedida. Por completude, `usethis::use_version()` pode ser utilizada para
 qualquer versão cheia:
 
 ```r

@@ -12,5 +12,6 @@ rmd_files: [
   "funcoes-deps.Rmd",
   "pacotes.Rmd",
   "data-data-raw.Rmd",
+  "testes.Rmd",
   "versoes-releases.Rmd"
 ]

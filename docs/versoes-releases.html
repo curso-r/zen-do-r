@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Versões e releases | O Zen do R</title>
+  <title>9 Versões e releases | O Zen do R</title>
   <meta name="description" content="Um livro de programação para não-programadores" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Versões e releases | O Zen do R" />
+  <meta property="og:title" content="9 Versões e releases | O Zen do R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/zen-do-r" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Versões e releases | O Zen do R" />
+  <meta name="twitter:title" content="9 Versões e releases | O Zen do R" />
   
   <meta name="twitter:description" content="Um livro de programação para não-programadores" />
   
@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-data-raw.html"/>
+<link rel="prev" href="testes.html"/>
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -160,16 +160,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>6.1</b> Documentação</a></li>
 <li class="chapter" data-level="6.2" data-path="pacotes.html"><a href="pacotes.html#imports"><i class="fa fa-check"></i><b>6.2</b> Imports</a></li>
-<li class="chapter" data-level="6.3" data-path="pacotes.html"><a href="pacotes.html#testes-automatizados"><i class="fa fa-check"></i><b>6.3</b> Testes automatizados</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="data-data-raw.html"><a href="data-data-raw.html#documentação-1"><i class="fa fa-check"></i><b>7.1</b> Documentação</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>8</b> Versões e releases</a>
+<li class="chapter" data-level="8" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>8</b> Testes automatizados</a></li>
+<li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="versoes-releases.html"><a href="versoes-releases.html#versionamento-semântico"><i class="fa fa-check"></i><b>8.1</b> Versionamento semântico</a></li>
-<li class="chapter" data-level="8.2" data-path="versoes-releases.html"><a href="versoes-releases.html#releases"><i class="fa fa-check"></i><b>8.2</b> Releases</a></li>
+<li class="chapter" data-level="9.1" data-path="versoes-releases.html"><a href="versoes-releases.html#versionamento-semântico"><i class="fa fa-check"></i><b>9.1</b> Versionamento semântico</a></li>
+<li class="chapter" data-level="9.2" data-path="versoes-releases.html"><a href="versoes-releases.html#releases"><i class="fa fa-check"></i><b>9.2</b> Releases</a></li>
 </ul></li>
 </ul>
 
@@ -189,7 +189,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="versoes-releases" class="section level1">
-<h1><span class="header-section-number">8</span> Versões e releases</h1>
+<h1><span class="header-section-number">9</span> Versões e releases</h1>
 <p>A maior parte dos softwares que utilizamos no dia-a-dia possuem versões, até
 mesmo aqueles que não costumamos associar com esse tipo de prática. Sistemas
 operacionais, como Windows 10 e iOS 13 , têm as versões embutidas em seus
@@ -197,7 +197,7 @@ próprios nomes, enquanto muitos aplicativos, como WhatsApp 2.20.22, só exibem
 esse tipo de informação no fundo da página de configurações.</p>
 <p>Pacotes do R também possuem versões. Ao executar o comando <code>update.packages()</code>
 (inclusive faça isso agora caso você nunca o tenha feito), o R é forçado a
-procurar por vesões mais recentes dos pacotes instalados na sua máquina. É
+procurar por versões mais recentes dos pacotes instalados na sua máquina. É
 importante deixar claro que “versão” não é nada mais que o identificador de uma
 atualização do software; se eu mudar uma linha do código do meu pacote e
 atualizar esse fonte no GitHub, pode-se dizer que criei uma nova versão do meu
@@ -221,7 +221,7 @@ entender para as versões de um projeto. Trazendo isso para termos concretos, o
 pacote <code>dplyr</code> está na versão 0.8.4, o <code>ggplot2</code> está na 3.2.1 e o <code>shiny</code>
 está na 1.4.0.</p>
 <div id="versionamento-semântico" class="section level2">
-<h2><span class="header-section-number">8.1</span> Versionamento semântico</h2>
+<h2><span class="header-section-number">9.1</span> Versionamento semântico</h2>
 <p>Em teoria, existe um <a href="https://semver.org/">padrão ouro</a> para a nomenclatura de
 versões de um software. Alguns dos seus preceitos, como o uso de 3 números
 inteiros não-negativos separados por pontos, são extremamente valiosos, enquanto
@@ -238,7 +238,7 @@ utilizando a versão sem o patch deve continuar funcionando. Quando alguma nova
 funcionalidade é introduzida ao programa, mas ele continua sendo
 retrocompatível (ou seja, compatível com as suas versões anteriores), deve ser
 incrementada a versão minor. Por fim, se for introduzida alguma mudança que
-quebra a retrocompatibilidade, deve ser increvementada a versão major. É
+quebra a retrocompatibilidade, deve ser incrementada a versão major. É
 importante dizer também que, depois de lançada, uma versão <strong>nunca</strong> deverá ser
 alterada, pois isso confundirá os usuários da mesma.</p>
 <p>Alguns pontos do versionamento semântico não são seguidos sempre, mas podem ser
@@ -290,8 +290,8 @@ LazyData: true</code></pre>
 <p>Note como o campo <em>Version</em> já está populado com a primeira versão possível para
 um pacote: 0.0.0.9000. Depois de alguns commits, se acharmos que o código está
 preparado para a primeira minor, utilizamos:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="versoes-releases.html#cb25-1"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;minor&quot;</span>)</span>
-<span id="cb25-2"><a href="versoes-releases.html#cb25-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="versoes-releases.html#cb2-1"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;minor&quot;</span>)</span>
+<span id="cb2-2"><a href="versoes-releases.html#cb2-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0&#39;</span></span></code></pre></div>
 <p>A segunda linha já deixa claro que agora o arquivo <code>DESCRIPTION</code> contém uma
 linha <code>Version: 0.1.0</code> (note como a versão de desenvolvimento é removida
 automaticamente). <strong>Mas atenção</strong>, antes de fazer qualquer outra alteração no
@@ -301,22 +301,22 @@ ela. Atualmente o <code>usethis</code> faz isso automaticamente.</p>
 para o estado de desenvolvimento. Ou seja, deve existir um único commit no qual
 o pacote é considerado estável para cada sequência de commits de
 desenvolvimento.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="versoes-releases.html#cb26-1"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
-<span id="cb26-2"><a href="versoes-releases.html#cb26-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0.9000&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="versoes-releases.html#cb3-1"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
+<span id="cb3-2"><a href="versoes-releases.html#cb3-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0.9000&#39;</span></span></code></pre></div>
 <p>Depois que o pacote voltar para desenvolvimento, a programação pode continuar
-desempedida. Por completude, <code>usethis::use_version()</code> pode ser utilizada para
+desimpedida. Por completude, <code>usethis::use_version()</code> pode ser utilizada para
 qualquer versão cheia:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="versoes-releases.html#cb27-1"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;patch&quot;</span>)</span>
-<span id="cb27-2"><a href="versoes-releases.html#cb27-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1&#39;</span></span>
-<span id="cb27-3"><a href="versoes-releases.html#cb27-3"></a></span>
-<span id="cb27-4"><a href="versoes-releases.html#cb27-4"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
-<span id="cb27-5"><a href="versoes-releases.html#cb27-5"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1.9000&#39;</span></span>
-<span id="cb27-6"><a href="versoes-releases.html#cb27-6"></a></span>
-<span id="cb27-7"><a href="versoes-releases.html#cb27-7"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;major&quot;</span>)</span>
-<span id="cb27-8"><a href="versoes-releases.html#cb27-8"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;1.0.0&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="versoes-releases.html#cb4-1"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;patch&quot;</span>)</span>
+<span id="cb4-2"><a href="versoes-releases.html#cb4-2"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1&#39;</span></span>
+<span id="cb4-3"><a href="versoes-releases.html#cb4-3"></a></span>
+<span id="cb4-4"><a href="versoes-releases.html#cb4-4"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
+<span id="cb4-5"><a href="versoes-releases.html#cb4-5"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1.9000&#39;</span></span>
+<span id="cb4-6"><a href="versoes-releases.html#cb4-6"></a></span>
+<span id="cb4-7"><a href="versoes-releases.html#cb4-7"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;major&quot;</span>)</span>
+<span id="cb4-8"><a href="versoes-releases.html#cb4-8"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;1.0.0&#39;</span></span></code></pre></div>
 </div>
 <div id="releases" class="section level2">
-<h2><span class="header-section-number">8.2</span> Releases</h2>
+<h2><span class="header-section-number">9.2</span> Releases</h2>
 <p>Uma parte interessante do processo de versionamento é que o GitHub permite
 marcar commits específicos como estáveis e atribuir um rótulo aos mesmos. No
 fundo isso não passa de um versionamento semântico integrado ao site.</p>
@@ -342,24 +342,12 @@ utilizado no <code>ggplot2</code>.</p>
 
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol>
-<li id="fn1"><p>E também não tenho paciência para entrar em mais nenhum debate “base vs.
-tidyverse”<a href="introducao.html#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>Não tenho nenhuma estatística confiável sobre esse número, mas sei que ele
-não é 100% porque conheço pelo menos uma pessoa que programa R no neovim.<a href="rdata-rhistory.html#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>Aqui o termo “programação funcional” é usado de forma figurativa. Na
-computação linguagens denominadas “funcionais” tem um <em>modus operandi</em> bastante
-específico não abordado neste capítulo.<a href="funcoes-deps.html#fnref3" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="data-data-raw.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="testes.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
