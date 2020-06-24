@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 Introdução | O Zen do R</title>
   <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 Introdução | O Zen do R" />
   <meta property="og:type" content="book" />
@@ -52,26 +52,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +79,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -132,42 +131,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a></li>
-<li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a>
-<ul>
+<li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
+<li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="introducao.html"><a href="introducao.html#o-que-você-vai-aprender"><i class="fa fa-check"></i><b>1.1.1</b> O que você vai aprender</a></li>
 <li class="chapter" data-level="1.1.2" data-path="introducao.html"><a href="introducao.html#o-que-você-não-vai-aprender"><i class="fa fa-check"></i><b>1.1.2</b> O que você não vai aprender</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="introducao.html"><a href="introducao.html#pré-requisitos"><i class="fa fa-check"></i><b>1.2</b> Pré-requisitos</a></li>
 <li class="chapter" data-level="1.3" data-path="introducao.html"><a href="introducao.html#principais-referências"><i class="fa fa-check"></i><b>1.3</b> Principais referências</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html"><i class="fa fa-check"></i><b>2</b> .RData e .Rhistory</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#porque-desistir"><i class="fa fa-check"></i><b>2.1</b> Porque desistir</a></li>
+<li class="chapter" data-level="2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html"><i class="fa fa-check"></i><b>2</b> .RData e .Rhistory</a><ul>
+<li class="chapter" data-level="2.1" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#por-que-desistir"><i class="fa fa-check"></i><b>2.1</b> Por que desistir</a></li>
 <li class="chapter" data-level="2.2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#como-desativar"><i class="fa fa-check"></i><b>2.2</b> Como desativar</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="rproj-dir.html"><a href="rproj-dir.html"><i class="fa fa-check"></i><b>3</b> Rproj e diretórios</a>
-<ul>
+<li class="chapter" data-level="3" data-path="rproj-dir.html"><a href="rproj-dir.html"><i class="fa fa-check"></i><b>3</b> Rproj e diretórios</a><ul>
 <li class="chapter" data-level="3.1" data-path="rproj-dir.html"><a href="rproj-dir.html#diretório-de-trabalho"><i class="fa fa-check"></i><b>3.1</b> Diretório de trabalho</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="git-github.html"><a href="git-github.html"><i class="fa fa-check"></i><b>4</b> Git e GitHub</a></li>
-<li class="chapter" data-level="5" data-path="funcoes-deps.html"><a href="funcoes-deps.html"><i class="fa fa-check"></i><b>5</b> Funções e dependências</a>
-<ul>
+<li class="chapter" data-level="5" data-path="funcoes-deps.html"><a href="funcoes-deps.html"><i class="fa fa-check"></i><b>5</b> Funções e dependências</a><ul>
 <li class="chapter" data-level="5.1" data-path="funcoes-deps.html"><a href="funcoes-deps.html#quatro-pontos"><i class="fa fa-check"></i><b>5.1</b> Quatro-pontos</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="pacotes.html"><a href="pacotes.html"><i class="fa fa-check"></i><b>6</b> Pacotes</a>
-<ul>
+<li class="chapter" data-level="6" data-path="pacotes.html"><a href="pacotes.html"><i class="fa fa-check"></i><b>6</b> Pacotes</a><ul>
 <li class="chapter" data-level="6.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>6.1</b> Documentação</a></li>
 <li class="chapter" data-level="6.2" data-path="pacotes.html"><a href="pacotes.html#imports"><i class="fa fa-check"></i><b>6.2</b> Imports</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a>
-<ul>
+<li class="chapter" data-level="7" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a><ul>
 <li class="chapter" data-level="7.1" data-path="data-data-raw.html"><a href="data-data-raw.html#documentação-1"><i class="fa fa-check"></i><b>7.1</b> Documentação</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>8</b> Testes automatizados</a></li>
-<li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a>
-<ul>
+<li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a><ul>
 <li class="chapter" data-level="9.1" data-path="versoes-releases.html"><a href="versoes-releases.html#versionamento-semântico"><i class="fa fa-check"></i><b>9.1</b> Versionamento semântico</a></li>
 <li class="chapter" data-level="9.2" data-path="versoes-releases.html"><a href="versoes-releases.html#releases"><i class="fa fa-check"></i><b>9.2</b> Releases</a></li>
 </ul></li>
@@ -233,7 +224,7 @@ não corra o risco de perder seu progresso;</li>
 e atualizadas;</li>
 <li>Funções e dependências: como organizar arquivos, funções e dependências para
 maximizar a reprodutibilidade do código;</li>
-<li>Pacotes: como e porquê transformar um projeto em um pacote, como documentá-lo
+<li>Pacotes: como e por que transformar um projeto em um pacote, como documentá-lo
 e como criar testes unitários;</li>
 <li>Data e data-raw: como organizar seus dados e scripts de tratamento em pastas
 com objetivos claros e distintos.</li>
@@ -247,12 +238,12 @@ mais avançados.</p>
 <div id="o-que-você-não-vai-aprender" class="section level3">
 <h3><span class="header-section-number">1.1.2</span> O que você não vai aprender</h3>
 <p>Primeiramente, você não vai aprender a programar R. Esse assunto é extremamente
-extenso e já existem livros o suficiente para ajudar com isso (vide
+extenso e já existem livros o suficiente para ajudar com isso (vide <a href="https://livro.curso-r.com/">o livro da Curso-R</a> ou
 <a href="https://r4ds.had.co.nz/">R for Data Science</a>), então não vou me preocupar
 com os detalhes do código ou com qual guia de estilo seguir.</p>
 <p>Se você gosta de fazer códigos longos e velozes usando o <code>base-r</code>, se você
 ama as pipelines do <code>tidyverse</code>, se você paraleliza todos os seus loops…
-Nada disso importa aqui; não vou dizer qual é o melhor jeito de programar<a href="versoes-releases.html#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.
+Nada disso importa aqui; não vou dizer qual é o melhor jeito de programar<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.
 Aqui você vai conhecer somente as melhores ferramentas para <strong>organizar o seu
 fluxo de programação</strong>.</p>
 <p>Apesar de terem nomes parecidos, <em>O Zen do R</em> e <em>O Zen do Python</em> são diferentes
@@ -273,6 +264,11 @@ talvez valha à pena
 <a href="https://www.rstudio.com/products/rstudio/download/">instalar a IDE</a>. Ainda
 no tocante ao R, você precisará ter instalado pelo menos os três pacotes a
 seguir:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Conteúdo principal do livro</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;usethis&quot;</span>, <span class="st">&quot;packrat&quot;</span>))</a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co"># Se você quiser reproduzir os exemplos</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</a></code></pre></div>
 <p>Você também precisa de um computador funcionando com um sistema operacional
 razoavelmente moderno. E uma conexão à internet.</p>
 </div>
@@ -290,6 +286,13 @@ citadas o tempo todo e portanto acabarão ficando aqui:</p>
 </ul>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>E também não tenho paciência para entrar em mais nenhum debate “base vs.
+tidyverse”<a href="introducao.html#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 

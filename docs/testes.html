@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Testes automatizados | O Zen do R</title>
   <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Testes automatizados | O Zen do R" />
   <meta property="og:type" content="book" />
@@ -52,26 +52,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +79,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -132,42 +131,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a></li>
-<li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a>
-<ul>
+<li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
+<li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="introducao.html"><a href="introducao.html#o-que-você-vai-aprender"><i class="fa fa-check"></i><b>1.1.1</b> O que você vai aprender</a></li>
 <li class="chapter" data-level="1.1.2" data-path="introducao.html"><a href="introducao.html#o-que-você-não-vai-aprender"><i class="fa fa-check"></i><b>1.1.2</b> O que você não vai aprender</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="introducao.html"><a href="introducao.html#pré-requisitos"><i class="fa fa-check"></i><b>1.2</b> Pré-requisitos</a></li>
 <li class="chapter" data-level="1.3" data-path="introducao.html"><a href="introducao.html#principais-referências"><i class="fa fa-check"></i><b>1.3</b> Principais referências</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html"><i class="fa fa-check"></i><b>2</b> .RData e .Rhistory</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#porque-desistir"><i class="fa fa-check"></i><b>2.1</b> Porque desistir</a></li>
+<li class="chapter" data-level="2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html"><i class="fa fa-check"></i><b>2</b> .RData e .Rhistory</a><ul>
+<li class="chapter" data-level="2.1" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#por-que-desistir"><i class="fa fa-check"></i><b>2.1</b> Por que desistir</a></li>
 <li class="chapter" data-level="2.2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#como-desativar"><i class="fa fa-check"></i><b>2.2</b> Como desativar</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="rproj-dir.html"><a href="rproj-dir.html"><i class="fa fa-check"></i><b>3</b> Rproj e diretórios</a>
-<ul>
+<li class="chapter" data-level="3" data-path="rproj-dir.html"><a href="rproj-dir.html"><i class="fa fa-check"></i><b>3</b> Rproj e diretórios</a><ul>
 <li class="chapter" data-level="3.1" data-path="rproj-dir.html"><a href="rproj-dir.html#diretório-de-trabalho"><i class="fa fa-check"></i><b>3.1</b> Diretório de trabalho</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="git-github.html"><a href="git-github.html"><i class="fa fa-check"></i><b>4</b> Git e GitHub</a></li>
-<li class="chapter" data-level="5" data-path="funcoes-deps.html"><a href="funcoes-deps.html"><i class="fa fa-check"></i><b>5</b> Funções e dependências</a>
-<ul>
+<li class="chapter" data-level="5" data-path="funcoes-deps.html"><a href="funcoes-deps.html"><i class="fa fa-check"></i><b>5</b> Funções e dependências</a><ul>
 <li class="chapter" data-level="5.1" data-path="funcoes-deps.html"><a href="funcoes-deps.html#quatro-pontos"><i class="fa fa-check"></i><b>5.1</b> Quatro-pontos</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="pacotes.html"><a href="pacotes.html"><i class="fa fa-check"></i><b>6</b> Pacotes</a>
-<ul>
+<li class="chapter" data-level="6" data-path="pacotes.html"><a href="pacotes.html"><i class="fa fa-check"></i><b>6</b> Pacotes</a><ul>
 <li class="chapter" data-level="6.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>6.1</b> Documentação</a></li>
 <li class="chapter" data-level="6.2" data-path="pacotes.html"><a href="pacotes.html#imports"><i class="fa fa-check"></i><b>6.2</b> Imports</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a>
-<ul>
+<li class="chapter" data-level="7" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a><ul>
 <li class="chapter" data-level="7.1" data-path="data-data-raw.html"><a href="data-data-raw.html#documentação-1"><i class="fa fa-check"></i><b>7.1</b> Documentação</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>8</b> Testes automatizados</a></li>
-<li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a>
-<ul>
+<li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a><ul>
 <li class="chapter" data-level="9.1" data-path="versoes-releases.html"><a href="versoes-releases.html#versionamento-semântico"><i class="fa fa-check"></i><b>9.1</b> Versionamento semântico</a></li>
 <li class="chapter" data-level="9.2" data-path="versoes-releases.html"><a href="versoes-releases.html#releases"><i class="fa fa-check"></i><b>9.2</b> Releases</a></li>
 </ul></li>
@@ -204,16 +195,16 @@ daquela função (prática conhecida como Desenvolvimento Orientado a Testes).</
 <p>Para criar um conjunto de testes é necessário primeiro criar o ambiente para tal
 dentro do pacote através do pacote <code>testthat</code>. Depois disso, basta criar
 conjuntos individuais de testes para cada função.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="testes.html#cb21-1"></a>usethis<span class="op">::</span><span class="kw">use_testthat</span>()</span>
-<span id="cb21-2"><a href="testes.html#cb21-2"></a><span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span></span>
-<span id="cb21-3"><a href="testes.html#cb21-3"></a><span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span></span>
-<span id="cb21-4"><a href="testes.html#cb21-4"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span></span>
-<span id="cb21-5"><a href="testes.html#cb21-5"></a><span class="co">#&gt; ● Call `use_test()` to initialize a basic test file and open it for editing.</span></span>
-<span id="cb21-6"><a href="testes.html#cb21-6"></a></span>
-<span id="cb21-7"><a href="testes.html#cb21-7"></a>usethis<span class="op">::</span><span class="kw">use_test</span>(<span class="st">&quot;funcao_demo&quot;</span>)</span>
-<span id="cb21-8"><a href="testes.html#cb21-8"></a><span class="co">#&gt; ✔ Increasing &#39;testthat&#39; version to &#39;&gt;= 2.1.0&#39; in DESCRIPTION</span></span>
-<span id="cb21-9"><a href="testes.html#cb21-9"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat/test-funcao_demo.R&#39;</span></span>
-<span id="cb21-10"><a href="testes.html#cb21-10"></a><span class="co">#&gt; ● Modify &#39;tests/testthat/test-funcao_demo.R&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1">usethis<span class="op">::</span><span class="kw">use_testthat</span>()</a>
+<a class="sourceLine" id="cb22-2" title="2"><span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span></a>
+<a class="sourceLine" id="cb22-3" title="3"><span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span></a>
+<a class="sourceLine" id="cb22-4" title="4"><span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span></a>
+<a class="sourceLine" id="cb22-5" title="5"><span class="co">#&gt; ● Call `use_test()` to initialize a basic test file and open it for editing.</span></a>
+<a class="sourceLine" id="cb22-6" title="6"></a>
+<a class="sourceLine" id="cb22-7" title="7">usethis<span class="op">::</span><span class="kw">use_test</span>(<span class="st">&quot;funcao_demo&quot;</span>)</a>
+<a class="sourceLine" id="cb22-8" title="8"><span class="co">#&gt; ✔ Increasing &#39;testthat&#39; version to &#39;&gt;= 2.1.0&#39; in DESCRIPTION</span></a>
+<a class="sourceLine" id="cb22-9" title="9"><span class="co">#&gt; ✔ Writing &#39;tests/testthat/test-funcao_demo.R&#39;</span></a>
+<a class="sourceLine" id="cb22-10" title="10"><span class="co">#&gt; ● Modify &#39;tests/testthat/test-funcao_demo.R&#39;</span></a></code></pre></div>
 <p>Como é possível notar, o pacote <code>testthat</code> permite criar um arquivo de testes
 para <code>funcao_demo()</code> (neste caso <code>tests/testthat/test-funcao_demo.R</code>). Esse
 arquivo já vem com um teste padrão a título de demonstração, mas, depois de
@@ -231,19 +222,19 @@ test_that(&quot;funcao_demo funciona&quot;, {
 
 })</code></pre>
 <p>E o resultado da execução dos testes é o seguinte:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="testes.html#cb23-1"></a>devtools<span class="op">::</span><span class="kw">test</span>()</span>
-<span id="cb23-2"><a href="testes.html#cb23-2"></a><span class="co">#&gt; Loading demo</span></span>
-<span id="cb23-3"><a href="testes.html#cb23-3"></a><span class="co">#&gt; Testing demo</span></span>
-<span id="cb23-4"><a href="testes.html#cb23-4"></a><span class="co">#&gt; ✔ |  OK F W S | Context</span></span>
-<span id="cb23-5"><a href="testes.html#cb23-5"></a><span class="co">#&gt; ✔ |   4       | funcao_demo</span></span>
-<span id="cb23-6"><a href="testes.html#cb23-6"></a><span class="co">#&gt; </span></span>
-<span id="cb23-7"><a href="testes.html#cb23-7"></a><span class="co">#&gt; ══ Results ═════════════════════════════════════════════════════════════════════</span></span>
-<span id="cb23-8"><a href="testes.html#cb23-8"></a><span class="co">#&gt; OK:       4</span></span>
-<span id="cb23-9"><a href="testes.html#cb23-9"></a><span class="co">#&gt; Failed:   0</span></span>
-<span id="cb23-10"><a href="testes.html#cb23-10"></a><span class="co">#&gt; Warnings: 0</span></span>
-<span id="cb23-11"><a href="testes.html#cb23-11"></a><span class="co">#&gt; Skipped:  0</span></span>
-<span id="cb23-12"><a href="testes.html#cb23-12"></a><span class="co">#&gt; </span></span>
-<span id="cb23-13"><a href="testes.html#cb23-13"></a><span class="co">#&gt; Keep up the good work.</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1">devtools<span class="op">::</span><span class="kw">test</span>()</a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="co">#&gt; Loading demo</span></a>
+<a class="sourceLine" id="cb24-3" title="3"><span class="co">#&gt; Testing demo</span></a>
+<a class="sourceLine" id="cb24-4" title="4"><span class="co">#&gt; ✔ |  OK F W S | Context</span></a>
+<a class="sourceLine" id="cb24-5" title="5"><span class="co">#&gt; ✔ |   4       | funcao_demo</span></a>
+<a class="sourceLine" id="cb24-6" title="6"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb24-7" title="7"><span class="co">#&gt; ══ Results ═════════════════════════════════════════════════════════════════════</span></a>
+<a class="sourceLine" id="cb24-8" title="8"><span class="co">#&gt; OK:       4</span></a>
+<a class="sourceLine" id="cb24-9" title="9"><span class="co">#&gt; Failed:   0</span></a>
+<a class="sourceLine" id="cb24-10" title="10"><span class="co">#&gt; Warnings: 0</span></a>
+<a class="sourceLine" id="cb24-11" title="11"><span class="co">#&gt; Skipped:  0</span></a>
+<a class="sourceLine" id="cb24-12" title="12"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb24-13" title="13"><span class="co">#&gt; Keep up the good work.</span></a></code></pre></div>
 <p>Para saber mais sobre como desenvolver testes eficazes, consulte a própria
 <a href="https://testthat.r-lib.org/">documentação</a> do <code>testthat</code>.</p>
 

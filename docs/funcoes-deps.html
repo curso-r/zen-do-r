@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Funções e dependências | O Zen do R</title>
   <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Funções e dependências | O Zen do R" />
   <meta property="og:type" content="book" />
@@ -52,26 +52,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +79,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -132,42 +131,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a></li>
-<li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a>
-<ul>
+<li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
+<li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="introducao.html"><a href="introducao.html#o-que-você-vai-aprender"><i class="fa fa-check"></i><b>1.1.1</b> O que você vai aprender</a></li>
 <li class="chapter" data-level="1.1.2" data-path="introducao.html"><a href="introducao.html#o-que-você-não-vai-aprender"><i class="fa fa-check"></i><b>1.1.2</b> O que você não vai aprender</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="introducao.html"><a href="introducao.html#pré-requisitos"><i class="fa fa-check"></i><b>1.2</b> Pré-requisitos</a></li>
 <li class="chapter" data-level="1.3" data-path="introducao.html"><a href="introducao.html#principais-referências"><i class="fa fa-check"></i><b>1.3</b> Principais referências</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html"><i class="fa fa-check"></i><b>2</b> .RData e .Rhistory</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#porque-desistir"><i class="fa fa-check"></i><b>2.1</b> Porque desistir</a></li>
+<li class="chapter" data-level="2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html"><i class="fa fa-check"></i><b>2</b> .RData e .Rhistory</a><ul>
+<li class="chapter" data-level="2.1" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#por-que-desistir"><i class="fa fa-check"></i><b>2.1</b> Por que desistir</a></li>
 <li class="chapter" data-level="2.2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#como-desativar"><i class="fa fa-check"></i><b>2.2</b> Como desativar</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="rproj-dir.html"><a href="rproj-dir.html"><i class="fa fa-check"></i><b>3</b> Rproj e diretórios</a>
-<ul>
+<li class="chapter" data-level="3" data-path="rproj-dir.html"><a href="rproj-dir.html"><i class="fa fa-check"></i><b>3</b> Rproj e diretórios</a><ul>
 <li class="chapter" data-level="3.1" data-path="rproj-dir.html"><a href="rproj-dir.html#diretório-de-trabalho"><i class="fa fa-check"></i><b>3.1</b> Diretório de trabalho</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="git-github.html"><a href="git-github.html"><i class="fa fa-check"></i><b>4</b> Git e GitHub</a></li>
-<li class="chapter" data-level="5" data-path="funcoes-deps.html"><a href="funcoes-deps.html"><i class="fa fa-check"></i><b>5</b> Funções e dependências</a>
-<ul>
+<li class="chapter" data-level="5" data-path="funcoes-deps.html"><a href="funcoes-deps.html"><i class="fa fa-check"></i><b>5</b> Funções e dependências</a><ul>
 <li class="chapter" data-level="5.1" data-path="funcoes-deps.html"><a href="funcoes-deps.html#quatro-pontos"><i class="fa fa-check"></i><b>5.1</b> Quatro-pontos</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="pacotes.html"><a href="pacotes.html"><i class="fa fa-check"></i><b>6</b> Pacotes</a>
-<ul>
+<li class="chapter" data-level="6" data-path="pacotes.html"><a href="pacotes.html"><i class="fa fa-check"></i><b>6</b> Pacotes</a><ul>
 <li class="chapter" data-level="6.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>6.1</b> Documentação</a></li>
 <li class="chapter" data-level="6.2" data-path="pacotes.html"><a href="pacotes.html#imports"><i class="fa fa-check"></i><b>6.2</b> Imports</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a>
-<ul>
+<li class="chapter" data-level="7" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a><ul>
 <li class="chapter" data-level="7.1" data-path="data-data-raw.html"><a href="data-data-raw.html#documentação-1"><i class="fa fa-check"></i><b>7.1</b> Documentação</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>8</b> Testes automatizados</a></li>
-<li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a>
-<ul>
+<li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a><ul>
 <li class="chapter" data-level="9.1" data-path="versoes-releases.html"><a href="versoes-releases.html#versionamento-semântico"><i class="fa fa-check"></i><b>9.1</b> Versionamento semântico</a></li>
 <li class="chapter" data-level="9.2" data-path="versoes-releases.html"><a href="versoes-releases.html#releases"><i class="fa fa-check"></i><b>9.2</b> Releases</a></li>
 </ul></li>
@@ -208,40 +199,40 @@ erro no resultado, fica bem mais fácil depurar a função culpada do que uma
 coleção desordenada de código. Funções têm argumentos e saídas, enquanto código
 solto pode modificar globais e criar resultados tardios que são impossíveis de
 acompanhar sem conhecer profundamente a tarefa sendo realizada.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="funcoes-deps.html#cb6-1"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb6-2"><a href="funcoes-deps.html#cb6-2"></a><span class="kw">library</span>(tibble)</span>
-<span id="cb6-3"><a href="funcoes-deps.html#cb6-3"></a></span>
-<span id="cb6-4"><a href="funcoes-deps.html#cb6-4"></a><span class="co"># Limpar dados</span></span>
-<span id="cb6-5"><a href="funcoes-deps.html#cb6-5"></a>mtcars_clean &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span></span>
-<span id="cb6-6"><a href="funcoes-deps.html#cb6-6"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb6-7"><a href="funcoes-deps.html#cb6-7"></a><span class="st">  </span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span></span>
-<span id="cb6-8"><a href="funcoes-deps.html#cb6-8"></a><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span><span class="dv">8</span>)</span>
-<span id="cb6-9"><a href="funcoes-deps.html#cb6-9"></a></span>
-<span id="cb6-10"><a href="funcoes-deps.html#cb6-10"></a><span class="co"># Selecionar carros com 4 cyl e tirar média de mpg e wt</span></span>
-<span id="cb6-11"><a href="funcoes-deps.html#cb6-11"></a>mtcars_clean <span class="op">%&gt;%</span></span>
-<span id="cb6-12"><a href="funcoes-deps.html#cb6-12"></a><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span><span class="dv">4</span>) <span class="op">%&gt;%</span></span>
-<span id="cb6-13"><a href="funcoes-deps.html#cb6-13"></a><span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></span>
-<span id="cb6-14"><a href="funcoes-deps.html#cb6-14"></a><span class="st">  </span><span class="kw">summarise</span>(</span>
-<span id="cb6-15"><a href="funcoes-deps.html#cb6-15"></a>    <span class="dt">mpg =</span> <span class="kw">mean</span>(mpg),</span>
-<span id="cb6-16"><a href="funcoes-deps.html#cb6-16"></a>    <span class="dt">wt =</span> <span class="kw">mean</span>(wt)</span>
-<span id="cb6-17"><a href="funcoes-deps.html#cb6-17"></a>  )</span>
-<span id="cb6-18"><a href="funcoes-deps.html#cb6-18"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
-<span id="cb6-19"><a href="funcoes-deps.html#cb6-19"></a><span class="co">#&gt;     cyl   mpg    wt</span></span>
-<span id="cb6-20"><a href="funcoes-deps.html#cb6-20"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span id="cb6-21"><a href="funcoes-deps.html#cb6-21"></a><span class="co">#&gt; 1     4  26.7  2.29</span></span>
-<span id="cb6-22"><a href="funcoes-deps.html#cb6-22"></a></span>
-<span id="cb6-23"><a href="funcoes-deps.html#cb6-23"></a><span class="co"># Selecionar carros com 6 cyl e tirar média de drat e disp</span></span>
-<span id="cb6-24"><a href="funcoes-deps.html#cb6-24"></a>mtcars_clean <span class="op">%&gt;%</span></span>
-<span id="cb6-25"><a href="funcoes-deps.html#cb6-25"></a><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span><span class="dv">6</span>) <span class="op">%&gt;%</span></span>
-<span id="cb6-26"><a href="funcoes-deps.html#cb6-26"></a><span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></span>
-<span id="cb6-27"><a href="funcoes-deps.html#cb6-27"></a><span class="st">  </span><span class="kw">summarise</span>(</span>
-<span id="cb6-28"><a href="funcoes-deps.html#cb6-28"></a>    <span class="dt">drat =</span> <span class="kw">mean</span>(drat),</span>
-<span id="cb6-29"><a href="funcoes-deps.html#cb6-29"></a>    <span class="dt">disp =</span> <span class="kw">mean</span>(disp)</span>
-<span id="cb6-30"><a href="funcoes-deps.html#cb6-30"></a>  )</span>
-<span id="cb6-31"><a href="funcoes-deps.html#cb6-31"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
-<span id="cb6-32"><a href="funcoes-deps.html#cb6-32"></a><span class="co">#&gt;     cyl  drat  disp</span></span>
-<span id="cb6-33"><a href="funcoes-deps.html#cb6-33"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span id="cb6-34"><a href="funcoes-deps.html#cb6-34"></a><span class="co">#&gt; 1     6  3.59  183.</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="kw">library</span>(tibble)</a>
+<a class="sourceLine" id="cb7-3" title="3"></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="co"># Limpar dados</span></a>
+<a class="sourceLine" id="cb7-5" title="5">mtcars_clean &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-6" title="6"><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="st">  </span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-8" title="8"><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span><span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb7-9" title="9"></a>
+<a class="sourceLine" id="cb7-10" title="10"><span class="co"># Selecionar carros com 4 cyl e tirar média de mpg e wt</span></a>
+<a class="sourceLine" id="cb7-11" title="11">mtcars_clean <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-12" title="12"><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span><span class="dv">4</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-13" title="13"><span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-14" title="14"><span class="st">  </span><span class="kw">summarise</span>(</a>
+<a class="sourceLine" id="cb7-15" title="15">    <span class="dt">mpg =</span> <span class="kw">mean</span>(mpg),</a>
+<a class="sourceLine" id="cb7-16" title="16">    <span class="dt">wt =</span> <span class="kw">mean</span>(wt)</a>
+<a class="sourceLine" id="cb7-17" title="17">  )</a>
+<a class="sourceLine" id="cb7-18" title="18"><span class="co">#&gt; # A tibble: 1 x 3</span></a>
+<a class="sourceLine" id="cb7-19" title="19"><span class="co">#&gt;     cyl   mpg    wt</span></a>
+<a class="sourceLine" id="cb7-20" title="20"><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb7-21" title="21"><span class="co">#&gt; 1     4  26.7  2.29</span></a>
+<a class="sourceLine" id="cb7-22" title="22"></a>
+<a class="sourceLine" id="cb7-23" title="23"><span class="co"># Selecionar carros com 6 cyl e tirar média de drat e disp</span></a>
+<a class="sourceLine" id="cb7-24" title="24">mtcars_clean <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-25" title="25"><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span><span class="dv">6</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-26" title="26"><span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-27" title="27"><span class="st">  </span><span class="kw">summarise</span>(</a>
+<a class="sourceLine" id="cb7-28" title="28">    <span class="dt">drat =</span> <span class="kw">mean</span>(drat),</a>
+<a class="sourceLine" id="cb7-29" title="29">    <span class="dt">disp =</span> <span class="kw">mean</span>(disp)</a>
+<a class="sourceLine" id="cb7-30" title="30">  )</a>
+<a class="sourceLine" id="cb7-31" title="31"><span class="co">#&gt; # A tibble: 1 x 3</span></a>
+<a class="sourceLine" id="cb7-32" title="32"><span class="co">#&gt;     cyl  drat  disp</span></a>
+<a class="sourceLine" id="cb7-33" title="33"><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb7-34" title="34"><span class="co">#&gt; 1     6  3.59  183.</span></a></code></pre></div>
 <p>O código acima é somente um exemplo de análise. Como descrito pelos comentários,
 <code>mtcars</code> é limpa e depois são extraídas as médias de diferentes variáveis para
 duas seleções da tabela (número de cilindros igual a 4 e 6). Abaixo está
@@ -251,42 +242,42 @@ encapsulamento das tarefas de limpeza e resumo, mas perceba, por exemplo, que,
 se fosse necessário trocar <code>mean()</code> por <code>median()</code>, antes seria necessário
 alterar quatro linhas e agora apenas uma. Esse tipo de ganho a longo prazo pode
 salvar análises inteiras do caos.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="funcoes-deps.html#cb7-1"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb7-2"><a href="funcoes-deps.html#cb7-2"></a><span class="kw">library</span>(tibble)</span>
-<span id="cb7-3"><a href="funcoes-deps.html#cb7-3"></a></span>
-<span id="cb7-4"><a href="funcoes-deps.html#cb7-4"></a><span class="co"># Limpa tabela, filtrando cyl &lt; cyl_max</span></span>
-<span id="cb7-5"><a href="funcoes-deps.html#cb7-5"></a>clean &lt;-<span class="st"> </span><span class="cf">function</span>(data, <span class="dt">cyl_max =</span> <span class="dv">8</span>) {</span>
-<span id="cb7-6"><a href="funcoes-deps.html#cb7-6"></a>  data <span class="op">%&gt;%</span></span>
-<span id="cb7-7"><a href="funcoes-deps.html#cb7-7"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb7-8"><a href="funcoes-deps.html#cb7-8"></a><span class="st">  </span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span></span>
-<span id="cb7-9"><a href="funcoes-deps.html#cb7-9"></a><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span>cyl_max)</span>
-<span id="cb7-10"><a href="funcoes-deps.html#cb7-10"></a>}</span>
-<span id="cb7-11"><a href="funcoes-deps.html#cb7-11"></a></span>
-<span id="cb7-12"><a href="funcoes-deps.html#cb7-12"></a><span class="co"># Resume tabela onde cyl == cyl_max, tirando média das colunas em ...</span></span>
-<span id="cb7-13"><a href="funcoes-deps.html#cb7-13"></a>summarise_cyl &lt;-<span class="st"> </span><span class="cf">function</span>(data, cyl_num, ...) {</span>
-<span id="cb7-14"><a href="funcoes-deps.html#cb7-14"></a>  data <span class="op">%&gt;%</span></span>
-<span id="cb7-15"><a href="funcoes-deps.html#cb7-15"></a><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span>cyl_num) <span class="op">%&gt;%</span></span>
-<span id="cb7-16"><a href="funcoes-deps.html#cb7-16"></a><span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></span>
-<span id="cb7-17"><a href="funcoes-deps.html#cb7-17"></a><span class="st">  </span><span class="kw">summarise_at</span>(<span class="kw">vars</span>(...), mean)</span>
-<span id="cb7-18"><a href="funcoes-deps.html#cb7-18"></a>}</span>
-<span id="cb7-19"><a href="funcoes-deps.html#cb7-19"></a></span>
-<span id="cb7-20"><a href="funcoes-deps.html#cb7-20"></a><span class="co"># 4 cyl, média de mpg e wt</span></span>
-<span id="cb7-21"><a href="funcoes-deps.html#cb7-21"></a>mtcars <span class="op">%&gt;%</span></span>
-<span id="cb7-22"><a href="funcoes-deps.html#cb7-22"></a><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></span>
-<span id="cb7-23"><a href="funcoes-deps.html#cb7-23"></a><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">4</span>, mpg, wt)</span>
-<span id="cb7-24"><a href="funcoes-deps.html#cb7-24"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
-<span id="cb7-25"><a href="funcoes-deps.html#cb7-25"></a><span class="co">#&gt;     cyl   mpg    wt</span></span>
-<span id="cb7-26"><a href="funcoes-deps.html#cb7-26"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span id="cb7-27"><a href="funcoes-deps.html#cb7-27"></a><span class="co">#&gt; 1     4  26.7  2.29</span></span>
-<span id="cb7-28"><a href="funcoes-deps.html#cb7-28"></a></span>
-<span id="cb7-29"><a href="funcoes-deps.html#cb7-29"></a><span class="co"># 6 cyl, média de drat e disp</span></span>
-<span id="cb7-30"><a href="funcoes-deps.html#cb7-30"></a>mtcars <span class="op">%&gt;%</span></span>
-<span id="cb7-31"><a href="funcoes-deps.html#cb7-31"></a><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></span>
-<span id="cb7-32"><a href="funcoes-deps.html#cb7-32"></a><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">6</span>, drat, disp)</span>
-<span id="cb7-33"><a href="funcoes-deps.html#cb7-33"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
-<span id="cb7-34"><a href="funcoes-deps.html#cb7-34"></a><span class="co">#&gt;     cyl  drat  disp</span></span>
-<span id="cb7-35"><a href="funcoes-deps.html#cb7-35"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span id="cb7-36"><a href="funcoes-deps.html#cb7-36"></a><span class="co">#&gt; 1     6  3.59  183.</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="kw">library</span>(tibble)</a>
+<a class="sourceLine" id="cb8-3" title="3"></a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="co"># Limpa tabela, filtrando cyl &lt; cyl_max</span></a>
+<a class="sourceLine" id="cb8-5" title="5">clean &lt;-<span class="st"> </span><span class="cf">function</span>(data, <span class="dt">cyl_max =</span> <span class="dv">8</span>) {</a>
+<a class="sourceLine" id="cb8-6" title="6">  data <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-7" title="7"><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-8" title="8"><span class="st">  </span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-9" title="9"><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span>cyl_max)</a>
+<a class="sourceLine" id="cb8-10" title="10">}</a>
+<a class="sourceLine" id="cb8-11" title="11"></a>
+<a class="sourceLine" id="cb8-12" title="12"><span class="co"># Resume tabela onde cyl == cyl_max, tirando média das colunas em ...</span></a>
+<a class="sourceLine" id="cb8-13" title="13">summarise_cyl &lt;-<span class="st"> </span><span class="cf">function</span>(data, cyl_num, ...) {</a>
+<a class="sourceLine" id="cb8-14" title="14">  data <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-15" title="15"><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span>cyl_num) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-16" title="16"><span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-17" title="17"><span class="st">  </span><span class="kw">summarise_at</span>(<span class="kw">vars</span>(...), mean)</a>
+<a class="sourceLine" id="cb8-18" title="18">}</a>
+<a class="sourceLine" id="cb8-19" title="19"></a>
+<a class="sourceLine" id="cb8-20" title="20"><span class="co"># 4 cyl, média de mpg e wt</span></a>
+<a class="sourceLine" id="cb8-21" title="21">mtcars <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-22" title="22"><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-23" title="23"><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">4</span>, mpg, wt)</a>
+<a class="sourceLine" id="cb8-24" title="24"><span class="co">#&gt; # A tibble: 1 x 3</span></a>
+<a class="sourceLine" id="cb8-25" title="25"><span class="co">#&gt;     cyl   mpg    wt</span></a>
+<a class="sourceLine" id="cb8-26" title="26"><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb8-27" title="27"><span class="co">#&gt; 1     4  26.7  2.29</span></a>
+<a class="sourceLine" id="cb8-28" title="28"></a>
+<a class="sourceLine" id="cb8-29" title="29"><span class="co"># 6 cyl, média de drat e disp</span></a>
+<a class="sourceLine" id="cb8-30" title="30">mtcars <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-31" title="31"><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-32" title="32"><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">6</span>, drat, disp)</a>
+<a class="sourceLine" id="cb8-33" title="33"><span class="co">#&gt; # A tibble: 1 x 3</span></a>
+<a class="sourceLine" id="cb8-34" title="34"><span class="co">#&gt;     cyl  drat  disp</span></a>
+<a class="sourceLine" id="cb8-35" title="35"><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb8-36" title="36"><span class="co">#&gt; 1     6  3.59  183.</span></a></code></pre></div>
 <p>Um código bem encapsulado reduz a necessidade de objetos intermediários (
 <code>base_tratada</code>, <code>base_filtrada</code>, etc.) pois para gerar um deles basta a
 aplicação de uma função. Além disso, programas com funções normalmente são muito
@@ -297,7 +288,7 @@ duas situações, mas os benefícios das funções são de longo prazo: ao encon
 um <em>bug</em>, haverá apenas um lugar para concertar; se surgir a necessidade de
 modificar uma propriedade, haverá apenas um lugar para editar; se aquele código
 se tornar obsoleto, haverá apenas um lugar para deletar.</p>
-<p>Pense na programação funcional<a href="versoes-releases.html#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> como ir à academia. No início o processo é
+<p>Pense na programação funcional<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> como ir à academia. No início o processo é
 difícil e exige uma quantidade considerável de esforço, mas depois de um tempo
 se torna um hábito e traz benefícios consideráveis para a saúde (neste caso, do
 código). As recomendações para quando criar uma nova função ou separar uma
@@ -334,48 +325,56 @@ diretamente atreladas às próprias funções sendo utilizadas.</p>
 <p>Existe um terceiro e importante benefício, mas este será abordado apenas no
 próximo capítulo. A título de curiosidade, o código anterior ficaria assim caso
 fosse escrito sem as chamadas para <code>library()</code>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="funcoes-deps.html#cb8-1"></a><span class="co"># Referência ao pipe</span></span>
-<span id="cb8-2"><a href="funcoes-deps.html#cb8-2"></a><span class="st">`</span><span class="dt">%&gt;%</span><span class="st">`</span> &lt;-<span class="st"> </span>magrittr<span class="op">::</span><span class="st">`</span><span class="dt">%&gt;%</span><span class="st">`</span></span>
-<span id="cb8-3"><a href="funcoes-deps.html#cb8-3"></a></span>
-<span id="cb8-4"><a href="funcoes-deps.html#cb8-4"></a><span class="co"># Limpa tabela, filtrando cyl &lt; cyl_max</span></span>
-<span id="cb8-5"><a href="funcoes-deps.html#cb8-5"></a>clean &lt;-<span class="st"> </span><span class="cf">function</span>(data, <span class="dt">cyl_max =</span> <span class="dv">8</span>) {</span>
-<span id="cb8-6"><a href="funcoes-deps.html#cb8-6"></a>  data <span class="op">%&gt;%</span></span>
-<span id="cb8-7"><a href="funcoes-deps.html#cb8-7"></a><span class="st">    </span>tibble<span class="op">::</span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb8-8"><a href="funcoes-deps.html#cb8-8"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span></span>
-<span id="cb8-9"><a href="funcoes-deps.html#cb8-9"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span>cyl_max)</span>
-<span id="cb8-10"><a href="funcoes-deps.html#cb8-10"></a>}</span>
-<span id="cb8-11"><a href="funcoes-deps.html#cb8-11"></a></span>
-<span id="cb8-12"><a href="funcoes-deps.html#cb8-12"></a><span class="co"># Resume tabela onde cyl == cyl_max, tirando média das colunas em ...</span></span>
-<span id="cb8-13"><a href="funcoes-deps.html#cb8-13"></a>summarise_cyl &lt;-<span class="st"> </span><span class="cf">function</span>(data, cyl_num, ...) {</span>
-<span id="cb8-14"><a href="funcoes-deps.html#cb8-14"></a>  data <span class="op">%&gt;%</span></span>
-<span id="cb8-15"><a href="funcoes-deps.html#cb8-15"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span>cyl_num) <span class="op">%&gt;%</span></span>
-<span id="cb8-16"><a href="funcoes-deps.html#cb8-16"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></span>
-<span id="cb8-17"><a href="funcoes-deps.html#cb8-17"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">summarise_at</span>(dplyr<span class="op">::</span><span class="kw">vars</span>(...), mean)</span>
-<span id="cb8-18"><a href="funcoes-deps.html#cb8-18"></a>}</span>
-<span id="cb8-19"><a href="funcoes-deps.html#cb8-19"></a></span>
-<span id="cb8-20"><a href="funcoes-deps.html#cb8-20"></a><span class="co"># 4 cyl, média de mpg e wt</span></span>
-<span id="cb8-21"><a href="funcoes-deps.html#cb8-21"></a>mtcars <span class="op">%&gt;%</span></span>
-<span id="cb8-22"><a href="funcoes-deps.html#cb8-22"></a><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></span>
-<span id="cb8-23"><a href="funcoes-deps.html#cb8-23"></a><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">4</span>, mpg, wt)</span>
-<span id="cb8-24"><a href="funcoes-deps.html#cb8-24"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
-<span id="cb8-25"><a href="funcoes-deps.html#cb8-25"></a><span class="co">#&gt;     cyl   mpg    wt</span></span>
-<span id="cb8-26"><a href="funcoes-deps.html#cb8-26"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span id="cb8-27"><a href="funcoes-deps.html#cb8-27"></a><span class="co">#&gt; 1     4  26.7  2.29</span></span>
-<span id="cb8-28"><a href="funcoes-deps.html#cb8-28"></a></span>
-<span id="cb8-29"><a href="funcoes-deps.html#cb8-29"></a><span class="co"># 6 cyl, média de drat e disp</span></span>
-<span id="cb8-30"><a href="funcoes-deps.html#cb8-30"></a>mtcars <span class="op">%&gt;%</span></span>
-<span id="cb8-31"><a href="funcoes-deps.html#cb8-31"></a><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></span>
-<span id="cb8-32"><a href="funcoes-deps.html#cb8-32"></a><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">6</span>, drat, disp)</span>
-<span id="cb8-33"><a href="funcoes-deps.html#cb8-33"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
-<span id="cb8-34"><a href="funcoes-deps.html#cb8-34"></a><span class="co">#&gt;     cyl  drat  disp</span></span>
-<span id="cb8-35"><a href="funcoes-deps.html#cb8-35"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span id="cb8-36"><a href="funcoes-deps.html#cb8-36"></a><span class="co">#&gt; 1     6  3.59  183.</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="co"># Referência ao pipe</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="st">`</span><span class="dt">%&gt;%</span><span class="st">`</span> &lt;-<span class="st"> </span>magrittr<span class="op">::</span><span class="st">`</span><span class="dt">%&gt;%</span><span class="st">`</span></a>
+<a class="sourceLine" id="cb9-3" title="3"></a>
+<a class="sourceLine" id="cb9-4" title="4"><span class="co"># Limpa tabela, filtrando cyl &lt; cyl_max</span></a>
+<a class="sourceLine" id="cb9-5" title="5">clean &lt;-<span class="st"> </span><span class="cf">function</span>(data, <span class="dt">cyl_max =</span> <span class="dv">8</span>) {</a>
+<a class="sourceLine" id="cb9-6" title="6">  data <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-7" title="7"><span class="st">    </span>tibble<span class="op">::</span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-8" title="8"><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-9" title="9"><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span>cyl_max)</a>
+<a class="sourceLine" id="cb9-10" title="10">}</a>
+<a class="sourceLine" id="cb9-11" title="11"></a>
+<a class="sourceLine" id="cb9-12" title="12"><span class="co"># Resume tabela onde cyl == cyl_max, tirando média das colunas em ...</span></a>
+<a class="sourceLine" id="cb9-13" title="13">summarise_cyl &lt;-<span class="st"> </span><span class="cf">function</span>(data, cyl_num, ...) {</a>
+<a class="sourceLine" id="cb9-14" title="14">  data <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-15" title="15"><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span>cyl_num) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-16" title="16"><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-17" title="17"><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">summarise_at</span>(dplyr<span class="op">::</span><span class="kw">vars</span>(...), mean)</a>
+<a class="sourceLine" id="cb9-18" title="18">}</a>
+<a class="sourceLine" id="cb9-19" title="19"></a>
+<a class="sourceLine" id="cb9-20" title="20"><span class="co"># 4 cyl, média de mpg e wt</span></a>
+<a class="sourceLine" id="cb9-21" title="21">mtcars <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-22" title="22"><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-23" title="23"><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">4</span>, mpg, wt)</a>
+<a class="sourceLine" id="cb9-24" title="24"><span class="co">#&gt; # A tibble: 1 x 3</span></a>
+<a class="sourceLine" id="cb9-25" title="25"><span class="co">#&gt;     cyl   mpg    wt</span></a>
+<a class="sourceLine" id="cb9-26" title="26"><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb9-27" title="27"><span class="co">#&gt; 1     4  26.7  2.29</span></a>
+<a class="sourceLine" id="cb9-28" title="28"></a>
+<a class="sourceLine" id="cb9-29" title="29"><span class="co"># 6 cyl, média de drat e disp</span></a>
+<a class="sourceLine" id="cb9-30" title="30">mtcars <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-31" title="31"><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-32" title="32"><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">6</span>, drat, disp)</a>
+<a class="sourceLine" id="cb9-33" title="33"><span class="co">#&gt; # A tibble: 1 x 3</span></a>
+<a class="sourceLine" id="cb9-34" title="34"><span class="co">#&gt;     cyl  drat  disp</span></a>
+<a class="sourceLine" id="cb9-35" title="35"><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb9-36" title="36"><span class="co">#&gt; 1     6  3.59  183.</span></a></code></pre></div>
 <p>Se serve de consolo, o RStudio facilita muito esse tipo de programação por causa
 da sua capacidade de sugerir continuações para código interativamente. Para
 escrever <code>dplyr::</code>, por exemplo, basta digitar <code>d</code>, <code>p</code>, <code>l</code> e apertar <code>TAB</code> uma
 vez. Com os <code>::</code>, as sugestões passarão a ser somente de funções daquele pacote.</p>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>Aqui o termo “programação funcional” é usado de forma figurativa. Na
+computação linguagens denominadas “funcionais” tem um <em>modus operandi</em> bastante
+específico não abordado neste capítulo.<a href="funcoes-deps.html#fnref3" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 

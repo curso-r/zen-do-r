@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Git e GitHub | O Zen do R</title>
   <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Git e GitHub | O Zen do R" />
   <meta property="og:type" content="book" />
@@ -52,26 +52,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +79,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -132,42 +131,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a></li>
-<li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a>
-<ul>
+<li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
+<li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="introducao.html"><a href="introducao.html#o-que-você-vai-aprender"><i class="fa fa-check"></i><b>1.1.1</b> O que você vai aprender</a></li>
 <li class="chapter" data-level="1.1.2" data-path="introducao.html"><a href="introducao.html#o-que-você-não-vai-aprender"><i class="fa fa-check"></i><b>1.1.2</b> O que você não vai aprender</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="introducao.html"><a href="introducao.html#pré-requisitos"><i class="fa fa-check"></i><b>1.2</b> Pré-requisitos</a></li>
 <li class="chapter" data-level="1.3" data-path="introducao.html"><a href="introducao.html#principais-referências"><i class="fa fa-check"></i><b>1.3</b> Principais referências</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html"><i class="fa fa-check"></i><b>2</b> .RData e .Rhistory</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#porque-desistir"><i class="fa fa-check"></i><b>2.1</b> Porque desistir</a></li>
+<li class="chapter" data-level="2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html"><i class="fa fa-check"></i><b>2</b> .RData e .Rhistory</a><ul>
+<li class="chapter" data-level="2.1" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#por-que-desistir"><i class="fa fa-check"></i><b>2.1</b> Por que desistir</a></li>
 <li class="chapter" data-level="2.2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#como-desativar"><i class="fa fa-check"></i><b>2.2</b> Como desativar</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="rproj-dir.html"><a href="rproj-dir.html"><i class="fa fa-check"></i><b>3</b> Rproj e diretórios</a>
-<ul>
+<li class="chapter" data-level="3" data-path="rproj-dir.html"><a href="rproj-dir.html"><i class="fa fa-check"></i><b>3</b> Rproj e diretórios</a><ul>
 <li class="chapter" data-level="3.1" data-path="rproj-dir.html"><a href="rproj-dir.html#diretório-de-trabalho"><i class="fa fa-check"></i><b>3.1</b> Diretório de trabalho</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="git-github.html"><a href="git-github.html"><i class="fa fa-check"></i><b>4</b> Git e GitHub</a></li>
-<li class="chapter" data-level="5" data-path="funcoes-deps.html"><a href="funcoes-deps.html"><i class="fa fa-check"></i><b>5</b> Funções e dependências</a>
-<ul>
+<li class="chapter" data-level="5" data-path="funcoes-deps.html"><a href="funcoes-deps.html"><i class="fa fa-check"></i><b>5</b> Funções e dependências</a><ul>
 <li class="chapter" data-level="5.1" data-path="funcoes-deps.html"><a href="funcoes-deps.html#quatro-pontos"><i class="fa fa-check"></i><b>5.1</b> Quatro-pontos</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="pacotes.html"><a href="pacotes.html"><i class="fa fa-check"></i><b>6</b> Pacotes</a>
-<ul>
+<li class="chapter" data-level="6" data-path="pacotes.html"><a href="pacotes.html"><i class="fa fa-check"></i><b>6</b> Pacotes</a><ul>
 <li class="chapter" data-level="6.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>6.1</b> Documentação</a></li>
 <li class="chapter" data-level="6.2" data-path="pacotes.html"><a href="pacotes.html#imports"><i class="fa fa-check"></i><b>6.2</b> Imports</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a>
-<ul>
+<li class="chapter" data-level="7" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a><ul>
 <li class="chapter" data-level="7.1" data-path="data-data-raw.html"><a href="data-data-raw.html#documentação-1"><i class="fa fa-check"></i><b>7.1</b> Documentação</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>8</b> Testes automatizados</a></li>
-<li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a>
-<ul>
+<li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a><ul>
 <li class="chapter" data-level="9.1" data-path="versoes-releases.html"><a href="versoes-releases.html#versionamento-semântico"><i class="fa fa-check"></i><b>9.1</b> Versionamento semântico</a></li>
 <li class="chapter" data-level="9.2" data-path="versoes-releases.html"><a href="versoes-releases.html#releases"><i class="fa fa-check"></i><b>9.2</b> Releases</a></li>
 </ul></li>
@@ -231,12 +222,12 @@ imagem no canto direito superior e siga para
 Nesta página basta descrever o seu uso para o token e selecionar o primeiro box
 de todos; por fim, gere e copie o seu token (uma sequência com uns 40 letras e
 números). Se você estiver sem nenhuma paciência, execute o comando abaixo:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="git-github.html#cb4-1"></a>usethis<span class="op">::</span><span class="kw">browse_github_token</span>()</span>
-<span id="cb4-2"><a href="git-github.html#cb4-2"></a><span class="co">#&gt; ✔ Opening URL &#39;https://github.com/settings/tokens/new?scopes=repo,gist&amp;description=R:GITHUB_PAT&#39;</span></span>
-<span id="cb4-3"><a href="git-github.html#cb4-3"></a><span class="co">#&gt; ● Call `usethis::edit_r_environ()` to open &#39;.Renviron&#39;.</span></span>
-<span id="cb4-4"><a href="git-github.html#cb4-4"></a><span class="co">#&gt; ● Store your PAT with a line like:</span></span>
-<span id="cb4-5"><a href="git-github.html#cb4-5"></a><span class="co">#&gt;   GITHUB_PAT=xxxyyyzzz</span></span>
-<span id="cb4-6"><a href="git-github.html#cb4-6"></a><span class="co">#&gt; ● Make sure &#39;.Renviron&#39; ends with a newline!</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">usethis<span class="op">::</span><span class="kw">browse_github_token</span>()</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="co">#&gt; ✔ Opening URL &#39;https://github.com/settings/tokens/new?scopes=repo,gist&amp;description=R:GITHUB_PAT&#39;</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co">#&gt; ● Call `usethis::edit_r_environ()` to open &#39;.Renviron&#39;.</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="co">#&gt; ● Store your PAT with a line like:</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="co">#&gt;   GITHUB_PAT=xxxyyyzzz</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt; ● Make sure &#39;.Renviron&#39; ends with a newline!</span></a></code></pre></div>
 <p><img src="static/git-github/pat.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Independentemente de como um PAT foi gerado, o importante é seguir as instruções
 descritas no comando. Execute a função <code>usethis::edit_r_environ()</code> e crie uma
@@ -246,64 +237,64 @@ não precisará mais se preocupar com nenhum tipo de configuração.</p>
 repositório no GitHub. O comando para criar projetos não muda, mas torna-se
 possível usar dois outros comando para associar aquela pasta com o sistema de
 controle de versões.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="git-github.html#cb5-1"></a>usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&quot;~/Documents/demo&quot;</span>)</span>
-<span id="cb5-2"><a href="git-github.html#cb5-2"></a><span class="co">#&gt; ✔ Creating &#39;~/Documents/demo/&#39;</span></span>
-<span id="cb5-3"><a href="git-github.html#cb5-3"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span></span>
-<span id="cb5-4"><a href="git-github.html#cb5-4"></a><span class="co">#&gt; ✔ Creating &#39;R/&#39;</span></span>
-<span id="cb5-5"><a href="git-github.html#cb5-5"></a><span class="co">#&gt; ✔ Writing &#39;demo.Rproj&#39;</span></span>
-<span id="cb5-6"><a href="git-github.html#cb5-6"></a><span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span></span>
-<span id="cb5-7"><a href="git-github.html#cb5-7"></a><span class="co">#&gt; ✔ Opening &#39;~/Documents/demo/&#39; in new RStudio session</span></span>
-<span id="cb5-8"><a href="git-github.html#cb5-8"></a><span class="co">#&gt; ✔ Setting active project to &#39;demo&#39; </span></span>
-<span id="cb5-9"><a href="git-github.html#cb5-9"></a></span>
-<span id="cb5-10"><a href="git-github.html#cb5-10"></a><span class="co"># No console do novo projeto</span></span>
-<span id="cb5-11"><a href="git-github.html#cb5-11"></a></span>
-<span id="cb5-12"><a href="git-github.html#cb5-12"></a>usethis<span class="op">::</span><span class="kw">use_git</span>()</span>
-<span id="cb5-13"><a href="git-github.html#cb5-13"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span></span>
-<span id="cb5-14"><a href="git-github.html#cb5-14"></a><span class="co">#&gt; ✔ Initialising Git repo</span></span>
-<span id="cb5-15"><a href="git-github.html#cb5-15"></a><span class="co">#&gt; ✔ Adding &#39;.Rhistory&#39;, &#39;.RData&#39; to &#39;.gitignore&#39;</span></span>
-<span id="cb5-16"><a href="git-github.html#cb5-16"></a><span class="co">#&gt; There are 2 uncommitted files:</span></span>
-<span id="cb5-17"><a href="git-github.html#cb5-17"></a><span class="co">#&gt; * &#39;.gitignore&#39;</span></span>
-<span id="cb5-18"><a href="git-github.html#cb5-18"></a><span class="co">#&gt; * &#39;demo.Rproj&#39;</span></span>
-<span id="cb5-19"><a href="git-github.html#cb5-19"></a><span class="co">#&gt; Is it ok to commit them?</span></span>
-<span id="cb5-20"><a href="git-github.html#cb5-20"></a><span class="co">#&gt; </span></span>
-<span id="cb5-21"><a href="git-github.html#cb5-21"></a><span class="co">#&gt; 1: Negative</span></span>
-<span id="cb5-22"><a href="git-github.html#cb5-22"></a><span class="co">#&gt; 2: Not now</span></span>
-<span id="cb5-23"><a href="git-github.html#cb5-23"></a><span class="co">#&gt; 3: I agree</span></span>
-<span id="cb5-24"><a href="git-github.html#cb5-24"></a><span class="co">#&gt; </span></span>
-<span id="cb5-25"><a href="git-github.html#cb5-25"></a><span class="co">#&gt; Selection: 3</span></span>
-<span id="cb5-26"><a href="git-github.html#cb5-26"></a><span class="co">#&gt; ✔ Adding files</span></span>
-<span id="cb5-27"><a href="git-github.html#cb5-27"></a><span class="co">#&gt; ✔ Commit with message &#39;Initial commit&#39;</span></span>
-<span id="cb5-28"><a href="git-github.html#cb5-28"></a><span class="co">#&gt; ● A restart of RStudio is required to activate the Git pane</span></span>
-<span id="cb5-29"><a href="git-github.html#cb5-29"></a><span class="co">#&gt; Restart now?</span></span>
-<span id="cb5-30"><a href="git-github.html#cb5-30"></a><span class="co">#&gt; </span></span>
-<span id="cb5-31"><a href="git-github.html#cb5-31"></a><span class="co">#&gt; 1: Absolutely not</span></span>
-<span id="cb5-32"><a href="git-github.html#cb5-32"></a><span class="co">#&gt; 2: No way</span></span>
-<span id="cb5-33"><a href="git-github.html#cb5-33"></a><span class="co">#&gt; 3: Yes</span></span>
-<span id="cb5-34"><a href="git-github.html#cb5-34"></a><span class="co">#&gt; </span></span>
-<span id="cb5-35"><a href="git-github.html#cb5-35"></a><span class="co">#&gt; Selection: 3</span></span>
-<span id="cb5-36"><a href="git-github.html#cb5-36"></a></span>
-<span id="cb5-37"><a href="git-github.html#cb5-37"></a>usethis<span class="op">::</span><span class="kw">use_github</span>()</span>
-<span id="cb5-38"><a href="git-github.html#cb5-38"></a><span class="co">#&gt; ✔ Checking that current branch is &#39;master&#39;</span></span>
-<span id="cb5-39"><a href="git-github.html#cb5-39"></a><span class="co">#&gt; Which git protocol to use? (enter 0 to exit) </span></span>
-<span id="cb5-40"><a href="git-github.html#cb5-40"></a><span class="co">#&gt; </span></span>
-<span id="cb5-41"><a href="git-github.html#cb5-41"></a><span class="co">#&gt; 1: ssh   &lt;-- presumes that you have set up ssh keys</span></span>
-<span id="cb5-42"><a href="git-github.html#cb5-42"></a><span class="co">#&gt; 2: https &lt;-- choose this if you don&#39;t have ssh keys (or don&#39;t know if you do)</span></span>
-<span id="cb5-43"><a href="git-github.html#cb5-43"></a><span class="co">#&gt; </span></span>
-<span id="cb5-44"><a href="git-github.html#cb5-44"></a><span class="co">#&gt; Selection: 2</span></span>
-<span id="cb5-45"><a href="git-github.html#cb5-45"></a><span class="co">#&gt; ● Check title and description</span></span>
-<span id="cb5-46"><a href="git-github.html#cb5-46"></a><span class="co">#&gt;   Name:        demo</span></span>
-<span id="cb5-47"><a href="git-github.html#cb5-47"></a><span class="co">#&gt;   Description: </span></span>
-<span id="cb5-48"><a href="git-github.html#cb5-48"></a><span class="co">#&gt; Are title and description ok?</span></span>
-<span id="cb5-49"><a href="git-github.html#cb5-49"></a><span class="co">#&gt; </span></span>
-<span id="cb5-50"><a href="git-github.html#cb5-50"></a><span class="co">#&gt; 1: Nope</span></span>
-<span id="cb5-51"><a href="git-github.html#cb5-51"></a><span class="co">#&gt; 2: No way</span></span>
-<span id="cb5-52"><a href="git-github.html#cb5-52"></a><span class="co">#&gt; 3: Yup</span></span>
-<span id="cb5-53"><a href="git-github.html#cb5-53"></a><span class="co">#&gt; </span></span>
-<span id="cb5-54"><a href="git-github.html#cb5-54"></a><span class="co">#&gt; Selection: 3</span></span>
-<span id="cb5-55"><a href="git-github.html#cb5-55"></a><span class="co">#&gt; ✔ Creating GitHub repository</span></span>
-<span id="cb5-56"><a href="git-github.html#cb5-56"></a><span class="co">#&gt; ✔ Setting remote &#39;origin&#39; to &#39;https://github.com/curso-r/demo.git&#39;</span></span>
-<span id="cb5-57"><a href="git-github.html#cb5-57"></a><span class="co">#&gt; ✔ Pushing &#39;master&#39; branch to GitHub and setting remote tracking branch</span></span>
-<span id="cb5-58"><a href="git-github.html#cb5-58"></a><span class="co">#&gt; ✔ Opening URL &#39;https://github.com/curso-r/demo&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&quot;~/Documents/demo&quot;</span>)</a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="co">#&gt; ✔ Creating &#39;~/Documents/demo/&#39;</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="co">#&gt; ✔ Creating &#39;R/&#39;</span></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="co">#&gt; ✔ Writing &#39;demo.Rproj&#39;</span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span></a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="co">#&gt; ✔ Opening &#39;~/Documents/demo/&#39; in new RStudio session</span></a>
+<a class="sourceLine" id="cb6-8" title="8"><span class="co">#&gt; ✔ Setting active project to &#39;demo&#39; </span></a>
+<a class="sourceLine" id="cb6-9" title="9"></a>
+<a class="sourceLine" id="cb6-10" title="10"><span class="co"># No console do novo projeto</span></a>
+<a class="sourceLine" id="cb6-11" title="11"></a>
+<a class="sourceLine" id="cb6-12" title="12">usethis<span class="op">::</span><span class="kw">use_git</span>()</a>
+<a class="sourceLine" id="cb6-13" title="13"><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span></a>
+<a class="sourceLine" id="cb6-14" title="14"><span class="co">#&gt; ✔ Initialising Git repo</span></a>
+<a class="sourceLine" id="cb6-15" title="15"><span class="co">#&gt; ✔ Adding &#39;.Rhistory&#39;, &#39;.RData&#39; to &#39;.gitignore&#39;</span></a>
+<a class="sourceLine" id="cb6-16" title="16"><span class="co">#&gt; There are 2 uncommitted files:</span></a>
+<a class="sourceLine" id="cb6-17" title="17"><span class="co">#&gt; * &#39;.gitignore&#39;</span></a>
+<a class="sourceLine" id="cb6-18" title="18"><span class="co">#&gt; * &#39;demo.Rproj&#39;</span></a>
+<a class="sourceLine" id="cb6-19" title="19"><span class="co">#&gt; Is it ok to commit them?</span></a>
+<a class="sourceLine" id="cb6-20" title="20"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb6-21" title="21"><span class="co">#&gt; 1: Negative</span></a>
+<a class="sourceLine" id="cb6-22" title="22"><span class="co">#&gt; 2: Not now</span></a>
+<a class="sourceLine" id="cb6-23" title="23"><span class="co">#&gt; 3: I agree</span></a>
+<a class="sourceLine" id="cb6-24" title="24"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb6-25" title="25"><span class="co">#&gt; Selection: 3</span></a>
+<a class="sourceLine" id="cb6-26" title="26"><span class="co">#&gt; ✔ Adding files</span></a>
+<a class="sourceLine" id="cb6-27" title="27"><span class="co">#&gt; ✔ Commit with message &#39;Initial commit&#39;</span></a>
+<a class="sourceLine" id="cb6-28" title="28"><span class="co">#&gt; ● A restart of RStudio is required to activate the Git pane</span></a>
+<a class="sourceLine" id="cb6-29" title="29"><span class="co">#&gt; Restart now?</span></a>
+<a class="sourceLine" id="cb6-30" title="30"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb6-31" title="31"><span class="co">#&gt; 1: Absolutely not</span></a>
+<a class="sourceLine" id="cb6-32" title="32"><span class="co">#&gt; 2: No way</span></a>
+<a class="sourceLine" id="cb6-33" title="33"><span class="co">#&gt; 3: Yes</span></a>
+<a class="sourceLine" id="cb6-34" title="34"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb6-35" title="35"><span class="co">#&gt; Selection: 3</span></a>
+<a class="sourceLine" id="cb6-36" title="36"></a>
+<a class="sourceLine" id="cb6-37" title="37">usethis<span class="op">::</span><span class="kw">use_github</span>()</a>
+<a class="sourceLine" id="cb6-38" title="38"><span class="co">#&gt; ✔ Checking that current branch is &#39;master&#39;</span></a>
+<a class="sourceLine" id="cb6-39" title="39"><span class="co">#&gt; Which git protocol to use? (enter 0 to exit) </span></a>
+<a class="sourceLine" id="cb6-40" title="40"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb6-41" title="41"><span class="co">#&gt; 1: ssh   &lt;-- presumes that you have set up ssh keys</span></a>
+<a class="sourceLine" id="cb6-42" title="42"><span class="co">#&gt; 2: https &lt;-- choose this if you don&#39;t have ssh keys (or don&#39;t know if you do)</span></a>
+<a class="sourceLine" id="cb6-43" title="43"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb6-44" title="44"><span class="co">#&gt; Selection: 2</span></a>
+<a class="sourceLine" id="cb6-45" title="45"><span class="co">#&gt; ● Check title and description</span></a>
+<a class="sourceLine" id="cb6-46" title="46"><span class="co">#&gt;   Name:        demo</span></a>
+<a class="sourceLine" id="cb6-47" title="47"><span class="co">#&gt;   Description: </span></a>
+<a class="sourceLine" id="cb6-48" title="48"><span class="co">#&gt; Are title and description ok?</span></a>
+<a class="sourceLine" id="cb6-49" title="49"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb6-50" title="50"><span class="co">#&gt; 1: Nope</span></a>
+<a class="sourceLine" id="cb6-51" title="51"><span class="co">#&gt; 2: No way</span></a>
+<a class="sourceLine" id="cb6-52" title="52"><span class="co">#&gt; 3: Yup</span></a>
+<a class="sourceLine" id="cb6-53" title="53"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb6-54" title="54"><span class="co">#&gt; Selection: 3</span></a>
+<a class="sourceLine" id="cb6-55" title="55"><span class="co">#&gt; ✔ Creating GitHub repository</span></a>
+<a class="sourceLine" id="cb6-56" title="56"><span class="co">#&gt; ✔ Setting remote &#39;origin&#39; to &#39;https://github.com/curso-r/demo.git&#39;</span></a>
+<a class="sourceLine" id="cb6-57" title="57"><span class="co">#&gt; ✔ Pushing &#39;master&#39; branch to GitHub and setting remote tracking branch</span></a>
+<a class="sourceLine" id="cb6-58" title="58"><span class="co">#&gt; ✔ Opening URL &#39;https://github.com/curso-r/demo&#39;</span></a></code></pre></div>
 <p>Depois de ter executado estes dois novos comandos, será inicializada uma nova
 aba no RStudio denominada Git. Através dela é possível controlar todas as
 versões do código e enviá-las ao GitHub para que sejam armazenadas com segurança
