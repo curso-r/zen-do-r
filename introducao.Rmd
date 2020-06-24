@@ -92,7 +92,7 @@ talvez valha à pena
 no tocante ao R, você precisará ter instalado pelo menos os três pacotes a
 seguir:
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo=TRUE}
 # Conteúdo principal do livro
 install.packages(c("usethis", "packrat"))
 
