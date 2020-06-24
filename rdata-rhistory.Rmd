@@ -13,7 +13,7 @@ O R, em combinação com o RStudio, possui um conjunto de funcionalidades cuja
 intenção é ajudar no processo de desenvolvimento. Entretanto, isso acaba
 deixando os programadores de R mal acostumados.
 
-Como uma pai coruja, o RStudio faz questão de lembrar tudo o que você fez
+Como um pai coruja, o RStudio faz questão de lembrar tudo o que você fez
 anteriormente. Em sua configuração padrão, a IDE manterá na "memória" todos os
 últimos comandos executados, todos os dados utilizados e todos os objetos
 criados. Ao fechar e abrir o RStudio, essas informações serão recarregadas
@@ -25,7 +25,7 @@ sessão R, enquanto o segundo contém uma lista com os últimos comandos
 executados. Ao reabrir o RStudio, o conteúdo armazenados nestes arquivos será
 carregado no ambiente de trabalho atual como se nada tivesse acontecido.
 
-## Porque desistir
+## Por que desistir
 
 Apesar de ser uma ótima conveniência, assim como o pai coruja, esse tipo de
 funcionalidade pode deixar o programador mal acostumado. Se todos os resultados
@@ -50,7 +50,7 @@ arquivos incompletos. Deste modo, abandonar essa funcionalidade permite utilizar
 ferramentas de compartilhamento e controle de versão da maneira como elas foram
 idealizadas.
 
-Por fim, é importante notar uma desvantagem sutil mas muito relevante do uso
+Por fim, é importante notar uma desvantagem sutil, mas muito relevante do uso
 do `.RData`. O R trata todos os objetos guardados na memória igualmente, sem
 levar em conta sua utilidade ou tamanho. Isso significa que ele também irá
 armazenar nos arquivos ocultos todas as bases de dados da sessão (não
