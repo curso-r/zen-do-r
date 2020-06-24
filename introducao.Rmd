@@ -48,7 +48,7 @@ não corra o risco de perder seu progresso;
 e atualizadas;
 - Funções e dependências: como organizar arquivos, funções e dependências para
 maximizar a reprodutibilidade do código;
-- Pacotes: como e porquê transformar um projeto em um pacote, como documentá-lo
+- Pacotes: como e por que transformar um projeto em um pacote, como documentá-lo
 e como criar testes unitários;
 - Data e data-raw: como organizar seus dados e scripts de tratamento em pastas
 com objetivos claros e distintos.
