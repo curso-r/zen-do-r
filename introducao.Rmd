@@ -62,7 +62,7 @@ mais avançados.
 ### O que você não vai aprender
 
 Primeiramente, você não vai aprender a programar R. Esse assunto é extremamente
-extenso e já existem livros o suficiente para ajudar com isso (vide
+extenso e já existem livros o suficiente para ajudar com isso (vide [o livro da Curso-R](https://livro.curso-r.com/) ou
 [R for Data Science](https://r4ds.had.co.nz/)), então não vou me preocupar
 com os detalhes do código ou com qual guia de estilo seguir.
 
