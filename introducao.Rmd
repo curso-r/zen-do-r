@@ -68,7 +68,7 @@ com os detalhes do código ou com qual guia de estilo seguir.
 
 Se você gosta de fazer códigos longos e velozes usando o `base-r`, se você
 ama as pipelines do `tidyverse`, se você paraleliza todos os seus loops...
-Nada disso importa aqui; não vou dizer qual é o melhor jeito de programar[^E também não tenho paciência para entrar em mais nenhum debate "base vs.
+Nada disso importa aqui; não vou dizer qual é o melhor jeito de programar^[E também não tenho paciência para entrar em mais nenhum debate "base vs.
 tidyverse"].
 Aqui você vai conhecer somente as melhores ferramentas para **organizar o seu
 fluxo de programação**.
