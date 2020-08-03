@@ -160,9 +160,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="data-data-raw.html"><a href="data-data-raw.html#documentação-1"><i class="fa fa-check"></i><b>7.1</b> Documentação</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>8</b> Testes automatizados</a></li>
-<li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a><ul>
-<li class="chapter" data-level="9.1" data-path="versoes-releases.html"><a href="versoes-releases.html#versionamento-semântico"><i class="fa fa-check"></i><b>9.1</b> Versionamento semântico</a></li>
-<li class="chapter" data-level="9.2" data-path="versoes-releases.html"><a href="versoes-releases.html#releases"><i class="fa fa-check"></i><b>9.2</b> Releases</a></li>
+<li class="chapter" data-level="9" data-path="versoesReleases.html"><a href="versoesReleases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a><ul>
+<li class="chapter" data-level="9.1" data-path="versoesReleases.html"><a href="versoesReleases.html#versionamento-semântico"><i class="fa fa-check"></i><b>9.1</b> Versionamento semântico</a></li>
+<li class="chapter" data-level="9.2" data-path="versoesReleases.html"><a href="versoesReleases.html#releases"><i class="fa fa-check"></i><b>9.2</b> Releases</a></li>
 </ul></li>
 </ul>
 
@@ -318,12 +318,14 @@ a invocação de nenhuma biblioteca, apenas com chamadas do tipo
 <code>biblioteca::funcao()</code>. Muitas pessoas inclusive nem sabem que é possível
 invocar uma função diretamente através dessa sintaxe!</p>
 <p>Se algum leitor estiver tendendo a seguir o caminho do TOC da programação,
-existem dois grandes benefícios em chamar todas as funções diretamente:
-- O código, no total, executa um pouco mais rápido porque são carregadas menos
+existem dois grandes benefícios em chamar todas as funções diretamente:</p>
+<ul>
+<li><p>o código, no total, executa um pouco mais rápido porque são carregadas menos
 funções no ambiente global (isso é especialmente importante em aplicações
-interativas feitas em Shiny).
-- As dependências do código estão sempre atualizadas porque elas estão
-diretamente atreladas às próprias funções sendo utilizadas.</p>
+interativas feitas em Shiny).</p></li>
+<li><p>as dependências do código estão sempre atualizadas porque elas estão
+diretamente atreladas às próprias funções sendo utilizadas.</p></li>
+</ul>
 <p>Existe um terceiro e importante benefício, mas este será abordado apenas no
 próximo capítulo. A título de curiosidade, o código anterior ficaria assim caso
 fosse escrito sem as chamadas para <code>library()</code>:</p>

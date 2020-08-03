@@ -160,9 +160,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="data-data-raw.html"><a href="data-data-raw.html#documentação-1"><i class="fa fa-check"></i><b>7.1</b> Documentação</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>8</b> Testes automatizados</a></li>
-<li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a><ul>
-<li class="chapter" data-level="9.1" data-path="versoes-releases.html"><a href="versoes-releases.html#versionamento-semântico"><i class="fa fa-check"></i><b>9.1</b> Versionamento semântico</a></li>
-<li class="chapter" data-level="9.2" data-path="versoes-releases.html"><a href="versoes-releases.html#releases"><i class="fa fa-check"></i><b>9.2</b> Releases</a></li>
+<li class="chapter" data-level="9" data-path="versoesReleases.html"><a href="versoesReleases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a><ul>
+<li class="chapter" data-level="9.1" data-path="versoesReleases.html"><a href="versoesReleases.html#versionamento-semântico"><i class="fa fa-check"></i><b>9.1</b> Versionamento semântico</a></li>
+<li class="chapter" data-level="9.2" data-path="versoesReleases.html"><a href="versoesReleases.html#releases"><i class="fa fa-check"></i><b>9.2</b> Releases</a></li>
 </ul></li>
 </ul>
 
@@ -192,7 +192,7 @@ distante da realidade: pacotes para o R são bastante simples e intuitivos de
 fazer.</p>
 <p>No início deste livro foi abordado o conceito de projeto. Ele não passa de um
 arquivo <code>.Rproj</code> que indica para o RStudio que aquele diretório é um ambiente de
-trabalho estruturado. Nesse sentido, pacotes iguais a projetos porque eles
+trabalho estruturado. Nesse sentido, pacotes são iguais a projetos porque eles
 também têm um <code>.Rproj</code>; pacotes na verdade <em>são</em> projetos.</p>
 <p>A diferença entre os dois é que pacotes podem ser documentados e instalados,
 permitindo toda uma gama de novas possibilidades para o programador.
@@ -286,7 +286,7 @@ basta adicionar comentários em cima dela com <code>#'</code> assim como no exem
 <span id="cb14-10"><a href="pacotes.html#cb14-10"></a>  <span class="kw">print</span>(z, ...)</span>
 <span id="cb14-11"><a href="pacotes.html#cb14-11"></a>  <span class="kw">return</span>(z)</span>
 <span id="cb14-12"><a href="pacotes.html#cb14-12"></a>}</span></code></pre></div>
-<p>No RStudio esse tipo de documentação é tratado diferentemente de outros
+<p>No RStudio, esse tipo de documentação é tratado diferentemente de outros
 comentários, então certas palavras-chave ficam coloridas. <code>@param</code> por exemplo
 indica a documentação de um dos parâmetros e <code>@export</code> indica que aquela função
 será exportada pelo pacote, ou seja, ficará disponível ao usuário quando ele
@@ -359,7 +359,7 @@ Remotes:
     curso-r/kuber</code></pre>
 <p>Note que o <code>kuber</code> já é importado com um link remoto para o seu repositório no
 GitHub e um marcador da versão atualmente instalada na sua máquina. Para saber
-mais sobre versões, consulte o capítulo <strong>Funções e dependências</strong>.</p>
+mais sobre versões, consulte o Capítulo <a href="versoesReleases.html#versoesReleases">9</a>.</p>
 
 </div>
 </div>
