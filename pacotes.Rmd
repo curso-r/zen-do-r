@@ -10,7 +10,7 @@ fazer.
 
 No início deste livro foi abordado o conceito de projeto. Ele não passa de um
 arquivo `.Rproj` que indica para o RStudio que aquele diretório é um ambiente de
-trabalho estruturado. Nesse sentido, pacotes iguais a projetos porque eles
+trabalho estruturado. Nesse sentido, pacotes são iguais a projetos porque eles
 também têm um `.Rproj`; pacotes na verdade *são* projetos.
 
 A diferença entre os dois é que pacotes podem ser documentados e instalados,
@@ -129,7 +129,7 @@ funcao_demo <- function(x, y, ...) {
 }
 ```
 
-No RStudio esse tipo de documentação é tratado diferentemente de outros
+No RStudio, esse tipo de documentação é tratado diferentemente de outros
 comentários, então certas palavras-chave ficam coloridas. `@param` por exemplo
 indica a documentação de um dos parâmetros e `@export` indica que aquela função
 será exportada pelo pacote, ou seja, ficará disponível ao usuário quando ele
@@ -223,4 +223,4 @@ Remotes:
 
 Note que o `kuber` já é importado com um link remoto para o seu repositório no
 GitHub e um marcador da versão atualmente instalada na sua máquina. Para saber
-mais sobre versões, consulte o capítulo **Funções e dependências**.
+mais sobre versões, consulte o Capítulo \@ref(versoesReleases).
