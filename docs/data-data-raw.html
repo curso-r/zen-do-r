@@ -204,7 +204,7 @@ perfeitamente organizados e padronizados. É comum precisar de múltiplos fluxos
 de tratamento para poder transformar os dados brutos naquilo que de fato pode
 ser utilizado durante uma análise.</p>
 <p>O programador é encorajado a separar essas planilhas brutas daquelas resultantes
-do processo de limpeza e tratamento. Junto com os dados crús, é importante
+do processo de limpeza e tratamento. Junto com os dados crus, é importante
 também guardar os arquivos que fazem o processo de limpeza; caso haja uma
 mudança nas demandas ou nas bases, o analista precisa ser capaz de alterar os
 <em>scripts</em> de tratamento e gerar novas bases consolidadas.</p>
@@ -245,7 +245,7 @@ prosseguir o exemplo, o arquivo <code>dados.xlsx</code> foi copiado para o diret
 <span id="cb20-18"><a href="data-data-raw.html#cb20-18"></a>usethis<span class="op">::</span><span class="kw">use_data</span>(dados)</span>
 <span id="cb20-19"><a href="data-data-raw.html#cb20-19"></a><span class="co">#&gt; ✔ Creating &#39;data/&#39;</span></span>
 <span id="cb20-20"><a href="data-data-raw.html#cb20-20"></a><span class="co">#&gt; ✔ Saving &#39;dados&#39; to &#39;data/dados.rda&#39;</span></span></code></pre></div>
-<p>Neste caso o arquivo Excel foi criado de dentro do prṕrio R com o comando
+<p>Neste caso o arquivo Excel foi criado de dentro do proṕrio R com o comando
 <code>writexl::write_xlsx(tibble::rownames_to_column(mtcars, "model"), "data-raw/dados.xlsx")</code>,
 mas isso é só um exemplo ilustrativo. O importante é saber o que acontece quando
 a função <code>use_data()</code> é executada para um objeto do ambiente global, ou seja,

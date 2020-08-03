@@ -31,9 +31,8 @@ claramente rotulada para que o usuário possa fazer o *downgrade* do pacote.
 E justamente são esses rótulos que precisamos utilizar para ter um bom sistema
 de versões nos nossos pacotes. Ao contrário de "controle de versão", para o qual
 utilizamos o Git, "versionamento semântico" é a prática de dar nomes fáceis de
-entender para as versões de um projeto. Trazendo isso para termos concretos, o
-pacote `dplyr` está na versão 0.8.4, o `ggplot2` está na 3.2.1 e o `shiny`
-está na 1.4.0.
+entender para as versões de um projeto. Trazendo isso para termos concretos, quando este livro foi escrito, o
+pacote `dplyr` estava na versão 0.8.4, o `ggplot2` estava na 3.2.1 e o `shiny` na 1.4.0.
 
 ## Versionamento semântico
 
@@ -45,6 +44,7 @@ padronizado, mas apenas você pode determinar quanto dele o seu esquema de
 nomenclatura seguirá.
 
 Uma versão é denotada pela forma X.Y.Z, onde:
+
 - X é a versão maior (denominada *major*);
 - Y é a versão menor (denominada *minor*) e
 - Z é a versão do conserto (denominada *patch*).
@@ -68,15 +68,21 @@ regra) e às vezes sufixos em texto podem ser adicionados (como "-alpha",
 Para propósitos ilustrativos, imaginemos um pacote chamado `pacotr` que possui
 apenas uma função com protótipo `f(x, y, z = TRUE)`. Um caminho imaginário para
 seu desenvolvimento pode ser o seguinte:
+
 - Versão 0.1.0: a primeira versão com código do pacote contém uma função
 `f(x, y)`;
+
 - Versão 0.1.1: um bug é consertado em `f(x, y)`;
+
 - Versão 0.1.2: mais um bug é consertado em `f(x, y)`;
+
 - Versão 1.0.0: o pacote sai do beta quando a função ganha um novo argumento
 `z`, agora necessário para o seu funcionamento, e vira `f(x, y, z)`;
 - Versão 1.0.1: um bug é consertado em `f(x, y, z)`;
-- Versão 1.2.0: o argumento `z` agora tem um valor padrão, transformando a
+
+- Versão 1.1.0: o argumento `z` agora tem um valor padrão, transformando a
 função em `f(x, y, z = FALSE)`;
+
 - Versão 2.0.0: o argumento `z` muda seu valor padrão, quebrando qualquer código
 escrito utilizando a versão 1.x.x, se tornando `f(x, y, z = TRUE)`
 
