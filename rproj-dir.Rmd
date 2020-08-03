@@ -14,15 +14,15 @@ O primeiro passo para organizar um bom ambiente de trabalho para análises de
 dados é criar um diretório onde todos os seus programas R podem viver. No meu
 computador eu tenho a pasta `~/Documents/Dev/R/`, mas não importa onde ela
 está, apenas que seja um lugar o qual você lembre sem dificuldades. Tendo
-criado um esse *workspace*, é importante registrá-lo como o seu ambiente de
+criado esse *workspace*, é importante registrá-lo como o seu ambiente de
 trabalho no RStudio: basta selecioná-lo em
-**Tools > Global Options... > Browse**.
+**Tools > Global Options... > General > R Sessions > Browse**.
 
 ```{r}
 knitr::include_graphics("static/rproj-dir/wd.png")
 ```
 
-Desta forma, toda vez que você iniciar um novo projeto no R, ele por parão
+Desta forma, toda vez que você iniciar um novo projeto no R, ele por padrão
 usará essa nova pasta como ambiente padrão! Se você já tiver alguns arquivos
 espalhados pelo seu computador, traga eles para o seu diretório de programas.
 
@@ -65,7 +65,7 @@ Importante também é a pasta `R/` criada. Nela você deve colocar todos os seus
 arquivos de código referentes àquele projeto com nomes que descrevam bem o que
 cada um faz. Se você seguiu o conselho anterior e juntou todos os seus códigos
 no seu diretório de trabalho, crie um projeto novo para cada grupo de programas
-que vocẽ tiver detectado. Talvez um para exercícios de R, um para cada cliente,
+que você tiver detectado. Talvez um para exercícios de R, um para cada cliente,
 um para uma nova ideia, etc. Cada um deles deve ter um nome descritivo e
 conter, em sua pasta R, todos os arquivos necessários para aquela análise.
 

@@ -24,10 +24,12 @@ a um serviço de hospedagem e armazenar todas as versões de um código fora
 do seu computador; o mais utilizado atualmente se chama GitHub.
 
 Na prática, a utilização do Git e do GitHub tem dois principais benefícios:
-- Nunca mais precisar controlar versões com `analise.R`, `analise_v2.R`,
+
+- nunca mais precisar controlar versões com `analise.R`, `analise_v2.R`,
 `analise_v3.R`, `analise_final.R`, `analise_final_final.R`,
 `analise_final_revisada.R`...
-- Nunca mais precisar se preocupar em perder seus projetos por causa de falhas
+
+- nunca mais precisar se preocupar em perder seus projetos por causa de falhas
 no seu computador.
 
 Nada mal para dois serviços gratuitos!
@@ -37,14 +39,14 @@ No capítulo anterior, é apresentado o conceito de projeto. Agora o segundo pas
 versão para manter seu trabalho sempre sincronizado na nuvem. Criar
 [uma conta](https://github.com/join) no GitHub e
 [instalar o programa](https://git-scm.com/downloads) `git` no seu computador são
-necessários para poder utilizar os recursos descritos a seguir. A partir daqui
+necessários para poder utilizar os recursos descritos a seguir. A partir daqui,
 assume-se que ambos os requisitos foram cumpridos.
 
 Para permitir que os comandos do R acessem a sua conta do GitHub, é essencial
 criar um *Personal Access Token* (PAT). Tendo logado no GitHub, clique na sua
 imagem no canto direito superior e siga para
 **Settings > Developer settings > Personal access tokens > Generate new token**.
-Nesta página basta descrever o seu uso para o token e selecionar o primeiro box
+Nesta página, basta descrever o seu uso para o token e selecionar o primeiro box
 de todos; por fim, gere e copie o seu token (uma sequência com uns 40 letras e
 números). Se você estiver sem nenhuma paciência, execute o comando abaixo:
 
