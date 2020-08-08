@@ -134,11 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><center><a href="./index.html"><img src = "https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width = 60%></a></center></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-curso-r"><i class="fa fa-check"></i>A Curso-R</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#comunidade"><i class="fa fa-check"></i>Comunidade</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Respire fundo</a></li>
 <li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a>
@@ -173,10 +169,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>7.1</b> Documentação</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>8</b> Testes automatizados</a></li>
-<li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a>
+<li class="chapter" data-level="9" data-path="versoesReleases.html"><a href="versoesReleases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="versoes-releases.html"><a href="versoes-releases.html#versionamento-semântico"><i class="fa fa-check"></i><b>9.1</b> Versionamento semântico</a></li>
-<li class="chapter" data-level="9.2" data-path="versoes-releases.html"><a href="versoes-releases.html#releases"><i class="fa fa-check"></i><b>9.2</b> Releases</a></li>
+<li class="chapter" data-level="9.1" data-path="versoesReleases.html"><a href="versoesReleases.html#versionamento-semântico"><i class="fa fa-check"></i><b>9.1</b> Versionamento semântico</a></li>
+<li class="chapter" data-level="9.2" data-path="versoesReleases.html"><a href="versoesReleases.html#releases"><i class="fa fa-check"></i><b>9.2</b> Releases</a></li>
 </ul></li>
 </ul>
 
@@ -195,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="versoes-releases" class="section level1" number="9">
+<div id="versoesReleases" class="section level1" number="9">
 <h1><span class="header-section-number">9</span> Versões e releases</h1>
 <p>A maior parte dos softwares que utilizamos no dia-a-dia possuem versões, até
 mesmo aqueles que não costumamos associar com esse tipo de prática. Sistemas
@@ -224,9 +220,8 @@ claramente rotulada para que o usuário possa fazer o <em>downgrade</em> do paco
 <p>E justamente são esses rótulos que precisamos utilizar para ter um bom sistema
 de versões nos nossos pacotes. Ao contrário de “controle de versão”, para o qual
 utilizamos o Git, “versionamento semântico” é a prática de dar nomes fáceis de
-entender para as versões de um projeto. Trazendo isso para termos concretos, o
-pacote <code>dplyr</code> está na versão 0.8.4, o <code>ggplot2</code> está na 3.2.1 e o <code>shiny</code>
-está na 1.4.0.</p>
+entender para as versões de um projeto. Trazendo isso para termos concretos, quando este livro foi escrito, o
+pacote <code>dplyr</code> estava na versão 0.8.4, o <code>ggplot2</code> estava na 3.2.1 e o <code>shiny</code> na 1.4.0.</p>
 <div id="versionamento-semântico" class="section level2" number="9.1">
 <h2><span class="header-section-number">9.1</span> Versionamento semântico</h2>
 <p>Em teoria, existe um <a href="https://semver.org/">padrão ouro</a> para a nomenclatura de
@@ -235,10 +230,12 @@ inteiros não-negativos separados por pontos, são extremamente valiosos, enquan
 outros nem sempre são seguidos ao pé da letra. Aqui tratamos do protocolo
 padronizado, mas apenas você pode determinar quanto dele o seu esquema de
 nomenclatura seguirá.</p>
-<p>Uma versão é denotada pela forma X.Y.Z, onde:
-- X é a versão maior (denominada <em>major</em>);
-- Y é a versão menor (denominada <em>minor</em>) e
-- Z é a versão do conserto (denominada <em>patch</em>).</p>
+<p>Uma versão é denotada pela forma X.Y.Z, onde:</p>
+<ul>
+<li>X é a versão maior (denominada <em>major</em>);</li>
+<li>Y é a versão menor (denominada <em>minor</em>) e</li>
+<li>Z é a versão do conserto (denominada <em>patch</em>).</li>
+</ul>
 <p>Um patch não passa de uma versão atualizada na qual apenas bugs foram
 corrigidos; nenhuma funcionalidade pode ser alterada e qualquer código escrito
 utilizando a versão sem o patch deve continuar funcionando. Quando alguma nova
@@ -255,18 +252,20 @@ regra) e às vezes sufixos em texto podem ser adicionados (como “-alpha”,
 “-beta”, etc.).</p>
 <p>Para propósitos ilustrativos, imaginemos um pacote chamado <code>pacotr</code> que possui
 apenas uma função com protótipo <code>f(x, y, z = TRUE)</code>. Um caminho imaginário para
-seu desenvolvimento pode ser o seguinte:
-- Versão 0.1.0: a primeira versão com código do pacote contém uma função
-<code>f(x, y)</code>;
-- Versão 0.1.1: um bug é consertado em <code>f(x, y)</code>;
-- Versão 0.1.2: mais um bug é consertado em <code>f(x, y)</code>;
-- Versão 1.0.0: o pacote sai do beta quando a função ganha um novo argumento
-<code>z</code>, agora necessário para o seu funcionamento, e vira <code>f(x, y, z)</code>;
-- Versão 1.0.1: um bug é consertado em <code>f(x, y, z)</code>;
-- Versão 1.2.0: o argumento <code>z</code> agora tem um valor padrão, transformando a
-função em <code>f(x, y, z = FALSE)</code>;
-- Versão 2.0.0: o argumento <code>z</code> muda seu valor padrão, quebrando qualquer código
-escrito utilizando a versão 1.x.x, se tornando <code>f(x, y, z = TRUE)</code></p>
+seu desenvolvimento pode ser o seguinte:</p>
+<ul>
+<li><p>Versão 0.1.0: a primeira versão com código do pacote contém uma função
+<code>f(x, y)</code>;</p></li>
+<li><p>Versão 0.1.1: um bug é consertado em <code>f(x, y)</code>;</p></li>
+<li><p>Versão 0.1.2: mais um bug é consertado em <code>f(x, y)</code>;</p></li>
+<li><p>Versão 1.0.0: o pacote sai do beta quando a função ganha um novo argumento
+<code>z</code>, agora necessário para o seu funcionamento, e vira <code>f(x, y, z)</code>;</p></li>
+<li><p>Versão 1.0.1: um bug é consertado em <code>f(x, y, z)</code>;</p></li>
+<li><p>Versão 1.1.0: o argumento <code>z</code> agora tem um valor padrão, transformando a
+função em <code>f(x, y, z = FALSE)</code>;</p></li>
+<li><p>Versão 2.0.0: o argumento <code>z</code> muda seu valor padrão, quebrando qualquer código
+escrito utilizando a versão 1.x.x, se tornando <code>f(x, y, z = TRUE)</code></p></li>
+</ul>
 <p>Utilizando o exemplo acima sem perda de generalidade, entre qualquer dois passos
 subsequentes haveriam versões denominadas de desenvolvimento, como por exemplo
 0.1.1.9000, 1.0.0.9000 e assim por diante. Isso não está no padrão ouro do
@@ -297,8 +296,8 @@ LazyData: true</code></pre>
 <p>Note como o campo <em>Version</em> já está populado com a primeira versão possível para
 um pacote: 0.0.0.9000. Depois de alguns commits, se acharmos que o código está
 preparado para a primeira minor, utilizamos:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="versoes-releases.html#cb25-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;minor&quot;</span>)</span>
-<span id="cb25-2"><a href="versoes-releases.html#cb25-2" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="versoesReleases.html#cb26-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;minor&quot;</span>)</span>
+<span id="cb26-2"><a href="versoesReleases.html#cb26-2" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0&#39;</span></span></code></pre></div>
 <p>A segunda linha já deixa claro que agora o arquivo <code>DESCRIPTION</code> contém uma
 linha <code>Version: 0.1.0</code> (note como a versão de desenvolvimento é removida
 automaticamente). <strong>Mas atenção</strong>, antes de fazer qualquer outra alteração no
@@ -308,19 +307,19 @@ ela. Atualmente o <code>usethis</code> faz isso automaticamente.</p>
 para o estado de desenvolvimento. Ou seja, deve existir um único commit no qual
 o pacote é considerado estável para cada sequência de commits de
 desenvolvimento.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="versoes-releases.html#cb26-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
-<span id="cb26-2"><a href="versoes-releases.html#cb26-2" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0.9000&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="versoesReleases.html#cb27-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
+<span id="cb27-2"><a href="versoesReleases.html#cb27-2" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0.9000&#39;</span></span></code></pre></div>
 <p>Depois que o pacote voltar para desenvolvimento, a programação pode continuar
 desimpedida. Por completude, <code>usethis::use_version()</code> pode ser utilizada para
 qualquer versão cheia:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="versoes-releases.html#cb27-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;patch&quot;</span>)</span>
-<span id="cb27-2"><a href="versoes-releases.html#cb27-2" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1&#39;</span></span>
-<span id="cb27-3"><a href="versoes-releases.html#cb27-3" aria-hidden="true"></a></span>
-<span id="cb27-4"><a href="versoes-releases.html#cb27-4" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
-<span id="cb27-5"><a href="versoes-releases.html#cb27-5" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1.9000&#39;</span></span>
-<span id="cb27-6"><a href="versoes-releases.html#cb27-6" aria-hidden="true"></a></span>
-<span id="cb27-7"><a href="versoes-releases.html#cb27-7" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;major&quot;</span>)</span>
-<span id="cb27-8"><a href="versoes-releases.html#cb27-8" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;1.0.0&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="versoesReleases.html#cb28-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;patch&quot;</span>)</span>
+<span id="cb28-2"><a href="versoesReleases.html#cb28-2" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1&#39;</span></span>
+<span id="cb28-3"><a href="versoesReleases.html#cb28-3" aria-hidden="true"></a></span>
+<span id="cb28-4"><a href="versoesReleases.html#cb28-4" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_dev_version</span>()</span>
+<span id="cb28-5"><a href="versoesReleases.html#cb28-5" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1.9000&#39;</span></span>
+<span id="cb28-6"><a href="versoesReleases.html#cb28-6" aria-hidden="true"></a></span>
+<span id="cb28-7"><a href="versoesReleases.html#cb28-7" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_version</span>(<span class="st">&quot;major&quot;</span>)</span>
+<span id="cb28-8"><a href="versoesReleases.html#cb28-8" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;1.0.0&#39;</span></span></code></pre></div>
 </div>
 <div id="releases" class="section level2" number="9.2">
 <h2><span class="header-section-number">9.2</span> Releases</h2>

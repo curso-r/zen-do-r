@@ -25,7 +25,7 @@ de tratamento para poder transformar os dados brutos naquilo que de fato pode
 ser utilizado durante uma análise.
 
 O programador é encorajado a separar essas planilhas brutas daquelas resultantes
-do processo de limpeza e tratamento. Junto com os dados crús, é importante
+do processo de limpeza e tratamento. Junto com os dados crus, é importante
 também guardar os arquivos que fazem o processo de limpeza; caso haja uma
 mudança nas demandas ou nas bases, o analista precisa ser capaz de alterar os
 *scripts* de tratamento e gerar novas bases consolidadas.
@@ -75,7 +75,7 @@ usethis::use_data(dados)
 #> ✔ Saving 'dados' to 'data/dados.rda'
 ```
 
-Neste caso o arquivo Excel foi criado de dentro do prṕrio R com o comando
+Neste caso o arquivo Excel foi criado de dentro do proṕrio R com o comando
 `writexl::write_xlsx(tibble::rownames_to_column(mtcars, "model"), "data-raw/dados.xlsx")`,
 mas isso é só um exemplo ilustrativo. O importante é saber o que acontece quando
 a função `use_data()` é executada para um objeto do ambiente global, ou seja,

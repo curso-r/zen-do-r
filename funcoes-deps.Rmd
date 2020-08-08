@@ -156,10 +156,12 @@ invocar uma função diretamente através dessa sintaxe!
 
 Se algum leitor estiver tendendo a seguir o caminho do TOC da programação,
 existem dois grandes benefícios em chamar todas as funções diretamente:
-- O código, no total, executa um pouco mais rápido porque são carregadas menos
+
+- o código, no total, executa um pouco mais rápido porque são carregadas menos
 funções no ambiente global (isso é especialmente importante em aplicações
 interativas feitas em Shiny).
-- As dependências do código estão sempre atualizadas porque elas estão
+
+- as dependências do código estão sempre atualizadas porque elas estão
 diretamente atreladas às próprias funções sendo utilizadas.
 
 Existe um terceiro e importante benefício, mas este será abordado apenas no

@@ -48,7 +48,7 @@ não corra o risco de perder seu progresso;
 e atualizadas;
 - Funções e dependências: como organizar arquivos, funções e dependências para
 maximizar a reprodutibilidade do código;
-- Pacotes: como e porquê transformar um projeto em um pacote, como documentá-lo
+- Pacotes: como e por que transformar um projeto em um pacote, como documentá-lo
 e como criar testes unitários;
 - Data e data-raw: como organizar seus dados e scripts de tratamento em pastas
 com objetivos claros e distintos.
@@ -62,20 +62,18 @@ mais avançados.
 ### O que você não vai aprender
 
 Primeiramente, você não vai aprender a programar R. Esse assunto é extremamente
-extenso e já existem livros o suficiente para ajudar com isso (vide
+extenso e já existem livros o suficiente para ajudar com isso (vide [o livro da Curso-R](https://livro.curso-r.com/) ou
 [R for Data Science](https://r4ds.had.co.nz/)), então não vou me preocupar
 com os detalhes do código ou com qual guia de estilo seguir.
 
 Se você gosta de fazer códigos longos e velozes usando o `base-r`, se você
 ama as pipelines do `tidyverse`, se você paraleliza todos os seus loops...
-Nada disso importa aqui; não vou dizer qual é o melhor jeito de programar[^1].
+Nada disso importa aqui; não vou dizer qual é o melhor jeito de programar^[E também não tenho paciência para entrar em mais nenhum debate "base vs.
+tidyverse"].
 Aqui você vai conhecer somente as melhores ferramentas para **organizar o seu
 fluxo de programação**.
 
-[^1]: E também não tenho paciência para entrar em mais nenhum debate "base vs.
-tidyverse"
-
-Apesar de terem nomes parecidos, o *Zen do R* e o *Zen do Python* são diferentes
+Apesar de terem nomes parecidos, *O Zen do R* e *O Zen do Python* são diferentes
 justamente por causa disso. O livro do Python pretende dar sugestões de como
 organizar e escrever o seu código, o que não será feito aqui.
 
@@ -94,7 +92,7 @@ talvez valha à pena
 no tocante ao R, você precisará ter instalado pelo menos os três pacotes a
 seguir:
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo=TRUE}
 # Conteúdo principal do livro
 install.packages(c("usethis", "packrat"))
 
