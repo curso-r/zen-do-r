@@ -1,4 +1,4 @@
-# O Zen do R
+# Zen do R
 Um livro de programação em R para não-programadores.
 
 ## Progresso

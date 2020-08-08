@@ -1,14 +1,16 @@
 bookdown::gitbook:
   config:
     toc:
-      collapse: section
+      collapse: subsection
       before: |
-        <li><strong><a href="./">O Zen do R</a></strong></li>
+        <li><center><a href="./index.html"><img src = "https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width = 60%></a></center></li>
     edit:
       link: https://github.com/curso-r/zen-do-r/edit/master/%s
       text: "Edit"
     sharing: no
   css: zen-do-r.css
+  includes:
+    in_header: [assets/fonts.html]
 
 bookdown::pdf_book:
   latex_engine: "xelatex"

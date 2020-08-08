@@ -4,24 +4,24 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>O Zen do R</title>
+  <title>Zen do R</title>
   <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="O Zen do R" />
+  <meta property="og:title" content="Zen do R" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:url" content="https://curso-r.github.io/zen-do-r/" />
   
   <meta property="og:description" content="Um livro de programação para não-programadores" />
   <meta name="github-repo" content="curso-r/zen-do-r" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="O Zen do R" />
+  <meta name="twitter:title" content="Zen do R" />
   
   <meta name="twitter:description" content="Um livro de programação para não-programadores" />
   
 
-<meta name="author" content="C. Lente" />
+<meta name="author" content="Caio Lente + Curso-R" />
 
 
 
@@ -29,9 +29,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
-  
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 
 <link rel="next" href="introducao.html"/>
+<script src="libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,71 +50,10 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="zen-do-r.css" type="text/css" />
 </head>
@@ -128,10 +68,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><strong><a href="./">O Zen do R</a></strong></li>
+<li><center><a href="./index.html"><img src = "https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width = 60%></a></center></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Respire fundo</a></li>
 <li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a>
@@ -144,7 +84,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html"><i class="fa fa-check"></i><b>2</b> .RData e .Rhistory</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#porque-desistir"><i class="fa fa-check"></i><b>2.1</b> Porque desistir</a></li>
+<li class="chapter" data-level="2.1" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#por-que-desistir"><i class="fa fa-check"></i><b>2.1</b> Por que desistir</a></li>
 <li class="chapter" data-level="2.2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#como-desativar"><i class="fa fa-check"></i><b>2.2</b> Como desativar</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="rproj-dir.html"><a href="rproj-dir.html"><i class="fa fa-check"></i><b>3</b> Rproj e diretórios</a>
@@ -163,7 +103,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="data-data-raw.html"><a href="data-data-raw.html#documentação-1"><i class="fa fa-check"></i><b>7.1</b> Documentação</a></li>
+<li class="chapter" data-level="7.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>7.1</b> Documentação</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>8</b> Testes automatizados</a></li>
 <li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a>
@@ -180,7 +120,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">O Zen do R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Zen do R</a>
           </h1>
         </div>
 
@@ -189,20 +129,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">O Zen do R</h1>
-<p class="author"><em>C. Lente</em></p>
+<h1 class="title">Zen do R</h1>
+<p class="author"><em>Caio Lente + Curso-R</em></p>
+<p class="date"><em>Última atualização: 07/08/2020</em></p>
 </div>
-<div id="bem-vindo" class="section level1">
-<h1>Bem-vindo</h1>
-<p>Este é <em>O Zen do R</em>, seja bem-vindo! O objetivo deste livro é ensinar ao leitor
-algumas formas simples de melhorar a organização de seus projetos de análise de
-dados em R.</p>
-<p>O texto deste livro foi escrito por <a href="https://github.com/clente">clente</a> com o
+<div id="respire-fundo" class="section level1 unnumbered" number="">
+<h1>Respire fundo</h1>
+<p><img src="assets/hex.png" width="250" alt="Hex" align="right" style="margin: 0 1em 0 1em" /> Este é o <em>Zen do R</em>, seja bem-vinda(o)! O objetivo deste livro é ensinar ao leitor
+que não costuma programar algumas formas simples de melhorar a organização de
+seus projetos de análise de dados em R.</p>
+<p>Ele foi escrito em <a href="https://rmarkdown.rstudio.com/">RMarkdown</a> com o pacote
+<a href="https://bookdown.org/">bookdown</a> e está em <strong>construção</strong> e em
+<strong>revisão aberta</strong>. Fique à vontade para corrigir qualquer tipo de erro que
+encontrar no nosso material.</p>
+<p>O texto deste livro foi elaborado por <a href="https://github.com/clente">Caio Lente</a> com o
 suporte, ajuda e revisão do time da <a href="https://www.curso-r.com/">Curso-R</a>. Ele
 está disponível gratuitamente no <a href="https://github.com/curso-r/zen-do-r">Github</a>
 sob a licença <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU GPLv3</a>.</p>
-<p>Ele foi escrito em <a href="https://rmarkdown.rstudio.com/">RMarkdown</a> com o pacote
-<a href="https://bookdown.org/">bookdown</a>.</p>
+<p>A Curso-R é o braço de Educação da R6 Consultoria, uma empresa de treinamentos e
+consultoria em Ciência de Dados e linguagem de programação R. Surgimos em 2015,
+com cursos de introdução ao R no Programa de Cursos de Verão do Instituto de
+Matemática e Estatística da Universidade de São Paulo (IME-USP).</p>
+<ul>
+<li>Conheça os nossos cursos: <a href="https://www.curso-r.com/cursos/" class="uri">https://www.curso-r.com/cursos/</a></li>
+<li>Conheça o nosso blog: <a href="https://www.curso-r.com/blog/" class="uri">https://www.curso-r.com/blog/</a></li>
+<li>Conheça o restante do nosso material: <a href="https://www.curso-r.com/material/" class="uri">https://www.curso-r.com/material/</a></li>
+<li>Saiba mais sobre a Curso-R: <a href="https://www.curso-r.com/sobre/" class="uri">https://www.curso-r.com/sobre/</a></li>
+</ul>
+<p>Participaram da construção deste livro:</p>
+<ul>
+<li><a href="https://twitter.com/athos_damiani">Athos Damiani</a></li>
+<li><a href="https://lente.dev/">Caio Lente</a></li>
+<li><a href="https://twitter.com/dfalbel">Daniel Falbel</a></li>
+<li><a href="https://twitter.com/Azeloc">Fernando Correa</a></li>
+<li><a href="https://twitter.com/jtrecenti">Julio Tricenti</a></li>
+<li><a href="https://twitter.com/Williamorim89">William Amorim</a></li>
+</ul>
+<p>Seja bem-vinda(o) também ao #rstats! Compartilhe seu desenvolvimento. Poste seus
+avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e
+participe dos grupos e comunidades de programadores.</p>
+<ul>
+<li>Comunidade RLadies: <a href="https://benubah.github.io/r-community-explorer/rladies.html" class="uri">https://benubah.github.io/r-community-explorer/rladies.html</a></li>
+<li>Fórum de dúvidas da Curso-R: <a href="https://discourse.curso-r.com/" class="uri">https://discourse.curso-r.com/</a></li>
+<li>Grupo de divulgação da Curso-R no Telegram: <a href="https://t.me/r6cursor" class="uri">https://t.me/r6cursor</a></li>
+<li>Grupo R Brasil no Telegram: <a href="https://t.me/rbrasiloficial" class="uri">https://t.me/rbrasiloficial</a></li>
+</ul>
 
 </div>
             </section>
@@ -246,7 +217,7 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "section"
+"collapse": "subsection"
 }
 });
 });

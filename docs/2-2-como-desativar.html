@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.2 Como desativar | Zen do R</title>
+  <meta name="description" content="Um livro de programação para não-programadores" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.2 Como desativar | Zen do R" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://curso-r.github.io/zen-do-r/" />
+  
+  <meta property="og:description" content="Um livro de programação para não-programadores" />
+  <meta name="github-repo" content="curso-r/zen-do-r" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.2 Como desativar | Zen do R" />
+  
+  <meta name="twitter:description" content="Um livro de programação para não-programadores" />
+  
+
+<meta name="author" content="C. Lente + Curso-R" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="2-1-por-que-desistir.html"/>
+<link rel="next" href="3-rproj-dir.html"/>
+<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="zen-do-r.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><center><a href="./index.html"><img src = "https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width = 60%></a></center></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a></li>
+<li class="chapter" data-level="1" data-path="1-introducao.html"><a href="1-introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1-1-sobre-o-livro.html"><a href="1-1-sobre-o-livro.html"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="1-1-sobre-o-livro.html"><a href="1-1-sobre-o-livro.html#o-que-você-vai-aprender"><i class="fa fa-check"></i><b>1.1.1</b> O que você vai aprender</a></li>
+<li class="chapter" data-level="1.1.2" data-path="1-1-sobre-o-livro.html"><a href="1-1-sobre-o-livro.html#o-que-você-não-vai-aprender"><i class="fa fa-check"></i><b>1.1.2</b> O que você não vai aprender</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="1-2-pré-requisitos.html"><a href="1-2-pré-requisitos.html"><i class="fa fa-check"></i><b>1.2</b> Pré-requisitos</a></li>
+<li class="chapter" data-level="1.3" data-path="1-3-principais-referências.html"><a href="1-3-principais-referências.html"><i class="fa fa-check"></i><b>1.3</b> Principais referências</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-rdata-rhistory.html"><a href="2-rdata-rhistory.html"><i class="fa fa-check"></i><b>2</b> .RData e .Rhistory</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="2-1-por-que-desistir.html"><a href="2-1-por-que-desistir.html"><i class="fa fa-check"></i><b>2.1</b> Por que desistir</a></li>
+<li class="chapter" data-level="2.2" data-path="2-2-como-desativar.html"><a href="2-2-como-desativar.html"><i class="fa fa-check"></i><b>2.2</b> Como desativar</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-rproj-dir.html"><a href="3-rproj-dir.html"><i class="fa fa-check"></i><b>3</b> Rproj e diretórios</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3-1-diretório-de-trabalho.html"><a href="3-1-diretório-de-trabalho.html"><i class="fa fa-check"></i><b>3.1</b> Diretório de trabalho</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-git-github.html"><a href="4-git-github.html"><i class="fa fa-check"></i><b>4</b> Git e GitHub</a></li>
+<li class="chapter" data-level="5" data-path="5-funcoes-deps.html"><a href="5-funcoes-deps.html"><i class="fa fa-check"></i><b>5</b> Funções e dependências</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="5-1-quatro-pontos.html"><a href="5-1-quatro-pontos.html"><i class="fa fa-check"></i><b>5.1</b> Quatro-pontos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-pacotes.html"><a href="6-pacotes.html"><i class="fa fa-check"></i><b>6</b> Pacotes</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6-1-documentação.html"><a href="6-1-documentação.html"><i class="fa fa-check"></i><b>6.1</b> Documentação</a></li>
+<li class="chapter" data-level="6.2" data-path="6-2-imports.html"><a href="6-2-imports.html"><i class="fa fa-check"></i><b>6.2</b> Imports</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-data-data-raw.html"><a href="7-data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="6-1-documentação.html"><a href="6-1-documentação.html#documentação"><i class="fa fa-check"></i><b>7.1</b> Documentação</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="8-testes.html"><a href="8-testes.html"><i class="fa fa-check"></i><b>8</b> Testes automatizados</a></li>
+<li class="chapter" data-level="9" data-path="9-versoes-releases.html"><a href="9-versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="9-1-versionamento-semântico.html"><a href="9-1-versionamento-semântico.html"><i class="fa fa-check"></i><b>9.1</b> Versionamento semântico</a></li>
+<li class="chapter" data-level="9.2" data-path="9-2-releases.html"><a href="9-2-releases.html"><i class="fa fa-check"></i><b>9.2</b> Releases</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Zen do R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="como-desativar" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Como desativar</h2>
+<p>O processo de desabilitar o <code>.RData</code> e o <code>.Rhistory</code> é bastante simples e afeta
+todos os projetos do computador, então só é necessário passar por ele uma vez.
+Basta selecionar <strong>Tools &gt; Global Options…</strong> na aba de ferramentas do RStudio
+e então ajustar três configurações. No final a página de opções gerais deve
+ficar similar à da imagem abaixo:</p>
+<p><img src="static/rdata-rhistory/config.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>Se acostumar com sessões efêmeras não é uma tarefa fácil e um desconforto
+inicial é esperado. Pode ser que o programador ache entediante executar o mesmo
+código toda vez que abrir seu RStudio, mas é importante ter em mente que esse
+programa só está lá e pode ser executado inúmeras vezes porque o R não estará
+mais fazendo o trabalho do analista.</p>
+
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="2-1-por-que-desistir.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="3-rproj-dir.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/curso-r/zen-do-r/edit/master/rdata-rhistory.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

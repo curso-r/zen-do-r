@@ -1,24 +1,56 @@
 ---
 knit: "bookdown::render_book"
-title: "O Zen do R"
-author: ["C. Lente"]
+title: "Zen do R"
+author: ["Caio Lente + Curso-R"]
+date: "`r paste('Última atualização:', format(Sys.Date(), '%d/%m/%Y'))`"
 description: "Um livro de programação para não-programadores"
-url: ""
+url: "https://curso-r.github.io/zen-do-r/"
 github-repo: curso-r/zen-do-r
+favicon: "assets/favicon.ico"
 site: bookdown::bookdown_site
 documentclass: book
 ---
 
-# Bem-vindo {-}
+# Respire fundo {-}
 
-Este é *O Zen do R*, seja bem-vindo! O objetivo deste livro é ensinar ao leitor
-algumas formas simples de melhorar a organização de seus projetos de análise de
-dados em R.
+<img src="assets/hex.png" width="250" alt="Hex" align="right" style="margin: 0 1em 0 1em" /> Este é o *Zen do R*, seja bem-vinda(o)! O objetivo deste livro é ensinar ao leitor
+que não costuma programar algumas formas simples de melhorar a organização de
+seus projetos de análise de dados em R.
 
-O texto deste livro foi escrito por [clente](https://github.com/clente) com o
+Ele foi escrito em [RMarkdown](https://rmarkdown.rstudio.com/) com o pacote
+[bookdown](https://bookdown.org/) e está em **construção** e em
+**revisão aberta**. Fique à vontade para corrigir qualquer tipo de erro que
+encontrar no nosso material.
+
+O texto deste livro foi elaborado por [Caio Lente](https://github.com/clente) com o
 suporte, ajuda e revisão do time da [Curso-R](https://www.curso-r.com/). Ele
 está disponível gratuitamente no [Github](https://github.com/curso-r/zen-do-r)
 sob a licença [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
-Ele foi escrito em [RMarkdown](https://rmarkdown.rstudio.com/) com o pacote
-[bookdown](https://bookdown.org/).
+A Curso-R é o braço de Educação da R6 Consultoria, uma empresa de treinamentos e
+consultoria em Ciência de Dados e linguagem de programação R. Surgimos em 2015,
+com cursos de introdução ao R no Programa de Cursos de Verão do Instituto de
+Matemática e Estatística da Universidade de São Paulo (IME-USP).
+
+- Conheça os nossos cursos: https://www.curso-r.com/cursos/
+- Conheça o nosso blog: https://www.curso-r.com/blog/
+- Conheça o restante do nosso material: https://www.curso-r.com/material/
+- Saiba mais sobre a Curso-R: https://www.curso-r.com/sobre/
+
+Participaram da construção deste livro:
+
+- [Athos Damiani](https://twitter.com/athos_damiani)
+- [Caio Lente](https://lente.dev/)
+- [Daniel Falbel](https://twitter.com/dfalbel)
+- [Fernando Correa](https://twitter.com/Azeloc)
+- [Julio Tricenti](https://twitter.com/jtrecenti)
+- [William Amorim](https://twitter.com/Williamorim89)
+
+Seja bem-vinda(o) também ao #rstats! Compartilhe seu desenvolvimento. Poste seus
+avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e
+participe dos grupos e comunidades de programadores.
+
+- Comunidade RLadies: https://benubah.github.io/r-community-explorer/rladies.html
+- Fórum de dúvidas da Curso-R: https://discourse.curso-r.com/
+- Grupo de divulgação da Curso-R no Telegram: https://t.me/r6cursor
+- Grupo R Brasil no Telegram: https://t.me/rbrasiloficial

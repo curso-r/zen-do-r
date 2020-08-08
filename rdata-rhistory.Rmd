@@ -25,7 +25,7 @@ sessão R, enquanto o segundo contém uma lista com os últimos comandos
 executados. Ao reabrir o RStudio, o conteúdo armazenados nestes arquivos será
 carregado no ambiente de trabalho atual como se nada tivesse acontecido.
 
-## Porque desistir
+## Por que desistir
 
 Apesar de ser uma ótima conveniência, assim como o pai coruja, esse tipo de
 funcionalidade pode deixar o programador mal acostumado. Se todos os resultados
@@ -38,7 +38,7 @@ aos poucos contando cada vez mais com a sorte. Caso ele acidentalmente
 sobrescreva o objeto relevante e o código para recriá-lo já tenha sido apagado,
 não haverá nenhuma forma confiável de recuperar esses dados. Idealmente, todo
 o código necessário para uma análise de dados deve estar salvo em um arquivo
-`.R` perfeitamente reprodutível; assim, caso o programador cometa um engado,
+`.R` perfeitamente reprodutível; assim, caso o programador cometa um engano,
 é possível executar aquele arquivo do início e obter novamente os objetos que
 estavam sendo utilizados.
 

@@ -4,24 +4,24 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Rproj e diretórios | O Zen do R</title>
+  <title>3 Rproj e diretórios | Zen do R</title>
   <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Rproj e diretórios | O Zen do R" />
+  <meta property="og:title" content="3 Rproj e diretórios | Zen do R" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:url" content="https://curso-r.github.io/zen-do-r/" />
   
   <meta property="og:description" content="Um livro de programação para não-programadores" />
   <meta name="github-repo" content="curso-r/zen-do-r" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Rproj e diretórios | O Zen do R" />
+  <meta name="twitter:title" content="3 Rproj e diretórios | Zen do R" />
   
   <meta name="twitter:description" content="Um livro de programação para não-programadores" />
   
 
-<meta name="author" content="C. Lente" />
+<meta name="author" content="Caio Lente + Curso-R" />
 
 
 
@@ -29,9 +29,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
-  
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="rdata-rhistory.html"/>
 <link rel="next" href="git-github.html"/>
+<script src="libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,6 +50,8 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 
 <style type="text/css">
@@ -128,10 +131,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><strong><a href="./">O Zen do R</a></strong></li>
+<li><center><a href="./index.html"><img src = "https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width = 60%></a></center></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-curso-r"><i class="fa fa-check"></i>A Curso-R</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#comunidade"><i class="fa fa-check"></i>Comunidade</a></li>
+</ul></li>
 <li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a>
@@ -144,7 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html"><i class="fa fa-check"></i><b>2</b> .RData e .Rhistory</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#porque-desistir"><i class="fa fa-check"></i><b>2.1</b> Porque desistir</a></li>
+<li class="chapter" data-level="2.1" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#por-que-desistir"><i class="fa fa-check"></i><b>2.1</b> Por que desistir</a></li>
 <li class="chapter" data-level="2.2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#como-desativar"><i class="fa fa-check"></i><b>2.2</b> Como desativar</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="rproj-dir.html"><a href="rproj-dir.html"><i class="fa fa-check"></i><b>3</b> Rproj e diretórios</a>
@@ -163,7 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="data-data-raw.html"><a href="data-data-raw.html#documentação-1"><i class="fa fa-check"></i><b>7.1</b> Documentação</a></li>
+<li class="chapter" data-level="7.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>7.1</b> Documentação</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>8</b> Testes automatizados</a></li>
 <li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a>
@@ -180,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">O Zen do R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Zen do R</a>
           </h1>
         </div>
 
@@ -188,7 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="rproj-dir" class="section level1">
+<div id="rproj-dir" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Rproj e diretórios</h1>
 <p>Um programador iniciante corre o risco de não gerenciar seus projetos. Muitas
 vezes seus arquivos de código ficarão espalhados pelos infinitos diretórios de
@@ -223,14 +230,14 @@ assunto. Mas esta não deve ser uma pasta comum, ela deve ser um projeto.</p>
 <p>O código listado abaixo demonstra como criar um projeto no RStudio. Basta
 apenas um comando e ele já fará tudo que for necessário para preparar o seu
 ambiente de desenvolvimento.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="rproj-dir.html#cb1-1"></a>usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&quot;~/Documents/Dev/R/Proj/&quot;</span>)</span>
-<span id="cb1-2"><a href="rproj-dir.html#cb1-2"></a><span class="co">#&gt; ✔ Creating &#39;~/Documents/Dev/R/Proj/&#39;</span></span>
-<span id="cb1-3"><a href="rproj-dir.html#cb1-3"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/Dev/R/Proj&#39;</span></span>
-<span id="cb1-4"><a href="rproj-dir.html#cb1-4"></a><span class="co">#&gt; ✔ Creating &#39;R/&#39;</span></span>
-<span id="cb1-5"><a href="rproj-dir.html#cb1-5"></a><span class="co">#&gt; ✔ Writing &#39;Proj.Rproj&#39;</span></span>
-<span id="cb1-6"><a href="rproj-dir.html#cb1-6"></a><span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span></span>
-<span id="cb1-7"><a href="rproj-dir.html#cb1-7"></a><span class="co">#&gt; ✔ Opening &#39;~/Documents/Dev/R/Proj/&#39; in new RStudio session</span></span>
-<span id="cb1-8"><a href="rproj-dir.html#cb1-8"></a><span class="co">#&gt; ✔ Setting active project to &#39;Proj&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="rproj-dir.html#cb1-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&quot;~/Documents/Dev/R/Proj/&quot;</span>)</span>
+<span id="cb1-2"><a href="rproj-dir.html#cb1-2" aria-hidden="true"></a><span class="co">#&gt; ✔ Creating &#39;~/Documents/Dev/R/Proj/&#39;</span></span>
+<span id="cb1-3"><a href="rproj-dir.html#cb1-3" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/Dev/R/Proj&#39;</span></span>
+<span id="cb1-4"><a href="rproj-dir.html#cb1-4" aria-hidden="true"></a><span class="co">#&gt; ✔ Creating &#39;R/&#39;</span></span>
+<span id="cb1-5"><a href="rproj-dir.html#cb1-5" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;Proj.Rproj&#39;</span></span>
+<span id="cb1-6"><a href="rproj-dir.html#cb1-6" aria-hidden="true"></a><span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span></span>
+<span id="cb1-7"><a href="rproj-dir.html#cb1-7" aria-hidden="true"></a><span class="co">#&gt; ✔ Opening &#39;~/Documents/Dev/R/Proj/&#39; in new RStudio session</span></span>
+<span id="cb1-8"><a href="rproj-dir.html#cb1-8" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting active project to &#39;Proj&#39;</span></span></code></pre></div>
 <p>Cada linha da saída do comando representa algo que ele fez para preparar o
 projeto. A mais importante é a quarta linha, que cria o arquivo <code>Proj.Rproj</code>;
 ele indica para o RStudio que aquele diretório será a raiz de um projeto e que,
@@ -244,7 +251,7 @@ no seu diretório de trabalho, crie um projeto novo para cada grupo de programas
 que vocẽ tiver detectado. Talvez um para exercícios de R, um para cada cliente,
 um para uma nova ideia, etc. Cada um deles deve ter um nome descritivo e
 conter, em sua pasta R, todos os arquivos necessários para aquela análise.</p>
-<div id="diretório-de-trabalho" class="section level2">
+<div id="diretório-de-trabalho" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Diretório de trabalho</h2>
 <p>Mas a funcionalidade mais importante dentre todas as já citadas é o conceito do
 <em>working directory</em> ou diretório de trabalho. No canto esquerdo superior do
@@ -257,15 +264,15 @@ prestando atenção.</p>
 <p>O R dá a possibilidade de mudar, instantaneamente, o diretório de trabalho.
 Isso que dizer que os caminhos relativos para arquivos podem mudar em questão
 de linhas. O exemplo abaixo demonstra superficialmente como isso funciona:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="rproj-dir.html#cb2-1"></a><span class="co"># Abrindo dois arquivos em diretórios diferentes</span></span>
-<span id="cb2-2"><a href="rproj-dir.html#cb2-2"></a></span>
-<span id="cb2-3"><a href="rproj-dir.html#cb2-3"></a><span class="kw">setwd</span>(<span class="st">&quot;~/Downloads&quot;</span>)</span>
-<span id="cb2-4"><a href="rproj-dir.html#cb2-4"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span>
-<span id="cb2-5"><a href="rproj-dir.html#cb2-5"></a></span>
-<span id="cb2-6"><a href="rproj-dir.html#cb2-6"></a><span class="kw">setwd</span>(<span class="st">&quot;~/Documents/Dev/R/Proj&quot;</span>)</span>
-<span id="cb2-7"><a href="rproj-dir.html#cb2-7"></a>b &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;b.csv&quot;</span>)</span>
-<span id="cb2-8"><a href="rproj-dir.html#cb2-8"></a></span>
-<span id="cb2-9"><a href="rproj-dir.html#cb2-9"></a><span class="kw">write.csv</span>(a, <span class="st">&quot;c.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="rproj-dir.html#cb2-1" aria-hidden="true"></a><span class="co"># Abrindo dois arquivos em diretórios diferentes</span></span>
+<span id="cb2-2"><a href="rproj-dir.html#cb2-2" aria-hidden="true"></a></span>
+<span id="cb2-3"><a href="rproj-dir.html#cb2-3" aria-hidden="true"></a><span class="kw">setwd</span>(<span class="st">&quot;~/Downloads&quot;</span>)</span>
+<span id="cb2-4"><a href="rproj-dir.html#cb2-4" aria-hidden="true"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span>
+<span id="cb2-5"><a href="rproj-dir.html#cb2-5" aria-hidden="true"></a></span>
+<span id="cb2-6"><a href="rproj-dir.html#cb2-6" aria-hidden="true"></a><span class="kw">setwd</span>(<span class="st">&quot;~/Documents/Dev/R/Proj&quot;</span>)</span>
+<span id="cb2-7"><a href="rproj-dir.html#cb2-7" aria-hidden="true"></a>b &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;b.csv&quot;</span>)</span>
+<span id="cb2-8"><a href="rproj-dir.html#cb2-8" aria-hidden="true"></a></span>
+<span id="cb2-9"><a href="rproj-dir.html#cb2-9" aria-hidden="true"></a><span class="kw">write.csv</span>(a, <span class="st">&quot;c.csv&quot;</span>)</span></code></pre></div>
 <p>Isso não parece tão problemático à primeira vista, mas usar <code>setwd()</code> cria um
 vício difícil de abandonar. Essa função estimula que os seus projetos continuem
 desorganizados com arquivos espalhados pelo computador, mas também confunde o
@@ -277,12 +284,12 @@ responder caso você não esteja atento ao código todo.</p>
 trabalho seja sempre a pasta do projeto. Neste caso é como se, ao abrir o
 RStudio, ele executasse o comando <code>setwd("~/Documents/Dev/R/Proj")</code>
 automaticamente. Mas como ler então o arquivo <code>a.csv</code>?</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="rproj-dir.html#cb3-1"></a><span class="co"># Duas formas de ler a.csv</span></span>
-<span id="cb3-2"><a href="rproj-dir.html#cb3-2"></a></span>
-<span id="cb3-3"><a href="rproj-dir.html#cb3-3"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>)</span>
-<span id="cb3-4"><a href="rproj-dir.html#cb3-4"></a></span>
-<span id="cb3-5"><a href="rproj-dir.html#cb3-5"></a><span class="kw">file.copy</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>, <span class="st">&quot;a.csv&quot;</span>)</span>
-<span id="cb3-6"><a href="rproj-dir.html#cb3-6"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="rproj-dir.html#cb3-1" aria-hidden="true"></a><span class="co"># Duas formas de ler a.csv</span></span>
+<span id="cb3-2"><a href="rproj-dir.html#cb3-2" aria-hidden="true"></a></span>
+<span id="cb3-3"><a href="rproj-dir.html#cb3-3" aria-hidden="true"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>)</span>
+<span id="cb3-4"><a href="rproj-dir.html#cb3-4" aria-hidden="true"></a></span>
+<span id="cb3-5"><a href="rproj-dir.html#cb3-5" aria-hidden="true"></a><span class="kw">file.copy</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>, <span class="st">&quot;a.csv&quot;</span>)</span>
+<span id="cb3-6"><a href="rproj-dir.html#cb3-6" aria-hidden="true"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span></code></pre></div>
 <p>A primeira forma deixa explícito que aquele arquivo não faz parte do projeto e
 que portanto deve ser tratado como temporário. A segunda forma, mais indicada,
 é trazer o arquivo para dentro do projeto! Se ele é importante, é essencial que
@@ -340,7 +347,7 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "section"
+"collapse": "subsection"
 }
 });
 });

@@ -1,12 +1,12 @@
 # Introdução {#introducao}
 
-*O Zen do R* tem o objetivo de ser um livro sobre programação para
+O *Zen do R* tem o objetivo de ser um livro sobre programação para
 não-programadores. Atualmente muitas pessoas de diferentes áreas do conhecimento
 acabam precisando usar a linguagem R por causa do seu grande potencial para
 programação estatística, mas ficam perdidas depois que aprendem o básico sobre a
 linguagem. Nesse sentido, este é um livro para "não-programadores" no que se
 refere a treinamento formal; isto não é uma introdução ao R, mas sim um guia
-sobre como usar o R de forma eficiente no dia-a-dia. *O Zen do R* também
+sobre como usar o R de forma eficiente no dia-a-dia. O *Zen do R* também
 pretende destoar dos manuais mais secos e técnicos sobre programação, utilizando
 uma linguagem leve e acessível justamente porque parte-se do princípio de que
 ele será utilizado em conjunto com algum outro texto (seco e técnico) sobre como
@@ -19,7 +19,7 @@ sendo uma vantagem muito difícil de ignorar. Fora isso, o `tidyverse`, as
 infinitas ferramentas do RStudio e o engajamento da comunidade fazem com que
 nós achemos o R a verdadeira linguagem do *data science*.
 
-Por isso, *O Zen do R* é um guia para acalmar os nervos daqueles que se
+Por isso, o *Zen do R* é um guia para acalmar os nervos daqueles que se
 aventuram pela primeira vez em um grande projeto em R.
 
 ## Sobre o livro
@@ -75,7 +75,7 @@ fluxo de programação**.
 [^1]: E também não tenho paciência para entrar em mais nenhum debate "base vs.
 tidyverse"
 
-Apesar de terem nomes parecidos, *O Zen do R* e *O Zen do Python* são diferentes
+Apesar de terem nomes parecidos, o *Zen do R* e o *Zen do Python* são diferentes
 justamente por causa disso. O livro do Python pretende dar sugestões de como
 organizar e escrever o seu código, o que não será feito aqui.
 
@@ -107,7 +107,7 @@ razoavelmente moderno. E uma conexão à internet.
 
 ## Principais referências
 
-*O Zen do R* se baseia em inúmeras referências que normalmente serão citadas
+O *Zen do R* se baseia em inúmeras referências que normalmente serão citadas
 juntamente com o próprio conteúdo. Mas algumas mais gerais acabariam sendo
 citadas o tempo todo e portanto acabarão ficando aqui:
 
