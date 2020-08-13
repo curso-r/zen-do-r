@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Testes automatizados | Zen do R</title>
+  <title>9 Testes automatizados | Zen do R</title>
   <meta name="description" content="Um livro de programação para não-programadores" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Testes automatizados | Zen do R" />
+  <meta property="og:title" content="9 Testes automatizados | Zen do R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://curso-r.github.io/zen-do-r/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/zen-do-r" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Testes automatizados | Zen do R" />
+  <meta name="twitter:title" content="9 Testes automatizados | Zen do R" />
   
   <meta name="twitter:description" content="Um livro de programação para não-programadores" />
   
@@ -164,15 +164,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>6.1</b> Documentação</a></li>
 <li class="chapter" data-level="6.2" data-path="pacotes.html"><a href="pacotes.html#imports"><i class="fa fa-check"></i><b>6.2</b> Imports</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a>
+<li class="chapter" data-level="7" data-path="pipe.html"><a href="pipe.html"><i class="fa fa-check"></i><b>7</b> Pipe</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>7.1</b> Documentação</a></li>
+<li class="chapter" data-level="7.1" data-path="pipe.html"><a href="pipe.html#como-funciona"><i class="fa fa-check"></i><b>7.1</b> Como funciona</a></li>
+<li class="chapter" data-level="7.2" data-path="pipe.html"><a href="pipe.html#vantagens"><i class="fa fa-check"></i><b>7.2</b> Vantagens</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>8</b> Testes automatizados</a></li>
-<li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a>
+<li class="chapter" data-level="8" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>8</b> Data e data-raw</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="versoes-releases.html"><a href="versoes-releases.html#versionamento-semântico"><i class="fa fa-check"></i><b>9.1</b> Versionamento semântico</a></li>
-<li class="chapter" data-level="9.2" data-path="versoes-releases.html"><a href="versoes-releases.html#releases"><i class="fa fa-check"></i><b>9.2</b> Releases</a></li>
+<li class="chapter" data-level="8.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>8.1</b> Documentação</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>9</b> Testes automatizados</a></li>
+<li class="chapter" data-level="10" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>10</b> Versões e releases</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="versoes-releases.html"><a href="versoes-releases.html#versionamento-semântico"><i class="fa fa-check"></i><b>10.1</b> Versionamento semântico</a></li>
+<li class="chapter" data-level="10.2" data-path="versoes-releases.html"><a href="versoes-releases.html#releases"><i class="fa fa-check"></i><b>10.2</b> Releases</a></li>
 </ul></li>
 </ul>
 
@@ -191,8 +196,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="testes" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> Testes automatizados</h1>
+<div id="testes" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Testes automatizados</h1>
 <p>Um recurso extremamente importante, mas comumente ignorado no mundo do R, para a
 garantia da longevidade de um pacote são os testes unitários automatizados. Como
 essa técnica deve ser limitada somente a pacotes complexos e utilizados por mais
@@ -207,16 +212,16 @@ daquela função (prática conhecida como Desenvolvimento Orientado a Testes).</
 <p>Para criar um conjunto de testes é necessário primeiro criar o ambiente para tal
 dentro do pacote através do pacote <code>testthat</code>. Depois disso, basta criar
 conjuntos individuais de testes para cada função.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="testes.html#cb22-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_testthat</span>()</span>
-<span id="cb22-2"><a href="testes.html#cb22-2" aria-hidden="true"></a><span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span></span>
-<span id="cb22-3"><a href="testes.html#cb22-3" aria-hidden="true"></a><span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span></span>
-<span id="cb22-4"><a href="testes.html#cb22-4" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span></span>
-<span id="cb22-5"><a href="testes.html#cb22-5" aria-hidden="true"></a><span class="co">#&gt; ● Call `use_test()` to initialize a basic test file and open it for editing.</span></span>
-<span id="cb22-6"><a href="testes.html#cb22-6" aria-hidden="true"></a></span>
-<span id="cb22-7"><a href="testes.html#cb22-7" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_test</span>(<span class="st">&quot;funcao_demo&quot;</span>)</span>
-<span id="cb22-8"><a href="testes.html#cb22-8" aria-hidden="true"></a><span class="co">#&gt; ✔ Increasing &#39;testthat&#39; version to &#39;&gt;= 2.1.0&#39; in DESCRIPTION</span></span>
-<span id="cb22-9"><a href="testes.html#cb22-9" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat/test-funcao_demo.R&#39;</span></span>
-<span id="cb22-10"><a href="testes.html#cb22-10" aria-hidden="true"></a><span class="co">#&gt; ● Modify &#39;tests/testthat/test-funcao_demo.R&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="testes.html#cb31-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_testthat</span>()</span>
+<span id="cb31-2"><a href="testes.html#cb31-2" aria-hidden="true"></a><span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span></span>
+<span id="cb31-3"><a href="testes.html#cb31-3" aria-hidden="true"></a><span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span></span>
+<span id="cb31-4"><a href="testes.html#cb31-4" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span></span>
+<span id="cb31-5"><a href="testes.html#cb31-5" aria-hidden="true"></a><span class="co">#&gt; ● Call `use_test()` to initialize a basic test file and open it for editing.</span></span>
+<span id="cb31-6"><a href="testes.html#cb31-6" aria-hidden="true"></a></span>
+<span id="cb31-7"><a href="testes.html#cb31-7" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_test</span>(<span class="st">&quot;funcao_demo&quot;</span>)</span>
+<span id="cb31-8"><a href="testes.html#cb31-8" aria-hidden="true"></a><span class="co">#&gt; ✔ Increasing &#39;testthat&#39; version to &#39;&gt;= 2.1.0&#39; in DESCRIPTION</span></span>
+<span id="cb31-9"><a href="testes.html#cb31-9" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat/test-funcao_demo.R&#39;</span></span>
+<span id="cb31-10"><a href="testes.html#cb31-10" aria-hidden="true"></a><span class="co">#&gt; ● Modify &#39;tests/testthat/test-funcao_demo.R&#39;</span></span></code></pre></div>
 <p>Como é possível notar, o pacote <code>testthat</code> permite criar um arquivo de testes
 para <code>funcao_demo()</code> (neste caso <code>tests/testthat/test-funcao_demo.R</code>). Esse
 arquivo já vem com um teste padrão a título de demonstração, mas, depois de
@@ -234,19 +239,19 @@ test_that(&quot;funcao_demo funciona&quot;, {
 
 })</code></pre>
 <p>E o resultado da execução dos testes é o seguinte:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="testes.html#cb24-1" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">test</span>()</span>
-<span id="cb24-2"><a href="testes.html#cb24-2" aria-hidden="true"></a><span class="co">#&gt; Loading demo</span></span>
-<span id="cb24-3"><a href="testes.html#cb24-3" aria-hidden="true"></a><span class="co">#&gt; Testing demo</span></span>
-<span id="cb24-4"><a href="testes.html#cb24-4" aria-hidden="true"></a><span class="co">#&gt; ✔ |  OK F W S | Context</span></span>
-<span id="cb24-5"><a href="testes.html#cb24-5" aria-hidden="true"></a><span class="co">#&gt; ✔ |   4       | funcao_demo</span></span>
-<span id="cb24-6"><a href="testes.html#cb24-6" aria-hidden="true"></a><span class="co">#&gt; </span></span>
-<span id="cb24-7"><a href="testes.html#cb24-7" aria-hidden="true"></a><span class="co">#&gt; ══ Results ═════════════════════════════════════════════════════════════════════</span></span>
-<span id="cb24-8"><a href="testes.html#cb24-8" aria-hidden="true"></a><span class="co">#&gt; OK:       4</span></span>
-<span id="cb24-9"><a href="testes.html#cb24-9" aria-hidden="true"></a><span class="co">#&gt; Failed:   0</span></span>
-<span id="cb24-10"><a href="testes.html#cb24-10" aria-hidden="true"></a><span class="co">#&gt; Warnings: 0</span></span>
-<span id="cb24-11"><a href="testes.html#cb24-11" aria-hidden="true"></a><span class="co">#&gt; Skipped:  0</span></span>
-<span id="cb24-12"><a href="testes.html#cb24-12" aria-hidden="true"></a><span class="co">#&gt; </span></span>
-<span id="cb24-13"><a href="testes.html#cb24-13" aria-hidden="true"></a><span class="co">#&gt; Keep up the good work.</span></span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="testes.html#cb33-1" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">test</span>()</span>
+<span id="cb33-2"><a href="testes.html#cb33-2" aria-hidden="true"></a><span class="co">#&gt; Loading demo</span></span>
+<span id="cb33-3"><a href="testes.html#cb33-3" aria-hidden="true"></a><span class="co">#&gt; Testing demo</span></span>
+<span id="cb33-4"><a href="testes.html#cb33-4" aria-hidden="true"></a><span class="co">#&gt; ✔ |  OK F W S | Context</span></span>
+<span id="cb33-5"><a href="testes.html#cb33-5" aria-hidden="true"></a><span class="co">#&gt; ✔ |   4       | funcao_demo</span></span>
+<span id="cb33-6"><a href="testes.html#cb33-6" aria-hidden="true"></a><span class="co">#&gt; </span></span>
+<span id="cb33-7"><a href="testes.html#cb33-7" aria-hidden="true"></a><span class="co">#&gt; ══ Results ═════════════════════════════════════════════════════════════════════</span></span>
+<span id="cb33-8"><a href="testes.html#cb33-8" aria-hidden="true"></a><span class="co">#&gt; OK:       4</span></span>
+<span id="cb33-9"><a href="testes.html#cb33-9" aria-hidden="true"></a><span class="co">#&gt; Failed:   0</span></span>
+<span id="cb33-10"><a href="testes.html#cb33-10" aria-hidden="true"></a><span class="co">#&gt; Warnings: 0</span></span>
+<span id="cb33-11"><a href="testes.html#cb33-11" aria-hidden="true"></a><span class="co">#&gt; Skipped:  0</span></span>
+<span id="cb33-12"><a href="testes.html#cb33-12" aria-hidden="true"></a><span class="co">#&gt; </span></span>
+<span id="cb33-13"><a href="testes.html#cb33-13" aria-hidden="true"></a><span class="co">#&gt; Keep up the good work.</span></span></code></pre></div>
 <p>Para saber mais sobre como desenvolver testes eficazes, consulte a própria
 <a href="https://testthat.r-lib.org/">documentação</a> do <code>testthat</code>.</p>
 
@@ -298,6 +303,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

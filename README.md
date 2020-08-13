@@ -10,8 +10,8 @@ Um livro de programação em R para não-programadores.
 - [x] Git e Github
 - [ ] Renv
 - [x] Funções e dependências
-- [ ] Pipe
 - [x] Pacotes
+- [x] Pipe
 - [x] Data e data-raw
 - [x] Testes automatizados
 - [x] Versões e releases

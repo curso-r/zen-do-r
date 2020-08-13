@@ -164,15 +164,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>6.1</b> Documentação</a></li>
 <li class="chapter" data-level="6.2" data-path="pacotes.html"><a href="pacotes.html#imports"><i class="fa fa-check"></i><b>6.2</b> Imports</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>7</b> Data e data-raw</a>
+<li class="chapter" data-level="7" data-path="pipe.html"><a href="pipe.html"><i class="fa fa-check"></i><b>7</b> Pipe</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>7.1</b> Documentação</a></li>
+<li class="chapter" data-level="7.1" data-path="pipe.html"><a href="pipe.html#como-funciona"><i class="fa fa-check"></i><b>7.1</b> Como funciona</a></li>
+<li class="chapter" data-level="7.2" data-path="pipe.html"><a href="pipe.html#vantagens"><i class="fa fa-check"></i><b>7.2</b> Vantagens</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>8</b> Testes automatizados</a></li>
-<li class="chapter" data-level="9" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>9</b> Versões e releases</a>
+<li class="chapter" data-level="8" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>8</b> Data e data-raw</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="versoes-releases.html"><a href="versoes-releases.html#versionamento-semântico"><i class="fa fa-check"></i><b>9.1</b> Versionamento semântico</a></li>
-<li class="chapter" data-level="9.2" data-path="versoes-releases.html"><a href="versoes-releases.html#releases"><i class="fa fa-check"></i><b>9.2</b> Releases</a></li>
+<li class="chapter" data-level="8.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>8.1</b> Documentação</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>9</b> Testes automatizados</a></li>
+<li class="chapter" data-level="10" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>10</b> Versões e releases</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="versoes-releases.html"><a href="versoes-releases.html#versionamento-semântico"><i class="fa fa-check"></i><b>10.1</b> Versionamento semântico</a></li>
+<li class="chapter" data-level="10.2" data-path="versoes-releases.html"><a href="versoes-releases.html#releases"><i class="fa fa-check"></i><b>10.2</b> Releases</a></li>
 </ul></li>
 </ul>
 
@@ -349,6 +354,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

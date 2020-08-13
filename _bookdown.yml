@@ -11,6 +11,7 @@ rmd_files: [
   "git-github.Rmd",
   "funcoes-deps.Rmd",
   "pacotes.Rmd",
+  "pipe.Rmd",
   "data-data-raw.Rmd",
   "testes.Rmd",
   "versoes-releases.Rmd"

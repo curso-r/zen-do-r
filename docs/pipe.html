@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Pipe | Zen do R</title>
+  <meta name="description" content="Um livro de programação para não-programadores" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Pipe | Zen do R" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://curso-r.github.io/zen-do-r/" />
+  
+  <meta property="og:description" content="Um livro de programação para não-programadores" />
+  <meta name="github-repo" content="curso-r/zen-do-r" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Pipe | Zen do R" />
+  
+  <meta name="twitter:description" content="Um livro de programação para não-programadores" />
+  
+
+<meta name="author" content="Caio Lente + Curso-R" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="pacotes.html"/>
+<link rel="next" href="data-data-raw.html"/>
+<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="zen-do-r.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><center><a href="./index.html"><img src = "https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width = 60%></a></center></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Respire fundo</a></li>
+<li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#sobre-o-livro"><i class="fa fa-check"></i><b>1.1</b> Sobre o livro</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introducao.html"><a href="introducao.html#o-que-você-vai-aprender"><i class="fa fa-check"></i><b>1.1.1</b> O que você vai aprender</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introducao.html"><a href="introducao.html#o-que-você-não-vai-aprender"><i class="fa fa-check"></i><b>1.1.2</b> O que você não vai aprender</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introducao.html"><a href="introducao.html#pré-requisitos"><i class="fa fa-check"></i><b>1.2</b> Pré-requisitos</a></li>
+<li class="chapter" data-level="1.3" data-path="introducao.html"><a href="introducao.html#principais-referências"><i class="fa fa-check"></i><b>1.3</b> Principais referências</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html"><i class="fa fa-check"></i><b>2</b> .RData e .Rhistory</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#por-que-desistir"><i class="fa fa-check"></i><b>2.1</b> Por que desistir</a></li>
+<li class="chapter" data-level="2.2" data-path="rdata-rhistory.html"><a href="rdata-rhistory.html#como-desativar"><i class="fa fa-check"></i><b>2.2</b> Como desativar</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="rproj-dir.html"><a href="rproj-dir.html"><i class="fa fa-check"></i><b>3</b> Rproj e diretórios</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="rproj-dir.html"><a href="rproj-dir.html#diretório-de-trabalho"><i class="fa fa-check"></i><b>3.1</b> Diretório de trabalho</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="git-github.html"><a href="git-github.html"><i class="fa fa-check"></i><b>4</b> Git e GitHub</a></li>
+<li class="chapter" data-level="5" data-path="funcoes-deps.html"><a href="funcoes-deps.html"><i class="fa fa-check"></i><b>5</b> Funções e dependências</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="funcoes-deps.html"><a href="funcoes-deps.html#quatro-pontos"><i class="fa fa-check"></i><b>5.1</b> Quatro-pontos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="pacotes.html"><a href="pacotes.html"><i class="fa fa-check"></i><b>6</b> Pacotes</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>6.1</b> Documentação</a></li>
+<li class="chapter" data-level="6.2" data-path="pacotes.html"><a href="pacotes.html#imports"><i class="fa fa-check"></i><b>6.2</b> Imports</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="pipe.html"><a href="pipe.html"><i class="fa fa-check"></i><b>7</b> Pipe</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="pipe.html"><a href="pipe.html#como-funciona"><i class="fa fa-check"></i><b>7.1</b> Como funciona</a></li>
+<li class="chapter" data-level="7.2" data-path="pipe.html"><a href="pipe.html#vantagens"><i class="fa fa-check"></i><b>7.2</b> Vantagens</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>8</b> Data e data-raw</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>8.1</b> Documentação</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>9</b> Testes automatizados</a></li>
+<li class="chapter" data-level="10" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>10</b> Versões e releases</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="versoes-releases.html"><a href="versoes-releases.html#versionamento-semântico"><i class="fa fa-check"></i><b>10.1</b> Versionamento semântico</a></li>
+<li class="chapter" data-level="10.2" data-path="versoes-releases.html"><a href="versoes-releases.html#releases"><i class="fa fa-check"></i><b>10.2</b> Releases</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Zen do R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pipe" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Pipe</h1>
+<p>Dificilmente um programador de R passa muito tempo sem ouvir falar do operador
+pipe (<code>%&gt;%</code>). Saber o que ele faz e significa, no entando, é algo mais complexo.
+Apesar de não passar de uma função como outra qualquer, os efeitos que ele pode
+ter no visual e na compreensibilidade de um código são imensos.</p>
+<p>Entender o pipe em profundidade pode levar muito tempo, mas o básico já é
+suficiente para a maioria das pessoas. É importante ter pelo menos uma ideia do
+que ele faz caso você acabe se deparando com um código que o utiliza e, quem
+sabe um dia, usá-lo nos seus próprios programas.</p>
+<p>No fundo, o conceito de pipe existe pelo menos desde os anos 1970. De acordo com
+seu criador, Douglas McIlroy, o operador foi concebido em “uma noite febril” e
+tinha o objetivo de simplificar comandos cujos resultados deveriam ser passados
+para outros comandos.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="pipe.html#cb1-1" aria-hidden="true"></a><span class="fu">ls</span> <span class="kw">|</span> <span class="fu">cat</span></span>
+<span id="cb1-2"><a href="pipe.html#cb1-2" aria-hidden="true"></a><span class="co"># Desktop</span></span>
+<span id="cb1-3"><a href="pipe.html#cb1-3" aria-hidden="true"></a><span class="co"># Documents</span></span>
+<span id="cb1-4"><a href="pipe.html#cb1-4" aria-hidden="true"></a><span class="co"># Downloads</span></span>
+<span id="cb1-5"><a href="pipe.html#cb1-5" aria-hidden="true"></a><span class="co"># Music</span></span>
+<span id="cb1-6"><a href="pipe.html#cb1-6" aria-hidden="true"></a><span class="co"># Pictures</span></span>
+<span id="cb1-7"><a href="pipe.html#cb1-7" aria-hidden="true"></a><span class="co"># Public</span></span>
+<span id="cb1-8"><a href="pipe.html#cb1-8" aria-hidden="true"></a><span class="co"># Templates</span></span>
+<span id="cb1-9"><a href="pipe.html#cb1-9" aria-hidden="true"></a><span class="co"># Videos</span></span></code></pre></div>
+<p>Com esse exemplo já é possível ter uma ideia de onde vem o seu nome: <em>pipe</em> em
+inglês significa “cano”, referindo-se ao transporte das saídas dos comandos. Em
+portugês o termo é traduzido preferencialmente como “encadeamento”, mas no
+dia-a-dia é mais comum usar o termo em inglês.</p>
+<p>A partir daí o pipe tem aparecido nas mais diversas aplicações, desde HTML até o
+próprio R. Ele pode aparecer em diferentes formas, mas o seu objetivo é sempre o
+mesmo: canalizar resultados de um comando para o outro.</p>
+<div id="como-funciona" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Como funciona</h2>
+<p>Em R, o pipe tem uma aparência bastante particular (<code>%&gt;%</code>), mas no fundo ele não
+passa de uma função infixa, ou seja, uma função que aparece entre os seus
+argumentos (como <code>a + b</code> ou <code>a %in% b</code>). Na verdade é por isso mesmo que ele tem
+porcentagens antes e depois: no R uma função infixa só pode ser declarada assim
+(vide o próprio <code>%in%()</code>).</p>
+<p>Se você estiver no RStudio, como sugerido anteriormente, para usar o pipe basta
+carregar a biblioteca <code>magrittr</code> e utilizar o atalho <strong>Ctrl + Shift + M</strong>; essas
+inocentes teclas irão fazê-lo aparecer magicamente diante dos seus olhos. Abaixo
+é possível notar como o pipe não passa de uma função como outra qualquer (ignore
+os acentos graves):</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="pipe.html#cb2-1" aria-hidden="true"></a><span class="kw">library</span>(magrittr)</span>
+<span id="cb2-2"><a href="pipe.html#cb2-2" aria-hidden="true"></a></span>
+<span id="cb2-3"><a href="pipe.html#cb2-3" aria-hidden="true"></a><span class="st">`</span><span class="dt">%&gt;%</span><span class="st">`</span>(<span class="st">&quot;oi&quot;</span>, print)</span>
+<span id="cb2-4"><a href="pipe.html#cb2-4" aria-hidden="true"></a><span class="co">#&gt; [1] &quot;oi&quot;</span></span></code></pre></div>
+<p>Perceba que, no código acima, o primeiro argumento do pipe (<code>"oi"</code>) virou a
+entrada do seu segundo argumento (a função <code>print()</code>). Abaixo o pipe está na sua
+forma mais tradicional entre seus dois argumentos:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="pipe.html#cb3-1" aria-hidden="true"></a><span class="st">&quot;oi&quot;</span> <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">print</span>()</span>
+<span id="cb3-2"><a href="pipe.html#cb3-2" aria-hidden="true"></a><span class="co">#&gt; [1] &quot;oi&quot;</span></span></code></pre></div>
+<p>Observe agora o comando abaixo. Queremos primeiro somar 3 a uma sequência de
+números e depois dividí-los por 2:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="pipe.html#cb4-1" aria-hidden="true"></a>mais_tres &lt;-<span class="st"> </span><span class="cf">function</span>(x) { x <span class="op">+</span><span class="st"> </span><span class="dv">3</span> }</span>
+<span id="cb4-2"><a href="pipe.html#cb4-2" aria-hidden="true"></a>sobre_dois &lt;-<span class="st"> </span><span class="cf">function</span>(x) { x <span class="op">/</span><span class="st"> </span><span class="dv">2</span> }</span>
+<span id="cb4-3"><a href="pipe.html#cb4-3" aria-hidden="true"></a></span>
+<span id="cb4-4"><a href="pipe.html#cb4-4" aria-hidden="true"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span></span>
+<span id="cb4-5"><a href="pipe.html#cb4-5" aria-hidden="true"></a></span>
+<span id="cb4-6"><a href="pipe.html#cb4-6" aria-hidden="true"></a><span class="kw">sobre_dois</span>(<span class="kw">mais_tres</span>(x))</span>
+<span id="cb4-7"><a href="pipe.html#cb4-7" aria-hidden="true"></a><span class="co">#&gt; [1] 2.0 2.5 3.0</span></span></code></pre></div>
+<p>Perceba como fica difícil de entender o que acontece primeiro. A linha relevante
+começa com a divisão por 2, depois vem a soma com 3 e, ao fim, os valores de
+entrada. É exatamente o oposto da nossa ordem de leitura da esquerda para a
+direita.</p>
+<p>Nesse tipo de situação é mais legível usar a notação de <a href="https://pt.wikipedia.org/wiki/Composi%C3%A7%C3%A3o_de_fun%C3%A7%C3%B5es">composição de
+funções</a>,
+com as funções sendo exibidas na ordem em que serão aplicadas: <span class="math inline">\(f \circ g\)</span>. Não
+é necessário conhecer essa notação, basta imaginar quão mais legível ficaria
+aquele comando se houvesse algum recurso que passasse o que o resultado do que
+está à sua esquerda para a função que está à sua direita. Esse é o pipe.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="pipe.html#cb5-1" aria-hidden="true"></a>x <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mais_tres</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sobre_dois</span>()</span>
+<span id="cb5-2"><a href="pipe.html#cb5-2" aria-hidden="true"></a><span class="co">#&gt; [1] 2.0 2.5 3.0</span></span></code></pre></div>
+<p>No comando acima fica evidente que pegamos o objeto <code>x</code>, somamos 3 e dividimos
+por 2.</p>
+<p>Perceba que a entrada de um pipe (esquerda) sempre é passada como o <em>primeiro</em>
+agumento da função à sua direita. Isso não impede que as funções utilizadas em
+uma sequência de pipes tenham outros argumentos.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="pipe.html#cb6-1" aria-hidden="true"></a>mais_n &lt;-<span class="st"> </span><span class="cf">function</span>(x, n) { x <span class="op">+</span><span class="st"> </span>n }</span>
+<span id="cb6-2"><a href="pipe.html#cb6-2" aria-hidden="true"></a></span>
+<span id="cb6-3"><a href="pipe.html#cb6-3" aria-hidden="true"></a>x <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mais_n</span>(<span class="dv">4</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sobre_dois</span>()</span>
+<span id="cb6-4"><a href="pipe.html#cb6-4" aria-hidden="true"></a><span class="co">#&gt; [1] 2.5 3.0 3.5</span></span></code></pre></div>
+</div>
+<div id="vantagens" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Vantagens</h2>
+<p>A grande vantagem do pipe não é só enxergar quais funções são aplicadas
+primeiro, mas sim nos ajudar a programar pipelines (“encanamento” em inglês) de
+tratamentos de dados.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="pipe.html#cb7-1" aria-hidden="true"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb7-2"><a href="pipe.html#cb7-2" aria-hidden="true"></a></span>
+<span id="cb7-3"><a href="pipe.html#cb7-3" aria-hidden="true"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb7-4"><a href="pipe.html#cb7-4" aria-hidden="true"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">bmi =</span> mass<span class="op">/</span>((height<span class="op">/</span><span class="dv">100</span>)<span class="op">^</span><span class="dv">2</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb7-5"><a href="pipe.html#cb7-5" aria-hidden="true"></a><span class="st">  </span><span class="kw">select</span>(name, bmi, species) <span class="op">%&gt;%</span></span>
+<span id="cb7-6"><a href="pipe.html#cb7-6" aria-hidden="true"></a><span class="st">  </span><span class="kw">group_by</span>(species) <span class="op">%&gt;%</span></span>
+<span id="cb7-7"><a href="pipe.html#cb7-7" aria-hidden="true"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">bmi =</span> <span class="kw">mean</span>(bmi))</span>
+<span id="cb7-8"><a href="pipe.html#cb7-8" aria-hidden="true"></a><span class="co">#&gt; # A tibble: 38 x 2</span></span>
+<span id="cb7-9"><a href="pipe.html#cb7-9" aria-hidden="true"></a><span class="co">#&gt;    species     bmi</span></span>
+<span id="cb7-10"><a href="pipe.html#cb7-10" aria-hidden="true"></a><span class="co">#&gt;    &lt;chr&gt;     &lt;dbl&gt;</span></span>
+<span id="cb7-11"><a href="pipe.html#cb7-11" aria-hidden="true"></a><span class="co">#&gt;  1 Aleena     24.0</span></span>
+<span id="cb7-12"><a href="pipe.html#cb7-12" aria-hidden="true"></a><span class="co">#&gt;  2 Besalisk   26.0</span></span>
+<span id="cb7-13"><a href="pipe.html#cb7-13" aria-hidden="true"></a><span class="co">#&gt;  3 Cerean     20.9</span></span>
+<span id="cb7-14"><a href="pipe.html#cb7-14" aria-hidden="true"></a><span class="co">#&gt;  4 Chagrian   NA  </span></span>
+<span id="cb7-15"><a href="pipe.html#cb7-15" aria-hidden="true"></a><span class="co">#&gt;  5 Clawdite   19.5</span></span>
+<span id="cb7-16"><a href="pipe.html#cb7-16" aria-hidden="true"></a><span class="co">#&gt;  6 Droid      NA  </span></span>
+<span id="cb7-17"><a href="pipe.html#cb7-17" aria-hidden="true"></a><span class="co">#&gt;  7 Dug        31.9</span></span>
+<span id="cb7-18"><a href="pipe.html#cb7-18" aria-hidden="true"></a><span class="co">#&gt;  8 Ewok       25.8</span></span>
+<span id="cb7-19"><a href="pipe.html#cb7-19" aria-hidden="true"></a><span class="co">#&gt;  9 Geonosian  23.9</span></span>
+<span id="cb7-20"><a href="pipe.html#cb7-20" aria-hidden="true"></a><span class="co">#&gt; 10 Gungan     NA  </span></span>
+<span id="cb7-21"><a href="pipe.html#cb7-21" aria-hidden="true"></a><span class="co">#&gt; # ... with 28 more rows</span></span></code></pre></div>
+<p>Acima fica extremamente claro o que está acontecendo em cada passo da pipeline.
+Partindo da base <code>starwars</code>, primeiro transformamos, depois selecionamos,
+agrupamos e resumimos: em cada linha temos uma operação e elas são executadas
+em sequência.</p>
+<p>Isso não melhora só a legibilidade do código, mas também a sua
+<em>debugabilidade</em><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Se tivermos encontrado um bug na pipeline, basta executar o
+encadeamento linha a linha até que encontremos o comando problemático. Com o
+pipe é possível programar de forma mais compacta, legível e correta.</p>
+<p>Todos os exemplos acima envolvem passar a entrada do pipe como o primeiro
+argumento da função à direita, mas esta não é uma obrigatoriedade. Com o
+operador <em>placeholder</em> <code>.</code> podemos indicar exatamente onde deve ser colocado o
+valor que chega no pipe:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="pipe.html#cb8-1" aria-hidden="true"></a>y_menos_x &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) { y <span class="op">-</span><span class="st"> </span>x }</span>
+<span id="cb8-2"><a href="pipe.html#cb8-2" aria-hidden="true"></a></span>
+<span id="cb8-3"><a href="pipe.html#cb8-3" aria-hidden="true"></a>x <span class="op">%&gt;%</span></span>
+<span id="cb8-4"><a href="pipe.html#cb8-4" aria-hidden="true"></a><span class="st">  </span><span class="kw">mais_tres</span>() <span class="op">%&gt;%</span></span>
+<span id="cb8-5"><a href="pipe.html#cb8-5" aria-hidden="true"></a><span class="st">  </span>purrr<span class="op">::</span><span class="kw">map2</span>(<span class="dv">4</span><span class="op">:</span><span class="dv">6</span>, ., y_menos_x)</span>
+<span id="cb8-6"><a href="pipe.html#cb8-6" aria-hidden="true"></a><span class="co"># [[1]]</span></span>
+<span id="cb8-7"><a href="pipe.html#cb8-7" aria-hidden="true"></a><span class="co"># [1] 0</span></span>
+<span id="cb8-8"><a href="pipe.html#cb8-8" aria-hidden="true"></a><span class="co"># </span></span>
+<span id="cb8-9"><a href="pipe.html#cb8-9" aria-hidden="true"></a><span class="co"># [[2]]</span></span>
+<span id="cb8-10"><a href="pipe.html#cb8-10" aria-hidden="true"></a><span class="co"># [1] 0</span></span>
+<span id="cb8-11"><a href="pipe.html#cb8-11" aria-hidden="true"></a><span class="co"># </span></span>
+<span id="cb8-12"><a href="pipe.html#cb8-12" aria-hidden="true"></a><span class="co"># [[3]]</span></span>
+<span id="cb8-13"><a href="pipe.html#cb8-13" aria-hidden="true"></a><span class="co"># [1] 0</span></span></code></pre></div>
+<p>Outra funcionalidade interessante e pouco conhecida do pipe são as funções
+unárias. Se você estiver familiarizado com o <a href="https://lente.dev/posts/magica-purrr/">pacote
+<code>purrr</code></a>, esse é um jeito bastante
+simples de criar funções descartáveis.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="pipe.html#cb9-1" aria-hidden="true"></a>m3_s2 &lt;-<span class="st"> </span>. <span class="op">%&gt;%</span></span>
+<span id="cb9-2"><a href="pipe.html#cb9-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">mais_tres</span>() <span class="op">%&gt;%</span></span>
+<span id="cb9-3"><a href="pipe.html#cb9-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">sobre_dois</span>()</span>
+<span id="cb9-4"><a href="pipe.html#cb9-4" aria-hidden="true"></a></span>
+<span id="cb9-5"><a href="pipe.html#cb9-5" aria-hidden="true"></a><span class="kw">m3_s2</span>(x)</span>
+<span id="cb9-6"><a href="pipe.html#cb9-6" aria-hidden="true"></a><span class="co">#&gt; [1] 2.0 2.5 3.0</span></span></code></pre></div>
+<p>Usando novamente o <code>.</code> definimos uma função que recebe apenas um argumento com
+uma sequência de aplicações de outras funções. Mas não se preocupe se as funções
+unárias tiverem parecido algo de outro mundo porque é realmente muito raro
+encontrá-las nos código alheios.</p>
+<p>Por fim, caso você queira utilizar o pipe dentro do seu próprio pacote, basta
+executar uma simples função do <code>usethis</code>: <code>use_pipe()</code>. Ela adiciona o
+<code>magrittr</code> como uma dependência do seu pacote e faz com que o pipe seja
+acessível dentro do mesmo, o que realmente facilita o trabalho do desenvolvedor
+que não quer entender o significado do código a seguir:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="pipe.html#cb10-1" aria-hidden="true"></a><span class="co">#&#39; Pipe operator</span></span>
+<span id="cb10-2"><a href="pipe.html#cb10-2" aria-hidden="true"></a><span class="co">#&#39;</span></span>
+<span id="cb10-3"><a href="pipe.html#cb10-3" aria-hidden="true"></a><span class="co">#&#39; See \code{magrittr::\link[magrittr:pipe]{\%&gt;\%}} for details.</span></span>
+<span id="cb10-4"><a href="pipe.html#cb10-4" aria-hidden="true"></a><span class="co">#&#39;</span></span>
+<span id="cb10-5"><a href="pipe.html#cb10-5" aria-hidden="true"></a><span class="co">#&#39; @name %&gt;%</span></span>
+<span id="cb10-6"><a href="pipe.html#cb10-6" aria-hidden="true"></a><span class="co">#&#39; @rdname pipe</span></span>
+<span id="cb10-7"><a href="pipe.html#cb10-7" aria-hidden="true"></a><span class="co">#&#39; @keywords internal</span></span>
+<span id="cb10-8"><a href="pipe.html#cb10-8" aria-hidden="true"></a><span class="co">#&#39; @export</span></span>
+<span id="cb10-9"><a href="pipe.html#cb10-9" aria-hidden="true"></a><span class="co">#&#39; @importFrom magrittr %&gt;%</span></span>
+<span id="cb10-10"><a href="pipe.html#cb10-10" aria-hidden="true"></a><span class="co">#&#39; @usage lhs \%&gt;\% rhs</span></span>
+<span id="cb10-11"><a href="pipe.html#cb10-11" aria-hidden="true"></a><span class="ot">NULL</span></span></code></pre></div>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Ainda não encontrei um termo melhor em portugês para esse
+conceito<a href="pipe.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="pacotes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-data-raw.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/curso-r/zen-do-r/edit/master/pipe.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
