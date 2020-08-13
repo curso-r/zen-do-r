@@ -1,4 +1,4 @@
-# Versões e releases {#versoesReleases}
+# Versões e releases {#versoes-releases}
 
 A maior parte dos softwares que utilizamos no dia-a-dia possuem versões, até
 mesmo aqueles que não costumamos associar com esse tipo de prática. Sistemas
