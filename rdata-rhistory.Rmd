@@ -3,9 +3,10 @@
 O fluxo ideal de análise de dados começa na escolha da ferramenta. Por ser uma
 linguagem especializada em estatística, o R é a primeira escolha de muitos
 usuários. Normalmente optar por programar em R também implica na escolha de uma
-IDE (*Integrated Development Environment*) que, em 90%^[Não tenho nenhuma estatística confiável sobre esse número, mas sei que ele
-não é 100% porque conheço pelo menos uma pessoa que programa R no neovim.] dos casos, será o
-RStudio.
+IDE (*Integrated Development Environment*) que, em 90%^[Não tenho nenhuma
+estatística confiável sobre esse número, mas sei que ele não é 100% porque
+conheço pelo menos uma pessoa que programa R no neovim e eu passei a usar
+emacs.] dos casos, será o RStudio.
 
 O R, em combinação com o RStudio, possui um conjunto de funcionalidades cuja
 intenção é ajudar no processo de desenvolvimento. Entretanto, isso acaba

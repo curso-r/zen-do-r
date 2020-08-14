@@ -1,7 +1,7 @@
 # Pipe {#pipe}
 
 Dificilmente um programador de R passa muito tempo sem ouvir falar do operador
-pipe (`%>%`). Saber o que ele faz e significa, no entando, é algo mais complexo.
+pipe (`%>%`). Saber o que ele faz e significa, no entanto, é algo mais complexo.
 Apesar de não passar de uma função como outra qualquer, os efeitos que ele pode
 ter no visual e na compreensibilidade de um código são imensos.
 
@@ -29,7 +29,7 @@ ls | cat
 
 Com esse exemplo já é possível ter uma ideia de onde vem o seu nome: _pipe_ em
 inglês significa "cano", referindo-se ao transporte das saídas dos comandos. Em
-portugês o termo é traduzido preferencialmente como "encadeamento", mas no
+português o termo é traduzido preferencialmente como "encadeamento", mas no
 dia-a-dia é mais comum usar o termo em inglês.
 
 A partir daí o pipe tem aparecido nas mais diversas aplicações, desde HTML até o
@@ -100,7 +100,7 @@ No comando acima fica evidente que pegamos o objeto `x`, somamos 3 e dividimos
 por 2.
 
 Perceba que a entrada de um pipe (esquerda) sempre é passada como o _primeiro_
-agumento da função à sua direita. Isso não impede que as funções utilizadas em
+argumento da função à sua direita. Isso não impede que as funções utilizadas em
 uma sequência de pipes tenham outros argumentos.
 
 ```r
@@ -146,7 +146,7 @@ agrupamos e resumimos: em cada linha temos uma operação e elas são executadas
 em sequência.
 
 Isso não melhora só a legibilidade do código, mas também a sua
-_debugabilidade_^[Ainda não encontrei um termo melhor em portugês para esse
+_debugabilidade_^[Ainda não encontrei um termo melhor em português para esse
 conceito]. Se tivermos encontrado um bug na pipeline, basta executar o
 encadeamento linha a linha até que encontremos o comando problemático. Com o
 pipe é possível programar de forma mais compacta, legível e correta.

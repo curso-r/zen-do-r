@@ -47,7 +47,7 @@ Participaram da construção deste livro:
 - [William Amorim](https://twitter.com/Williamorim89)
 
 Seja bem-vinda(o) também ao #rstats! Compartilhe seu desenvolvimento. Poste seus
-avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e
+avanços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e
 participe dos grupos e comunidades de programadores.
 
 - Comunidade RLadies: https://benubah.github.io/r-community-explorer/rladies.html

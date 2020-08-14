@@ -31,27 +31,10 @@ Parece muito estranho que essas duas coisas tenham alguma relação, mas a vida
 
 ### O que você vai aprender
 
-Essencialmente você vai aprender a usar dois pacotes e como trabalhar com quatro
-aspectos do processo de análise de dados: ambiente, versões, dados e arquivos.
-Não é necessário ler o livro em ordem porque cada uma dessas quatro sessões são
-completamente independentes.
-
-Os assuntos abordados são, em ordem:
-
-- .RData e .Rhistory: como fazer com que o RStudio não guarde nada que você fez
-para que você não fique mal acostumado;
-- Rproj e diretórios: como usar o conceito de "projeto" para organizar seu
-trabalho e não se perder nos diretórios;
-- Git e Github: como usar ferramentas de controle de versão para que você
-não corra o risco de perder seu progresso;
-- Packrat: como usar o pacote `packrat` para manter suas dependências em ordem
-e atualizadas;
-- Funções e dependências: como organizar arquivos, funções e dependências para
-maximizar a reprodutibilidade do código;
-- Pacotes: como e por que transformar um projeto em um pacote, como documentá-lo
-e como criar testes unitários;
-- Data e data-raw: como organizar seus dados e scripts de tratamento em pastas
-com objetivos claros e distintos.
+Essencialmente você vai aprender a usar alguns pacotes e como trabalhar com
+quatro aspectos do processo de análise de dados: ambiente, versões, dados e
+arquivos. Não é necessário ler o livro em ordem porque cada uma dessas quatro
+sessões são completamente independentes.
 
 Sinta-se livre para pular todos os tópicos sobre os quais você sentir que já
 sabe o suficiente. Mas não se iluda, porque nenhum dos tópicos é inútil ou pode
@@ -62,14 +45,15 @@ mais avançados.
 ### O que você não vai aprender
 
 Primeiramente, você não vai aprender a programar R. Esse assunto é extremamente
-extenso e já existem livros o suficiente para ajudar com isso (vide [o livro da Curso-R](https://livro.curso-r.com/) ou
-[R for Data Science](https://r4ds.had.co.nz/)), então não vou me preocupar
-com os detalhes do código ou com qual guia de estilo seguir.
+extenso e já existem livros o suficiente para ajudar com isso (vide [o livro da
+Curso-R](https://livro.curso-r.com/) ou [R for Data
+Science](https://r4ds.had.co.nz/)), então não vou me preocupar com os detalhes
+do código ou com qual guia de estilo seguir.
 
-Se você gosta de fazer códigos longos e velozes usando o `base-r`, se você
-ama as pipelines do `tidyverse`, se você paraleliza todos os seus loops...
-Nada disso importa aqui; não vou dizer qual é o melhor jeito de programar^[E também não tenho paciência para entrar em mais nenhum debate "base vs.
-tidyverse"].
+Se você gosta de fazer códigos longos e velozes usando o `base-r`, se você ama
+as pipelines do `tidyverse`, se você paraleliza todos os seus loops... Nada
+disso importa aqui; não vou dizer qual é o melhor jeito de programar^[E também
+não tenho paciência para entrar em mais nenhum debate "base vs. tidyverse"].
 Aqui você vai conhecer somente as melhores ferramentas para **organizar o seu
 fluxo de programação**.
 
@@ -94,7 +78,7 @@ seguir:
 
 ```{r, eval=FALSE, echo=TRUE}
 # Conteúdo principal do livro
-install.packages(c("usethis", "packrat"))
+install.packages(c("usethis", "renv", "tidyverse"))
 
 # Se você quiser reproduzir os exemplos
 install.packages("devtools")

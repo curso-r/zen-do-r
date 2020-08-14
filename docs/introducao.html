@@ -225,27 +225,10 @@ Parece muito estranho que essas duas coisas tenham alguma relação, mas a vida
 é uma boa metáfora para muitos processos que encontramos no dia-a-dia!</p>
 <div id="o-que-você-vai-aprender" class="section level3" number="1.1.1">
 <h3><span class="header-section-number">1.1.1</span> O que você vai aprender</h3>
-<p>Essencialmente você vai aprender a usar dois pacotes e como trabalhar com quatro
-aspectos do processo de análise de dados: ambiente, versões, dados e arquivos.
-Não é necessário ler o livro em ordem porque cada uma dessas quatro sessões são
-completamente independentes.</p>
-<p>Os assuntos abordados são, em ordem:</p>
-<ul>
-<li>.RData e .Rhistory: como fazer com que o RStudio não guarde nada que você fez
-para que você não fique mal acostumado;</li>
-<li>Rproj e diretórios: como usar o conceito de “projeto” para organizar seu
-trabalho e não se perder nos diretórios;</li>
-<li>Git e Github: como usar ferramentas de controle de versão para que você
-não corra o risco de perder seu progresso;</li>
-<li>Packrat: como usar o pacote <code>packrat</code> para manter suas dependências em ordem
-e atualizadas;</li>
-<li>Funções e dependências: como organizar arquivos, funções e dependências para
-maximizar a reprodutibilidade do código;</li>
-<li>Pacotes: como e por que transformar um projeto em um pacote, como documentá-lo
-e como criar testes unitários;</li>
-<li>Data e data-raw: como organizar seus dados e scripts de tratamento em pastas
-com objetivos claros e distintos.</li>
-</ul>
+<p>Essencialmente você vai aprender a usar alguns pacotes e como trabalhar com
+quatro aspectos do processo de análise de dados: ambiente, versões, dados e
+arquivos. Não é necessário ler o livro em ordem porque cada uma dessas quatro
+sessões são completamente independentes.</p>
 <p>Sinta-se livre para pular todos os tópicos sobre os quais você sentir que já
 sabe o suficiente. Mas não se iluda, porque nenhum dos tópicos é inútil ou pode
 ser simplesmente ignorado; quanto maior for um projeto (seja uma tese de
@@ -255,12 +238,13 @@ mais avançados.</p>
 <div id="o-que-você-não-vai-aprender" class="section level3" number="1.1.2">
 <h3><span class="header-section-number">1.1.2</span> O que você não vai aprender</h3>
 <p>Primeiramente, você não vai aprender a programar R. Esse assunto é extremamente
-extenso e já existem livros o suficiente para ajudar com isso (vide <a href="https://livro.curso-r.com/">o livro da Curso-R</a> ou
-<a href="https://r4ds.had.co.nz/">R for Data Science</a>), então não vou me preocupar
-com os detalhes do código ou com qual guia de estilo seguir.</p>
-<p>Se você gosta de fazer códigos longos e velozes usando o <code>base-r</code>, se você
-ama as pipelines do <code>tidyverse</code>, se você paraleliza todos os seus loops…
-Nada disso importa aqui; não vou dizer qual é o melhor jeito de programar<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.
+extenso e já existem livros o suficiente para ajudar com isso (vide <a href="https://livro.curso-r.com/">o livro da
+Curso-R</a> ou <a href="https://r4ds.had.co.nz/">R for Data
+Science</a>), então não vou me preocupar com os detalhes
+do código ou com qual guia de estilo seguir.</p>
+<p>Se você gosta de fazer códigos longos e velozes usando o <code>base-r</code>, se você ama
+as pipelines do <code>tidyverse</code>, se você paraleliza todos os seus loops… Nada
+disso importa aqui; não vou dizer qual é o melhor jeito de programar<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.
 Aqui você vai conhecer somente as melhores ferramentas para <strong>organizar o seu
 fluxo de programação</strong>.</p>
 <p>Apesar de terem nomes parecidos, <em>O Zen do R</em> e <em>O Zen do Python</em> são diferentes
@@ -282,7 +266,7 @@ talvez valha à pena
 no tocante ao R, você precisará ter instalado pelo menos os três pacotes a
 seguir:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introducao.html#cb1-1" aria-hidden="true"></a><span class="co"># Conteúdo principal do livro</span></span>
-<span id="cb1-2"><a href="introducao.html#cb1-2" aria-hidden="true"></a><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;usethis&quot;</span>, <span class="st">&quot;packrat&quot;</span>))</span>
+<span id="cb1-2"><a href="introducao.html#cb1-2" aria-hidden="true"></a><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;usethis&quot;</span>, <span class="st">&quot;renv&quot;</span>, <span class="st">&quot;tidyverse&quot;</span>))</span>
 <span id="cb1-3"><a href="introducao.html#cb1-3" aria-hidden="true"></a></span>
 <span id="cb1-4"><a href="introducao.html#cb1-4" aria-hidden="true"></a><span class="co"># Se você quiser reproduzir os exemplos</span></span>
 <span id="cb1-5"><a href="introducao.html#cb1-5" aria-hidden="true"></a><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span></code></pre></div>
@@ -307,8 +291,8 @@ citadas o tempo todo e portanto acabarão ficando aqui:</p>
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>E também não tenho paciência para entrar em mais nenhum debate “base vs.
-tidyverse”<a href="introducao.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>E também
+não tenho paciência para entrar em mais nenhum debate “base vs. tidyverse”<a href="introducao.html#fnref1" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

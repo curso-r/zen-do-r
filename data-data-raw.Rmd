@@ -75,7 +75,7 @@ usethis::use_data(dados)
 #> ✔ Saving 'dados' to 'data/dados.rda'
 ```
 
-Neste caso o arquivo Excel foi criado de dentro do proṕrio R com o comando
+Neste caso o arquivo Excel foi criado de dentro do próprio R com o comando
 `writexl::write_xlsx(tibble::rownames_to_column(mtcars, "model"), "data-raw/dados.xlsx")`,
 mas isso é só um exemplo ilustrativo. O importante é saber o que acontece quando
 a função `use_data()` é executada para um objeto do ambiente global, ou seja,

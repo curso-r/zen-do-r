@@ -195,7 +195,7 @@ Como dito anteriormente, um passo importante na criação de um pacote é a
 declaração de suas dependências. Se você tiver seguido com cuidado a sugestão de
 já começar a escrever o pacote declarando todas as importações explicitamente
 (ou seja, com `pacote::funcao()`), isso não será um problema, pois o
-`devtools::check()` já será capaz de apontar extamanete quais dependências ainda
+`devtools::check()` já será capaz de apontar exatamente quais dependências ainda
 precisam ser registradas.
 
 Suponha que um pacote tem exatamente duas dependências: o `dplyr` e o `kuber`
@@ -223,4 +223,4 @@ Remotes:
 
 Note que o `kuber` já é importado com um link remoto para o seu repositório no
 GitHub e um marcador da versão atualmente instalada na sua máquina. Para saber
-mais sobre versões, consulte o Capítulo \@ref(versoesReleases).
+mais sobre versões, consulte o Capítulo \@ref(versoes-releases).

@@ -212,16 +212,16 @@ daquela função (prática conhecida como Desenvolvimento Orientado a Testes).</
 <p>Para criar um conjunto de testes é necessário primeiro criar o ambiente para tal
 dentro do pacote através do pacote <code>testthat</code>. Depois disso, basta criar
 conjuntos individuais de testes para cada função.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="testes.html#cb31-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_testthat</span>()</span>
-<span id="cb31-2"><a href="testes.html#cb31-2" aria-hidden="true"></a><span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span></span>
-<span id="cb31-3"><a href="testes.html#cb31-3" aria-hidden="true"></a><span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span></span>
-<span id="cb31-4"><a href="testes.html#cb31-4" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span></span>
-<span id="cb31-5"><a href="testes.html#cb31-5" aria-hidden="true"></a><span class="co">#&gt; ● Call `use_test()` to initialize a basic test file and open it for editing.</span></span>
-<span id="cb31-6"><a href="testes.html#cb31-6" aria-hidden="true"></a></span>
-<span id="cb31-7"><a href="testes.html#cb31-7" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_test</span>(<span class="st">&quot;funcao_demo&quot;</span>)</span>
-<span id="cb31-8"><a href="testes.html#cb31-8" aria-hidden="true"></a><span class="co">#&gt; ✔ Increasing &#39;testthat&#39; version to &#39;&gt;= 2.1.0&#39; in DESCRIPTION</span></span>
-<span id="cb31-9"><a href="testes.html#cb31-9" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat/test-funcao_demo.R&#39;</span></span>
-<span id="cb31-10"><a href="testes.html#cb31-10" aria-hidden="true"></a><span class="co">#&gt; ● Modify &#39;tests/testthat/test-funcao_demo.R&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="testes.html#cb32-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_testthat</span>()</span>
+<span id="cb32-2"><a href="testes.html#cb32-2" aria-hidden="true"></a><span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span></span>
+<span id="cb32-3"><a href="testes.html#cb32-3" aria-hidden="true"></a><span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span></span>
+<span id="cb32-4"><a href="testes.html#cb32-4" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span></span>
+<span id="cb32-5"><a href="testes.html#cb32-5" aria-hidden="true"></a><span class="co">#&gt; ● Call `use_test()` to initialize a basic test file and open it for editing.</span></span>
+<span id="cb32-6"><a href="testes.html#cb32-6" aria-hidden="true"></a></span>
+<span id="cb32-7"><a href="testes.html#cb32-7" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_test</span>(<span class="st">&quot;funcao_demo&quot;</span>)</span>
+<span id="cb32-8"><a href="testes.html#cb32-8" aria-hidden="true"></a><span class="co">#&gt; ✔ Increasing &#39;testthat&#39; version to &#39;&gt;= 2.1.0&#39; in DESCRIPTION</span></span>
+<span id="cb32-9"><a href="testes.html#cb32-9" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat/test-funcao_demo.R&#39;</span></span>
+<span id="cb32-10"><a href="testes.html#cb32-10" aria-hidden="true"></a><span class="co">#&gt; ● Modify &#39;tests/testthat/test-funcao_demo.R&#39;</span></span></code></pre></div>
 <p>Como é possível notar, o pacote <code>testthat</code> permite criar um arquivo de testes
 para <code>funcao_demo()</code> (neste caso <code>tests/testthat/test-funcao_demo.R</code>). Esse
 arquivo já vem com um teste padrão a título de demonstração, mas, depois de
@@ -239,19 +239,19 @@ test_that(&quot;funcao_demo funciona&quot;, {
 
 })</code></pre>
 <p>E o resultado da execução dos testes é o seguinte:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="testes.html#cb33-1" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">test</span>()</span>
-<span id="cb33-2"><a href="testes.html#cb33-2" aria-hidden="true"></a><span class="co">#&gt; Loading demo</span></span>
-<span id="cb33-3"><a href="testes.html#cb33-3" aria-hidden="true"></a><span class="co">#&gt; Testing demo</span></span>
-<span id="cb33-4"><a href="testes.html#cb33-4" aria-hidden="true"></a><span class="co">#&gt; ✔ |  OK F W S | Context</span></span>
-<span id="cb33-5"><a href="testes.html#cb33-5" aria-hidden="true"></a><span class="co">#&gt; ✔ |   4       | funcao_demo</span></span>
-<span id="cb33-6"><a href="testes.html#cb33-6" aria-hidden="true"></a><span class="co">#&gt; </span></span>
-<span id="cb33-7"><a href="testes.html#cb33-7" aria-hidden="true"></a><span class="co">#&gt; ══ Results ═════════════════════════════════════════════════════════════════════</span></span>
-<span id="cb33-8"><a href="testes.html#cb33-8" aria-hidden="true"></a><span class="co">#&gt; OK:       4</span></span>
-<span id="cb33-9"><a href="testes.html#cb33-9" aria-hidden="true"></a><span class="co">#&gt; Failed:   0</span></span>
-<span id="cb33-10"><a href="testes.html#cb33-10" aria-hidden="true"></a><span class="co">#&gt; Warnings: 0</span></span>
-<span id="cb33-11"><a href="testes.html#cb33-11" aria-hidden="true"></a><span class="co">#&gt; Skipped:  0</span></span>
-<span id="cb33-12"><a href="testes.html#cb33-12" aria-hidden="true"></a><span class="co">#&gt; </span></span>
-<span id="cb33-13"><a href="testes.html#cb33-13" aria-hidden="true"></a><span class="co">#&gt; Keep up the good work.</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="testes.html#cb34-1" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">test</span>()</span>
+<span id="cb34-2"><a href="testes.html#cb34-2" aria-hidden="true"></a><span class="co">#&gt; Loading demo</span></span>
+<span id="cb34-3"><a href="testes.html#cb34-3" aria-hidden="true"></a><span class="co">#&gt; Testing demo</span></span>
+<span id="cb34-4"><a href="testes.html#cb34-4" aria-hidden="true"></a><span class="co">#&gt; ✔ |  OK F W S | Context</span></span>
+<span id="cb34-5"><a href="testes.html#cb34-5" aria-hidden="true"></a><span class="co">#&gt; ✔ |   4       | funcao_demo</span></span>
+<span id="cb34-6"><a href="testes.html#cb34-6" aria-hidden="true"></a><span class="co">#&gt; </span></span>
+<span id="cb34-7"><a href="testes.html#cb34-7" aria-hidden="true"></a><span class="co">#&gt; ══ Results ═════════════════════════════════════════════════════════════════════</span></span>
+<span id="cb34-8"><a href="testes.html#cb34-8" aria-hidden="true"></a><span class="co">#&gt; OK:       4</span></span>
+<span id="cb34-9"><a href="testes.html#cb34-9" aria-hidden="true"></a><span class="co">#&gt; Failed:   0</span></span>
+<span id="cb34-10"><a href="testes.html#cb34-10" aria-hidden="true"></a><span class="co">#&gt; Warnings: 0</span></span>
+<span id="cb34-11"><a href="testes.html#cb34-11" aria-hidden="true"></a><span class="co">#&gt; Skipped:  0</span></span>
+<span id="cb34-12"><a href="testes.html#cb34-12" aria-hidden="true"></a><span class="co">#&gt; </span></span>
+<span id="cb34-13"><a href="testes.html#cb34-13" aria-hidden="true"></a><span class="co">#&gt; Keep up the good work.</span></span></code></pre></div>
 <p>Para saber mais sobre como desenvolver testes eficazes, consulte a própria
 <a href="https://testthat.r-lib.org/">documentação</a> do <code>testthat</code>.</p>
 

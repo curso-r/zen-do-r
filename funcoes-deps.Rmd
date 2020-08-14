@@ -58,6 +58,9 @@ mtcars_clean %>%
 #> 1     6  3.59  183.
 ```
 
+**Observação:** caso não esteja claro o que é o pipe (`%>%`), leia o Capítulo
+\@ref(pipe) para saber mais.
+
 O código acima é somente um exemplo de análise. Como descrito pelos comentários,
 `mtcars` é limpa e depois são extraídas as médias de diferentes variáveis para
 duas seleções da tabela (número de cilindros igual a 4 e 6). Abaixo está

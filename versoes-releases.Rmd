@@ -31,8 +31,9 @@ claramente rotulada para que o usuário possa fazer o *downgrade* do pacote.
 E justamente são esses rótulos que precisamos utilizar para ter um bom sistema
 de versões nos nossos pacotes. Ao contrário de "controle de versão", para o qual
 utilizamos o Git, "versionamento semântico" é a prática de dar nomes fáceis de
-entender para as versões de um projeto. Trazendo isso para termos concretos, quando este livro foi escrito, o
-pacote `dplyr` estava na versão 0.8.4, o `ggplot2` estava na 3.2.1 e o `shiny` na 1.4.0.
+entender para as versões de um projeto. Trazendo isso para termos concretos,
+quando este livro foi escrito, o pacote `dplyr` estava na versão 0.8.4, o
+`ggplot2` estava na 3.2.1 e o `shiny` na 1.4.0.
 
 ## Versionamento semântico
 
