@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Pacotes | Zen do R</title>
   <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Pacotes | Zen do R" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,7 @@
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="funcoes-deps.html"/>
 <link rel="next" href="pipe.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,7 +50,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 
@@ -58,6 +59,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -118,6 +120,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="zen-do-r.css" type="text/css" />
 </head>
 
@@ -171,7 +174,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>8</b> Data e data-raw</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>8.1</b> Documentação</a></li>
+<li class="chapter" data-level="8.1" data-path="data-data-raw.html"><a href="data-data-raw.html#documentação-1"><i class="fa fa-check"></i><b>8.1</b> Documentação</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>9</b> Testes automatizados</a></li>
 <li class="chapter" data-level="10" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>10</b> Versões e releases</a>
@@ -222,25 +225,25 @@ projeto já é suficiente. Outra motivação para criar um pacote é compartilha
 conjuntos úteis de funções com outras pessoas; isso acaba sendo menos comum para
 a maioria dos usuários, mas é importante ressaltar que o R não seria a linguagem
 popular que é hoje se não fossem pelas famosas bibliotecas <code>ggplot2</code> e <code>dplyr</code>.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="pacotes.html#cb10-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">create_package</span>(<span class="st">&quot;~/Documents/demo&quot;</span>)</span>
-<span id="cb10-2"><a href="pacotes.html#cb10-2" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span></span>
-<span id="cb10-3"><a href="pacotes.html#cb10-3" aria-hidden="true"></a><span class="co">#&gt; ✔ Creating &#39;R/&#39;</span></span>
-<span id="cb10-4"><a href="pacotes.html#cb10-4" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;DESCRIPTION&#39;</span></span>
-<span id="cb10-5"><a href="pacotes.html#cb10-5" aria-hidden="true"></a><span class="co">#&gt; Package: demo</span></span>
-<span id="cb10-6"><a href="pacotes.html#cb10-6" aria-hidden="true"></a><span class="co">#&gt; Title: What the Package Does (One Line, Title Case)</span></span>
-<span id="cb10-7"><a href="pacotes.html#cb10-7" aria-hidden="true"></a><span class="co">#&gt; Version: 0.0.0.9000</span></span>
-<span id="cb10-8"><a href="pacotes.html#cb10-8" aria-hidden="true"></a><span class="co">#&gt; Authors@R (parsed):</span></span>
-<span id="cb10-9"><a href="pacotes.html#cb10-9" aria-hidden="true"></a><span class="co">#&gt;     * First Last &lt;first.last@example.com&gt; [aut, cre] (&lt;https://orcid.org/YOUR-ORCID-ID&gt;)</span></span>
-<span id="cb10-10"><a href="pacotes.html#cb10-10" aria-hidden="true"></a><span class="co">#&gt; Description: What the package does (one paragraph).</span></span>
-<span id="cb10-11"><a href="pacotes.html#cb10-11" aria-hidden="true"></a><span class="co">#&gt; License: What license it uses</span></span>
-<span id="cb10-12"><a href="pacotes.html#cb10-12" aria-hidden="true"></a><span class="co">#&gt; Encoding: UTF-8</span></span>
-<span id="cb10-13"><a href="pacotes.html#cb10-13" aria-hidden="true"></a><span class="co">#&gt; LazyData: true</span></span>
-<span id="cb10-14"><a href="pacotes.html#cb10-14" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;NAMESPACE&#39;</span></span>
-<span id="cb10-15"><a href="pacotes.html#cb10-15" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;demo.Rproj&#39;</span></span>
-<span id="cb10-16"><a href="pacotes.html#cb10-16" aria-hidden="true"></a><span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span></span>
-<span id="cb10-17"><a href="pacotes.html#cb10-17" aria-hidden="true"></a><span class="co">#&gt; ✔ Adding &#39;^demo\\.Rproj$&#39;, &#39;^\\.Rproj\\.user$&#39; to &#39;.Rbuildignore&#39;</span></span>
-<span id="cb10-18"><a href="pacotes.html#cb10-18" aria-hidden="true"></a><span class="co">#&gt; ✔ Opening &#39;~/Documents/demo/&#39; in new RStudio session</span></span>
-<span id="cb10-19"><a href="pacotes.html#cb10-19" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting active project to &#39;demo&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="pacotes.html#cb10-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_package</span>(<span class="st">&quot;~/Documents/demo&quot;</span>)</span>
+<span id="cb10-2"><a href="pacotes.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span></span>
+<span id="cb10-3"><a href="pacotes.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Creating &#39;R/&#39;</span></span>
+<span id="cb10-4"><a href="pacotes.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing &#39;DESCRIPTION&#39;</span></span>
+<span id="cb10-5"><a href="pacotes.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Package: demo</span></span>
+<span id="cb10-6"><a href="pacotes.html#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Title: What the Package Does (One Line, Title Case)</span></span>
+<span id="cb10-7"><a href="pacotes.html#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Version: 0.0.0.9000</span></span>
+<span id="cb10-8"><a href="pacotes.html#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Authors@R (parsed):</span></span>
+<span id="cb10-9"><a href="pacotes.html#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     * First Last &lt;first.last@example.com&gt; [aut, cre] (&lt;https://orcid.org/YOUR-ORCID-ID&gt;)</span></span>
+<span id="cb10-10"><a href="pacotes.html#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Description: What the package does (one paragraph).</span></span>
+<span id="cb10-11"><a href="pacotes.html#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; License: What license it uses</span></span>
+<span id="cb10-12"><a href="pacotes.html#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Encoding: UTF-8</span></span>
+<span id="cb10-13"><a href="pacotes.html#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; LazyData: true</span></span>
+<span id="cb10-14"><a href="pacotes.html#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing &#39;NAMESPACE&#39;</span></span>
+<span id="cb10-15"><a href="pacotes.html#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing &#39;demo.Rproj&#39;</span></span>
+<span id="cb10-16"><a href="pacotes.html#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span></span>
+<span id="cb10-17"><a href="pacotes.html#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Adding &#39;^demo\\.Rproj$&#39;, &#39;^\\.Rproj\\.user$&#39; to &#39;.Rbuildignore&#39;</span></span>
+<span id="cb10-18"><a href="pacotes.html#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Opening &#39;~/Documents/demo/&#39; in new RStudio session</span></span>
+<span id="cb10-19"><a href="pacotes.html#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting active project to &#39;demo&#39;</span></span></code></pre></div>
 <p>A função executada acima é exatamente análoga à função de criação de projetos.
 A principal diferença é que ela cria um arquivo <code>DESCRIPTION</code> e assume que o
 nome do pacote é igual ao nome da pasta onde o mesmo está sendo criado (neste
@@ -250,12 +253,12 @@ projeto e pode ser sincronizado com o Git exatamente da mesma maneira.</p>
 <p>O primeiro passo para começar a usar um pacote é atribuir a ele uma licença
 (caso um dia você resolva compartilhá-lo com o mundo) e preencher a descrição.
 Abaixo encontra-se uma função simples que adiciona uma licença MIT ao pacote.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="pacotes.html#cb11-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_mit_license</span>(<span class="st">&quot;Seu Nome&quot;</span>)</span>
-<span id="cb11-2"><a href="pacotes.html#cb11-2" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span></span>
-<span id="cb11-3"><a href="pacotes.html#cb11-3" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting License field in DESCRIPTION to &#39;MIT + file LICENSE&#39;</span></span>
-<span id="cb11-4"><a href="pacotes.html#cb11-4" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;LICENSE.md&#39;</span></span>
-<span id="cb11-5"><a href="pacotes.html#cb11-5" aria-hidden="true"></a><span class="co">#&gt; ✔ Adding &#39;^LICENSE\\.md$&#39; to &#39;.Rbuildignore&#39;</span></span>
-<span id="cb11-6"><a href="pacotes.html#cb11-6" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;LICENSE&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="pacotes.html#cb11-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_mit_license</span>(<span class="st">&quot;Seu Nome&quot;</span>)</span>
+<span id="cb11-2"><a href="pacotes.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span></span>
+<span id="cb11-3"><a href="pacotes.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting License field in DESCRIPTION to &#39;MIT + file LICENSE&#39;</span></span>
+<span id="cb11-4"><a href="pacotes.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing &#39;LICENSE.md&#39;</span></span>
+<span id="cb11-5"><a href="pacotes.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Adding &#39;^LICENSE\\.md$&#39; to &#39;.Rbuildignore&#39;</span></span>
+<span id="cb11-6"><a href="pacotes.html#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing &#39;LICENSE&#39;</span></span></code></pre></div>
 <p>O arquivo de descrição, no entanto, é um pouco mais complexo porque ele tem
 alguns campos que precisam ser preenchidos manualmente. Quando o pacote for
 criado, eles já estarão populados com instruções para facilitar a vida do
@@ -282,25 +285,25 @@ arquivos com funções à pasta <code>R/</code>.</p>
 <code>devtools</code>. Assim como o <code>tidyverse</code>, este é um conjunto de pacotes (que inclui
 o <code>usethis</code> por sinal) que auxiliam no processo de criar e testar um pacote de
 R.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="pacotes.html#cb13-1" aria-hidden="true"></a><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="pacotes.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span></code></pre></div>
 <p>A partir de agora você pode, por exemplo, criar documentações para as funções do
 seu pacote. Quando outras pessoas o instalarem, elas poderão consultar esses
 manuais da mesma forma que fazem com qualquer outra função: <code>?funcao()</code>.</p>
 <p>A documentação mais simples (e obrigatória) envolve dar um título para a função
 e descrever o que cada parâmetro significa. Para documentar uma função qualquer,
 basta adicionar comentários em cima dela com <code>#'</code> assim como no exemplo abaixo:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="pacotes.html#cb14-1" aria-hidden="true"></a><span class="co">#&#39; Função demonstrativa que soma e imprime</span></span>
-<span id="cb14-2"><a href="pacotes.html#cb14-2" aria-hidden="true"></a><span class="co">#&#39;</span></span>
-<span id="cb14-3"><a href="pacotes.html#cb14-3" aria-hidden="true"></a><span class="co">#&#39; @param x Um número ou vetor numérico</span></span>
-<span id="cb14-4"><a href="pacotes.html#cb14-4" aria-hidden="true"></a><span class="co">#&#39; @param y Um número ou vetor numérico</span></span>
-<span id="cb14-5"><a href="pacotes.html#cb14-5" aria-hidden="true"></a><span class="co">#&#39; @param ... Outros argumentos passados para [print()]</span></span>
-<span id="cb14-6"><a href="pacotes.html#cb14-6" aria-hidden="true"></a><span class="co">#&#39;</span></span>
-<span id="cb14-7"><a href="pacotes.html#cb14-7" aria-hidden="true"></a><span class="co">#&#39; @export</span></span>
-<span id="cb14-8"><a href="pacotes.html#cb14-8" aria-hidden="true"></a>funcao_demo &lt;-<span class="st"> </span><span class="cf">function</span>(x, y, ...) {</span>
-<span id="cb14-9"><a href="pacotes.html#cb14-9" aria-hidden="true"></a>  z &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y</span>
-<span id="cb14-10"><a href="pacotes.html#cb14-10" aria-hidden="true"></a>  <span class="kw">print</span>(z, ...)</span>
-<span id="cb14-11"><a href="pacotes.html#cb14-11" aria-hidden="true"></a>  <span class="kw">return</span>(z)</span>
-<span id="cb14-12"><a href="pacotes.html#cb14-12" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="pacotes.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Função demonstrativa que soma e imprime</span></span>
+<span id="cb14-2"><a href="pacotes.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb14-3"><a href="pacotes.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param x Um número ou vetor numérico</span></span>
+<span id="cb14-4"><a href="pacotes.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y Um número ou vetor numérico</span></span>
+<span id="cb14-5"><a href="pacotes.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param ... Outros argumentos passados para [print()]</span></span>
+<span id="cb14-6"><a href="pacotes.html#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb14-7"><a href="pacotes.html#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @export</span></span>
+<span id="cb14-8"><a href="pacotes.html#cb14-8" aria-hidden="true" tabindex="-1"></a>funcao_demo <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, ...) {</span>
+<span id="cb14-9"><a href="pacotes.html#cb14-9" aria-hidden="true" tabindex="-1"></a>  z <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
+<span id="cb14-10"><a href="pacotes.html#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(z, ...)</span>
+<span id="cb14-11"><a href="pacotes.html#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(z)</span>
+<span id="cb14-12"><a href="pacotes.html#cb14-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>No RStudio, esse tipo de documentação é tratado diferentemente de outros
 comentários, então certas palavras-chave ficam coloridas. <code>@param</code> por exemplo
 indica a documentação de um dos parâmetros e <code>@export</code> indica que aquela função
@@ -308,16 +311,16 @@ será exportada pelo pacote, ou seja, ficará disponível ao usuário quando ele
 executar <code>library(demo)</code>.</p>
 <p>Para gerar a documentação do pacote, basta chamar uma outra função do
 <code>devtools</code>:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="pacotes.html#cb15-1" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">document</span>()</span>
-<span id="cb15-2"><a href="pacotes.html#cb15-2" aria-hidden="true"></a><span class="co">#&gt; Updating demo documentation</span></span>
-<span id="cb15-3"><a href="pacotes.html#cb15-3" aria-hidden="true"></a><span class="co">#&gt; Updating roxygen version in ~/Documents/demo/DESCRIPTION</span></span>
-<span id="cb15-4"><a href="pacotes.html#cb15-4" aria-hidden="true"></a><span class="co">#&gt; Writing NAMESPACE</span></span>
-<span id="cb15-5"><a href="pacotes.html#cb15-5" aria-hidden="true"></a><span class="co">#&gt; Loading demo</span></span>
-<span id="cb15-6"><a href="pacotes.html#cb15-6" aria-hidden="true"></a><span class="co">#&gt; Writing NAMESPACE</span></span>
-<span id="cb15-7"><a href="pacotes.html#cb15-7" aria-hidden="true"></a><span class="co">#&gt; Writing funcao_demo.Rd</span></span>
-<span id="cb15-8"><a href="pacotes.html#cb15-8" aria-hidden="true"></a></span>
-<span id="cb15-9"><a href="pacotes.html#cb15-9" aria-hidden="true"></a>?<span class="kw">funcao_demo</span>()</span>
-<span id="cb15-10"><a href="pacotes.html#cb15-10" aria-hidden="true"></a><span class="co">#&gt; Rendering development documentation for &#39;funcao_demo&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="pacotes.html#cb15-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>()</span>
+<span id="cb15-2"><a href="pacotes.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Updating demo documentation</span></span>
+<span id="cb15-3"><a href="pacotes.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Updating roxygen version in ~/Documents/demo/DESCRIPTION</span></span>
+<span id="cb15-4"><a href="pacotes.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Writing NAMESPACE</span></span>
+<span id="cb15-5"><a href="pacotes.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading demo</span></span>
+<span id="cb15-6"><a href="pacotes.html#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Writing NAMESPACE</span></span>
+<span id="cb15-7"><a href="pacotes.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Writing funcao_demo.Rd</span></span>
+<span id="cb15-8"><a href="pacotes.html#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="pacotes.html#cb15-9" aria-hidden="true" tabindex="-1"></a>?<span class="fu">funcao_demo</span>()</span>
+<span id="cb15-10"><a href="pacotes.html#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Rendering development documentation for &#39;funcao_demo&#39;</span></span></code></pre></div>
 <p><img src="static/pacotes/doc.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Conforme o número de funções no pacote for crescendo, basta iterar nesse ciclo
 descrito até aqui. Além disso, é importante lembrar (como destacado na sessão
@@ -329,25 +332,25 @@ forma <code>pacote::funcao()</code>; neste momento, o pacote em questão se torn
 executar a função de verificação <code>devtools::check()</code>. Se nenhum defeito for
 encontrado, basta compartilhar o pacote com os seus colegas e instalá-lo com
 <code>devtools::install_local()</code>.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="pacotes.html#cb16-1" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">check</span>()</span>
-<span id="cb16-2"><a href="pacotes.html#cb16-2" aria-hidden="true"></a><span class="co">#&gt; Updating demo documentation</span></span>
-<span id="cb16-3"><a href="pacotes.html#cb16-3" aria-hidden="true"></a><span class="co">#&gt; Writing NAMESPACE</span></span>
-<span id="cb16-4"><a href="pacotes.html#cb16-4" aria-hidden="true"></a><span class="co">#&gt; Loading demo</span></span>
-<span id="cb16-5"><a href="pacotes.html#cb16-5" aria-hidden="true"></a><span class="co">#&gt; Writing NAMESPACE</span></span>
-<span id="cb16-6"><a href="pacotes.html#cb16-6" aria-hidden="true"></a><span class="co">#&gt; ── Building ───────────────────────────────────────────────────────── demo ──</span></span>
-<span id="cb16-7"><a href="pacotes.html#cb16-7" aria-hidden="true"></a><span class="co">#&gt; Setting env vars:</span></span>
-<span id="cb16-8"><a href="pacotes.html#cb16-8" aria-hidden="true"></a><span class="co">#&gt; ● CFLAGS    : -Wall -pedantic -fdiagnostics-color=always</span></span>
-<span id="cb16-9"><a href="pacotes.html#cb16-9" aria-hidden="true"></a><span class="co">#&gt; ● CXXFLAGS  : -Wall -pedantic -fdiagnostics-color=always</span></span>
-<span id="cb16-10"><a href="pacotes.html#cb16-10" aria-hidden="true"></a><span class="co">#&gt; ● CXX11FLAGS: -Wall -pedantic -fdiagnostics-color=always</span></span>
-<span id="cb16-11"><a href="pacotes.html#cb16-11" aria-hidden="true"></a><span class="co">#&gt; ─────────────────────────────────────────────────────────────────────────────</span></span>
-<span id="cb16-12"><a href="pacotes.html#cb16-12" aria-hidden="true"></a><span class="co">#&gt; ✔  checking for file ‘/home/clente/Documents/demo/DESCRIPTION’ ...</span></span>
-<span id="cb16-13"><a href="pacotes.html#cb16-13" aria-hidden="true"></a><span class="co">#&gt; </span></span>
-<span id="cb16-14"><a href="pacotes.html#cb16-14" aria-hidden="true"></a><span class="co">#&gt; [... omitido por brevidade ...]</span></span>
-<span id="cb16-15"><a href="pacotes.html#cb16-15" aria-hidden="true"></a><span class="co">#&gt; </span></span>
-<span id="cb16-16"><a href="pacotes.html#cb16-16" aria-hidden="true"></a><span class="co">#&gt; ── R CMD check results ───────────────────────────────── demo 0.0.0.9000 ────</span></span>
-<span id="cb16-17"><a href="pacotes.html#cb16-17" aria-hidden="true"></a><span class="co">#&gt; Duration: 8.2s</span></span>
-<span id="cb16-18"><a href="pacotes.html#cb16-18" aria-hidden="true"></a><span class="co">#&gt; </span></span>
-<span id="cb16-19"><a href="pacotes.html#cb16-19" aria-hidden="true"></a><span class="co">#&gt; 0 errors ✔ | 0 warnings ✔ | 0 notes ✔</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="pacotes.html#cb16-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">check</span>()</span>
+<span id="cb16-2"><a href="pacotes.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Updating demo documentation</span></span>
+<span id="cb16-3"><a href="pacotes.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Writing NAMESPACE</span></span>
+<span id="cb16-4"><a href="pacotes.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading demo</span></span>
+<span id="cb16-5"><a href="pacotes.html#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Writing NAMESPACE</span></span>
+<span id="cb16-6"><a href="pacotes.html#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ── Building ───────────────────────────────────────────────────────── demo ──</span></span>
+<span id="cb16-7"><a href="pacotes.html#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Setting env vars:</span></span>
+<span id="cb16-8"><a href="pacotes.html#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ● CFLAGS    : -Wall -pedantic -fdiagnostics-color=always</span></span>
+<span id="cb16-9"><a href="pacotes.html#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ● CXXFLAGS  : -Wall -pedantic -fdiagnostics-color=always</span></span>
+<span id="cb16-10"><a href="pacotes.html#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ● CXX11FLAGS: -Wall -pedantic -fdiagnostics-color=always</span></span>
+<span id="cb16-11"><a href="pacotes.html#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ─────────────────────────────────────────────────────────────────────────────</span></span>
+<span id="cb16-12"><a href="pacotes.html#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔  checking for file ‘/home/clente/Documents/demo/DESCRIPTION’ ...</span></span>
+<span id="cb16-13"><a href="pacotes.html#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb16-14"><a href="pacotes.html#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [... omitido por brevidade ...]</span></span>
+<span id="cb16-15"><a href="pacotes.html#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb16-16"><a href="pacotes.html#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ── R CMD check results ───────────────────────────────── demo 0.0.0.9000 ────</span></span>
+<span id="cb16-17"><a href="pacotes.html#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Duration: 8.2s</span></span>
+<span id="cb16-18"><a href="pacotes.html#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb16-19"><a href="pacotes.html#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0 errors ✔ | 0 warnings ✔ | 0 notes ✔</span></span></code></pre></div>
 </div>
 <div id="imports" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Imports</h2>
@@ -360,8 +363,8 @@ precisam ser registradas.</p>
 <p>Suponha que um pacote tem exatamente duas dependências: o <code>dplyr</code> e o <code>kuber</code>
 (um pacote desenvolvido pela Curso-R e disponível somente via GitHub). Para
 passar no <code>check()</code> basta executar os dois comandos abaixo:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="pacotes.html#cb17-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_package</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
-<span id="cb17-2"><a href="pacotes.html#cb17-2" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_dev_package</span>(<span class="st">&quot;kuber&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="pacotes.html#cb17-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb17-2"><a href="pacotes.html#cb17-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_dev_package</span>(<span class="st">&quot;kuber&quot;</span>)</span></code></pre></div>
 <p>O <code>dplyr</code>, por estar disponível no CRAN, não é um pacote considerado em fase de
 desenvolvimento, então basta usar <code>usethis::use_package()</code>. Já o <code>kuber</code> só está
 disponível no GitHub e instalável via <code>remotes::install_github("curso-r/kuber")</code>,

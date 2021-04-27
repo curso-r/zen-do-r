@@ -47,26 +47,27 @@ criar um *Personal Access Token* (PAT). Tendo logado no GitHub, clique na sua
 imagem no canto direito superior e siga para
 **Settings > Developer settings > Personal access tokens > Generate new token**.
 Nesta página, basta descrever o seu uso para o token e selecionar o primeiro box
-de todos; por fim, gere e copie o seu token (uma sequência com uns 40 letras e
-números). Se você estiver sem nenhuma paciência, execute o comando abaixo:
+de todos; por fim, gere e copie o seu token (uma sequência de mais ou menos 40
+letras e números). Se você estiver sem nenhuma paciência, execute o comando
+abaixo:
 
 ```r
-usethis::browse_github_token()
-#> ✔ Opening URL 'https://github.com/settings/tokens/new?scopes=repo,gist&description=R:GITHUB_PAT'
-#> ● Call `usethis::edit_r_environ()` to open '.Renviron'.
-#> ● Store your PAT with a line like:
-#>   GITHUB_PAT=xxxyyyzzz
-#> ● Make sure '.Renviron' ends with a newline!
+usethis::create_github_token()
+#> ● Call `gitcreds::gitcreds_set()` to register this token in the local Git credential store
+#>   It is also a great idea to store this token in any password-management software that you use
+#> ✔ Opening URL 'https://github.com/settings/tokens/new?scopes=repo,user,gist,workflow&description=R:GITHUB_PAT'
 ```
 
 ```{r}
 knitr::include_graphics("static/git-github/pat.png")
 ```
 
-Independentemente de como um PAT foi gerado, o importante é seguir as instruções
-descritas no comando. Execute a função `usethis::edit_r_environ()` e crie uma
-nova linha na forma `GITHUB_PAT={SEU_TOKEN}`. Assim que isso estiver feito, você
-não precisará mais se preocupar com nenhum tipo de configuração.
+Independentemente de como um PAT foi gerado, clique em **Generate token** no pé
+da página para confirmar a criação do token. Agora é necessário seguir as
+instruções descritas no comando. Execute a função `gitcreds::gitcreds_set()` e 
+cole o seu token no console quando o mesmo for requisitado. Assim que isso
+estiver feito, você não precisará mais se preocupar com nenhum tipo de
+configuração.
 
 Agora, ao criar um novo projeto, é possível associar imediatamente a ele um
 repositório no GitHub. O comando para criar projetos não muda, mas torna-se

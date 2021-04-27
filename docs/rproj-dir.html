@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Rproj e diretórios | Zen do R</title>
   <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Rproj e diretórios | Zen do R" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,7 @@
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="rdata-rhistory.html"/>
 <link rel="next" href="git-github.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,7 +50,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 
@@ -58,6 +59,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -118,6 +120,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="zen-do-r.css" type="text/css" />
 </head>
 
@@ -171,7 +174,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>8</b> Data e data-raw</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>8.1</b> Documentação</a></li>
+<li class="chapter" data-level="8.1" data-path="data-data-raw.html"><a href="data-data-raw.html#documentação-1"><i class="fa fa-check"></i><b>8.1</b> Documentação</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>9</b> Testes automatizados</a></li>
 <li class="chapter" data-level="10" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>10</b> Versões e releases</a>
@@ -231,14 +234,14 @@ assunto. Mas esta não deve ser uma pasta comum, ela deve ser um projeto.</p>
 <p>O código listado abaixo demonstra como criar um projeto no RStudio. Basta
 apenas um comando e ele já fará tudo que for necessário para preparar o seu
 ambiente de desenvolvimento.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="rproj-dir.html#cb2-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">create_project</span>(<span class="st">&quot;~/Documents/Dev/R/Proj/&quot;</span>)</span>
-<span id="cb2-2"><a href="rproj-dir.html#cb2-2" aria-hidden="true"></a><span class="co">#&gt; ✔ Creating &#39;~/Documents/Dev/R/Proj/&#39;</span></span>
-<span id="cb2-3"><a href="rproj-dir.html#cb2-3" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/Dev/R/Proj&#39;</span></span>
-<span id="cb2-4"><a href="rproj-dir.html#cb2-4" aria-hidden="true"></a><span class="co">#&gt; ✔ Creating &#39;R/&#39;</span></span>
-<span id="cb2-5"><a href="rproj-dir.html#cb2-5" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;Proj.Rproj&#39;</span></span>
-<span id="cb2-6"><a href="rproj-dir.html#cb2-6" aria-hidden="true"></a><span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span></span>
-<span id="cb2-7"><a href="rproj-dir.html#cb2-7" aria-hidden="true"></a><span class="co">#&gt; ✔ Opening &#39;~/Documents/Dev/R/Proj/&#39; in new RStudio session</span></span>
-<span id="cb2-8"><a href="rproj-dir.html#cb2-8" aria-hidden="true"></a><span class="co">#&gt; ✔ Setting active project to &#39;Proj&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="rproj-dir.html#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_project</span>(<span class="st">&quot;~/Documents/Dev/R/Proj/&quot;</span>)</span>
+<span id="cb2-2"><a href="rproj-dir.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Creating &#39;~/Documents/Dev/R/Proj/&#39;</span></span>
+<span id="cb2-3"><a href="rproj-dir.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/Dev/R/Proj&#39;</span></span>
+<span id="cb2-4"><a href="rproj-dir.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Creating &#39;R/&#39;</span></span>
+<span id="cb2-5"><a href="rproj-dir.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing &#39;Proj.Rproj&#39;</span></span>
+<span id="cb2-6"><a href="rproj-dir.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span></span>
+<span id="cb2-7"><a href="rproj-dir.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Opening &#39;~/Documents/Dev/R/Proj/&#39; in new RStudio session</span></span>
+<span id="cb2-8"><a href="rproj-dir.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting active project to &#39;Proj&#39;</span></span></code></pre></div>
 <p>Cada linha da saída do comando representa algo que ele fez para preparar o
 projeto. A mais importante é a quarta linha, que cria o arquivo <code>Proj.Rproj</code>;
 ele indica para o RStudio que aquele diretório será a raiz de um projeto e que,
@@ -265,15 +268,15 @@ prestando atenção.</p>
 <p>O R dá a possibilidade de mudar, instantaneamente, o diretório de trabalho.
 Isso que dizer que os caminhos relativos para arquivos podem mudar em questão
 de linhas. O exemplo abaixo demonstra superficialmente como isso funciona:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="rproj-dir.html#cb3-1" aria-hidden="true"></a><span class="co"># Abrindo dois arquivos em diretórios diferentes</span></span>
-<span id="cb3-2"><a href="rproj-dir.html#cb3-2" aria-hidden="true"></a></span>
-<span id="cb3-3"><a href="rproj-dir.html#cb3-3" aria-hidden="true"></a><span class="kw">setwd</span>(<span class="st">&quot;~/Downloads&quot;</span>)</span>
-<span id="cb3-4"><a href="rproj-dir.html#cb3-4" aria-hidden="true"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span>
-<span id="cb3-5"><a href="rproj-dir.html#cb3-5" aria-hidden="true"></a></span>
-<span id="cb3-6"><a href="rproj-dir.html#cb3-6" aria-hidden="true"></a><span class="kw">setwd</span>(<span class="st">&quot;~/Documents/Dev/R/Proj&quot;</span>)</span>
-<span id="cb3-7"><a href="rproj-dir.html#cb3-7" aria-hidden="true"></a>b &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;b.csv&quot;</span>)</span>
-<span id="cb3-8"><a href="rproj-dir.html#cb3-8" aria-hidden="true"></a></span>
-<span id="cb3-9"><a href="rproj-dir.html#cb3-9" aria-hidden="true"></a><span class="kw">write.csv</span>(a, <span class="st">&quot;c.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="rproj-dir.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrindo dois arquivos em diretórios diferentes</span></span>
+<span id="cb3-2"><a href="rproj-dir.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="rproj-dir.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Downloads&quot;</span>)</span>
+<span id="cb3-4"><a href="rproj-dir.html#cb3-4" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span>
+<span id="cb3-5"><a href="rproj-dir.html#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="rproj-dir.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Documents/Dev/R/Proj&quot;</span>)</span>
+<span id="cb3-7"><a href="rproj-dir.html#cb3-7" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;b.csv&quot;</span>)</span>
+<span id="cb3-8"><a href="rproj-dir.html#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="rproj-dir.html#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(a, <span class="st">&quot;c.csv&quot;</span>)</span></code></pre></div>
 <p>Isso não parece tão problemático à primeira vista, mas usar <code>setwd()</code> cria um
 vício difícil de abandonar. Essa função estimula que os seus projetos continuem
 desorganizados com arquivos espalhados pelo computador, mas também confunde o
@@ -285,12 +288,12 @@ responder caso você não esteja atento ao código todo.</p>
 trabalho seja sempre a pasta do projeto. Neste caso é como se, ao abrir o
 RStudio, ele executasse o comando <code>setwd("~/Documents/Dev/R/Proj")</code>
 automaticamente. Mas como ler então o arquivo <code>a.csv</code>?</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="rproj-dir.html#cb4-1" aria-hidden="true"></a><span class="co"># Duas formas de ler a.csv</span></span>
-<span id="cb4-2"><a href="rproj-dir.html#cb4-2" aria-hidden="true"></a></span>
-<span id="cb4-3"><a href="rproj-dir.html#cb4-3" aria-hidden="true"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>)</span>
-<span id="cb4-4"><a href="rproj-dir.html#cb4-4" aria-hidden="true"></a></span>
-<span id="cb4-5"><a href="rproj-dir.html#cb4-5" aria-hidden="true"></a><span class="kw">file.copy</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>, <span class="st">&quot;a.csv&quot;</span>)</span>
-<span id="cb4-6"><a href="rproj-dir.html#cb4-6" aria-hidden="true"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="rproj-dir.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Duas formas de ler a.csv</span></span>
+<span id="cb4-2"><a href="rproj-dir.html#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="rproj-dir.html#cb4-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>)</span>
+<span id="cb4-4"><a href="rproj-dir.html#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="rproj-dir.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">file.copy</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>, <span class="st">&quot;a.csv&quot;</span>)</span>
+<span id="cb4-6"><a href="rproj-dir.html#cb4-6" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span></code></pre></div>
 <p>A primeira forma deixa explícito que aquele arquivo não faz parte do projeto e
 que portanto deve ser tratado como temporário. A segunda forma, mais indicada,
 é trazer o arquivo para dentro do projeto! Se ele é importante, é essencial que

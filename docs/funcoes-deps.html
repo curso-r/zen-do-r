@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Funções e dependências | Zen do R</title>
   <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Funções e dependências | Zen do R" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,7 @@
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="git-github.html"/>
 <link rel="next" href="pacotes.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,7 +50,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 
@@ -58,6 +59,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -118,6 +120,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="zen-do-r.css" type="text/css" />
 </head>
 
@@ -171,7 +174,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="data-data-raw.html"><a href="data-data-raw.html"><i class="fa fa-check"></i><b>8</b> Data e data-raw</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="pacotes.html"><a href="pacotes.html#documentação"><i class="fa fa-check"></i><b>8.1</b> Documentação</a></li>
+<li class="chapter" data-level="8.1" data-path="data-data-raw.html"><a href="data-data-raw.html#documentação-1"><i class="fa fa-check"></i><b>8.1</b> Documentação</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="testes.html"><a href="testes.html"><i class="fa fa-check"></i><b>9</b> Testes automatizados</a></li>
 <li class="chapter" data-level="10" data-path="versoes-releases.html"><a href="versoes-releases.html"><i class="fa fa-check"></i><b>10</b> Versões e releases</a>
@@ -216,40 +219,40 @@ erro no resultado, fica bem mais fácil depurar a função culpada do que uma
 coleção desordenada de código. Funções têm argumentos e saídas, enquanto código
 solto pode modificar globais e criar resultados tardios que são impossíveis de
 acompanhar sem conhecer profundamente a tarefa sendo realizada.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="funcoes-deps.html#cb7-1" aria-hidden="true"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb7-2"><a href="funcoes-deps.html#cb7-2" aria-hidden="true"></a><span class="kw">library</span>(tibble)</span>
-<span id="cb7-3"><a href="funcoes-deps.html#cb7-3" aria-hidden="true"></a></span>
-<span id="cb7-4"><a href="funcoes-deps.html#cb7-4" aria-hidden="true"></a><span class="co"># Limpar dados</span></span>
-<span id="cb7-5"><a href="funcoes-deps.html#cb7-5" aria-hidden="true"></a>mtcars_clean &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span></span>
-<span id="cb7-6"><a href="funcoes-deps.html#cb7-6" aria-hidden="true"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb7-7"><a href="funcoes-deps.html#cb7-7" aria-hidden="true"></a><span class="st">  </span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span></span>
-<span id="cb7-8"><a href="funcoes-deps.html#cb7-8" aria-hidden="true"></a><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span><span class="dv">8</span>)</span>
-<span id="cb7-9"><a href="funcoes-deps.html#cb7-9" aria-hidden="true"></a></span>
-<span id="cb7-10"><a href="funcoes-deps.html#cb7-10" aria-hidden="true"></a><span class="co"># Selecionar carros com 4 cyl e tirar média de mpg e wt</span></span>
-<span id="cb7-11"><a href="funcoes-deps.html#cb7-11" aria-hidden="true"></a>mtcars_clean <span class="op">%&gt;%</span></span>
-<span id="cb7-12"><a href="funcoes-deps.html#cb7-12" aria-hidden="true"></a><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span><span class="dv">4</span>) <span class="op">%&gt;%</span></span>
-<span id="cb7-13"><a href="funcoes-deps.html#cb7-13" aria-hidden="true"></a><span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></span>
-<span id="cb7-14"><a href="funcoes-deps.html#cb7-14" aria-hidden="true"></a><span class="st">  </span><span class="kw">summarise</span>(</span>
-<span id="cb7-15"><a href="funcoes-deps.html#cb7-15" aria-hidden="true"></a>    <span class="dt">mpg =</span> <span class="kw">mean</span>(mpg),</span>
-<span id="cb7-16"><a href="funcoes-deps.html#cb7-16" aria-hidden="true"></a>    <span class="dt">wt =</span> <span class="kw">mean</span>(wt)</span>
-<span id="cb7-17"><a href="funcoes-deps.html#cb7-17" aria-hidden="true"></a>  )</span>
-<span id="cb7-18"><a href="funcoes-deps.html#cb7-18" aria-hidden="true"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
-<span id="cb7-19"><a href="funcoes-deps.html#cb7-19" aria-hidden="true"></a><span class="co">#&gt;     cyl   mpg    wt</span></span>
-<span id="cb7-20"><a href="funcoes-deps.html#cb7-20" aria-hidden="true"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span id="cb7-21"><a href="funcoes-deps.html#cb7-21" aria-hidden="true"></a><span class="co">#&gt; 1     4  26.7  2.29</span></span>
-<span id="cb7-22"><a href="funcoes-deps.html#cb7-22" aria-hidden="true"></a></span>
-<span id="cb7-23"><a href="funcoes-deps.html#cb7-23" aria-hidden="true"></a><span class="co"># Selecionar carros com 6 cyl e tirar média de drat e disp</span></span>
-<span id="cb7-24"><a href="funcoes-deps.html#cb7-24" aria-hidden="true"></a>mtcars_clean <span class="op">%&gt;%</span></span>
-<span id="cb7-25"><a href="funcoes-deps.html#cb7-25" aria-hidden="true"></a><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span><span class="dv">6</span>) <span class="op">%&gt;%</span></span>
-<span id="cb7-26"><a href="funcoes-deps.html#cb7-26" aria-hidden="true"></a><span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></span>
-<span id="cb7-27"><a href="funcoes-deps.html#cb7-27" aria-hidden="true"></a><span class="st">  </span><span class="kw">summarise</span>(</span>
-<span id="cb7-28"><a href="funcoes-deps.html#cb7-28" aria-hidden="true"></a>    <span class="dt">drat =</span> <span class="kw">mean</span>(drat),</span>
-<span id="cb7-29"><a href="funcoes-deps.html#cb7-29" aria-hidden="true"></a>    <span class="dt">disp =</span> <span class="kw">mean</span>(disp)</span>
-<span id="cb7-30"><a href="funcoes-deps.html#cb7-30" aria-hidden="true"></a>  )</span>
-<span id="cb7-31"><a href="funcoes-deps.html#cb7-31" aria-hidden="true"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
-<span id="cb7-32"><a href="funcoes-deps.html#cb7-32" aria-hidden="true"></a><span class="co">#&gt;     cyl  drat  disp</span></span>
-<span id="cb7-33"><a href="funcoes-deps.html#cb7-33" aria-hidden="true"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span id="cb7-34"><a href="funcoes-deps.html#cb7-34" aria-hidden="true"></a><span class="co">#&gt; 1     6  3.59  183.</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="funcoes-deps.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-2"><a href="funcoes-deps.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb7-3"><a href="funcoes-deps.html#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="funcoes-deps.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Limpar dados</span></span>
+<span id="cb7-5"><a href="funcoes-deps.html#cb7-5" aria-hidden="true" tabindex="-1"></a>mtcars_clean <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="funcoes-deps.html#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">&quot;model&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-7"><a href="funcoes-deps.html#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb7-8"><a href="funcoes-deps.html#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">&lt;</span> <span class="dv">8</span>)</span>
+<span id="cb7-9"><a href="funcoes-deps.html#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="funcoes-deps.html#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecionar carros com 4 cyl e tirar média de mpg e wt</span></span>
+<span id="cb7-11"><a href="funcoes-deps.html#cb7-11" aria-hidden="true" tabindex="-1"></a>mtcars_clean <span class="sc">%&gt;%</span></span>
+<span id="cb7-12"><a href="funcoes-deps.html#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">4</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-13"><a href="funcoes-deps.html#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb7-14"><a href="funcoes-deps.html#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb7-15"><a href="funcoes-deps.html#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">mpg =</span> <span class="fu">mean</span>(mpg),</span>
+<span id="cb7-16"><a href="funcoes-deps.html#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">wt =</span> <span class="fu">mean</span>(wt)</span>
+<span id="cb7-17"><a href="funcoes-deps.html#cb7-17" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-18"><a href="funcoes-deps.html#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
+<span id="cb7-19"><a href="funcoes-deps.html#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     cyl   mpg    wt</span></span>
+<span id="cb7-20"><a href="funcoes-deps.html#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb7-21"><a href="funcoes-deps.html#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1     4  26.7  2.29</span></span>
+<span id="cb7-22"><a href="funcoes-deps.html#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="funcoes-deps.html#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecionar carros com 6 cyl e tirar média de drat e disp</span></span>
+<span id="cb7-24"><a href="funcoes-deps.html#cb7-24" aria-hidden="true" tabindex="-1"></a>mtcars_clean <span class="sc">%&gt;%</span></span>
+<span id="cb7-25"><a href="funcoes-deps.html#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-26"><a href="funcoes-deps.html#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb7-27"><a href="funcoes-deps.html#cb7-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb7-28"><a href="funcoes-deps.html#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">drat =</span> <span class="fu">mean</span>(drat),</span>
+<span id="cb7-29"><a href="funcoes-deps.html#cb7-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">disp =</span> <span class="fu">mean</span>(disp)</span>
+<span id="cb7-30"><a href="funcoes-deps.html#cb7-30" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-31"><a href="funcoes-deps.html#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
+<span id="cb7-32"><a href="funcoes-deps.html#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     cyl  drat  disp</span></span>
+<span id="cb7-33"><a href="funcoes-deps.html#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb7-34"><a href="funcoes-deps.html#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1     6  3.59  183.</span></span></code></pre></div>
 <p><strong>Observação:</strong> caso não esteja claro o que é o pipe (<code>%&gt;%</code>), leia o Capítulo
 <a href="pipe.html#pipe">7</a> para saber mais.</p>
 <p>O código acima é somente um exemplo de análise. Como descrito pelos comentários,
@@ -261,42 +264,42 @@ encapsulamento das tarefas de limpeza e resumo, mas perceba, por exemplo, que,
 se fosse necessário trocar <code>mean()</code> por <code>median()</code>, antes seria necessário
 alterar quatro linhas e agora apenas uma. Esse tipo de ganho a longo prazo pode
 salvar análises inteiras do caos.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="funcoes-deps.html#cb8-1" aria-hidden="true"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb8-2"><a href="funcoes-deps.html#cb8-2" aria-hidden="true"></a><span class="kw">library</span>(tibble)</span>
-<span id="cb8-3"><a href="funcoes-deps.html#cb8-3" aria-hidden="true"></a></span>
-<span id="cb8-4"><a href="funcoes-deps.html#cb8-4" aria-hidden="true"></a><span class="co"># Limpa tabela, filtrando cyl &lt; cyl_max</span></span>
-<span id="cb8-5"><a href="funcoes-deps.html#cb8-5" aria-hidden="true"></a>clean &lt;-<span class="st"> </span><span class="cf">function</span>(data, <span class="dt">cyl_max =</span> <span class="dv">8</span>) {</span>
-<span id="cb8-6"><a href="funcoes-deps.html#cb8-6" aria-hidden="true"></a>  data <span class="op">%&gt;%</span></span>
-<span id="cb8-7"><a href="funcoes-deps.html#cb8-7" aria-hidden="true"></a><span class="st">  </span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb8-8"><a href="funcoes-deps.html#cb8-8" aria-hidden="true"></a><span class="st">  </span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span></span>
-<span id="cb8-9"><a href="funcoes-deps.html#cb8-9" aria-hidden="true"></a><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span>cyl_max)</span>
-<span id="cb8-10"><a href="funcoes-deps.html#cb8-10" aria-hidden="true"></a>}</span>
-<span id="cb8-11"><a href="funcoes-deps.html#cb8-11" aria-hidden="true"></a></span>
-<span id="cb8-12"><a href="funcoes-deps.html#cb8-12" aria-hidden="true"></a><span class="co"># Resume tabela onde cyl == cyl_max, tirando média das colunas em ...</span></span>
-<span id="cb8-13"><a href="funcoes-deps.html#cb8-13" aria-hidden="true"></a>summarise_cyl &lt;-<span class="st"> </span><span class="cf">function</span>(data, cyl_num, ...) {</span>
-<span id="cb8-14"><a href="funcoes-deps.html#cb8-14" aria-hidden="true"></a>  data <span class="op">%&gt;%</span></span>
-<span id="cb8-15"><a href="funcoes-deps.html#cb8-15" aria-hidden="true"></a><span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span>cyl_num) <span class="op">%&gt;%</span></span>
-<span id="cb8-16"><a href="funcoes-deps.html#cb8-16" aria-hidden="true"></a><span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></span>
-<span id="cb8-17"><a href="funcoes-deps.html#cb8-17" aria-hidden="true"></a><span class="st">  </span><span class="kw">summarise_at</span>(<span class="kw">vars</span>(...), mean)</span>
-<span id="cb8-18"><a href="funcoes-deps.html#cb8-18" aria-hidden="true"></a>}</span>
-<span id="cb8-19"><a href="funcoes-deps.html#cb8-19" aria-hidden="true"></a></span>
-<span id="cb8-20"><a href="funcoes-deps.html#cb8-20" aria-hidden="true"></a><span class="co"># 4 cyl, média de mpg e wt</span></span>
-<span id="cb8-21"><a href="funcoes-deps.html#cb8-21" aria-hidden="true"></a>mtcars <span class="op">%&gt;%</span></span>
-<span id="cb8-22"><a href="funcoes-deps.html#cb8-22" aria-hidden="true"></a><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></span>
-<span id="cb8-23"><a href="funcoes-deps.html#cb8-23" aria-hidden="true"></a><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">4</span>, mpg, wt)</span>
-<span id="cb8-24"><a href="funcoes-deps.html#cb8-24" aria-hidden="true"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
-<span id="cb8-25"><a href="funcoes-deps.html#cb8-25" aria-hidden="true"></a><span class="co">#&gt;     cyl   mpg    wt</span></span>
-<span id="cb8-26"><a href="funcoes-deps.html#cb8-26" aria-hidden="true"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span id="cb8-27"><a href="funcoes-deps.html#cb8-27" aria-hidden="true"></a><span class="co">#&gt; 1     4  26.7  2.29</span></span>
-<span id="cb8-28"><a href="funcoes-deps.html#cb8-28" aria-hidden="true"></a></span>
-<span id="cb8-29"><a href="funcoes-deps.html#cb8-29" aria-hidden="true"></a><span class="co"># 6 cyl, média de drat e disp</span></span>
-<span id="cb8-30"><a href="funcoes-deps.html#cb8-30" aria-hidden="true"></a>mtcars <span class="op">%&gt;%</span></span>
-<span id="cb8-31"><a href="funcoes-deps.html#cb8-31" aria-hidden="true"></a><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></span>
-<span id="cb8-32"><a href="funcoes-deps.html#cb8-32" aria-hidden="true"></a><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">6</span>, drat, disp)</span>
-<span id="cb8-33"><a href="funcoes-deps.html#cb8-33" aria-hidden="true"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
-<span id="cb8-34"><a href="funcoes-deps.html#cb8-34" aria-hidden="true"></a><span class="co">#&gt;     cyl  drat  disp</span></span>
-<span id="cb8-35"><a href="funcoes-deps.html#cb8-35" aria-hidden="true"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span id="cb8-36"><a href="funcoes-deps.html#cb8-36" aria-hidden="true"></a><span class="co">#&gt; 1     6  3.59  183.</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="funcoes-deps.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-2"><a href="funcoes-deps.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb8-3"><a href="funcoes-deps.html#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="funcoes-deps.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Limpa tabela, filtrando cyl &lt; cyl_max</span></span>
+<span id="cb8-5"><a href="funcoes-deps.html#cb8-5" aria-hidden="true" tabindex="-1"></a>clean <span class="ot">&lt;-</span> <span class="cf">function</span>(data, <span class="at">cyl_max =</span> <span class="dv">8</span>) {</span>
+<span id="cb8-6"><a href="funcoes-deps.html#cb8-6" aria-hidden="true" tabindex="-1"></a>  data <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="funcoes-deps.html#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">&quot;model&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-8"><a href="funcoes-deps.html#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb8-9"><a href="funcoes-deps.html#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">&lt;</span> cyl_max)</span>
+<span id="cb8-10"><a href="funcoes-deps.html#cb8-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-11"><a href="funcoes-deps.html#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="funcoes-deps.html#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Resume tabela onde cyl == cyl_max, tirando média das colunas em ...</span></span>
+<span id="cb8-13"><a href="funcoes-deps.html#cb8-13" aria-hidden="true" tabindex="-1"></a>summarise_cyl <span class="ot">&lt;-</span> <span class="cf">function</span>(data, cyl_num, ...) {</span>
+<span id="cb8-14"><a href="funcoes-deps.html#cb8-14" aria-hidden="true" tabindex="-1"></a>  data <span class="sc">%&gt;%</span></span>
+<span id="cb8-15"><a href="funcoes-deps.html#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> cyl_num) <span class="sc">%&gt;%</span></span>
+<span id="cb8-16"><a href="funcoes-deps.html#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb8-17"><a href="funcoes-deps.html#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="fu">vars</span>(...), mean)</span>
+<span id="cb8-18"><a href="funcoes-deps.html#cb8-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-19"><a href="funcoes-deps.html#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="funcoes-deps.html#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 4 cyl, média de mpg e wt</span></span>
+<span id="cb8-21"><a href="funcoes-deps.html#cb8-21" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb8-22"><a href="funcoes-deps.html#cb8-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean</span>(<span class="at">cyl_max =</span> <span class="dv">8</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-23"><a href="funcoes-deps.html#cb8-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_cyl</span>(<span class="at">cyl_num =</span> <span class="dv">4</span>, mpg, wt)</span>
+<span id="cb8-24"><a href="funcoes-deps.html#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
+<span id="cb8-25"><a href="funcoes-deps.html#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     cyl   mpg    wt</span></span>
+<span id="cb8-26"><a href="funcoes-deps.html#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb8-27"><a href="funcoes-deps.html#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1     4  26.7  2.29</span></span>
+<span id="cb8-28"><a href="funcoes-deps.html#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-29"><a href="funcoes-deps.html#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="co"># 6 cyl, média de drat e disp</span></span>
+<span id="cb8-30"><a href="funcoes-deps.html#cb8-30" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb8-31"><a href="funcoes-deps.html#cb8-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean</span>(<span class="at">cyl_max =</span> <span class="dv">8</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-32"><a href="funcoes-deps.html#cb8-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_cyl</span>(<span class="at">cyl_num =</span> <span class="dv">6</span>, drat, disp)</span>
+<span id="cb8-33"><a href="funcoes-deps.html#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
+<span id="cb8-34"><a href="funcoes-deps.html#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     cyl  drat  disp</span></span>
+<span id="cb8-35"><a href="funcoes-deps.html#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb8-36"><a href="funcoes-deps.html#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1     6  3.59  183.</span></span></code></pre></div>
 <p>Um código bem encapsulado reduz a necessidade de objetos intermediários (
 <code>base_tratada</code>, <code>base_filtrada</code>, etc.) pois para gerar um deles basta a
 aplicação de uma função. Além disso, programas com funções normalmente são muito
@@ -346,42 +349,42 @@ diretamente atreladas às próprias funções sendo utilizadas.</p></li>
 <p>Existe um terceiro e importante benefício, mas este será abordado apenas no
 próximo capítulo. A título de curiosidade, o código anterior ficaria assim caso
 fosse escrito sem as chamadas para <code>library()</code>:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="funcoes-deps.html#cb9-1" aria-hidden="true"></a><span class="co"># Referência ao pipe</span></span>
-<span id="cb9-2"><a href="funcoes-deps.html#cb9-2" aria-hidden="true"></a><span class="st">`</span><span class="dt">%&gt;%</span><span class="st">`</span> &lt;-<span class="st"> </span>magrittr<span class="op">::</span><span class="st">`</span><span class="dt">%&gt;%</span><span class="st">`</span></span>
-<span id="cb9-3"><a href="funcoes-deps.html#cb9-3" aria-hidden="true"></a></span>
-<span id="cb9-4"><a href="funcoes-deps.html#cb9-4" aria-hidden="true"></a><span class="co"># Limpa tabela, filtrando cyl &lt; cyl_max</span></span>
-<span id="cb9-5"><a href="funcoes-deps.html#cb9-5" aria-hidden="true"></a>clean &lt;-<span class="st"> </span><span class="cf">function</span>(data, <span class="dt">cyl_max =</span> <span class="dv">8</span>) {</span>
-<span id="cb9-6"><a href="funcoes-deps.html#cb9-6" aria-hidden="true"></a>  data <span class="op">%&gt;%</span></span>
-<span id="cb9-7"><a href="funcoes-deps.html#cb9-7" aria-hidden="true"></a><span class="st">    </span>tibble<span class="op">::</span><span class="kw">rownames_to_column</span>(<span class="dt">var =</span> <span class="st">&quot;model&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb9-8"><a href="funcoes-deps.html#cb9-8" aria-hidden="true"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span></span>
-<span id="cb9-9"><a href="funcoes-deps.html#cb9-9" aria-hidden="true"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cyl <span class="op">&lt;</span><span class="st"> </span>cyl_max)</span>
-<span id="cb9-10"><a href="funcoes-deps.html#cb9-10" aria-hidden="true"></a>}</span>
-<span id="cb9-11"><a href="funcoes-deps.html#cb9-11" aria-hidden="true"></a></span>
-<span id="cb9-12"><a href="funcoes-deps.html#cb9-12" aria-hidden="true"></a><span class="co"># Resume tabela onde cyl == cyl_max, tirando média das colunas em ...</span></span>
-<span id="cb9-13"><a href="funcoes-deps.html#cb9-13" aria-hidden="true"></a>summarise_cyl &lt;-<span class="st"> </span><span class="cf">function</span>(data, cyl_num, ...) {</span>
-<span id="cb9-14"><a href="funcoes-deps.html#cb9-14" aria-hidden="true"></a>  data <span class="op">%&gt;%</span></span>
-<span id="cb9-15"><a href="funcoes-deps.html#cb9-15" aria-hidden="true"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cyl <span class="op">==</span><span class="st"> </span>cyl_num) <span class="op">%&gt;%</span></span>
-<span id="cb9-16"><a href="funcoes-deps.html#cb9-16" aria-hidden="true"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></span>
-<span id="cb9-17"><a href="funcoes-deps.html#cb9-17" aria-hidden="true"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">summarise_at</span>(dplyr<span class="op">::</span><span class="kw">vars</span>(...), mean)</span>
-<span id="cb9-18"><a href="funcoes-deps.html#cb9-18" aria-hidden="true"></a>}</span>
-<span id="cb9-19"><a href="funcoes-deps.html#cb9-19" aria-hidden="true"></a></span>
-<span id="cb9-20"><a href="funcoes-deps.html#cb9-20" aria-hidden="true"></a><span class="co"># 4 cyl, média de mpg e wt</span></span>
-<span id="cb9-21"><a href="funcoes-deps.html#cb9-21" aria-hidden="true"></a>mtcars <span class="op">%&gt;%</span></span>
-<span id="cb9-22"><a href="funcoes-deps.html#cb9-22" aria-hidden="true"></a><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></span>
-<span id="cb9-23"><a href="funcoes-deps.html#cb9-23" aria-hidden="true"></a><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">4</span>, mpg, wt)</span>
-<span id="cb9-24"><a href="funcoes-deps.html#cb9-24" aria-hidden="true"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
-<span id="cb9-25"><a href="funcoes-deps.html#cb9-25" aria-hidden="true"></a><span class="co">#&gt;     cyl   mpg    wt</span></span>
-<span id="cb9-26"><a href="funcoes-deps.html#cb9-26" aria-hidden="true"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span id="cb9-27"><a href="funcoes-deps.html#cb9-27" aria-hidden="true"></a><span class="co">#&gt; 1     4  26.7  2.29</span></span>
-<span id="cb9-28"><a href="funcoes-deps.html#cb9-28" aria-hidden="true"></a></span>
-<span id="cb9-29"><a href="funcoes-deps.html#cb9-29" aria-hidden="true"></a><span class="co"># 6 cyl, média de drat e disp</span></span>
-<span id="cb9-30"><a href="funcoes-deps.html#cb9-30" aria-hidden="true"></a>mtcars <span class="op">%&gt;%</span></span>
-<span id="cb9-31"><a href="funcoes-deps.html#cb9-31" aria-hidden="true"></a><span class="st">  </span><span class="kw">clean</span>(<span class="dt">cyl_max =</span> <span class="dv">8</span>) <span class="op">%&gt;%</span></span>
-<span id="cb9-32"><a href="funcoes-deps.html#cb9-32" aria-hidden="true"></a><span class="st">  </span><span class="kw">summarise_cyl</span>(<span class="dt">cyl_num =</span> <span class="dv">6</span>, drat, disp)</span>
-<span id="cb9-33"><a href="funcoes-deps.html#cb9-33" aria-hidden="true"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
-<span id="cb9-34"><a href="funcoes-deps.html#cb9-34" aria-hidden="true"></a><span class="co">#&gt;     cyl  drat  disp</span></span>
-<span id="cb9-35"><a href="funcoes-deps.html#cb9-35" aria-hidden="true"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span id="cb9-36"><a href="funcoes-deps.html#cb9-36" aria-hidden="true"></a><span class="co">#&gt; 1     6  3.59  183.</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="funcoes-deps.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Referência ao pipe</span></span>
+<span id="cb9-2"><a href="funcoes-deps.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">%&gt;%</span><span class="st">`</span> <span class="ot">&lt;-</span> magrittr<span class="sc">::</span><span class="st">`</span><span class="at">%&gt;%</span><span class="st">`</span></span>
+<span id="cb9-3"><a href="funcoes-deps.html#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="funcoes-deps.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Limpa tabela, filtrando cyl &lt; cyl_max</span></span>
+<span id="cb9-5"><a href="funcoes-deps.html#cb9-5" aria-hidden="true" tabindex="-1"></a>clean <span class="ot">&lt;-</span> <span class="cf">function</span>(data, <span class="at">cyl_max =</span> <span class="dv">8</span>) {</span>
+<span id="cb9-6"><a href="funcoes-deps.html#cb9-6" aria-hidden="true" tabindex="-1"></a>  data <span class="sc">%&gt;%</span></span>
+<span id="cb9-7"><a href="funcoes-deps.html#cb9-7" aria-hidden="true" tabindex="-1"></a>    tibble<span class="sc">::</span><span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">&quot;model&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-8"><a href="funcoes-deps.html#cb9-8" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb9-9"><a href="funcoes-deps.html#cb9-9" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(cyl <span class="sc">&lt;</span> cyl_max)</span>
+<span id="cb9-10"><a href="funcoes-deps.html#cb9-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-11"><a href="funcoes-deps.html#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="funcoes-deps.html#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Resume tabela onde cyl == cyl_max, tirando média das colunas em ...</span></span>
+<span id="cb9-13"><a href="funcoes-deps.html#cb9-13" aria-hidden="true" tabindex="-1"></a>summarise_cyl <span class="ot">&lt;-</span> <span class="cf">function</span>(data, cyl_num, ...) {</span>
+<span id="cb9-14"><a href="funcoes-deps.html#cb9-14" aria-hidden="true" tabindex="-1"></a>  data <span class="sc">%&gt;%</span></span>
+<span id="cb9-15"><a href="funcoes-deps.html#cb9-15" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(cyl <span class="sc">==</span> cyl_num) <span class="sc">%&gt;%</span></span>
+<span id="cb9-16"><a href="funcoes-deps.html#cb9-16" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb9-17"><a href="funcoes-deps.html#cb9-17" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarise_at</span>(dplyr<span class="sc">::</span><span class="fu">vars</span>(...), mean)</span>
+<span id="cb9-18"><a href="funcoes-deps.html#cb9-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-19"><a href="funcoes-deps.html#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="funcoes-deps.html#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 4 cyl, média de mpg e wt</span></span>
+<span id="cb9-21"><a href="funcoes-deps.html#cb9-21" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb9-22"><a href="funcoes-deps.html#cb9-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean</span>(<span class="at">cyl_max =</span> <span class="dv">8</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-23"><a href="funcoes-deps.html#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_cyl</span>(<span class="at">cyl_num =</span> <span class="dv">4</span>, mpg, wt)</span>
+<span id="cb9-24"><a href="funcoes-deps.html#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
+<span id="cb9-25"><a href="funcoes-deps.html#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     cyl   mpg    wt</span></span>
+<span id="cb9-26"><a href="funcoes-deps.html#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb9-27"><a href="funcoes-deps.html#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1     4  26.7  2.29</span></span>
+<span id="cb9-28"><a href="funcoes-deps.html#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-29"><a href="funcoes-deps.html#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="co"># 6 cyl, média de drat e disp</span></span>
+<span id="cb9-30"><a href="funcoes-deps.html#cb9-30" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb9-31"><a href="funcoes-deps.html#cb9-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean</span>(<span class="at">cyl_max =</span> <span class="dv">8</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-32"><a href="funcoes-deps.html#cb9-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_cyl</span>(<span class="at">cyl_num =</span> <span class="dv">6</span>, drat, disp)</span>
+<span id="cb9-33"><a href="funcoes-deps.html#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 x 3</span></span>
+<span id="cb9-34"><a href="funcoes-deps.html#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     cyl  drat  disp</span></span>
+<span id="cb9-35"><a href="funcoes-deps.html#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb9-36"><a href="funcoes-deps.html#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1     6  3.59  183.</span></span></code></pre></div>
 <p>Se serve de consolo, o RStudio facilita muito esse tipo de programação por causa
 da sua capacidade de sugerir continuações para código interativamente. Para
 escrever <code>dplyr::</code>, por exemplo, basta digitar <code>d</code>, <code>p</code>, <code>l</code> e apertar <code>TAB</code> uma
