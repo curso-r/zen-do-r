@@ -155,7 +155,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="rproj-dir.html"><a href="rproj-dir.html"><i class="fa fa-check"></i><b>3</b> Rproj e diretórios</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="rproj-dir.html"><a href="rproj-dir.html#diretório-de-trabalho"><i class="fa fa-check"></i><b>3.1</b> Diretório de trabalho</a></li>
+<li class="chapter" data-level="3.1" data-path="rproj-dir.html"><a href="rproj-dir.html#caminhos-relativos-e-absolutos"><i class="fa fa-check"></i><b>3.1</b> Caminhos relativos e absolutos</a></li>
+<li class="chapter" data-level="3.2" data-path="rproj-dir.html"><a href="rproj-dir.html#organizando-o-ambiente"><i class="fa fa-check"></i><b>3.2</b> Organizando o ambiente</a></li>
+<li class="chapter" data-level="3.3" data-path="rproj-dir.html"><a href="rproj-dir.html#diretório-de-trabalho"><i class="fa fa-check"></i><b>3.3</b> Diretório de trabalho</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="git-github.html"><a href="git-github.html"><i class="fa fa-check"></i><b>4</b> Git e GitHub</a></li>
 <li class="chapter" data-level="5" data-path="funcoes-deps.html"><a href="funcoes-deps.html"><i class="fa fa-check"></i><b>5</b> Funções e dependências</a>
@@ -209,6 +211,48 @@ programação.</p>
 <p>Felizmente o RStudio possui uma ferramenta incrível que auxilia na tarefa de
 consolidar todos os recursos necessários para uma análise. Denominados
 “projetos”, eles não passam de pastas comuns com um arquivo <code>.Rproj</code>.</p>
+<div id="caminhos-relativos-e-absolutos" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Caminhos relativos e absolutos</h2>
+<p>Antes de continuar falando sobre diretórios, é importante falar um pouco sobre
+como funcionam os caminhos para arquivos no computador. Toda função de
+importação vai exigir um caminho, uma string que representa oendereço do arquivo
+no computador e há duas formas de passarmos um caminho de arquivo: a absoluta e
+a relativa.</p>
+<p>Caminhos absolutos são aqueles que têm início na pasta raiz do seu computador,
+ou seja, que começam com uma barra <code>/</code> ou um disco do Windows (<code>C:/</code>, <code>D:/</code> e
+assim por diante). Por exemplo, esse é o caminho absoluto para a pasta onde este
+livro foi produzido:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="rproj-dir.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span>
+<span id="cb2-2"><a href="rproj-dir.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;/home/clente/Documents/zen-do-r&quot;</span></span></code></pre></div>
+<p>Na grande maioria dos casos, caminhos absolutos são uma má prática, pois deixam
+o código irreprodutível. Se você trocar de computador ou passar o script para
+outra pessoa rodar, o código não vai funcionar, pois o caminho absoluto para o
+arquivo muito provavelmente será diferente.</p>
+<p>Já caminhos relativos são aqueles que têm início no diretório de trabalho da sua
+sessão, ou em outras palavras, no seu <em>working directory</em>. Essa é a pasta em que
+o R vai procurar arquivos na hora de ler informações ou gravar arquivos na hora
+de salvar objetos. O caminho relativo para o seu diretório de trabalho é sempre
+<code>.</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="rproj-dir.html#cb3-1" aria-hidden="true" tabindex="-1"></a>R.utils<span class="sc">::</span><span class="fu">getRelativePath</span>(<span class="fu">getwd</span>())</span>
+<span id="cb3-2"><a href="rproj-dir.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;.&quot;</span></span></code></pre></div>
+<p>Um arquivo dentro do diretório de trabalho será o seu próprio caminho relativo,
+enquanto <code>..</code> indica “voltar” um diretório em relação ao <em>working directory</em>.
+Por fim, o til <code>~</code> é um caractere que indica a <em>home</em> do usuário (<code>/home/clente</code>
+no meu caso) e costuma ser classificado como caminoh relativo.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="rproj-dir.html#cb4-1" aria-hidden="true" tabindex="-1"></a>R.utils<span class="sc">::</span><span class="fu">getRelativePath</span>(<span class="st">&quot;/home/clente/Documents/zen-do-r/git-github.Rmd&quot;</span>)</span>
+<span id="cb4-2"><a href="rproj-dir.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;git-github.Rmd&quot;</span></span>
+<span id="cb4-3"><a href="rproj-dir.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="rproj-dir.html#cb4-4" aria-hidden="true" tabindex="-1"></a>R.utils<span class="sc">::</span><span class="fu">getRelativePath</span>(<span class="st">&quot;/home/clente/Documents&quot;</span>)</span>
+<span id="cb4-5"><a href="rproj-dir.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;..&quot;</span></span>
+<span id="cb4-6"><a href="rproj-dir.html#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="rproj-dir.html#cb4-7" aria-hidden="true" tabindex="-1"></a>R.utils<span class="sc">::</span><span class="fu">getRelativePath</span>(<span class="st">&quot;/home/clente/Documents/blog&quot;</span>)</span>
+<span id="cb4-8"><a href="rproj-dir.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;../blog&quot;</span></span>
+<span id="cb4-9"><a href="rproj-dir.html#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="rproj-dir.html#cb4-10" aria-hidden="true" tabindex="-1"></a>R.utils<span class="sc">::</span><span class="fu">getRelativePath</span>(<span class="st">&quot;~/Documents/blog&quot;</span>)</span>
+<span id="cb4-11"><a href="rproj-dir.html#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;../blog&quot;</span></span></code></pre></div>
+</div>
+<div id="organizando-o-ambiente" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Organizando o ambiente</h2>
 <p>O primeiro passo para organizar um bom ambiente de trabalho para análises de
 dados é criar um diretório onde todos os seus programas R podem viver. No meu
 computador eu tenho a pasta <code>~/Documents/Dev/R/</code>, mas não importa onde ela
@@ -234,14 +278,14 @@ assunto. Mas esta não deve ser uma pasta comum, ela deve ser um projeto.</p>
 <p>O código listado abaixo demonstra como criar um projeto no RStudio. Basta
 apenas um comando e ele já fará tudo que for necessário para preparar o seu
 ambiente de desenvolvimento.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="rproj-dir.html#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_project</span>(<span class="st">&quot;~/Documents/Dev/R/Proj/&quot;</span>)</span>
-<span id="cb2-2"><a href="rproj-dir.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Creating &#39;~/Documents/Dev/R/Proj/&#39;</span></span>
-<span id="cb2-3"><a href="rproj-dir.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/Dev/R/Proj&#39;</span></span>
-<span id="cb2-4"><a href="rproj-dir.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Creating &#39;R/&#39;</span></span>
-<span id="cb2-5"><a href="rproj-dir.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing &#39;Proj.Rproj&#39;</span></span>
-<span id="cb2-6"><a href="rproj-dir.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span></span>
-<span id="cb2-7"><a href="rproj-dir.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Opening &#39;~/Documents/Dev/R/Proj/&#39; in new RStudio session</span></span>
-<span id="cb2-8"><a href="rproj-dir.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting active project to &#39;Proj&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="rproj-dir.html#cb5-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_project</span>(<span class="st">&quot;~/Documents/Dev/R/Proj/&quot;</span>)</span>
+<span id="cb5-2"><a href="rproj-dir.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Creating &#39;~/Documents/Dev/R/Proj/&#39;</span></span>
+<span id="cb5-3"><a href="rproj-dir.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/Dev/R/Proj&#39;</span></span>
+<span id="cb5-4"><a href="rproj-dir.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Creating &#39;R/&#39;</span></span>
+<span id="cb5-5"><a href="rproj-dir.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing &#39;Proj.Rproj&#39;</span></span>
+<span id="cb5-6"><a href="rproj-dir.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;</span></span>
+<span id="cb5-7"><a href="rproj-dir.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Opening &#39;~/Documents/Dev/R/Proj/&#39; in new RStudio session</span></span>
+<span id="cb5-8"><a href="rproj-dir.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting active project to &#39;Proj&#39;</span></span></code></pre></div>
 <p>Cada linha da saída do comando representa algo que ele fez para preparar o
 projeto. A mais importante é a quarta linha, que cria o arquivo <code>Proj.Rproj</code>;
 ele indica para o RStudio que aquele diretório será a raiz de um projeto e que,
@@ -255,8 +299,9 @@ no seu diretório de trabalho, crie um projeto novo para cada grupo de programas
 que você tiver detectado. Talvez um para exercícios de R, um para cada cliente,
 um para uma nova ideia, etc. Cada um deles deve ter um nome descritivo e
 conter, em sua pasta R, todos os arquivos necessários para aquela análise.</p>
-<div id="diretório-de-trabalho" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Diretório de trabalho</h2>
+</div>
+<div id="diretório-de-trabalho" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Diretório de trabalho</h2>
 <p>Mas a funcionalidade mais importante dentre todas as já citadas é o conceito do
 <em>working directory</em> ou diretório de trabalho. No canto esquerdo superior do
 Console do RStudio existe um caminho denominado diretório de trabalho, que é
@@ -268,15 +313,15 @@ prestando atenção.</p>
 <p>O R dá a possibilidade de mudar, instantaneamente, o diretório de trabalho.
 Isso que dizer que os caminhos relativos para arquivos podem mudar em questão
 de linhas. O exemplo abaixo demonstra superficialmente como isso funciona:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="rproj-dir.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrindo dois arquivos em diretórios diferentes</span></span>
-<span id="cb3-2"><a href="rproj-dir.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="rproj-dir.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Downloads&quot;</span>)</span>
-<span id="cb3-4"><a href="rproj-dir.html#cb3-4" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span>
-<span id="cb3-5"><a href="rproj-dir.html#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="rproj-dir.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Documents/Dev/R/Proj&quot;</span>)</span>
-<span id="cb3-7"><a href="rproj-dir.html#cb3-7" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;b.csv&quot;</span>)</span>
-<span id="cb3-8"><a href="rproj-dir.html#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="rproj-dir.html#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(a, <span class="st">&quot;c.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="rproj-dir.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrindo dois arquivos em diretórios diferentes</span></span>
+<span id="cb6-2"><a href="rproj-dir.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="rproj-dir.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Downloads&quot;</span>)</span>
+<span id="cb6-4"><a href="rproj-dir.html#cb6-4" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span>
+<span id="cb6-5"><a href="rproj-dir.html#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="rproj-dir.html#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Documents/Dev/R/Proj&quot;</span>)</span>
+<span id="cb6-7"><a href="rproj-dir.html#cb6-7" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;b.csv&quot;</span>)</span>
+<span id="cb6-8"><a href="rproj-dir.html#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="rproj-dir.html#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(a, <span class="st">&quot;c.csv&quot;</span>)</span></code></pre></div>
 <p>Isso não parece tão problemático à primeira vista, mas usar <code>setwd()</code> cria um
 vício difícil de abandonar. Essa função estimula que os seus projetos continuem
 desorganizados com arquivos espalhados pelo computador, mas também confunde o
@@ -288,12 +333,12 @@ responder caso você não esteja atento ao código todo.</p>
 trabalho seja sempre a pasta do projeto. Neste caso é como se, ao abrir o
 RStudio, ele executasse o comando <code>setwd("~/Documents/Dev/R/Proj")</code>
 automaticamente. Mas como ler então o arquivo <code>a.csv</code>?</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="rproj-dir.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Duas formas de ler a.csv</span></span>
-<span id="cb4-2"><a href="rproj-dir.html#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="rproj-dir.html#cb4-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>)</span>
-<span id="cb4-4"><a href="rproj-dir.html#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="rproj-dir.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">file.copy</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>, <span class="st">&quot;a.csv&quot;</span>)</span>
-<span id="cb4-6"><a href="rproj-dir.html#cb4-6" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="rproj-dir.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Duas formas de ler a.csv</span></span>
+<span id="cb7-2"><a href="rproj-dir.html#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="rproj-dir.html#cb7-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>)</span>
+<span id="cb7-4"><a href="rproj-dir.html#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="rproj-dir.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">file.copy</span>(<span class="st">&quot;~/Downloads/a.csv&quot;</span>, <span class="st">&quot;a.csv&quot;</span>)</span>
+<span id="cb7-6"><a href="rproj-dir.html#cb7-6" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;a.csv&quot;</span>)</span></code></pre></div>
 <p>A primeira forma deixa explícito que aquele arquivo não faz parte do projeto e
 que portanto deve ser tratado como temporário. A segunda forma, mais indicada,
 é trazer o arquivo para dentro do projeto! Se ele é importante, é essencial que

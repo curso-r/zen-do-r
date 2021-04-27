@@ -155,7 +155,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="rproj-dir.html"><a href="rproj-dir.html"><i class="fa fa-check"></i><b>3</b> Rproj e diretórios</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="rproj-dir.html"><a href="rproj-dir.html#diretório-de-trabalho"><i class="fa fa-check"></i><b>3.1</b> Diretório de trabalho</a></li>
+<li class="chapter" data-level="3.1" data-path="rproj-dir.html"><a href="rproj-dir.html#caminhos-relativos-e-absolutos"><i class="fa fa-check"></i><b>3.1</b> Caminhos relativos e absolutos</a></li>
+<li class="chapter" data-level="3.2" data-path="rproj-dir.html"><a href="rproj-dir.html#organizando-o-ambiente"><i class="fa fa-check"></i><b>3.2</b> Organizando o ambiente</a></li>
+<li class="chapter" data-level="3.3" data-path="rproj-dir.html"><a href="rproj-dir.html#diretório-de-trabalho"><i class="fa fa-check"></i><b>3.3</b> Diretório de trabalho</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="git-github.html"><a href="git-github.html"><i class="fa fa-check"></i><b>4</b> Git e GitHub</a></li>
 <li class="chapter" data-level="5" data-path="funcoes-deps.html"><a href="funcoes-deps.html"><i class="fa fa-check"></i><b>5</b> Funções e dependências</a>
@@ -305,8 +307,8 @@ LazyData: true</code></pre>
 <p>Note como o campo <em>Version</em> já está populado com a primeira versão possível para
 um pacote: 0.0.0.9000. Depois de alguns commits, se acharmos que o código está
 preparado para a primeira minor, utilizamos:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="versoes-releases.html#cb37-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_version</span>(<span class="st">&quot;minor&quot;</span>)</span>
-<span id="cb37-2"><a href="versoes-releases.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="versoes-releases.html#cb40-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_version</span>(<span class="st">&quot;minor&quot;</span>)</span>
+<span id="cb40-2"><a href="versoes-releases.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0&#39;</span></span></code></pre></div>
 <p>A segunda linha já deixa claro que agora o arquivo <code>DESCRIPTION</code> contém uma
 linha <code>Version: 0.1.0</code> (note como a versão de desenvolvimento é removida
 automaticamente). <strong>Mas atenção</strong>, antes de fazer qualquer outra alteração no
@@ -316,19 +318,19 @@ ela. Atualmente o <code>usethis</code> faz isso automaticamente.</p>
 para o estado de desenvolvimento. Ou seja, deve existir um único commit no qual
 o pacote é considerado estável para cada sequência de commits de
 desenvolvimento.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="versoes-releases.html#cb38-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_dev_version</span>()</span>
-<span id="cb38-2"><a href="versoes-releases.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0.9000&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="versoes-releases.html#cb41-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_dev_version</span>()</span>
+<span id="cb41-2"><a href="versoes-releases.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.0.9000&#39;</span></span></code></pre></div>
 <p>Depois que o pacote voltar para desenvolvimento, a programação pode continuar
 desimpedida. Por completude, <code>usethis::use_version()</code> pode ser utilizada para
 qualquer versão cheia:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="versoes-releases.html#cb39-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_version</span>(<span class="st">&quot;patch&quot;</span>)</span>
-<span id="cb39-2"><a href="versoes-releases.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1&#39;</span></span>
-<span id="cb39-3"><a href="versoes-releases.html#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-4"><a href="versoes-releases.html#cb39-4" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_dev_version</span>()</span>
-<span id="cb39-5"><a href="versoes-releases.html#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1.9000&#39;</span></span>
-<span id="cb39-6"><a href="versoes-releases.html#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-7"><a href="versoes-releases.html#cb39-7" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_version</span>(<span class="st">&quot;major&quot;</span>)</span>
-<span id="cb39-8"><a href="versoes-releases.html#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;1.0.0&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="versoes-releases.html#cb42-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_version</span>(<span class="st">&quot;patch&quot;</span>)</span>
+<span id="cb42-2"><a href="versoes-releases.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1&#39;</span></span>
+<span id="cb42-3"><a href="versoes-releases.html#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="versoes-releases.html#cb42-4" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_dev_version</span>()</span>
+<span id="cb42-5"><a href="versoes-releases.html#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;0.1.1.9000&#39;</span></span>
+<span id="cb42-6"><a href="versoes-releases.html#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="versoes-releases.html#cb42-7" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_version</span>(<span class="st">&quot;major&quot;</span>)</span>
+<span id="cb42-8"><a href="versoes-releases.html#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting Version field in DESCRIPTION to &#39;1.0.0&#39;</span></span></code></pre></div>
 </div>
 <div id="releases" class="section level2" number="10.2">
 <h2><span class="header-section-number">10.2</span> Releases</h2>

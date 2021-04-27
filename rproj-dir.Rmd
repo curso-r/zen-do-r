@@ -10,6 +10,61 @@ Felizmente o RStudio possui uma ferramenta incrível que auxilia na tarefa de
 consolidar todos os recursos necessários para uma análise. Denominados
 "projetos", eles não passam de pastas comuns com um arquivo `.Rproj`.
 
+## Caminhos relativos e absolutos
+
+Antes de continuar falando sobre diretórios, é importante falar um pouco sobre
+como funcionam os caminhos para arquivos no computador. Toda função de
+importação vai exigir um caminho, uma string que representa oendereço do arquivo
+no computador e há duas formas de passarmos um caminho de arquivo: a absoluta e
+a relativa.
+
+Caminhos absolutos são aqueles que têm início na pasta raiz do seu computador,
+ou seja, que começam com uma barra `/` ou um disco do Windows (`C:/`, `D:/` e
+assim por diante). Por exemplo, esse é o caminho absoluto para a pasta onde este
+livro foi produzido:
+
+```r
+getwd()
+#> [1] "/home/clente/Documents/zen-do-r"
+```
+
+Na grande maioria dos casos, caminhos absolutos são uma má prática, pois deixam
+o código irreprodutível. Se você trocar de computador ou passar o script para
+outra pessoa rodar, o código não vai funcionar, pois o caminho absoluto para o
+arquivo muito provavelmente será diferente.
+
+Já caminhos relativos são aqueles que têm início no diretório de trabalho da sua
+sessão, ou em outras palavras, no seu *working directory*. Essa é a pasta em que
+o R vai procurar arquivos na hora de ler informações ou gravar arquivos na hora
+de salvar objetos. O caminho relativo para o seu diretório de trabalho é sempre
+`.`:
+
+```r
+R.utils::getRelativePath(getwd())
+#> [1] "."
+```
+
+Um arquivo dentro do diretório de trabalho será o seu próprio caminho relativo,
+enquanto `..` indica "voltar" um diretório em relação ao *working directory*.
+Por fim, o til `~` é um caractere que indica a *home* do usuário (`/home/clente`
+no meu caso) e costuma ser classificado como caminoh relativo.
+
+```r
+R.utils::getRelativePath("/home/clente/Documents/zen-do-r/git-github.Rmd")
+#> [1] "git-github.Rmd"
+
+R.utils::getRelativePath("/home/clente/Documents")
+#> [1] ".."
+
+R.utils::getRelativePath("/home/clente/Documents/blog")
+#> [1] "../blog"
+
+R.utils::getRelativePath("~/Documents/blog")
+#> [1] "../blog"
+```
+
+## Organizando o ambiente
+
 O primeiro passo para organizar um bom ambiente de trabalho para análises de
 dados é criar um diretório onde todos os seus programas R podem viver. No meu
 computador eu tenho a pasta `~/Documents/Dev/R/`, mas não importa onde ela

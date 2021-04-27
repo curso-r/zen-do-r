@@ -155,7 +155,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="rproj-dir.html"><a href="rproj-dir.html"><i class="fa fa-check"></i><b>3</b> Rproj e diretórios</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="rproj-dir.html"><a href="rproj-dir.html#diretório-de-trabalho"><i class="fa fa-check"></i><b>3.1</b> Diretório de trabalho</a></li>
+<li class="chapter" data-level="3.1" data-path="rproj-dir.html"><a href="rproj-dir.html#caminhos-relativos-e-absolutos"><i class="fa fa-check"></i><b>3.1</b> Caminhos relativos e absolutos</a></li>
+<li class="chapter" data-level="3.2" data-path="rproj-dir.html"><a href="rproj-dir.html#organizando-o-ambiente"><i class="fa fa-check"></i><b>3.2</b> Organizando o ambiente</a></li>
+<li class="chapter" data-level="3.3" data-path="rproj-dir.html"><a href="rproj-dir.html#diretório-de-trabalho"><i class="fa fa-check"></i><b>3.3</b> Diretório de trabalho</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="git-github.html"><a href="git-github.html"><i class="fa fa-check"></i><b>4</b> Git e GitHub</a></li>
 <li class="chapter" data-level="5" data-path="funcoes-deps.html"><a href="funcoes-deps.html"><i class="fa fa-check"></i><b>5</b> Funções e dependências</a>
@@ -230,39 +232,39 @@ mudança nas demandas ou nas bases, o analista precisa ser capaz de alterar os
 denominada <code>dados.xlsx</code>. Primeiramente deve-se executar a função
 <code>usethis::use_data_raw()</code> para criar a pasta <code>data-raw</code> e um arquivo de
 tratamento para a base em questão.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="data-data-raw.html#cb30-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data_raw</span>(<span class="st">&quot;dados&quot;</span>)</span>
-<span id="cb30-2"><a href="data-data-raw.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span></span>
-<span id="cb30-3"><a href="data-data-raw.html#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Creating &#39;data-raw/&#39;</span></span>
-<span id="cb30-4"><a href="data-data-raw.html#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Adding &#39;^data-raw$&#39; to &#39;.Rbuildignore&#39;</span></span>
-<span id="cb30-5"><a href="data-data-raw.html#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing &#39;data-raw/dados.R&#39;</span></span>
-<span id="cb30-6"><a href="data-data-raw.html#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ● Modify &#39;data-raw/dados.R&#39;</span></span>
-<span id="cb30-7"><a href="data-data-raw.html#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ● Finish the data preparation script in &#39;data-raw/dados.R&#39;</span></span>
-<span id="cb30-8"><a href="data-data-raw.html#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ● Use `usethis::use_data()` to add prepared data to package</span></span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="data-data-raw.html#cb33-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data_raw</span>(<span class="st">&quot;dados&quot;</span>)</span>
+<span id="cb33-2"><a href="data-data-raw.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Setting active project to &#39;~/Documents/demo&#39;</span></span>
+<span id="cb33-3"><a href="data-data-raw.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Creating &#39;data-raw/&#39;</span></span>
+<span id="cb33-4"><a href="data-data-raw.html#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Adding &#39;^data-raw$&#39; to &#39;.Rbuildignore&#39;</span></span>
+<span id="cb33-5"><a href="data-data-raw.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing &#39;data-raw/dados.R&#39;</span></span>
+<span id="cb33-6"><a href="data-data-raw.html#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ● Modify &#39;data-raw/dados.R&#39;</span></span>
+<span id="cb33-7"><a href="data-data-raw.html#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ● Finish the data preparation script in &#39;data-raw/dados.R&#39;</span></span>
+<span id="cb33-8"><a href="data-data-raw.html#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ● Use `usethis::use_data()` to add prepared data to package</span></span></code></pre></div>
 <p>Como indicado pelos três últimos pontos da saída do comando, agora basta colocar
 o código de tratamento da base <code>dados</code> em <code>data-raw/dados.R</code> e por fim utilizar
 <code>usethis::use_data()</code> para adicionar os dados preparados ao pacote. Para
 prosseguir o exemplo, o arquivo <code>dados.xlsx</code> foi copiado para o diretório
 <code>data-raw</code> e o código abaixo foi inserido em <code>data-raw/dados.R</code>.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="data-data-raw.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb31-2"><a href="data-data-raw.html#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="data-data-raw.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Limpar a base dados.xlsx</span></span>
-<span id="cb31-4"><a href="data-data-raw.html#cb31-4" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="st">&quot;data-raw/dados.xlsx&quot;</span> <span class="sc">%&gt;%</span></span>
-<span id="cb31-5"><a href="data-data-raw.html#cb31-5" aria-hidden="true" tabindex="-1"></a>  readxl<span class="sc">::</span><span class="fu">read_xlsx</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb31-6"><a href="data-data-raw.html#cb31-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(cyl <span class="sc">&gt;</span> <span class="dv">4</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb31-7"><a href="data-data-raw.html#cb31-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb31-8"><a href="data-data-raw.html#cb31-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">brand =</span> stringr<span class="sc">::</span><span class="fu">str_extract</span>(model, <span class="st">&quot;^[A-z]+&quot;</span>)</span>
-<span id="cb31-9"><a href="data-data-raw.html#cb31-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb31-10"><a href="data-data-raw.html#cb31-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(brand) <span class="sc">%&gt;%</span></span>
-<span id="cb31-11"><a href="data-data-raw.html#cb31-11" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
-<span id="cb31-12"><a href="data-data-raw.html#cb31-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_mpg =</span> <span class="fu">mean</span>(mpg),</span>
-<span id="cb31-13"><a href="data-data-raw.html#cb31-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop_6_cyl =</span> <span class="fu">sum</span>(cyl <span class="sc">==</span> <span class="dv">6</span>)<span class="sc">/</span>dplyr<span class="sc">::</span><span class="fu">n</span>()</span>
-<span id="cb31-14"><a href="data-data-raw.html#cb31-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb31-15"><a href="data-data-raw.html#cb31-15" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(brand)</span>
-<span id="cb31-16"><a href="data-data-raw.html#cb31-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-17"><a href="data-data-raw.html#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Salvar a base para uso no pacote</span></span>
-<span id="cb31-18"><a href="data-data-raw.html#cb31-18" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data</span>(dados)</span>
-<span id="cb31-19"><a href="data-data-raw.html#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Creating &#39;data/&#39;</span></span>
-<span id="cb31-20"><a href="data-data-raw.html#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Saving &#39;dados&#39; to &#39;data/dados.rda&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data-data-raw.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb34-2"><a href="data-data-raw.html#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="data-data-raw.html#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Limpar a base dados.xlsx</span></span>
+<span id="cb34-4"><a href="data-data-raw.html#cb34-4" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="st">&quot;data-raw/dados.xlsx&quot;</span> <span class="sc">%&gt;%</span></span>
+<span id="cb34-5"><a href="data-data-raw.html#cb34-5" aria-hidden="true" tabindex="-1"></a>  readxl<span class="sc">::</span><span class="fu">read_xlsx</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb34-6"><a href="data-data-raw.html#cb34-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(cyl <span class="sc">&gt;</span> <span class="dv">4</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb34-7"><a href="data-data-raw.html#cb34-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb34-8"><a href="data-data-raw.html#cb34-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">brand =</span> stringr<span class="sc">::</span><span class="fu">str_extract</span>(model, <span class="st">&quot;^[A-z]+&quot;</span>)</span>
+<span id="cb34-9"><a href="data-data-raw.html#cb34-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb34-10"><a href="data-data-raw.html#cb34-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(brand) <span class="sc">%&gt;%</span></span>
+<span id="cb34-11"><a href="data-data-raw.html#cb34-11" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
+<span id="cb34-12"><a href="data-data-raw.html#cb34-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_mpg =</span> <span class="fu">mean</span>(mpg),</span>
+<span id="cb34-13"><a href="data-data-raw.html#cb34-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop_6_cyl =</span> <span class="fu">sum</span>(cyl <span class="sc">==</span> <span class="dv">6</span>)<span class="sc">/</span>dplyr<span class="sc">::</span><span class="fu">n</span>()</span>
+<span id="cb34-14"><a href="data-data-raw.html#cb34-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb34-15"><a href="data-data-raw.html#cb34-15" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(brand)</span>
+<span id="cb34-16"><a href="data-data-raw.html#cb34-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-17"><a href="data-data-raw.html#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Salvar a base para uso no pacote</span></span>
+<span id="cb34-18"><a href="data-data-raw.html#cb34-18" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data</span>(dados)</span>
+<span id="cb34-19"><a href="data-data-raw.html#cb34-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Creating &#39;data/&#39;</span></span>
+<span id="cb34-20"><a href="data-data-raw.html#cb34-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Saving &#39;dados&#39; to &#39;data/dados.rda&#39;</span></span></code></pre></div>
 <p>Neste caso o arquivo Excel foi criado de dentro do próprio R com o comando
 <code>writexl::write_xlsx(tibble::rownames_to_column(mtcars, "model"), "data-raw/dados.xlsx")</code>,
 mas isso é só um exemplo ilustrativo. O importante é saber o que acontece quando
@@ -298,20 +300,20 @@ pessoas da mesma organização, pois assim não é necessário compartilhar uma
 planilha Excel separada descrevendo cada uma das colunas da tabela.</p>
 <p>Uma boa documentação de bases de dados não precisa de muita coisa. Abaixo é
 exemplificado como seria documentada <code>dados</code>:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data-data-raw.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Dados sobre 15 marcas de carros</span></span>
-<span id="cb32-2"><a href="data-data-raw.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
-<span id="cb32-3"><a href="data-data-raw.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; A tabela, gerada a partir de `mtcars`, apresenta algumas poucas</span></span>
-<span id="cb32-4"><a href="data-data-raw.html#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; informações sobre carros com mais de 4 cilindros de 15 marcas</span></span>
-<span id="cb32-5"><a href="data-data-raw.html#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; americanas de carros.</span></span>
-<span id="cb32-6"><a href="data-data-raw.html#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
-<span id="cb32-7"><a href="data-data-raw.html#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @format Uma tabela com 3 colunas e 15 linhas:</span></span>
-<span id="cb32-8"><a href="data-data-raw.html#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; \describe{</span></span>
-<span id="cb32-9"><a href="data-data-raw.html#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;   \item{brand}{Marca}</span></span>
-<span id="cb32-10"><a href="data-data-raw.html#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;   \item{mean_mpg}{Milhas por galão médias para aquela marca}</span></span>
-<span id="cb32-11"><a href="data-data-raw.html#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;   \item{prop_6_cyl}{Proporção dos carros que apresentam 6 cilindros}</span></span>
-<span id="cb32-12"><a href="data-data-raw.html#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; }</span></span>
-<span id="cb32-13"><a href="data-data-raw.html#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @source Henderson and Velleman (1981)</span></span>
-<span id="cb32-14"><a href="data-data-raw.html#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;dados&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="data-data-raw.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Dados sobre 15 marcas de carros</span></span>
+<span id="cb35-2"><a href="data-data-raw.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb35-3"><a href="data-data-raw.html#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; A tabela, gerada a partir de `mtcars`, apresenta algumas poucas</span></span>
+<span id="cb35-4"><a href="data-data-raw.html#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; informações sobre carros com mais de 4 cilindros de 15 marcas</span></span>
+<span id="cb35-5"><a href="data-data-raw.html#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; americanas de carros.</span></span>
+<span id="cb35-6"><a href="data-data-raw.html#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb35-7"><a href="data-data-raw.html#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @format Uma tabela com 3 colunas e 15 linhas:</span></span>
+<span id="cb35-8"><a href="data-data-raw.html#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; \describe{</span></span>
+<span id="cb35-9"><a href="data-data-raw.html#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;   \item{brand}{Marca}</span></span>
+<span id="cb35-10"><a href="data-data-raw.html#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;   \item{mean_mpg}{Milhas por galão médias para aquela marca}</span></span>
+<span id="cb35-11"><a href="data-data-raw.html#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;   \item{prop_6_cyl}{Proporção dos carros que apresentam 6 cilindros}</span></span>
+<span id="cb35-12"><a href="data-data-raw.html#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; }</span></span>
+<span id="cb35-13"><a href="data-data-raw.html#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @source Henderson and Velleman (1981)</span></span>
+<span id="cb35-14"><a href="data-data-raw.html#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;dados&quot;</span></span></code></pre></div>
 
 </div>
 </div>

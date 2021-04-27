@@ -8,6 +8,8 @@ rdata-rhistory
 por-que-desistir
 como-desativar
 rproj-dir
+caminhos-relativos-e-absolutos
+organizando-o-ambiente
 diretório-de-trabalho
 git-github
 funcoes-deps
