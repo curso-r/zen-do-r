@@ -13,6 +13,7 @@ Um livro de programação em R para não-programadores.
 - [x] Pacotes
 - [x] Pipe
 - [x] Data e data-raw
+- [ ] Outras pastas (inst/, etc...)
 - [x] Testes automatizados
 - [x] Versões e releases
 - [ ] CI/CD
