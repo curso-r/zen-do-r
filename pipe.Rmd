@@ -212,3 +212,15 @@ que não quer entender o significado do código a seguir:
 #' @usage lhs \%>\% rhs
 NULL
 ```
+
+Se você não estiver trabalhando em um pacote, mas também não quer carregar o
+pacote com `library()`, há duas formas de trazer o pipe para os seus scripts:
+puxando ele como uma função ou usando o argumento `include.only` da `library()`.
+
+```r
+# Puxando como função
+`%>%` <- magrittr::`%>%`
+
+# Usando include.only
+library(magrittr, include.only = "%>%")
+```

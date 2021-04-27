@@ -40,7 +40,8 @@ Matemática e Estatística da Universidade de São Paulo (IME-USP).
 Participaram da construção deste livro:
 
 - [Athos Damiani](https://twitter.com/athos_damiani)
-- [Caio Lente](https://lente.dev/)
+- [Beatriz Milz](https://twitter.com/beamilz)
+- [Caio Lente](https://twitter.com/clente_)
 - [Daniel Falbel](https://twitter.com/dfalbel)
 - [Fernando Correa](https://twitter.com/Azeloc)
 - [Julio Tricenti](https://twitter.com/jtrecenti)

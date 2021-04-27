@@ -362,6 +362,14 @@ que não quer entender o significado do código a seguir:</p>
 <span id="cb28-9"><a href="pipe.html#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @importFrom magrittr %&gt;%</span></span>
 <span id="cb28-10"><a href="pipe.html#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @usage lhs \%&gt;\% rhs</span></span>
 <span id="cb28-11"><a href="pipe.html#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="cn">NULL</span></span></code></pre></div>
+<p>Se você não estiver trabalhando em um pacote, mas também não quer carregar o
+pacote com <code>library()</code>, há duas formas de trazer o pipe para os seus scripts:
+puxando ele como uma função ou usando o argumento <code>include.only</code> da <code>library()</code>.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="pipe.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Puxando como função</span></span>
+<span id="cb29-2"><a href="pipe.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">%&gt;%</span><span class="st">`</span> <span class="ot">&lt;-</span> magrittr<span class="sc">::</span><span class="st">`</span><span class="at">%&gt;%</span><span class="st">`</span></span>
+<span id="cb29-3"><a href="pipe.html#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="pipe.html#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando include.only</span></span>
+<span id="cb29-5"><a href="pipe.html#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr, <span class="at">include.only =</span> <span class="st">&quot;%&gt;%&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>
