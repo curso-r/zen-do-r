@@ -7,7 +7,10 @@ bookdown::gitbook:
     edit:
       link: https://github.com/curso-r/zen-do-r/edit/master/%s
       text: "Edit"
-    download: ["pdf", "epub", "mobi"]
+    download:
+      - ["docs/zen-do-r.pdf", "PDF"]
+      - ["docs/zen-do-r.epub", "EPUB"]
+      - ["docs/zen-do-r.mobi", "MOBI"]
     sharing:
       facebook: yes
       twitter: yes
