@@ -7,10 +7,18 @@ bookdown::gitbook:
     edit:
       link: https://github.com/curso-r/zen-do-r/edit/master/%s
       text: "Edit"
-    sharing: no
+    download: ["pdf", "epub", "mobi"]
+    sharing:
+      facebook: yes
+      twitter: yes
+      linkedin: yes
+      whatsapp: yes
+      all: ["github", "weibo", "instapaper", "vk"]
   css: zen-do-r.css
   includes:
     in_header: [assets/fonts.html]
 
 bookdown::pdf_book:
   latex_engine: "xelatex"
+
+bookdown::epub_book: default

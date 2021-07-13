@@ -32,7 +32,7 @@
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="pipe.html"/>
 <link rel="next" href="testes.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -338,7 +338,17 @@ exemplificado como seria documentada <code>dados</code>:</p>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": false,
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": true,
+"all": ["github", "weibo", "instapaper", "vk"]
+},
 "fontsettings": {
 "theme": "white",
 "family": "sans",
@@ -356,7 +366,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["zen-do-r.pdf", "zen-do-r.epub", "zen-do-r.mobi"],
 "toc": {
 "collapse": "subsection"
 }
