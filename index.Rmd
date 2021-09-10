@@ -45,6 +45,7 @@ Participaram da construção deste livro:
 - [Daniel Falbel](https://twitter.com/dfalbel)
 - [Fernando Correa](https://twitter.com/Azeloc)
 - [Julio Tricenti](https://twitter.com/jtrecenti)
+- Tereza Lacerda
 - [William Amorim](https://twitter.com/Williamorim89)
 
 Seja bem-vinda(o) também ao #rstats! Compartilhe seu desenvolvimento. Poste seus
