@@ -1,6 +1,6 @@
 # Pipe {#pipe}
 
-Dificilmente um programador de R passa muito tempo sem ouvir falar do operador
+Dificilmente uma pessoa que programa em R passa muito tempo sem ouvir falar do operador
 pipe (`%>%`). Saber o que ele faz e significa, no entanto, é algo mais complexo.
 Apesar de não passar de uma função como outra qualquer, os efeitos que ele pode
 ter no visual e na compreensibilidade de um código são imensos.
