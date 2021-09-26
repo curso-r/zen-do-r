@@ -35,7 +35,7 @@ Matemática e Estatística da Universidade de São Paulo (IME-USP).
 - Conheça os nossos cursos: https://www.curso-r.com/cursos/
 - Conheça o nosso blog: https://www.curso-r.com/blog/
 - Conheça o restante do nosso material: https://www.curso-r.com/material/
-- Saiba mais sobre a Curso-R: https://www.curso-r.com/sobre/
+- Saiba mais sobre a Curso-R: https://curso-r.com/
 
 Participaram da construção deste livro:
 
@@ -46,7 +46,7 @@ Participaram da construção deste livro:
 - [Fernando Correa](https://twitter.com/Azeloc)
 - [Julio Tricenti](https://twitter.com/jtrecenti)
 - Tereza Lacerda
-- [William Amorim](https://twitter.com/Williamorim89)
+- [William Amorim](https://twitter.com/wamorim_)
 
 Seja bem-vinda(o) também ao #rstats! Compartilhe seu desenvolvimento. Poste seus
 avanços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e
