@@ -157,7 +157,7 @@ a invocação de nenhuma biblioteca, apenas com chamadas do tipo
 `biblioteca::funcao()`. Muitas pessoas inclusive nem sabem que é possível
 invocar uma função diretamente através dessa sintaxe!
 
-Se algum leitor estiver tendendo a seguir o caminho do TOC da programação,
+Se você estiver tendendo a seguir o caminho do TOC da programação,
 existem dois grandes benefícios em chamar todas as funções diretamente:
 
 - o código, no total, executa um pouco mais rápido porque são carregadas menos
