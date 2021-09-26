@@ -13,8 +13,7 @@ documentclass: book
 
 # Respire fundo {-}
 
-<img src="assets/hex.png" width="250" alt="Hex" align="right" style="margin: 0 1em 0 1em" /> Este é o *Zen do R*, seja bem-vinda(o)! O objetivo deste livro é ensinar ao leitor
-que não costuma programar algumas formas simples de melhorar a organização de
+<img src="assets/hex.png" width="250" alt="Hex" align="right" style="margin: 0 1em 0 1em" /> Este é o *Zen do R*, seja bem-vinda(o)! O objetivo deste livro é ensinar a quem não costuma programar algumas formas simples de melhorar a organização de
 seus projetos de análise de dados em R.
 
 Ele foi escrito em [RMarkdown](https://rmarkdown.rstudio.com/) com o pacote
