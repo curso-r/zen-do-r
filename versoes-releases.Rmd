@@ -16,17 +16,17 @@ pacote.
 
 Mas por que marcar e dar nomes a essas atualizações? É bastante mais fácil
 simplesmente continuar programando e exigir que seus usuários baixem a versão
-mais recente do seu código. Essa prática, entretanto, é ruim para o usuário e
-para o programador.
+mais recente do seu código. Essa prática, entretanto, é ruim para quem usa e
+para quem programa.
 
-Você, como programador, quer poder fazer alterações no seu código que não
+Você, como pessoa que programa, quer poder fazer alterações no seu código que não
 necessariamente estão prontas para o público em geral. Erros acontecem e, muitas
 vezes, é preciso fazer uma série de modificações antes que o pacote volte a ter
-certa estabilidade. Por outro lado, o usuário também só quer atualizar seu
+certa estabilidade. Por outro lado, a pessoa que usa também só quer atualizar seu
 pacote quando algo suficientemente diferente estiver disponível (sejam correções
 de erros, sejam novas funcionalidades). Além disso, caso uma nova versão do seu
-código gere problemas para ele, é necessário ter uma versão estável anterior
-claramente rotulada para que o usuário possa fazer o *downgrade* do pacote.
+código gere problemas para ela, é necessário ter uma versão estável anterior
+claramente rotulada para que a pessoa possa fazer o *downgrade* do pacote.
 
 E justamente são esses rótulos que precisamos utilizar para ter um bom sistema
 de versões nos nossos pacotes. Ao contrário de "controle de versão", para o qual
@@ -58,7 +58,7 @@ retrocompatível (ou seja, compatível com as suas versões anteriores), deve se
 incrementada a versão minor. Por fim, se for introduzida alguma mudança que
 quebra a retrocompatibilidade, deve ser incrementada a versão major. É
 importante dizer também que, depois de lançada, uma versão **nunca** deverá ser
-alterada, pois isso confundirá os usuários da mesma.
+alterada, pois isso confundirá as pessoas que usam a mesma.
 
 Alguns pontos do versionamento semântico não são seguidos sempre, mas podem ser
 úteis. Por exemplo, o patch pode ser omitido se ele for 0, a major 0 normalmente
