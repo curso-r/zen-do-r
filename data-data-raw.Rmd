@@ -24,10 +24,10 @@ perfeitamente organizados e padronizados. É comum precisar de múltiplos fluxos
 de tratamento para poder transformar os dados brutos naquilo que de fato pode
 ser utilizado durante uma análise.
 
-O programador é encorajado a separar essas planilhas brutas daquelas resultantes
+A pessoa que está programando é encorajada a separar essas planilhas brutas daquelas resultantes
 do processo de limpeza e tratamento. Junto com os dados crus, é importante
 também guardar os arquivos que fazem o processo de limpeza; caso haja uma
-mudança nas demandas ou nas bases, o analista precisa ser capaz de alterar os
+mudança nas demandas ou nas bases, a pessoa precisa ser capaz de alterar os
 *scripts* de tratamento e gerar novas bases consolidadas.
 
 No exemplo abaixo, supõe-se um diretório com um pacote R e uma base bruta
@@ -86,7 +86,7 @@ gerar um arquivo RDA a partir de um objeto do ambiente global. Arquivos RDA são
 extremamente estáveis, compactos e podem ser carregados rapidamente pelo R,
 tornando este formato o principal meio de guardar dados de um pacote. Se os
 dados do pacote forem guardados assim, eles ficarão disponíveis para serem
-chamados pelo usuário (você mesmo durante a análise)! Para entender como ficam
+chamados por quem está usando (ou seja, você durante a análise)! Para entender como ficam
 os dados uma vez que eles são incluídos na pasta `data`, basta dar uma olhada
 no objeto `dplyr::starwars`; neste caso, a base tratada e exportada se chama
 `starwars`.
