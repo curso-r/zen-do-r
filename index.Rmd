@@ -42,8 +42,8 @@ Participaram da construção deste livro:
 - [Caio Lente](https://twitter.com/clente_)
 - [Daniel Falbel](https://twitter.com/dfalbel)
 - [Fernando Correa](https://twitter.com/Azeloc)
-- [Julio Tricenti](https://twitter.com/jtrecenti)
-- Tereza Lacerda
+- [Julio Trecenti](https://twitter.com/jtrecenti)
+- [Tereza Lacerda](https://twitter.com/tereza_lacerda)
 - [William Amorim](https://twitter.com/wamorim_)
 
 Boas-vindas também ao #rstats! Compartilhe seu desenvolvimento. Poste seus
