@@ -13,7 +13,7 @@ documentclass: book
 
 # Respire fundo {-}
 
-<img src="assets/hex.png" width="250" alt="Hex" align="right" style="margin: 0 1em 0 1em" /> Este é o *Zen do R*, seja bem-vinda(o)! O objetivo deste livro é ensinar a quem não costuma programar algumas formas simples de melhorar a organização de projetos de análise de dados em R.
+<img src="assets/hex.png" width="250" alt="Hex" align="right" style="margin: 0 1em 0 1em" /> Este é o *Zen do R*, boas-vindas! O objetivo deste livro é ensinar a quem não costuma programar algumas formas simples de melhorar a organização de projetos de análise de dados em R.
 
 Ele foi escrito em [RMarkdown](https://rmarkdown.rstudio.com/) com o pacote
 [bookdown](https://bookdown.org/) e está em **construção** e em
@@ -46,7 +46,7 @@ Participaram da construção deste livro:
 - Tereza Lacerda
 - [William Amorim](https://twitter.com/wamorim_)
 
-Seja bem-vinda(o) também ao #rstats! Compartilhe seu desenvolvimento. Poste seus
+Boas-vindas também ao #rstats! Compartilhe seu desenvolvimento. Poste seus
 avanços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e
 participe dos grupos e comunidades de pessoas que programam.
 
