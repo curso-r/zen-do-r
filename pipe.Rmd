@@ -196,8 +196,7 @@ encontrá-las nos código alheios.
 Por fim, caso você queira utilizar o pipe dentro do seu próprio pacote, basta
 executar uma simples função do `usethis`: `use_pipe()`. Ela adiciona o
 `magrittr` como uma dependência do seu pacote e faz com que o pipe seja
-acessível dentro do mesmo, o que realmente facilita o trabalho do desenvolvedor
-que não quer entender o significado do código a seguir:
+acessível dentro do mesmo, o que realmente facilita o trabalho de quem não quer entender o significado do código a seguir:
 
 ```r
 #' Pipe operator
