@@ -20,7 +20,7 @@ na memória como se você nunca tivesse saído do programa.
 Esse recurso é tornado possível pela criação de dois arquivos ocultos: `.RData`
 e `.Rhistory`. O primeiro abriga absolutamente todos os objetos criados por uma
 sessão R, enquanto o segundo contém uma lista com os últimos comandos
-executados. Ao reabrir o RStudio, o conteúdo armazenados nestes arquivos será
+executados. Ao reabrir o RStudio, o conteúdo armazenado nestes arquivos será
 carregado no ambiente de trabalho atual como se nada tivesse acontecido.
 
 ## Por que desistir
@@ -43,7 +43,7 @@ estavam sendo utilizados.
 Arquivos reprodutíveis também tem uma outra vantagem: facilidade de
 compartilhamento. A menos que você pretenda sentar com outra pessoa para
 explicar como utilizar os objetos do `.RData` e do `.Rhistory`, não pode-se
-esperar que a outra pessoa seja capaz de reproduzir uma análise a partir de
+esperar que ela seja capaz de reproduzir uma análise a partir de
 arquivos incompletos. Deste modo, abandonar essa funcionalidade permite utilizar
 ferramentas de compartilhamento e controle de versão da maneira como elas foram
 idealizadas.
