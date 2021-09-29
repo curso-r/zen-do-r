@@ -64,7 +64,7 @@ organizar e escrever o seu código, o que não será feito aqui.
 ## Pré-requisitos
 
 Como talvez já tenha ficado claro, um dos principais pré-requisitos deste livro
-é saber a programar pelo menos um pouco de R. Você não precisa ser especialista, mas, para ter a necessidade de melhorar o seu fluxo de análise,
+é saber programar pelo menos um pouco de R. Você não precisa ser especialista, mas, para ter a necessidade de melhorar o seu fluxo de análise,
 você antes precisa estar fazendo alguma análise.
 
 Fora isso, o segundo principal pré-requisito é um ambiente de desenvolvimento.
