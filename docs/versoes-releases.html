@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10 Versões e releases | Zen do R</title>
-  <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="description" content="Um livro de programação para quem não programa" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10 Versões e releases | Zen do R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://curso-r.github.io/zen-do-r/" />
   
-  <meta property="og:description" content="Um livro de programação para não-programadores" />
+  <meta property="og:description" content="Um livro de programação para quem não programa" />
   <meta name="github-repo" content="curso-r/zen-do-r" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="10 Versões e releases | Zen do R" />
   
-  <meta name="twitter:description" content="Um livro de programação para não-programadores" />
+  <meta name="twitter:description" content="Um livro de programação para quem não programa" />
   
 
 <meta name="author" content="Caio Lente + Curso-R" />
@@ -32,8 +32,9 @@
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="testes.html"/>
 
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -216,17 +216,17 @@ atualização do software; se eu mudar uma linha do código do meu pacote e
 atualizar esse fonte no GitHub, pode-se dizer que criei uma nova versão do meu
 pacote.</p>
 <p>Mas por que marcar e dar nomes a essas atualizações? É bastante mais fácil
-simplesmente continuar programando e exigir que seus usuários baixem a versão
-mais recente do seu código. Essa prática, entretanto, é ruim para o usuário e
-para o programador.</p>
-<p>Você, como programador, quer poder fazer alterações no seu código que não
+simplesmente continuar programando e exigir que as pessoas que usam o pacote baixem a versão
+mais recente do seu código. Essa prática, entretanto, é ruim para quem usa e
+para quem programa.</p>
+<p>Você, que está programando, quer poder fazer alterações no seu código que não
 necessariamente estão prontas para o público em geral. Erros acontecem e, muitas
 vezes, é preciso fazer uma série de modificações antes que o pacote volte a ter
-certa estabilidade. Por outro lado, o usuário também só quer atualizar seu
+certa estabilidade. Por outro lado, a pessoa que está utilizando-o também só quer atualizar seu
 pacote quando algo suficientemente diferente estiver disponível (sejam correções
 de erros, sejam novas funcionalidades). Além disso, caso uma nova versão do seu
-código gere problemas para ele, é necessário ter uma versão estável anterior
-claramente rotulada para que o usuário possa fazer o <em>downgrade</em> do pacote.</p>
+código gere problemas para ela, é necessário ter uma versão estável anterior
+claramente rotulada para que a pessoa possa fazer o <em>downgrade</em> do pacote.</p>
 <p>E justamente são esses rótulos que precisamos utilizar para ter um bom sistema
 de versões nos nossos pacotes. Ao contrário de “controle de versão”, para o qual
 utilizamos o Git, “versionamento semântico” é a prática de dar nomes fáceis de
@@ -255,7 +255,7 @@ retrocompatível (ou seja, compatível com as suas versões anteriores), deve se
 incrementada a versão minor. Por fim, se for introduzida alguma mudança que
 quebra a retrocompatibilidade, deve ser incrementada a versão major. É
 importante dizer também que, depois de lançada, uma versão <strong>nunca</strong> deverá ser
-alterada, pois isso confundirá os usuários da mesma.</p>
+alterada, pois isso confundirá as pessoas que usam a mesma.</p>
 <p>Alguns pontos do versionamento semântico não são seguidos sempre, mas podem ser
 úteis. Por exemplo, o patch pode ser omitido se ele for 0, a major 0 normalmente
 é reservada para software em fase de testes (o <code>dplyr</code>, portanto, não segue essa
@@ -281,11 +281,10 @@ escrito utilizando a versão 1.x.x, se tornando <code>f(x, y, z = TRUE)</code></
 subsequentes haveriam versões denominadas de desenvolvimento, como por exemplo
 0.1.1.9000, 1.0.0.9000 e assim por diante. Isso não está no padrão ouro do
 versionamento semântico, mas é comumente utilizado em programas de R.</p>
-<p>Uma versão de desenvolvimento é qualquer “subversão” que não deveria ser
-utilizada pelo usuário final; qualquer commit entre patches, minors ou majors é
+<p>Uma versão de desenvolvimento é qualquer “subversão” que ainda não deveria ser
+utilizada pela comunidade; qualquer commit entre patches, minors ou majors é
 uma versão de desenvolvimento. Por convenção, a primeira versão de
-desenvolvimento é marcada como 9000, podendo chegar até 9999. Alguns
-programadores incrementam esse número a cada commit realizado, mas é mais comum
+desenvolvimento é marcada como 9000, podendo chegar até 9999. Algumas pessoas incrementam esse número a cada commit realizado, mas é mais comum
 manter o 9000 até que o código esteja pronto para se tornar um verdadeiro patch,
 minor ou major.</p>
 <p>Na prática, é muito simples trabalhar com versões. Assim que um novo pacote é
@@ -339,15 +338,14 @@ marcar commits específicos como estáveis e atribuir um rótulo aos mesmos. No
 fundo isso não passa de um versionamento semântico integrado ao site.</p>
 <p>Como exemplo, podemos ver a aba “Releases” do pacote <code>decryptr</code>:</p>
 <p><img src="static/versoes-releases/ver.png" width="70%" style="display: block; margin: auto;" /></p>
-<p>É bom fazer esse tipo de versionamento externo porque os usuários passam a ter
-um lugar de fácil acesso com o código-fonte de absolutamente todas as versões do
-seu pacote. Além disso, a função <code>devtools::install_github()</code> é capaz de
+<p>É bom fazer esse tipo de versionamento externo porque as pessoas que usam o pacote passam a ter
+um lugar de fácil acesso com o código-fonte de absolutamente todas as suas versões. Além disso, a função <code>devtools::install_github()</code> é capaz de
 utilizar esses releases como indicador de qual versão de um pacote deve ser
 baixada.</p>
 <p>Para criar releases de um pacote seu, antes você deve dar push no commit da
 versão atual (depois de <code>usethis::use_version()</code> e antes de
 <code>usethis::use_dev_version()</code>), pois assim estará pública no GitHub exatamente a
-versão do seu pacote que deve ser baixada pelos usuários. Depois basta ir para
+versão do seu pacote que deve ser baixada. Depois basta ir para
 a aba das releases e clicar em <strong>Draft a new release</strong>. Preencha os campos
 correspondentes e publique a versão.</p>
 <p><img src="static/versoes-releases/tag.png" width="70%" style="display: block; margin: auto;" /></p>
@@ -385,7 +383,6 @@ utilizado no <code>ggplot2</code>.</p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -425,6 +422,10 @@ gitbook.start({
 "text": null
 },
 "download": ["zen-do-r.pdf", "zen-do-r.epub", "zen-do-r.mobi"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

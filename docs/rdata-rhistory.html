@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 .RData e .Rhistory | Zen do R</title>
-  <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="description" content="Um livro de programação para quem não programa" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 .RData e .Rhistory | Zen do R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://curso-r.github.io/zen-do-r/" />
   
-  <meta property="og:description" content="Um livro de programação para não-programadores" />
+  <meta property="og:description" content="Um livro de programação para quem não programa" />
   <meta name="github-repo" content="curso-r/zen-do-r" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="2 .RData e .Rhistory | Zen do R" />
   
-  <meta name="twitter:description" content="Um livro de programação para não-programadores" />
+  <meta name="twitter:description" content="Um livro de programação para quem não programa" />
   
 
 <meta name="author" content="Caio Lente + Curso-R" />
@@ -32,8 +32,9 @@
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="introducao.html"/>
 <link rel="next" href="rproj-dir.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -204,41 +204,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="rdata-rhistory" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> .RData e .Rhistory</h1>
 <p>O fluxo ideal de análise de dados começa na escolha da ferramenta. Por ser uma
-linguagem especializada em estatística, o R é a primeira escolha de muitos
-usuários. Normalmente optar por programar em R também implica na escolha de uma
+linguagem especializada em estatística, o R é a primeira escolha de muitas pessoas. Normalmente optar por programar em R também implica na escolha de uma
 IDE (<em>Integrated Development Environment</em>) que, em 90%<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> dos casos, será o RStudio.</p>
 <p>O R, em combinação com o RStudio, possui um conjunto de funcionalidades cuja
 intenção é ajudar no processo de desenvolvimento. Entretanto, isso acaba
-deixando os programadores de R mal acostumados.</p>
+deixando as pessoas que programam em R mal acostumadas.</p>
 <p>Como um pai coruja, o RStudio faz questão de lembrar tudo o que você fez
 anteriormente. Em sua configuração padrão, a IDE manterá na “memória” todos os
 últimos comandos executados, todos os dados utilizados e todos os objetos
 criados. Ao fechar e abrir o RStudio, essas informações serão recarregadas
-na memória como se o usuário nunca tivesse saído do programa.</p>
+na memória como se você nunca tivesse saído do programa.</p>
 <p>Esse recurso é tornado possível pela criação de dois arquivos ocultos: <code>.RData</code>
 e <code>.Rhistory</code>. O primeiro abriga absolutamente todos os objetos criados por uma
 sessão R, enquanto o segundo contém uma lista com os últimos comandos
-executados. Ao reabrir o RStudio, o conteúdo armazenados nestes arquivos será
+executados. Ao reabrir o RStudio, o conteúdo armazenado nestes arquivos será
 carregado no ambiente de trabalho atual como se nada tivesse acontecido.</p>
 <div id="por-que-desistir" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Por que desistir</h2>
 <p>Apesar de ser uma ótima conveniência, assim como o pai coruja, esse tipo de
-funcionalidade pode deixar o programador mal acostumado. Se todos os resultados
+funcionalidade pode te acostumar mal. Se todos os resultados
 parciais de uma análise estiverem disponíveis a qualquer momento, diminui o
 incentivo para a escrita de <em>código reprodutível</em> e, se todo o histórico de
 comandos for acessível, acaba a necessidade de experimentos controlados.</p>
-<p>Um usuário que dependa ativamente do <code>.RData</code> para recuperar seus dados estará
-aos poucos contando cada vez mais com a sorte. Caso ele acidentalmente
+<p>Uma pessoa que dependa ativamente do <code>.RData</code> para recuperar seus dados estará
+aos poucos contando cada vez mais com a sorte. Caso ela acidentalmente
 sobrescreva o objeto relevante e o código para recriá-lo já tenha sido apagado,
 não haverá nenhuma forma confiável de recuperar esses dados. Idealmente, todo
 o código necessário para uma análise de dados deve estar salvo em um arquivo
-<code>.R</code> perfeitamente reprodutível; assim, caso o programador cometa um engano,
+<code>.R</code> perfeitamente reprodutível; assim, caso você cometa um engano,
 é possível executar aquele arquivo do início e obter novamente os objetos que
 estavam sendo utilizados.</p>
 <p>Arquivos reprodutíveis também tem uma outra vantagem: facilidade de
-compartilhamento. A menos que o programador pretenda sentar com seu colega para
+compartilhamento. A menos que você pretenda sentar com outra pessoa para
 explicar como utilizar os objetos do <code>.RData</code> e do <code>.Rhistory</code>, não pode-se
-esperar que outra pessoa seja capaz de reproduzir uma análise a partir de
+esperar que ela seja capaz de reproduzir uma análise a partir de
 arquivos incompletos. Deste modo, abandonar essa funcionalidade permite utilizar
 ferramentas de compartilhamento e controle de versão da maneira como elas foram
 idealizadas.</p>
@@ -249,7 +248,7 @@ armazenar nos arquivos ocultos todas as bases de dados da sessão (não
 importando quão grande sejam). Isso faz com que o <code>.RData</code> normalmente seja um
 arquivo de múltiplos gigabytes.</p>
 <p>Ao reabrir o RStudio, todos esses dados serão recarregados e
-provavelmente farão com que o programador espere vários minutos até que ele
+provavelmente farão com que você espere vários minutos até que
 possa voltar ao seu trabalho. Com o <code>.RData</code> é impossível ter controle sobre
 quais dados devem ser utilizados em cada sessão de programação.</p>
 </div>
@@ -262,10 +261,10 @@ e então ajustar três configurações. No final a página de opções gerais de
 ficar similar à da imagem abaixo:</p>
 <p><img src="static/rdata-rhistory/config.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Se acostumar com sessões efêmeras não é uma tarefa fácil e um desconforto
-inicial é esperado. Pode ser que o programador ache entediante executar o mesmo
+inicial é esperado. Pode ser que você ache entediante executar o mesmo
 código toda vez que abrir seu RStudio, mas é importante ter em mente que esse
 programa só está lá e pode ser executado inúmeras vezes porque o R não estará
-mais fazendo o trabalho do analista.</p>
+mais fazendo o seu trabalho.</p>
 
 </div>
 </div>
@@ -288,7 +287,6 @@ emacs.<a href="rdata-rhistory.html#fnref2" class="footnote-back">↩︎</a></p><
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -328,6 +326,10 @@ gitbook.start({
 "text": null
 },
 "download": ["zen-do-r.pdf", "zen-do-r.epub", "zen-do-r.mobi"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

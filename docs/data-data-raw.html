@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Data e data-raw | Zen do R</title>
-  <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="description" content="Um livro de programação para quem não programa" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Data e data-raw | Zen do R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://curso-r.github.io/zen-do-r/" />
   
-  <meta property="og:description" content="Um livro de programação para não-programadores" />
+  <meta property="og:description" content="Um livro de programação para quem não programa" />
   <meta name="github-repo" content="curso-r/zen-do-r" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="8 Data e data-raw | Zen do R" />
   
-  <meta name="twitter:description" content="Um livro de programação para não-programadores" />
+  <meta name="twitter:description" content="Um livro de programação para quem não programa" />
   
 
 <meta name="author" content="Caio Lente + Curso-R" />
@@ -32,8 +32,9 @@
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="pipe.html"/>
 <link rel="next" href="testes.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -223,10 +223,10 @@ exemplo, que lê arquivos no formato nativo do R.</p>
 perfeitamente organizados e padronizados. É comum precisar de múltiplos fluxos
 de tratamento para poder transformar os dados brutos naquilo que de fato pode
 ser utilizado durante uma análise.</p>
-<p>O programador é encorajado a separar essas planilhas brutas daquelas resultantes
+<p>A pessoa que está programando é encorajada a separar essas planilhas brutas daquelas resultantes
 do processo de limpeza e tratamento. Junto com os dados crus, é importante
 também guardar os arquivos que fazem o processo de limpeza; caso haja uma
-mudança nas demandas ou nas bases, o analista precisa ser capaz de alterar os
+mudança nas demandas ou nas bases, a pessoa precisa ser capaz de alterar os
 <em>scripts</em> de tratamento e gerar novas bases consolidadas.</p>
 <p>No exemplo abaixo, supõe-se um diretório com um pacote R e uma base bruta
 denominada <code>dados.xlsx</code>. Primeiramente deve-se executar a função
@@ -275,7 +275,7 @@ gerar um arquivo RDA a partir de um objeto do ambiente global. Arquivos RDA são
 extremamente estáveis, compactos e podem ser carregados rapidamente pelo R,
 tornando este formato o principal meio de guardar dados de um pacote. Se os
 dados do pacote forem guardados assim, eles ficarão disponíveis para serem
-chamados pelo usuário (você mesmo durante a análise)! Para entender como ficam
+chamados por quem os está usando (ou seja, você durante a análise)! Para entender como ficam
 os dados uma vez que eles são incluídos na pasta <code>data</code>, basta dar uma olhada
 no objeto <code>dplyr::starwars</code>; neste caso, a base tratada e exportada se chama
 <code>starwars</code>.</p>
@@ -327,7 +327,6 @@ exemplificado como seria documentada <code>dados</code>:</p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -367,6 +366,10 @@ gitbook.start({
 "text": null
 },
 "download": ["zen-do-r.pdf", "zen-do-r.epub", "zen-do-r.mobi"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Funções e dependências | Zen do R</title>
-  <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="description" content="Um livro de programação para quem não programa" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Funções e dependências | Zen do R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://curso-r.github.io/zen-do-r/" />
   
-  <meta property="og:description" content="Um livro de programação para não-programadores" />
+  <meta property="og:description" content="Um livro de programação para quem não programa" />
   <meta name="github-repo" content="curso-r/zen-do-r" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="5 Funções e dependências | Zen do R" />
   
-  <meta name="twitter:description" content="Um livro de programação para não-programadores" />
+  <meta name="twitter:description" content="Um livro de programação para quem não programa" />
   
 
 <meta name="author" content="Caio Lente + Curso-R" />
@@ -32,8 +32,9 @@
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="git-github.html"/>
 <link rel="next" href="pacotes.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -339,7 +339,7 @@ excessivamente preciosista pedir para que qualquer análise em R seja feita sem
 a invocação de nenhuma biblioteca, apenas com chamadas do tipo
 <code>biblioteca::funcao()</code>. Muitas pessoas inclusive nem sabem que é possível
 invocar uma função diretamente através dessa sintaxe!</p>
-<p>Se algum leitor estiver tendendo a seguir o caminho do TOC da programação,
+<p>Se você estiver tendendo a seguir o caminho do TOC da programação,
 existem dois grandes benefícios em chamar todas as funções diretamente:</p>
 <ul>
 <li><p>o código, no total, executa um pouco mais rápido porque são carregadas menos
@@ -412,7 +412,6 @@ específico não abordado neste capítulo.<a href="funcoes-deps.html#fnref3" cla
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -452,6 +451,10 @@ gitbook.start({
 "text": null
 },
 "download": ["zen-do-r.pdf", "zen-do-r.epub", "zen-do-r.mobi"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

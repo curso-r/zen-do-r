@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7 Pipe | Zen do R</title>
-  <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="description" content="Um livro de programação para quem não programa" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7 Pipe | Zen do R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://curso-r.github.io/zen-do-r/" />
   
-  <meta property="og:description" content="Um livro de programação para não-programadores" />
+  <meta property="og:description" content="Um livro de programação para quem não programa" />
   <meta name="github-repo" content="curso-r/zen-do-r" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="7 Pipe | Zen do R" />
   
-  <meta name="twitter:description" content="Um livro de programação para não-programadores" />
+  <meta name="twitter:description" content="Um livro de programação para quem não programa" />
   
 
 <meta name="author" content="Caio Lente + Curso-R" />
@@ -32,8 +32,9 @@
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="pacotes.html"/>
 <link rel="next" href="data-data-raw.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -203,7 +203,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="pipe" class="section level1" number="7">
 <h1><span class="header-section-number">7</span> Pipe</h1>
-<p>Dificilmente um programador de R passa muito tempo sem ouvir falar do operador
+<p>Dificilmente alguém que programa R passa muito tempo sem ouvir falar do operador
 pipe (<code>%&gt;%</code>). Saber o que ele faz e significa, no entanto, é algo mais complexo.
 Apesar de não passar de uma função como outra qualquer, os efeitos que ele pode
 ter no visual e na compreensibilidade de um código são imensos.</p>
@@ -351,8 +351,7 @@ encontrá-las nos código alheios.</p>
 <p>Por fim, caso você queira utilizar o pipe dentro do seu próprio pacote, basta
 executar uma simples função do <code>usethis</code>: <code>use_pipe()</code>. Ela adiciona o
 <code>magrittr</code> como uma dependência do seu pacote e faz com que o pipe seja
-acessível dentro do mesmo, o que realmente facilita o trabalho do desenvolvedor
-que não quer entender o significado do código a seguir:</p>
+acessível dentro do mesmo, o que realmente facilita o trabalho de quem não quer entender o significado do código a seguir:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="pipe.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Pipe operator</span></span>
 <span id="cb31-2"><a href="pipe.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
 <span id="cb31-3"><a href="pipe.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; See \code{magrittr::\link[magrittr:pipe]{\%&gt;\%}} for details.</span></span>
@@ -392,7 +391,6 @@ conceito<a href="pipe.html#fnref4" class="footnote-back">↩︎</a></p></li>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -432,6 +430,10 @@ gitbook.start({
 "text": null
 },
 "download": ["zen-do-r.pdf", "zen-do-r.epub", "zen-do-r.mobi"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

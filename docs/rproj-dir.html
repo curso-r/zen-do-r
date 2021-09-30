@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Rproj e diretórios | Zen do R</title>
-  <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="description" content="Um livro de programação para quem não programa" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Rproj e diretórios | Zen do R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://curso-r.github.io/zen-do-r/" />
   
-  <meta property="og:description" content="Um livro de programação para não-programadores" />
+  <meta property="og:description" content="Um livro de programação para quem não programa" />
   <meta name="github-repo" content="curso-r/zen-do-r" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="3 Rproj e diretórios | Zen do R" />
   
-  <meta name="twitter:description" content="Um livro de programação para não-programadores" />
+  <meta name="twitter:description" content="Um livro de programação para quem não programa" />
   
 
 <meta name="author" content="Caio Lente + Curso-R" />
@@ -32,8 +32,9 @@
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="rdata-rhistory.html"/>
 <link rel="next" href="git-github.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -203,7 +203,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="rproj-dir" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Rproj e diretórios</h1>
-<p>Um programador iniciante corre o risco de não gerenciar seus projetos. Muitas
+<p>Uma pessoa que está começando a programar corre o risco de não gerenciar seus projetos. Muitas
 vezes seus arquivos de código ficarão espalhados pelos infinitos diretórios de
 seu computador, esperando a primeira oportunidade de sumir para sempre. No R
 isso não é diferente: organizar arquivos é uma parte integral do processo de
@@ -215,7 +215,7 @@ consolidar todos os recursos necessários para uma análise. Denominados
 <h2><span class="header-section-number">3.1</span> Caminhos relativos e absolutos</h2>
 <p>Antes de continuar falando sobre diretórios, é importante falar um pouco sobre
 como funcionam os caminhos para arquivos no computador. Toda função de
-importação vai exigir um caminho, uma string que representa oendereço do arquivo
+importação vai exigir um caminho, uma string que representa o endereço do arquivo
 no computador e há duas formas de passarmos um caminho de arquivo: a absoluta e
 a relativa.</p>
 <p>Caminhos absolutos são aqueles que têm início na pasta raiz do seu computador,
@@ -237,8 +237,8 @@ de salvar objetos. O caminho relativo para o seu diretório de trabalho é sempr
 <span id="cb3-2"><a href="rproj-dir.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;.&quot;</span></span></code></pre></div>
 <p>Um arquivo dentro do diretório de trabalho será o seu próprio caminho relativo,
 enquanto <code>..</code> indica “voltar” um diretório em relação ao <em>working directory</em>.
-Por fim, o til <code>~</code> é um caractere que indica a <em>home</em> do usuário (<code>/home/clente</code>
-no meu caso) e costuma ser classificado como caminoh relativo.</p>
+Por fim, o til <code>~</code> é um caractere que indica a sua <em>home</em> (<code>/home/clente</code>
+no meu caso) e costuma ser classificado como caminho relativo.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="rproj-dir.html#cb4-1" aria-hidden="true" tabindex="-1"></a>R.utils<span class="sc">::</span><span class="fu">getRelativePath</span>(<span class="st">&quot;/home/clente/Documents/zen-do-r/git-github.Rmd&quot;</span>)</span>
 <span id="cb4-2"><a href="rproj-dir.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;git-github.Rmd&quot;</span></span>
 <span id="cb4-3"><a href="rproj-dir.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -305,7 +305,7 @@ conter, em sua pasta R, todos os arquivos necessários para aquela análise.</p>
 <p>Mas a funcionalidade mais importante dentre todas as já citadas é o conceito do
 <em>working directory</em> ou diretório de trabalho. No canto esquerdo superior do
 Console do RStudio existe um caminho denominado diretório de trabalho, que é
-essencialmente a raiz do seu projeto. Muitos programadores que aprenderam R há
+essencialmente a raiz do seu projeto. Muitas pessoas que aprenderam R há
 muito tempo conhecem uma função chamada <code>setwd()</code>; se você nunca ouviu falar
 disso, não se preocupe e continue assim, mas se você costuma usá-la, siga
 prestando atenção.</p>
@@ -323,12 +323,11 @@ de linhas. O exemplo abaixo demonstra superficialmente como isso funciona:</p>
 <span id="cb6-8"><a href="rproj-dir.html#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-9"><a href="rproj-dir.html#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(a, <span class="st">&quot;c.csv&quot;</span>)</span></code></pre></div>
 <p>Isso não parece tão problemático à primeira vista, mas usar <code>setwd()</code> cria um
-vício difícil de abandonar. Essa função estimula que os seus projetos continuem
-desorganizados com arquivos espalhados pelo computador, mas também confunde o
-programador na hora de salvar arquivos. Onde será salvo o arquivo <code>c.csv</code>?
+vício difícil de abandonar. Essa função não só estimula que os seus projetos continuem
+desorganizados com arquivos espalhados pelo computador, mas também te confunde na hora de salvar arquivos. Onde será salvo o arquivo <code>c.csv</code>?
 De onde veio o arquivo <code>a.csv</code> ou de onde veio o <code>b.csv</code>? E se essa linha fosse
 mudada de lugar para antes do segundo <code>setwd()</code>? São perguntas difíceis de
-responder caso você não esteja atento ao código todo.</p>
+responder caso você não esteja alerta ao código todo.</p>
 <p>A solução que os projetos oferecem para isso é fazer com que o diretório de
 trabalho seja sempre a pasta do projeto. Neste caso é como se, ao abrir o
 RStudio, ele executasse o comando <code>setwd("~/Documents/Dev/R/Proj")</code>
@@ -350,7 +349,7 @@ arquivos utilizados estão/serão salvos e poder compartilhar um projeto com
 qualquer pessoa. <code>setwd()</code> depende que seja explicitado um caminho dentro do
 seu computador e isso nem sempre é verdade no computador de outra pessoa;
 fazendo com que todos os arquivos estejam no projeto e com caminhos relativos
-nos códigos permite que outro usuário replique a sua análise sem ter que
+nos códigos permite que outra pessoa replique a sua análise sem ter que
 modificar nem uma linha do programa.</p>
 
 </div>
@@ -365,7 +364,6 @@ modificar nem uma linha do programa.</p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -405,6 +403,10 @@ gitbook.start({
 "text": null
 },
 "download": ["zen-do-r.pdf", "zen-do-r.epub", "zen-do-r.mobi"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
