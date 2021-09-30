@@ -13,8 +13,8 @@ ele será utilizado em conjunto com algum outro texto (seco e técnico) sobre co
 de fato programar em R.
 
 A escolha do R é parcialmente arbitrária. Nada impede de você usar Python para
-a análise de dados, mas ao longo de alguns anos de experiência, especialistas
-notaram que o fato de o R ter sido feito com análise de dados em mente acaba
+a análise de dados, mas ao longo de alguns anos de experiência notou-se
+que o fato de o R ter sido feito com análise de dados em mente acaba
 sendo uma vantagem muito difícil de ignorar. Fora isso, o `tidyverse`, as
 infinitas ferramentas do RStudio e o engajamento da comunidade fazem com que
 nós achemos o R a verdadeira linguagem do *data science*.
