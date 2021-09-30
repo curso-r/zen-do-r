@@ -22,7 +22,7 @@ para quem programa.
 Você, que está programando, quer poder fazer alterações no seu código que não
 necessariamente estão prontas para o público em geral. Erros acontecem e, muitas
 vezes, é preciso fazer uma série de modificações antes que o pacote volte a ter
-certa estabilidade. Por outro lado, a pessoa que usa também só quer atualizar seu
+certa estabilidade. Por outro lado, a pessoa que está utilizando-o também só quer atualizar seu
 pacote quando algo suficientemente diferente estiver disponível (sejam correções
 de erros, sejam novas funcionalidades). Além disso, caso uma nova versão do seu
 código gere problemas para ela, é necessário ter uma versão estável anterior
