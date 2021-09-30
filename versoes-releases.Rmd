@@ -179,7 +179,7 @@ baixada.
 Para criar releases de um pacote seu, antes você deve dar push no commit da
 versão atual (depois de `usethis::use_version()` e antes de
 `usethis::use_dev_version()`), pois assim estará pública no GitHub exatamente a
-versão do seu pacote que deve ser baixada pelas pessoas. Depois basta ir para
+versão do seu pacote que deve ser baixada. Depois basta ir para
 a aba das releases e clicar em **Draft a new release**. Preencha os campos
 correspondentes e publique a versão.
 
