@@ -48,7 +48,7 @@ Participaram da construção deste livro:
 
 Boas-vindas também ao #rstats! Compartilhe seu desenvolvimento. Poste seus
 avanços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e
-participe dos grupos e comunidades de pessoas que programam.
+participe dos grupos e comunidades de programação.
 
 - Comunidade RLadies: https://benubah.github.io/r-community-explorer/rladies.html
 - Fórum de dúvidas da Curso-R: https://discourse.curso-r.com/
