@@ -3,7 +3,7 @@ knit: "bookdown::render_book"
 title: "Zen do R"
 author: ["Caio Lente + Curso-R"]
 date: "`r paste('Última atualização:', format(Sys.Date(), '%d/%m/%Y'))`"
-description: "Um livro de programação para pessoas não-programadoras"
+description: "Um livro de programação para quem não programa"
 url: "https://curso-r.github.io/zen-do-r/"
 github-repo: curso-r/zen-do-r
 favicon: "assets/favicon.ico"
