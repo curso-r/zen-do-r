@@ -1,7 +1,7 @@
 # Introdução {#introducao}
 
 O *Zen do R* tem o objetivo de ser um livro sobre programação para
-pessoas que não programam. Atualmente muitas pessoas de diferentes áreas do conhecimento
+quem não programa. Atualmente muitas pessoas de diferentes áreas do conhecimento
 acabam precisando usar a linguagem R por causa do seu grande potencial para
 programação estatística, mas ficam perdidas depois que aprendem o básico sobre a
 linguagem. Nesse sentido, este é um livro para pessoas "não-programadoras" no que se
