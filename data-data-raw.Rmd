@@ -86,7 +86,7 @@ gerar um arquivo RDA a partir de um objeto do ambiente global. Arquivos RDA são
 extremamente estáveis, compactos e podem ser carregados rapidamente pelo R,
 tornando este formato o principal meio de guardar dados de um pacote. Se os
 dados do pacote forem guardados assim, eles ficarão disponíveis para serem
-chamados por quem está usando (ou seja, você durante a análise)! Para entender como ficam
+chamados por quem os está usando (ou seja, você durante a análise)! Para entender como ficam
 os dados uma vez que eles são incluídos na pasta `data`, basta dar uma olhada
 no objeto `dplyr::starwars`; neste caso, a base tratada e exportada se chama
 `starwars`.
