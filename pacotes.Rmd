@@ -3,7 +3,7 @@
 Nas palavras do maior guru do R, Hadley Wickham, "pacotes são a unidade
 fundamental de código R reprodutível". Toda vez que você utiliza a função
 `library()`, algum pacote está sendo carregado na sessão. Muitas vezes criar uma
-biblioteca de funções pode parecer uma tarefa árdua e confusa, restrita apenas a pessoas que possuem grande conhecimento da linguagem, mas essa impressão não poderia estar mais
+biblioteca de funções pode parecer uma tarefa árdua e confusa, restrita apenas a quem possui grande conhecimento da linguagem, mas essa impressão não poderia estar mais
 distante da realidade: pacotes para o R são bastante simples e intuitivos de
 fazer.
 
