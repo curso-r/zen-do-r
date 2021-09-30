@@ -1,6 +1,6 @@
 # Rproj e diretórios {#rproj-dir}
 
-Uma pessoa que está começando a programar corre o risco de não gerenciar seus projetos. Muitas
+Uma pessoa que está começando a programar corre o risco de não saber gerenciar seus projetos. Muitas
 vezes seus arquivos de código ficarão espalhados pelos infinitos diretórios de
 seu computador, esperando a primeira oportunidade de sumir para sempre. No R
 isso não é diferente: organizar arquivos é uma parte integral do processo de
