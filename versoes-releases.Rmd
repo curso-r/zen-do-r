@@ -95,7 +95,7 @@ versionamento semântico, mas é comumente utilizado em programas de R.
 Uma versão de desenvolvimento é qualquer "subversão" que ainda não deveria ser
 utilizada pela comunidade; qualquer commit entre patches, minors ou majors é
 uma versão de desenvolvimento. Por convenção, a primeira versão de
-desenvolvimento é marcada como 9000, podendo chegar até 9999. Algumas pessoas que programam incrementam esse número a cada commit realizado, mas é mais comum
+desenvolvimento é marcada como 9000, podendo chegar até 9999. Algumas pessoas incrementam esse número a cada commit realizado, mas é mais comum
 manter o 9000 até que o código esteja pronto para se tornar um verdadeiro patch,
 minor ou major.
 
