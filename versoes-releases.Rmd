@@ -19,7 +19,7 @@ simplesmente continuar programando e exigir que as pessoas que usam o pacote bai
 mais recente do seu código. Essa prática, entretanto, é ruim para quem usa e
 para quem programa.
 
-Você, como pessoa que programa, quer poder fazer alterações no seu código que não
+Você, que está programando, quer poder fazer alterações no seu código que não
 necessariamente estão prontas para o público em geral. Erros acontecem e, muitas
 vezes, é preciso fazer uma série de modificações antes que o pacote volte a ter
 certa estabilidade. Por outro lado, a pessoa que usa também só quer atualizar seu
