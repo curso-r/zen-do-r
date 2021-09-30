@@ -1,6 +1,6 @@
 # Rproj e diretórios {#rproj-dir}
 
-Um programador iniciante corre o risco de não gerenciar seus projetos. Muitas
+Uma pessoa que está começando a programar corre o risco de não gerenciar seus projetos. Muitas
 vezes seus arquivos de código ficarão espalhados pelos infinitos diretórios de
 seu computador, esperando a primeira oportunidade de sumir para sempre. No R
 isso não é diferente: organizar arquivos é uma parte integral do processo de
@@ -14,7 +14,7 @@ consolidar todos os recursos necessários para uma análise. Denominados
 
 Antes de continuar falando sobre diretórios, é importante falar um pouco sobre
 como funcionam os caminhos para arquivos no computador. Toda função de
-importação vai exigir um caminho, uma string que representa oendereço do arquivo
+importação vai exigir um caminho, uma string que representa o endereço do arquivo
 no computador e há duas formas de passarmos um caminho de arquivo: a absoluta e
 a relativa.
 
@@ -46,8 +46,8 @@ R.utils::getRelativePath(getwd())
 
 Um arquivo dentro do diretório de trabalho será o seu próprio caminho relativo,
 enquanto `..` indica "voltar" um diretório em relação ao *working directory*.
-Por fim, o til `~` é um caractere que indica a *home* do usuário (`/home/clente`
-no meu caso) e costuma ser classificado como caminoh relativo.
+Por fim, o til `~` é um caractere que indica a sua *home* (`/home/clente`
+no meu caso) e costuma ser classificado como caminho relativo.
 
 ```r
 R.utils::getRelativePath("/home/clente/Documents/zen-do-r/git-github.Rmd")
@@ -129,7 +129,7 @@ conter, em sua pasta R, todos os arquivos necessários para aquela análise.
 Mas a funcionalidade mais importante dentre todas as já citadas é o conceito do
 *working directory* ou diretório de trabalho. No canto esquerdo superior do
 Console do RStudio existe um caminho denominado diretório de trabalho, que é
-essencialmente a raiz do seu projeto. Muitos programadores que aprenderam R há
+essencialmente a raiz do seu projeto. Muitas pessoas que aprenderam R há
 muito tempo conhecem uma função chamada `setwd()`; se você nunca ouviu falar
 disso, não se preocupe e continue assim, mas se você costuma usá-la, siga
 prestando atenção.
@@ -155,12 +155,11 @@ write.csv(a, "c.csv")
 ```
 
 Isso não parece tão problemático à primeira vista, mas usar `setwd()` cria um
-vício difícil de abandonar. Essa função estimula que os seus projetos continuem
-desorganizados com arquivos espalhados pelo computador, mas também confunde o
-programador na hora de salvar arquivos. Onde será salvo o arquivo `c.csv`?
+vício difícil de abandonar. Essa função não só estimula que os seus projetos continuem
+desorganizados com arquivos espalhados pelo computador, mas também te confunde na hora de salvar arquivos. Onde será salvo o arquivo `c.csv`?
 De onde veio o arquivo `a.csv` ou de onde veio o `b.csv`? E se essa linha fosse
 mudada de lugar para antes do segundo `setwd()`? São perguntas difíceis de
-responder caso você não esteja atento ao código todo.
+responder caso você não esteja alerta ao código todo.
 
 A solução que os projetos oferecem para isso é fazer com que o diretório de
 trabalho seja sempre a pasta do projeto. Neste caso é como se, ao abrir o
@@ -188,5 +187,5 @@ arquivos utilizados estão/serão salvos e poder compartilhar um projeto com
 qualquer pessoa. `setwd()` depende que seja explicitado um caminho dentro do
 seu computador e isso nem sempre é verdade no computador de outra pessoa;
 fazendo com que todos os arquivos estejam no projeto e com caminhos relativos
-nos códigos permite que outro usuário replique a sua análise sem ter que
+nos códigos permite que outra pessoa replique a sua análise sem ter que
 modificar nem uma linha do programa.

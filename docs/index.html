@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Zen do R</title>
   <meta name="description" content="Um livro de programação para não-programadores" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Zen do R" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 
 <link rel="next" href="introducao.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -204,7 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Zen do R</h1>
 <p class="author"><em>Caio Lente + Curso-R</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>Última atualização: 13/07/2021</em></p>
+<p class="date"><em>Última atualização: 10/09/2021</em></p>
 </div>
 <div id="respire-fundo" class="section level1 unnumbered">
 <h1>Respire fundo</h1>
@@ -237,6 +237,7 @@ Matemática e Estatística da Universidade de São Paulo (IME-USP).</p>
 <li><a href="https://twitter.com/dfalbel">Daniel Falbel</a></li>
 <li><a href="https://twitter.com/Azeloc">Fernando Correa</a></li>
 <li><a href="https://twitter.com/jtrecenti">Julio Tricenti</a></li>
+<li>Tereza Lacerda</li>
 <li><a href="https://twitter.com/Williamorim89">William Amorim</a></li>
 </ul>
 <p>Seja bem-vinda(o) também ao #rstats! Compartilhe seu desenvolvimento. Poste seus
@@ -260,7 +261,6 @@ participe dos grupos e comunidades de programadores.</p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -300,6 +300,10 @@ gitbook.start({
 "text": null
 },
 "download": ["zen-do-r.pdf", "zen-do-r.epub", "zen-do-r.mobi"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
