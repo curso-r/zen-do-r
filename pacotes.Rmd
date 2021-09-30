@@ -18,7 +18,7 @@ Muitas vezes uma análise de dados pode envolver dezenas de funções e diversas
 pessoas, fazendo com que o compartilhamento de código seja vital para que a
 análise não fuja do controle. Pacotes permitem gerenciar dependências, manter
 documentação, executar testes unitários e muito mais com o objetivo de deixar
-todo o grupo de analistas na mesma página.
+todo o time na mesma página.
 
 Sendo assim, recomenda-se criar um pacote para qualquer análise que envolva pelo
 menos meia dúzia de funções complexas e mais de uma pessoa, caso contrário, um
