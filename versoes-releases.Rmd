@@ -15,18 +15,18 @@ atualizar esse fonte no GitHub, pode-se dizer que criei uma nova versão do meu
 pacote.
 
 Mas por que marcar e dar nomes a essas atualizações? É bastante mais fácil
-simplesmente continuar programando e exigir que seus usuários baixem a versão
-mais recente do seu código. Essa prática, entretanto, é ruim para o usuário e
-para o programador.
+simplesmente continuar programando e exigir que as pessoas que usam o pacote baixem a versão
+mais recente do seu código. Essa prática, entretanto, é ruim para quem usa e
+para quem programa.
 
-Você, como programador, quer poder fazer alterações no seu código que não
+Você, que está programando, quer poder fazer alterações no seu código que não
 necessariamente estão prontas para o público em geral. Erros acontecem e, muitas
 vezes, é preciso fazer uma série de modificações antes que o pacote volte a ter
-certa estabilidade. Por outro lado, o usuário também só quer atualizar seu
+certa estabilidade. Por outro lado, a pessoa que está utilizando-o também só quer atualizar seu
 pacote quando algo suficientemente diferente estiver disponível (sejam correções
 de erros, sejam novas funcionalidades). Além disso, caso uma nova versão do seu
-código gere problemas para ele, é necessário ter uma versão estável anterior
-claramente rotulada para que o usuário possa fazer o *downgrade* do pacote.
+código gere problemas para ela, é necessário ter uma versão estável anterior
+claramente rotulada para que a pessoa possa fazer o *downgrade* do pacote.
 
 E justamente são esses rótulos que precisamos utilizar para ter um bom sistema
 de versões nos nossos pacotes. Ao contrário de "controle de versão", para o qual
@@ -58,7 +58,7 @@ retrocompatível (ou seja, compatível com as suas versões anteriores), deve se
 incrementada a versão minor. Por fim, se for introduzida alguma mudança que
 quebra a retrocompatibilidade, deve ser incrementada a versão major. É
 importante dizer também que, depois de lançada, uma versão **nunca** deverá ser
-alterada, pois isso confundirá os usuários da mesma.
+alterada, pois isso confundirá as pessoas que usam a mesma.
 
 Alguns pontos do versionamento semântico não são seguidos sempre, mas podem ser
 úteis. Por exemplo, o patch pode ser omitido se ele for 0, a major 0 normalmente
@@ -92,11 +92,10 @@ subsequentes haveriam versões denominadas de desenvolvimento, como por exemplo
 0.1.1.9000, 1.0.0.9000 e assim por diante. Isso não está no padrão ouro do
 versionamento semântico, mas é comumente utilizado em programas de R.
 
-Uma versão de desenvolvimento é qualquer "subversão" que não deveria ser
-utilizada pelo usuário final; qualquer commit entre patches, minors ou majors é
+Uma versão de desenvolvimento é qualquer "subversão" que ainda não deveria ser
+utilizada pela comunidade; qualquer commit entre patches, minors ou majors é
 uma versão de desenvolvimento. Por convenção, a primeira versão de
-desenvolvimento é marcada como 9000, podendo chegar até 9999. Alguns
-programadores incrementam esse número a cada commit realizado, mas é mais comum
+desenvolvimento é marcada como 9000, podendo chegar até 9999. Algumas pessoas incrementam esse número a cada commit realizado, mas é mais comum
 manter o 9000 até que o código esteja pronto para se tornar um verdadeiro patch,
 minor ou major.
 
@@ -172,16 +171,15 @@ Como exemplo, podemos ver a aba "Releases" do pacote `decryptr`:
 knitr::include_graphics("static/versoes-releases/ver.png")
 ```
 
-É bom fazer esse tipo de versionamento externo porque os usuários passam a ter
-um lugar de fácil acesso com o código-fonte de absolutamente todas as versões do
-seu pacote. Além disso, a função `devtools::install_github()` é capaz de
+É bom fazer esse tipo de versionamento externo porque as pessoas que usam o pacote passam a ter
+um lugar de fácil acesso com o código-fonte de absolutamente todas as suas versões. Além disso, a função `devtools::install_github()` é capaz de
 utilizar esses releases como indicador de qual versão de um pacote deve ser
 baixada.
 
 Para criar releases de um pacote seu, antes você deve dar push no commit da
 versão atual (depois de `usethis::use_version()` e antes de
 `usethis::use_dev_version()`), pois assim estará pública no GitHub exatamente a
-versão do seu pacote que deve ser baixada pelos usuários. Depois basta ir para
+versão do seu pacote que deve ser baixada. Depois basta ir para
 a aba das releases e clicar em **Draft a new release**. Preencha os campos
 correspondentes e publique a versão.
 

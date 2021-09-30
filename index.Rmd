@@ -3,7 +3,7 @@ knit: "bookdown::render_book"
 title: "Zen do R"
 author: ["Caio Lente + Curso-R"]
 date: "`r paste('Última atualização:', format(Sys.Date(), '%d/%m/%Y'))`"
-description: "Um livro de programação para não-programadores"
+description: "Um livro de programação para quem não programa"
 url: "https://curso-r.github.io/zen-do-r/"
 github-repo: curso-r/zen-do-r
 favicon: "assets/favicon.ico"
@@ -13,9 +13,7 @@ documentclass: book
 
 # Respire fundo {-}
 
-<img src="assets/hex.png" width="250" alt="Hex" align="right" style="margin: 0 1em 0 1em" /> Este é o *Zen do R*, seja bem-vinda(o)! O objetivo deste livro é ensinar ao leitor
-que não costuma programar algumas formas simples de melhorar a organização de
-seus projetos de análise de dados em R.
+<img src="assets/hex.png" width="250" alt="Hex" align="right" style="margin: 0 1em 0 1em" /> Este é o *Zen do R*, boas-vindas! O objetivo deste livro é ensinar a quem não costuma programar algumas formas simples de melhorar a organização de projetos de análise de dados em R.
 
 Ele foi escrito em [RMarkdown](https://rmarkdown.rstudio.com/) com o pacote
 [bookdown](https://bookdown.org/) e está em **construção** e em
@@ -35,7 +33,7 @@ Matemática e Estatística da Universidade de São Paulo (IME-USP).
 - Conheça os nossos cursos: https://www.curso-r.com/cursos/
 - Conheça o nosso blog: https://www.curso-r.com/blog/
 - Conheça o restante do nosso material: https://www.curso-r.com/material/
-- Saiba mais sobre a Curso-R: https://www.curso-r.com/sobre/
+- Saiba mais sobre a Curso-R: https://curso-r.com/
 
 Participaram da construção deste livro:
 
@@ -44,12 +42,13 @@ Participaram da construção deste livro:
 - [Caio Lente](https://twitter.com/clente_)
 - [Daniel Falbel](https://twitter.com/dfalbel)
 - [Fernando Correa](https://twitter.com/Azeloc)
-- [Julio Tricenti](https://twitter.com/jtrecenti)
-- [William Amorim](https://twitter.com/Williamorim89)
+- [Julio Trecenti](https://twitter.com/jtrecenti)
+- [Tereza Lacerda](https://twitter.com/tereza_lacerda)
+- [William Amorim](https://twitter.com/wamorim_)
 
-Seja bem-vinda(o) também ao #rstats! Compartilhe seu desenvolvimento. Poste seus
+Boas-vindas também ao #rstats! Compartilhe seu desenvolvimento. Poste seus
 avanços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e
-participe dos grupos e comunidades de programadores.
+participe dos grupos e comunidades de programação.
 
 - Comunidade RLadies: https://benubah.github.io/r-community-explorer/rladies.html
 - Fórum de dúvidas da Curso-R: https://discourse.curso-r.com/

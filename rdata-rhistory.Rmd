@@ -1,8 +1,7 @@
 # .RData e .Rhistory {#rdata-rhistory}
 
 O fluxo ideal de análise de dados começa na escolha da ferramenta. Por ser uma
-linguagem especializada em estatística, o R é a primeira escolha de muitos
-usuários. Normalmente optar por programar em R também implica na escolha de uma
+linguagem especializada em estatística, o R é a primeira escolha de muitas pessoas. Normalmente optar por programar em R também implica na escolha de uma
 IDE (*Integrated Development Environment*) que, em 90%^[Não tenho nenhuma
 estatística confiável sobre esse número, mas sei que ele não é 100% porque
 conheço pelo menos uma pessoa que programa R no neovim e eu passei a usar
@@ -10,41 +9,41 @@ emacs.] dos casos, será o RStudio.
 
 O R, em combinação com o RStudio, possui um conjunto de funcionalidades cuja
 intenção é ajudar no processo de desenvolvimento. Entretanto, isso acaba
-deixando os programadores de R mal acostumados.
+deixando as pessoas que programam em R mal acostumadas.
 
 Como um pai coruja, o RStudio faz questão de lembrar tudo o que você fez
 anteriormente. Em sua configuração padrão, a IDE manterá na "memória" todos os
 últimos comandos executados, todos os dados utilizados e todos os objetos
 criados. Ao fechar e abrir o RStudio, essas informações serão recarregadas
-na memória como se o usuário nunca tivesse saído do programa.
+na memória como se você nunca tivesse saído do programa.
 
 Esse recurso é tornado possível pela criação de dois arquivos ocultos: `.RData`
 e `.Rhistory`. O primeiro abriga absolutamente todos os objetos criados por uma
 sessão R, enquanto o segundo contém uma lista com os últimos comandos
-executados. Ao reabrir o RStudio, o conteúdo armazenados nestes arquivos será
+executados. Ao reabrir o RStudio, o conteúdo armazenado nestes arquivos será
 carregado no ambiente de trabalho atual como se nada tivesse acontecido.
 
 ## Por que desistir
 
 Apesar de ser uma ótima conveniência, assim como o pai coruja, esse tipo de
-funcionalidade pode deixar o programador mal acostumado. Se todos os resultados
+funcionalidade pode te acostumar mal. Se todos os resultados
 parciais de uma análise estiverem disponíveis a qualquer momento, diminui o
 incentivo para a escrita de *código reprodutível* e, se todo o histórico de
 comandos for acessível, acaba a necessidade de experimentos controlados.
 
-Um usuário que dependa ativamente do `.RData` para recuperar seus dados estará
-aos poucos contando cada vez mais com a sorte. Caso ele acidentalmente
+Uma pessoa que dependa ativamente do `.RData` para recuperar seus dados estará
+aos poucos contando cada vez mais com a sorte. Caso ela acidentalmente
 sobrescreva o objeto relevante e o código para recriá-lo já tenha sido apagado,
 não haverá nenhuma forma confiável de recuperar esses dados. Idealmente, todo
 o código necessário para uma análise de dados deve estar salvo em um arquivo
-`.R` perfeitamente reprodutível; assim, caso o programador cometa um engano,
+`.R` perfeitamente reprodutível; assim, caso você cometa um engano,
 é possível executar aquele arquivo do início e obter novamente os objetos que
 estavam sendo utilizados.
 
 Arquivos reprodutíveis também tem uma outra vantagem: facilidade de
-compartilhamento. A menos que o programador pretenda sentar com seu colega para
+compartilhamento. A menos que você pretenda sentar com outra pessoa para
 explicar como utilizar os objetos do `.RData` e do `.Rhistory`, não pode-se
-esperar que outra pessoa seja capaz de reproduzir uma análise a partir de
+esperar que ela seja capaz de reproduzir uma análise a partir de
 arquivos incompletos. Deste modo, abandonar essa funcionalidade permite utilizar
 ferramentas de compartilhamento e controle de versão da maneira como elas foram
 idealizadas.
@@ -57,7 +56,7 @@ importando quão grande sejam). Isso faz com que o `.RData` normalmente seja um
 arquivo de múltiplos gigabytes.
 
 Ao reabrir o RStudio, todos esses dados serão recarregados e
-provavelmente farão com que o programador espere vários minutos até que ele
+provavelmente farão com que você espere vários minutos até que
 possa voltar ao seu trabalho. Com o `.RData` é impossível ter controle sobre
 quais dados devem ser utilizados em cada sessão de programação.
 
@@ -74,7 +73,7 @@ knitr::include_graphics("static/rdata-rhistory/config.png")
 ```
 
 Se acostumar com sessões efêmeras não é uma tarefa fácil e um desconforto
-inicial é esperado. Pode ser que o programador ache entediante executar o mesmo
+inicial é esperado. Pode ser que você ache entediante executar o mesmo
 código toda vez que abrir seu RStudio, mas é importante ter em mente que esse
 programa só está lá e pode ser executado inúmeras vezes porque o R não estará
-mais fazendo o trabalho do analista.
+mais fazendo o seu trabalho.

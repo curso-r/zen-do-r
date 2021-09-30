@@ -3,8 +3,7 @@
 Nas palavras do maior guru do R, Hadley Wickham, "pacotes são a unidade
 fundamental de código R reprodutível". Toda vez que você utiliza a função
 `library()`, algum pacote está sendo carregado na sessão. Muitas vezes criar uma
-biblioteca de funções pode parecer uma tarefa árdua e confusa, restrita a
-grandes conhecedores da linguagem, mas essa impressão não poderia estar mais
+biblioteca de funções pode parecer uma tarefa árdua e confusa, restrita apenas a quem possui grande conhecimento da linguagem, mas essa impressão não poderia estar mais
 distante da realidade: pacotes para o R são bastante simples e intuitivos de
 fazer.
 
@@ -14,18 +13,18 @@ trabalho estruturado. Nesse sentido, pacotes são iguais a projetos porque eles
 também têm um `.Rproj`; pacotes na verdade *são* projetos.
 
 A diferença entre os dois é que pacotes podem ser documentados e instalados,
-permitindo toda uma gama de novas possibilidades para o programador.
+permitindo toda uma gama de novas possibilidades para quem programa.
 Muitas vezes uma análise de dados pode envolver dezenas de funções e diversas
 pessoas, fazendo com que o compartilhamento de código seja vital para que a
 análise não fuja do controle. Pacotes permitem gerenciar dependências, manter
 documentação, executar testes unitários e muito mais com o objetivo de deixar
-todos os analistas na mesma página.
+todo o time na mesma página.
 
 Sendo assim, recomenda-se criar um pacote para qualquer análise que envolva pelo
 menos meia dúzia de funções complexas e mais de uma pessoa, caso contrário, um
 projeto já é suficiente. Outra motivação para criar um pacote é compartilhar
 conjuntos úteis de funções com outras pessoas; isso acaba sendo menos comum para
-a maioria dos usuários, mas é importante ressaltar que o R não seria a linguagem
+a maioria das pessoas, mas é importante ressaltar que o R não seria a linguagem
 popular que é hoje se não fossem pelas famosas bibliotecas `ggplot2` e `dplyr`.
 
 ```r
@@ -72,8 +71,7 @@ usethis::use_mit_license("Seu Nome")
 
 O arquivo de descrição, no entanto, é um pouco mais complexo porque ele tem
 alguns campos que precisam ser preenchidos manualmente. Quando o pacote for
-criado, eles já estarão populados com instruções para facilitar a vida do
-programador. Abaixo está um exemplo de como `DESCRIPTION` deve ficar depois de
+criado, eles já estarão populados com instruções para facilitar a vida de quem programa. Abaixo está um exemplo de como `DESCRIPTION` deve ficar depois de
 completo:
 
 ```
@@ -132,8 +130,8 @@ funcao_demo <- function(x, y, ...) {
 No RStudio, esse tipo de documentação é tratado diferentemente de outros
 comentários, então certas palavras-chave ficam coloridas. `@param` por exemplo
 indica a documentação de um dos parâmetros e `@export` indica que aquela função
-será exportada pelo pacote, ou seja, ficará disponível ao usuário quando ele
-executar `library(demo)`.
+será exportada pelo pacote, ou seja, ficará disponível quando for
+executado o comando `library(demo)`.
 
 Para gerar a documentação do pacote, basta chamar uma outra função do
 `devtools`:
@@ -164,7 +162,7 @@ forma `pacote::funcao()`; neste momento, o pacote em questão se tornará uma
 
 Para garantir que o R não encontrará nenhum problema no seu pacote, basta
 executar a função de verificação `devtools::check()`. Se nenhum defeito for
-encontrado, basta compartilhar o pacote com os seus colegas e instalá-lo com
+encontrado, basta compartilhar o pacote com a comunidade e instalá-lo com
 `devtools::install_local()`.
 
 ```r
