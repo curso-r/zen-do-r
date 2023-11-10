@@ -117,7 +117,7 @@ mais enxutos e limpos do que *scripts* soltos, pois estes estimulam repetição 
 código. Às vezes é mais rápido copiar e colar um pedaço de código e adaptá-lo ao
 novo contexto do que criar uma função que generalize a operação desejada para as
 duas situações, mas os benefícios das funções são de longo prazo: ao encontrar
-um *bug*, haverá apenas um lugar para concertar; se surgir a necessidade de
+um *bug*, haverá apenas um lugar para consertar; se surgir a necessidade de
 modificar uma propriedade, haverá apenas um lugar para editar; se aquele código
 se tornar obsoleto, haverá apenas um lugar para deletar.
 
