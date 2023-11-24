@@ -143,7 +143,7 @@ mente desde o momento de criação do novo projeto.
 No exemplo da seção anterior, é possível notar as chamadas para as bibliotecas
 `dplyr` e `tibble`. Elas têm inúmeras funções úteis, mas aqui somente algumas
 poucas foram utilizadas. Além disso, se o código fosse muito maior, ficaria
-impossível saber de uma biblioteca ainda está sendo utilizada; se não fosse mais
+impossível saber se uma biblioteca ainda está sendo utilizada; se não fosse mais
 necessário utilizar `rownames_to_column()`, qual seria a melhor forma de saber
 que pode ser removida a chamada `library(tibble)`?
 
